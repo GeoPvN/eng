@@ -1,0 +1,954 @@
+
+        <?xml version="1.0" encoding="utf-8"?><?mso-application progid="Excel.Sheet"?>
+        <ss:Workbook xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:o="urn:schemas-microsoft-com:office:office">
+        	<o:DocumentProperties>
+        		<o:Title>შემომავალი ზარი</o:Title>
+        	</o:DocumentProperties>
+        	<ss:ExcelWorkbook>
+        		<ss:WindowHeight>9000</ss:WindowHeight>
+        		<ss:WindowWidth>50000</ss:WindowWidth>
+        		<ss:ProtectStructure>false</ss:ProtectStructure>
+        		<ss:ProtectWindows>false</ss:ProtectWindows>
+        	</ss:ExcelWorkbook>
+        	<ss:Styles>
+        		<ss:Style ss:ID="Default">
+        			<ss:Alignment ss:Vertical="Center" ss:Horizontal="Center" ss:WrapText="1" />
+        			<ss:Font ss:FontName="Sylfaen" ss:Size="12" />
+        			<ss:Interior />
+        			<ss:NumberFormat />
+        			<ss:Protection />
+        			<ss:Borders>
+        				<ss:Border ss:Position="Top" ss:Color="#000000" ss:Weight="1" ss:LineStyle="Continuous" />
+        				<ss:Border ss:Position="Bottom" ss:Color="#000000" ss:Weight="1" ss:LineStyle="Continuous" />
+        				<ss:Border ss:Position="Left" ss:Color="#000000" ss:Weight="1" ss:LineStyle="Continuous" />
+        				<ss:Border ss:Position="Right" ss:Color="#000000" ss:Weight="1" ss:LineStyle="Continuous" />
+        			</ss:Borders>
+        		</ss:Style>
+        		<ss:Style ss:ID="title">
+        			<ss:Borders />
+        			<ss:NumberFormat ss:Format="@" />
+        			<ss:Alignment ss:WrapText="1" ss:Horizontal="Center" ss:Vertical="Center" />
+        		</ss:Style>
+        		<ss:Style ss:ID="headercell">
+        			<ss:Font ss:Bold="1" />
+        			<ss:Interior ss:Pattern="Solid" />
+        			<ss:Alignment ss:WrapText="1" ss:Horizontal="Center" ss:Vertical="Center" />
+        		</ss:Style>
+        		<ss:Style ss:ID="headercellRotated">
+        			<ss:Font ss:Bold="1" />
+        			<ss:Interior ss:Pattern="Solid" />
+        			<ss:Alignment ss:WrapText="1" ss:Horizontal="Center" ss:Rotate="90" ss:Vertical="Center" />
+        		</ss:Style>
+        	</ss:Styles>
+        	<ss:Worksheet ss:Name="შემომავალი ზარი">
+        		<ss:Names>
+        			<ss:NamedRange ss:Name="Print_Titles" ss:RefersTo="=' შემომავალი ზარი '!R1:R2" />
+        		</ss:Names>
+        		<ss:Table x:FullRows="1" x:FullColumns="1" ss:ExpandedColumnCount="10" ss:ExpandedRowCount="34">
+        			<ss:Column ss:AutoFitWidth="1" ss:Width="150" />
+        			<ss:Column ss:AutoFitWidth="1" ss:Width="100" />
+        			<ss:Column ss:AutoFitWidth="1" ss:Width="100" />
+        			<ss:Column ss:AutoFitWidth="1" ss:Width="100" />
+        			<ss:Column ss:AutoFitWidth="1" ss:Width="200" />
+        			<ss:Column ss:AutoFitWidth="1" ss:Width="100" />
+        			<ss:Column ss:AutoFitWidth="1" ss:Width="100" />
+        			<ss:Column ss:AutoFitWidth="1" ss:Width="100" />
+        			<ss:Row ss:Height="40">
+        				<ss:Cell ss:StyleID="title" ss:MergeAcross="9">
+        					<ss:Data xmlns:html="http://www.w3.org/TR/REC-html40" ss:Type="String">
+        						<html:B>
+        							<html:Font html:Size="14">შემომავალი ზარი</html:Font>
+        						</html:B>
+        					</ss:Data>
+        					<ss:NamedCell ss:Name="Print_Titles" />
+        				</ss:Cell>
+        			</ss:Row>
+        			<ss:Row ss:AutoFitHeight="1" ss:Height="50">
+        				<ss:Cell ss:StyleID="headercell">
+        					<ss:Data ss:Type="String">№</ss:Data>
+        					<ss:NamedCell ss:Name="Print_Titles" />
+        				</ss:Cell>
+        			    <ss:Cell ss:StyleID="headercell">
+        					<ss:Data ss:Type="String">თარიღი</ss:Data>
+        					<ss:NamedCell ss:Name="Print_Titles" />
+        				</ss:Cell>
+        				<ss:Cell ss:StyleID="headercell">
+        					<ss:Data ss:Type="String">ტელეფონი</ss:Data>
+        					<ss:NamedCell ss:Name="Print_Titles" />
+        				</ss:Cell>
+        				<ss:Cell ss:StyleID="headercell">
+        					<ss:Data ss:Type="String">აბონენტი</ss:Data>
+        					<ss:NamedCell ss:Name="Print_Titles" />
+        				</ss:Cell>
+        				<ss:Cell ss:StyleID="headercell">
+        					<ss:Data ss:Type="String">აბონენტის ნომერი</ss:Data>
+        					<ss:NamedCell ss:Name="Print_Titles" />
+        				</ss:Cell>
+        				<ss:Cell ss:StyleID="headercell">
+        					<ss:Data ss:Type="String">მ/ცენტრი</ss:Data>
+        					<ss:NamedCell ss:Name="Print_Titles" />
+        				</ss:Cell>
+        			    <ss:Cell ss:StyleID="headercell">
+        					<ss:Data ss:Type="String">კატეგორია</ss:Data>
+        					<ss:NamedCell ss:Name="Print_Titles" />
+        				</ss:Cell>
+        				<ss:Cell ss:StyleID="headercell">
+        					<ss:Data ss:Type="String">რეაგირება</ss:Data>
+        					<ss:NamedCell ss:Name="Print_Titles" />
+        				</ss:Cell>
+        			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">80951</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-01 08:08:04</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995551171034</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String"></ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String"></ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">ჭიათურა</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">81887</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-02 13:10:25</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995555309208</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">სახერხი - წითელაძე  </ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">6010202141</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">ბათუმი</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">81894</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-02 13:19:37</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995322244668</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">სვანანაძე მარიამ</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String"></ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">რუსთავი</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">83252</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-04 05:35:43</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995372222257</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String"></ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String"></ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">გარდაბანი</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">83253</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-04 06:27:11</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995574194514</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String"></ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String"></ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">გარდაბანი</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">83849</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-05 09:40:30</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995558386673</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String"></ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String"></ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">ზესტაფონი</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">84037</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-05 15:10:36</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995555352770</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">შალვა სოლოღაშვილი</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">4110089782</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">მცხეთა</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">85259</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-07 16:37:54</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995341250477</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">ფანჩულიძე  </ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">4910175581</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">რუსთავი</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">85340</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-07 19:34:12</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995341250477</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">ფანჩულიძე  </ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">4910175581</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">რუსთავი</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">85346</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-07 20:09:18</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995593606506</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String"></ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String"></ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">მარნეული</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">85355</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-07 20:46:28</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995597588486</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String"></ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String"></ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">მარნეული</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">85357</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-07 20:48:27</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2512009</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">პაატა თუშურაშვილი</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">4110312832</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">მცხეთა</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ინფორმაციული</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">85774</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-08 15:39:49</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995555131619</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">ევგენა საბაშვილი </ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">3710097592</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">გორი</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ინფორმაციული</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">85826</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-08 16:52:08</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995551569509</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String"></ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String"></ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">ჭიათურა</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">86018</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-08 22:35:44</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995577580255</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">ტარიელი არსოშვილი </ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">5710135042</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">რუსთავი</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">86030</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-08 23:13:35</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995591925441</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">ივანე არსოშვილი</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">5710221461</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">რუსთავი</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">86061</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-09 07:52:19</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995322529158</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">გელა დარჩიაშვილი</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">4110159390</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">მცხეთა</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">გადაცემულია გასარკვევად</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">86144</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-09 10:48:15</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995593121134</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">საინიძე იაკობ</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String"></ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">ბათუმი</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">86168</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-09 11:25:45</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995599947753</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">ტანია სუხიშვილი </ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">5710170630</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">რუსთავი</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">86260</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-09 14:25:23</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995599947753</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">ტანია სუხიშვილი </ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">5710170630</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">რუსთავი</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">86289</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-09 16:06:26</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995599190529</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">თამაზი გიუნაშვილი </ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">5710092622</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">რუსთავი</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">86825</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-11 08:03:12</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995577738489</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String"></ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String"></ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">ბათუმი</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">90499</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-17 14:56:37</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995514022086</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">შოთა კოპალიანი</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">6010470000</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">ბათუმი</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ინფორმაციული</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">90502</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-17 15:04:07</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995598188012</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">შოთა კოპალიანი</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">6010470000</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">ბათუმი</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">90541</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-17 16:23:30</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995599996908</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">ალექსანდრე მოლაშხია</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">6010490902</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">ბათუმი</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">სერვისის პრობლემა</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">90576</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-17 17:42:51</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995599287508</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">ინეზა  სვაძნიძე</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">6010411901</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">ბათუმი</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">მრიცხველის პრობლემა</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">92474</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-20 08:02:16</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995579705737</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String"></ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">1211021692</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">ქუთაისი</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">გადაცემულია გასარკვევად</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">96050</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-22 19:02:41</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995593459864</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">მურთაზი ძაპტაშვილი</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">0110243381</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">ზუგდიდი</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">96051</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-22 19:03:55</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995599331515</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String"></ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String"></ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">მცხეთა</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ინფორმაციული</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">დასრულებულია</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">96803</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-24 11:45:55</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995577502332</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">ავთანდილ ლებანიძე</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">4110270011</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">მცხეთა</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">გადაცემულია გასარკვევად</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">97404</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-25 15:02:36</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995557433440</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">მაია ებრალიძე  </ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">6010488851</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">ბათუმი</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">გადაცემულია გასარკვევად</ss:Data>
+    				</ss:Cell>
+    			</ss:Row>
+    			<ss:Row>
+    	            <ss:Cell>
+    					<ss:Data ss:Type="String">97510</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">2016-07-25 16:15:50</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">995595901501</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">მარიკა ჩანტლაძე</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">4110264082</ss:Data>
+    				</ss:Cell>
+    				<ss:Cell>
+    					<ss:Data ss:Type="String">მცხეთა</ss:Data>
+    				</ss:Cell>
+    			    <ss:Cell>
+    					<ss:Data ss:Type="String">ტექნიკური</ss:Data>
+    				</ss:Cell>
+                    <ss:Cell>
+    					<ss:Data ss:Type="String">გადაცემულია გასარკვევად</ss:Data>
+    				</ss:Cell>
+    			</ss:Row></ss:Table>
+    		<x:WorksheetOptions>
+    			<x:PageSetup>
+    				<x:Layout x:CenterHorizontal="1" x:Orientation="Portrait" />
+    				<x:Header x:Data="&amp;R&#10;&#10;&amp;D" />
+    				<x:Footer x:Data="Page &amp;P of &amp;N" x:Margin="0.5" />
+    				<x:PageMargins x:Top="0.5" x:Right="0.5" x:Left="0.5" x:Bottom="0.8" />
+    			</x:PageSetup>
+    			<x:FitToPage />
+    			<x:Print>
+    				<x:PrintErrors>Blank</x:PrintErrors>
+    				<x:FitWidth>1</x:FitWidth>
+    				<x:FitHeight>32767</x:FitHeight>
+    				<x:ValidPrinterInfo />
+    				<x:VerticalResolution>600</x:VerticalResolution>
+    			</x:Print>
+    			<x:Selected />
+    			<x:DoNotDisplayGridlines />
+    			<x:ProtectObjects>False</x:ProtectObjects>
+    			<x:ProtectScenarios>False</x:ProtectScenarios>
+    		</x:WorksheetOptions>
+	   </ss:Worksheet>
+    </ss:Workbook>
+		
