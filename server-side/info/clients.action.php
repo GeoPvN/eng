@@ -86,39 +86,6 @@ switch ($action) {
 		}
 	
 	    break;
-    case 'get_holiday':
-        $count = 		$_REQUEST['count'];
-        $hidden = 		$_REQUEST['hidden'];
-        $rResult = mysql_query("SELECT 	`project_holiday`.`id`,
-                        				`holidays`.`date`,
-                        				`holidays`.`name`,
-                        				`holidays_category`.`name`
-                                FROM    `project_holiday`
-                                JOIN    `holidays` ON project_holiday.holidays_id = holidays.id
-                                JOIN    `holidays_category` ON `holidays`.holidays_category_id = `holidays_category`.`id`
-                                WHERE   `project_holiday`.`actived` = 1 AND `project_holiday`.`project_id` = '$_REQUEST[project_id]'");
-    
-        $data = array(
-            "aaData"	=> array()
-        );
-         
-        while ( $aRow = mysql_fetch_array( $rResult ) )
-        {
-            $row = array();
-            for ( $i = 0 ; $i < $count ; $i++ )
-            {
-                /* General output */
-                $row[] = $aRow[$i];
-                if($i == ($count - 1)){
-                    $row[] = '<div class="callapp_checkbox">
-                              <input type="checkbox" id="callapp_checkbox_holiday_'.$aRow[$hidden].'" name="check_'.$aRow[$hidden].'" value="'.$aRow[$hidden].'" class="check" />
-                              <label style="margin-top: 2px;" for="callapp_checkbox_holiday_'.$aRow[$hidden].'"></label>
-                          </div>';
-                }
-            }
-            $data['aaData'][] = $row;
-        }
-        break;
     case 'table_week':
         $count = 		$_REQUEST['count'];
         $hidden = 		$_REQUEST['hidden'];
@@ -164,15 +131,32 @@ switch ($action) {
     case 'get_list_import':
         $count = 		$_REQUEST['count'];
         $hidden = 		$_REQUEST['hidden'];
-        $rResult = mysql_query("SELECT 	phone_base_detail.`id`,
-                        				phone_base_detail.`firstname`,
-                        				phone_base_detail.`lastname`,
-                        				phone_base_detail.`pid`,
-                        				phone_base_detail.`phone1`,
-                        				phone_base_detail.`phone2`
-                                FROM 	`phone_base`
-                                JOIN phone_base_detail ON phone_base_detail.phone_base_id = phone_base.id AND phone_base_detail.`actived` = 1
-                                WHERE   phone_base.`actived` = 1");
+        
+        if($_REQUEST['cp'] == 1){
+            $rResult = mysql_query("SELECT 	phone_base_detail.`id`,
+                                            phone_base_detail.`client_name`,
+                                            phone_base_detail.`note`,
+                                            phone_base_detail.`phone1`,
+                                            phone_base_detail.`phone2`,
+                                            phone_base_detail.`mail1`,
+                                            phone_base_detail.`mail2`,
+                                            phone_base_detail.`address1`,
+                                            phone_base_detail.`address2`,
+                                            phone_base_detail.`info1`
+                                    FROM 	phone_base
+                                    JOIN    phone_base_detail ON phone_base_detail.phone_base_id = phone_base.id AND phone_base_detail.`actived` = 1
+                                    WHERE   phone_base.`actived` = 1");
+        }else{
+            $rResult = mysql_query("SELECT 	phone_base_detail.`id`,
+                            				phone_base_detail.`firstname`,
+                            				phone_base_detail.`lastname`,
+                            				phone_base_detail.`pid`,
+                            				phone_base_detail.`phone1`,
+                            				phone_base_detail.`phone2`
+                                    FROM 	`phone_base`
+                                    JOIN phone_base_detail ON phone_base_detail.phone_base_id = phone_base.id AND phone_base_detail.`actived` = 1
+                                    WHERE   phone_base.`actived` = 1 AND (ISNULL(phone_base_detail.`client_name`) OR phone_base_detail.`client_name` = '')");
+        }
          
         $data = array(
             "aaData"	=> array()
@@ -199,16 +183,34 @@ switch ($action) {
     case 'get_list_import_actived':
         $count = 		$_REQUEST['count'];
         $hidden = 		$_REQUEST['hidden'];
-        $rResult = mysql_query("SELECT 	outgoing_campaign_detail.`id`,
-                        				phone_base_detail.`firstname`,
-                        				phone_base_detail.`lastname`,
-                        				phone_base_detail.`pid`,
-                        				phone_base_detail.`phone1`,
-                        				phone_base_detail.`phone2`
-                                FROM `outgoing_campaign`
-                                JOIN outgoing_campaign_detail ON outgoing_campaign.id = outgoing_campaign_detail.outgoing_campaign_id
-                                JOIN phone_base_detail ON outgoing_campaign_detail.phone_base_detail_id = phone_base_detail.id
-                                WHERE project_id = $_REQUEST[project_id] AND outgoing_campaign_detail.actived = 1");
+        if($_REQUEST['cp']==1){
+            $rResult = mysql_query("SELECT 	outgoing_campaign_detail.`id`,
+                        				    phone_base_detail.`client_name`,
+                                            phone_base_detail.`note`,
+                                            phone_base_detail.`phone1`,
+                                            phone_base_detail.`phone2`,
+                                            phone_base_detail.`mail1`,
+                                            phone_base_detail.`mail2`,
+                                            phone_base_detail.`address1`,
+                                            phone_base_detail.`address2`,
+                                            phone_base_detail.`info1`
+                                    FROM `outgoing_campaign`
+                                    JOIN outgoing_campaign_detail ON outgoing_campaign.id = outgoing_campaign_detail.outgoing_campaign_id
+                                    JOIN phone_base_detail ON outgoing_campaign_detail.phone_base_detail_id = phone_base_detail.id
+                                    WHERE project_id = $_REQUEST[project_id] AND outgoing_campaign_detail.actived = 1");
+        }else{
+            $rResult = mysql_query("SELECT 	outgoing_campaign_detail.`id`,
+                                            phone_base_detail.`firstname`,
+                                            phone_base_detail.`lastname`,
+                                            phone_base_detail.`pid`,
+                                            phone_base_detail.`phone1`,
+                                            phone_base_detail.`phone2`,
+                                            phone_base_detail.`note`
+                                    FROM `outgoing_campaign`
+                                    JOIN outgoing_campaign_detail ON outgoing_campaign.id = outgoing_campaign_detail.outgoing_campaign_id
+                                    JOIN phone_base_detail ON outgoing_campaign_detail.phone_base_detail_id = phone_base_detail.id
+                                    WHERE project_id = $_REQUEST[project_id] AND outgoing_campaign_detail.actived = 1 AND (ISNULL(phone_base_detail.`client_name`) OR phone_base_detail.`client_name` = '')");
+        }
          
         $data = array(
             "aaData"	=> array()

@@ -196,36 +196,14 @@ function template($hidden_id){
 
 function GetPage($res){
 
+    if($_REQUEST['cp']==1){
 	$data  .= '
 	
 	<div id="dialog-form">
 	    <fieldset style="width: 400px;">
 	       <legend>ძირითადი ინფორმაცია</legend>
 			<table class="dialog-form-table" style="width: 100%;">
-	           <tr>
-	               <td><label for="import_fname">სახელი</label></td>
-	               <td><label for="import_lname">გვარი</label></td>
-    	       </tr>
-	           <tr>
-	               <td><input id="import_fname" style="width: 150px;" value="'.$res[firstname].'"></td>
-	               <td><input id="import_lname" style="width: 150px;" value="'.$res[lastname].'"></td>
-    	       </tr>
-	       	   <tr>
-	               <td><label for="import_pid">პირადი ნომერი</label></td>
-	               <td><label for="import_date">დაბადების თარიღი</label></td>
-    	       </tr>
-	           <tr>
-	               <td><input id="import_pid" style="width: 150px;" value="'.$res[pid].'" maxlength="11"></td>
-	               <td><input id="import_date" style="width: 150px;" value="'.$res[born_date].'"></td>
-    	       </tr>
-	           <tr>
-	               <td><label for="import_age">წლოვანება</label></td>
-	               <td><label for="import_sex">სქესი</label></td>
-    	       </tr>
-	           <tr>
-	               <td><input id="import_age" style="width: 150px;" value="'.$res[age].'"></td>
-	               <td><input id="import_sex" style="width: 150px;" value="'.$res[sex].'"></td>
-    	       </tr>
+
 	           <tr>
 	               <td><label for="import_phone1">ტელეფონი 1</label></td>
 	               <td><label for="import_phone2">ტელეფონი 2</label></td>
@@ -252,38 +230,99 @@ function GetPage($res){
     	       </tr>
 	           <tr>
 	               <td><label for="import_id_code">საიდ. კოდი</label></td>
-	               <td><label for="import_client_name">კლიენტის სახელი</label></td>
+	               <td><label for="import_client_name">დასახელება</label></td>
     	       </tr>
 	           <tr>
 	               <td><input id="import_id_code" style="width: 150px;" value="'.$res[id_code].'"></td>
 	               <td><input id="import_client_name" style="width: 150px;" value="'.$res[client_name].'"></td>
     	       </tr>
 	           <tr>
-	               <td><label for="import_activities">საქმიანობის სფერო</label></td>
-	               <td><label for="import_note">შენიშვნა</label></td>
+                   <td><label for="import_info1">ვებ გვერდი</label></td>
+	               <td><label for="import_note">საქმიანობის სფერო</label></td>
     	       </tr>
 	           <tr>
-	               <td><input id="import_activities" style="width: 150px;" value="'.$res[activities].'"></td>
+                   <td><input id="import_info1" style="width: 150px;" value="'.$res[info1].'"></td>
 	               <td><input id="import_note" style="width: 150px;" value="'.$res[note].'"></td>
-    	       </tr>
-	           <tr>
-	               <td><label for="import_info1">ინფო 1</label></td>
-	               <td><label for="import_info2">ინფო 2</label></td>
-    	       </tr>
-	           <tr>
-	               <td><input id="import_info1" style="width: 150px;" value="'.$res[info1].'"></td>
-	               <td><input id="import_info2" style="width: 150px;" value="'.$res[info2].'"></td>
-    	       </tr>
-	           <tr>
-	               <td><label for="import_info3">ინფო 3</label></td>
-    	       </tr>
-	           <tr>
-	               <td><input id="import_info3" style="width: 150px;" value="'.$res[info3].'"></td>
     	       </tr>
 	       </table>
 		 </fieldset>	    
 	</div><input id="import_id" type="hidden" value="'.$res[id].'">
 	</div>';
+    }else{
+        $data  .= '
+    	<div id="dialog-form">
+    	    <fieldset style="width: 400px;">
+    	       <legend>ძირითადი ინფორმაცია</legend>
+    			<table class="dialog-form-table" style="width: 100%;">
+    	           <tr>
+    	               <td><label for="import_fname">სახელი</label></td>
+    	               <td><label for="import_lname">გვარი</label></td>
+        	       </tr>
+    	           <tr>
+    	               <td><input id="import_fname" style="width: 150px;" value="'.$res[firstname].'"></td>
+    	               <td><input id="import_lname" style="width: 150px;" value="'.$res[lastname].'"></td>
+        	       </tr>
+    	       	   <tr>
+    	               <td><label for="import_pid">პირადი ნომერი</label></td>
+    	               <td><label for="import_date">დაბადების თარიღი</label></td>
+        	       </tr>
+    	           <tr>
+    	               <td><input id="import_pid" style="width: 150px;" value="'.$res[pid].'" maxlength="11"></td>
+    	               <td><input id="import_date" style="width: 150px;" value="'.$res[born_date].'"></td>
+        	       </tr>
+    	           <tr>
+    	               <td><label for="import_age">წლოვანება</label></td>
+    	               <td><label for="import_sex">სქესი</label></td>
+        	       </tr>
+    	           <tr>
+    	               <td><input id="import_age" style="width: 150px;" value="'.$res[age].'"></td>
+    	               <td><input id="import_sex" style="width: 150px;" value="'.$res[sex].'"></td>
+        	       </tr>
+    	           <tr>
+    	               <td><label for="import_phone1">ტელეფონი 1</label></td>
+    	               <td><label for="import_phone2">ტელეფონი 2</label></td>
+        	       </tr>
+    	           <tr>
+    	               <td><input id="import_phone1" style="width: 150px;" value="'.$res[phone1].'"></td>
+    	               <td><input id="import_phone2" style="width: 150px;" value="'.$res[phone2].'"></td>
+        	       </tr>
+    	           <tr>
+    	               <td><label for="import_mail">ელ-ფოსტა 1</label></td>
+    	               <td><label for="import_addres">მისამართი 1</label></td>
+        	       </tr>
+    	           <tr>
+    	               <td><input id="import_mail1" style="width: 150px;" value="'.$res[mail1].'"></td>
+    	               <td><input id="import_address1" style="width: 150px;" value="'.$res[address1].'"></td>
+        	       </tr>
+    	           <tr>
+    	               <td><label for="import_mail">ელ-ფოსტა 2</label></td>
+    	               <td><label for="import_addres">მისამართი 2</label></td>
+        	       </tr>
+    	           <tr>
+    	               <td><input id="import_mail2" style="width: 150px;" value="'.$res[mail2].'"></td>
+    	               <td><input id="import_address2" style="width: 150px;" value="'.$res[address2].'"></td>
+        	       </tr>
+    	           <tr>
+    	               <td><label for="import_note">შენიშვნა</label></td>
+    	               <td><label for="import_info1">ინფო 1</label></td>
+        	       </tr>
+    	           <tr>
+    	               <td><input id="import_note" style="width: 150px;" value="'.$res[note].'"></td>
+    	               <td><input id="import_info1" style="width: 150px;" value="'.$res[info1].'"></td>
+        	       </tr>
+    	           <tr>
+    	               <td><label for="import_info2">ინფო 2</label></td>
+    	               <td><label for="import_info3">ინფო 3</label></td>
+        	       </tr>
+    	           <tr>
+    	               <td><input id="import_info2" style="width: 150px;" value="'.$res[info2].'"></td>
+    	               <td><input id="import_info3" style="width: 150px;" value="'.$res[info3].'"></td>
+        	       </tr>
+    	       </table>
+    		 </fieldset>
+    	</div><input id="import_id" type="hidden" value="'.$res[id].'">
+    	</div>';
+    }
 
 	return $data;
 }

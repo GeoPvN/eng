@@ -380,7 +380,7 @@ function GetDataTableSD(tname, aJaxURL, action, count, data, hidden, length, sor
 }
 
 
-function GetDataTable3(tname, aJaxURL, action, count, data, hidden, length, sorting, sortMeth, total, colum_change) {
+function GetDataTable3(tname, aJaxURL, action, count, data, hidden, length, sorting, sortMeth, total) {
     if (empty(data))
         data = "";
     
@@ -419,7 +419,7 @@ function GetDataTable3(tname, aJaxURL, action, count, data, hidden, length, sort
         "bDestroy": true, 																				//Reinicialization table
         "bJQueryUI": true, 																				//Add jQuery ThemeRoller
         //"bStateSave": true, 																			//state saving
-        "sDom": colum_change,
+        "sDom": "<'dataTable_buttons'T><'H'lfrt><'dataTable_content't><'F'ip>",
 		"oTableTools": imex,
         "sPaginationType": "full_numbers",
         "bProcessing": true,
@@ -525,53 +525,51 @@ function GetDataTable3(tname, aJaxURL, action, count, data, hidden, length, sort
               { "sClass": "colum_hidden", "bSortable": false, "bSearchable": false, "aTargets": [hidden]}	//hidden collum
             ],
         "oLanguage": {																						//Localization
-            "sProcessing": "იტვირთება...",
+            "sProcessing": "Loading...",
             "sLengthMenu": "_MENU_",
-            "sZeroRecords": "ჩანაწერი ვერ მოიძებნა",
-            "sInfo": "_START_-დან _END_-მდე სულ: _TOTAL_",
-            "sInfoEmpty": "0-დან 0-მდე სულ: 0",
-            "sInfoFiltered": "(გაიფილტრა _MAX_-დან _TOTAL_ ჩანაწერი)",
+            "sZeroRecords": "Records could not be found",
+            "sInfo": "_START_-From _END_-Up to all: _TOTAL_",
+            "sInfoEmpty": "0-From 0-Up to all: 0",
+            "sInfoFiltered": "(Filtrated _MAX_-From _TOTAL_ Record)",
             "sInfoPostFix": "",
-            "sSearch": "ძიება",
+            "sSearch": "Search",
             "sUrl": "",
             "oPaginate": {
-                "sFirst": "პირველი",
-                "sPrevious": "წინა",
-                "sNext": "შემდეგი",
-                "sLast": "ბოლო"
+                "sFirst": "First",
+                "sPrevious": "Front",
+                "sNext": "Next",
+                "sLast": "last"
             }
         }
     });
     
-  //new $.fn.dataTable.ColReorder(oTable);
-    $("#"+tname+" thead input, .dataTables_scrollFoot .dataTable tfoot input").keyup(function () {
-    	
+    $("#" + tname + " thead input").keyup(function () {
         /* Filter on the column (the index) of this element */
-        oTable.fnFilter(this.value, $("#"+tname+" thead input, .dataTables_scrollFoot .dataTable tfoot input").index(this));
+        oTable.fnFilter(this.value, $("#" + tname + " thead input").index(this));
     });
-
+    
     /*
-    * Support functions to provide a little bit of 'user friendlyness' to the textboxes in
+    * Support functions to provide a little bit of 'user friendlyness' to the textboxes in 
     * the footer
     */
-    $("#"+tname+" thead input, .dataTables_scrollFoot .dataTable tfoot input").each(function (i) {
+    $("#" + tname + " thead input").each(function (i) {
         asInitVals[i] = this.value;
     });
 
-    $("#"+tname+" thead input,  .dataTables_scrollFoot .dataTable tfoot input").focus(function () {
+    $("#" + tname + " thead input").focus(function () {
         if (this.className == "search_init") {
             this.className = "";
             this.value = "";
         }
     });
 
-    $("#"+tname+" thead input, .dataTables_scrollFoot .dataTable tfoot input").blur(function (i) {
+    $("#" + tname + " thead input").blur(function (i) {
         if (this.value == "") {
             this.className = "search_init";
-            this.value = asInitVals[$("#"+tname+" thead input, .dataTables_scrollFoot .dataTable tfoot input").index(this)];
+            this.value = asInitVals[$("#" + tname + " thead input").index(this)];
         }
     });
-
+        
     $(".DTTT_button").hover(
 		  function () {
 		    $(this).addClass("ui-state-hover");
@@ -579,7 +577,7 @@ function GetDataTable3(tname, aJaxURL, action, count, data, hidden, length, sort
 		  function () {
 		    $(this).removeClass("ui-state-hover");
 		  }
-    );	
+    );    
 }
 
 function onhovercolor(color){
@@ -684,21 +682,21 @@ function GetDataTableServer(tname, aJaxURL, action, count, data, hidden, length,
             "data": function ( d ) {d.act = action; d.check = data}
 		},
 		"stateSave": true,
-        "oLanguage": {																						//Localization
-            "sProcessing": "იტვირთება...",
-            "sLengthMenu": "ნახე _MENU_ ჩანაწერი",
-            "sZeroRecords": "ჩანაწერი ვერ მოიძებნა",
-            "sInfo": "_START_-დან _END_-მდე სულ: _TOTAL_",
-            "sInfoEmpty": "0-დან 0-მდე სულ: 0",
-            "sInfoFiltered": "(გაიფილტრა _MAX_-დან _TOTAL_ ჩანაწერი)",
+		"oLanguage": {																						//Localization
+            "sProcessing": "Loading...",
+            "sLengthMenu": "_MENU_",
+            "sZeroRecords": "Records could not be found",
+            "sInfo": "_START_-From _END_-Up to all: _TOTAL_",
+            "sInfoEmpty": "0-From 0-Up to all: 0",
+            "sInfoFiltered": "(Filtrated _MAX_-From _TOTAL_ Record)",
             "sInfoPostFix": "",
-            "sSearch": "ძიება",
+            "sSearch": "Search",
             "sUrl": "",
             "oPaginate": {
-                "sFirst": "პირველი",
-                "sPrevious": "წინა",
-                "sNext": "შემდეგი",
-                "sLast": "ბოლო"
+                "sFirst": "First",
+                "sPrevious": "Front",
+                "sNext": "Next",
+                "sLast": "last"
             }
         }
     });
@@ -1503,7 +1501,7 @@ function play(str){
 	});
 	var buttons = {
         	"cancel": {
-	            text: "დახურვა",
+	            text: "Close",
 	            id: "cancel-dialog",
 	            click: function () {
 	            	$('audio').each(function(){

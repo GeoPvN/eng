@@ -29,7 +29,7 @@
         project_id	= $("#hidden_project_id").val();
         wday = $('#weak_id').val()
 
-        GetDataTable(tName+tbl, aJaxURL, act, col_num, "client_id="+client_id+"&project_id="+project_id+"&wday="+wday, 0, "", 1, "desc", '', change_colum);
+        GetDataTable(tName+tbl, aJaxURL, act, col_num, "client_id="+client_id+"&project_id="+project_id+"&wday="+wday+"&cp="+$('#client_personal').val(), 0, "", 1, "desc", '', change_colum);
 
     	setTimeout(function(){
     		$('.ColVis, .dataTable_buttons').css('display','none');
@@ -90,14 +90,17 @@
 		        GetDialog("add-edit-form-project", 401, "auto", buttons, 'left+43 top');
 		        LoadTable('number',5,'get_list_number',"<'F'lip>");
 		        SetEvents("add_number", "delete_number", "check-all-number", tName+'number', "add-edit-form-number", aJaxURL_sub_project);
-		        $("#add_number, #delete_number, #download_exel, #choose_button, #delete_import, #choose_button1, #add_import, #delete_import_actived, #add_import_actived, #open_choseFile").button(); 
+		        $("#add_number, #delete_number, #download_exel_client, #download_exel, #choose_button, #delete_import, #choose_button1, #add_import, #delete_import_actived, #add_import_actived, #open_choseFile").button(); 
 		        GetDateTimes('project_add_date');
+		        $('#client_personal').chosen({ search_contains: true,width: "257px" });
+		        $('#project_type').chosen({ search_contains: true });
+		        $("#client_personal_chosen").css('top','-3px');
+		        $('.import').click();
+		        LoadTable('import_client',10,'get_list_import',"<'F'lip>");
+		        SetEvents("add_import", "delete_import", "check-all-import", tName+'import_client', "add-edit-form-import", aJaxURL_template,'cp='+$('#client_personal').val(),tName+'import',10,'get_list_import',change_colum_main);
 
-		        LoadTable('import',6,'get_list_import',"<'F'lip>");
-		        SetEvents("add_import", "delete_import", "check-all-import", tName+'import', "add-edit-form-import", aJaxURL_template,'',tName+'import',colum_number,'get_list_import',change_colum_main);
-
-		        LoadTable('import_actived',6,'get_list_import_actived',"<'F'lip>");
-		        SetEvents("add_import_actived", "delete_import_actived", "check-all-import-actived", tName+'import_actived', "add-edit-form-import-actived", aJaxURL_template_actived);
+		        LoadTable('import_actived_client',10,'get_list_import_actived',"<'F'lip>");
+		        SetEvents("add_import_actived", "delete_import_actived", "check-all-import-actived", tName+'import_actived_client', "add-edit-form-import-actived", aJaxURL_template_actived);
 		        if($('#scenario_id').val() != 0){
 		            $('#choose_button1,#add_import').css('display','inline-block');
 		        }else{
@@ -113,54 +116,8 @@
 		        	$('.phone').css('display','block');
 		        }
 		        $( "#hide_said_menu_number" ).click();
-		        GetDateTimes('start_date_holi');
-		        GetDateTimes('end_date_holi');
-		        GetButtons("add_holiday","delete_holiday");
-		        GetButtons("holi_creap","holi_creap_delete");
-		        GetButtons("holi_creap_break");
-		        GetButtons("holi_creap_ext");
-		        LoadTable('holiday',4,'get_holiday',"<'F'lip>");
-		        
-		        $.ajax({
-			        url: aJaxURL_object,
-				    data: 'act=get_wk&project_id='+$('#hidden_project_id').val(),
-			        success: function(data) {
-						if(typeof(data.error) != "undefined"){
-							if(data.error != ""){
-								alert(data.error);
-							}else{
-    							for(g=0;g < $(data.work).size();g++){
-    								for(i=parseInt(data.work[g].starttime);i < parseInt(data.work[g].endtime);i++){
-    					    			$("td[clock='"+i+"'][wday='"+data.work[g].wday+"']").css('background','green');
-    					    			$("td[clock='"+i+"'][wday='"+data.work[g].wday+"']").html(data.work[g].ext_number);
-    					    		}
-								}
-								for(o=0;o < $(data.break).size();o++){
-    								for(i=parseInt(data.break[o].breakstarttime);i < parseInt(data.break[o].breakendtime);i++){
-    									$("td[clock='"+i+"'][wday='"+data.break[o].wday+"']").css('background','yellow');
-    									$("td[clock='"+i+"'][wday='"+data.break[o].wday+"']").html('');
-    					    		}
-								}
-							}
-						}
-				    }
-			    }).done(function() {
-// 		        $.ajax({
-// 		            url: aJaxURL_object,
-// 		            type: "POST",
-// 		            data: "act=check_weak&project_id=" + $('#hidden_project_id').val() + '&wday=' + $("#weak_id").val(),
-// 		            dataType: "json",
-// 		            success: function (data) {
-// 		                    if (data.error != "") {
-// 		                        alert(data.error);
-// 		                    } else {
-// 		                        $("#start_time").val(data.start_time);
-// 		                        $("#end_time").val(data.end_time);
-// 		                        $("#ext_number").val(data.ext_number);
-// 		                    }
-// 		            }
-// 		        });
-			    });
+		        $('.import').click();
+
 		   break;
 		   case "add-edit-form-import":
 		    	var buttons = {
@@ -192,7 +149,9 @@
 				            }
 				        }
 				    };
-		        GetDialog("add-edit-form-import-actived", 450, "auto", buttons, 'left+43 top');
+		        GetDialog("add-edit-form-import-actived", 350, "auto", buttons, 'left+43 top');
+		        $('#note_actived,#scenario_id').chosen({ search_contains: true });
+		        $('#add-edit-form-import-actived,.add-edit-form-import-actived-class').css('overflow', 'visible');
 		   break;
 		   case "add-edit-form-client":
 		    	var buttons = {
@@ -271,6 +230,30 @@
         $(".import").children('img').attr('src','media/images/icons/import.png');
         $(".actived").children('img').attr('src','media/images/icons/actived.png');
     }
+
+    $(document).on("change", "#client_personal", function () {
+        if($(this).val() == 1){
+        	$('#table_import_client_div,#table_import_actived_client_div').css('display','block');
+        	$('#table_import_div,#table_import_actived_div').css('display','none');
+        	$('#download_exel_client').css('display','inline');
+        	$('#download_exel').css('display','none');
+            LoadTable('import_client',10,'get_list_import',"<'F'lip>");
+            SetEvents("add_import", "delete_import", "check-all-import", tName+'import_client', "add-edit-form-import", aJaxURL_template,'cp='+$('#client_personal').val(),tName+'import',10,'get_list_import',change_colum_main);
+
+            LoadTable('import_actived_client',10,'get_list_import_actived',"<'F'lip>");
+	        SetEvents("add_import_actived", "delete_import_actived", "check-all-import-actived", tName+'import_actived_client', "add-edit-form-import-actived", aJaxURL_template_actived);
+        }else{
+            $('#table_import_client_div,#table_import_actived_client_div').css('display','none');
+            $('#table_import_div,#table_import_actived_div').css('display','block');
+            $('#download_exel_client').css('display','none');
+        	$('#download_exel').css('display','inline');
+            LoadTable('import',6,'get_list_import',"<'F'lip>");
+            SetEvents("add_import", "delete_import", "check-all-import", tName+'import', "add-edit-form-import", aJaxURL_template,'cp='+$('#client_personal').val(),tName+'import',6,'get_list_import',change_colum_main);
+
+            LoadTable('import_actived',7,'get_list_import_actived',"<'F'lip>");
+	        SetEvents("add_import_actived", "delete_import_actived", "check-all-import-actived", tName+'import_actived', "add-edit-form-import-actived", aJaxURL_template_actived);
+        }
+    });
     
     function show_main(id,my_this){
     	$("#client_main,#client_other").hide();
@@ -390,6 +373,7 @@
 	    param.project_hidden_id = $("#project_hidden_id").val();
 	    param.actived_number    = $("#actived_number").val();
 	    param.scenario_id       = $("#scenario_id").val();
+	    param.note              = $("#note_actived").val();
 	   
 	   
 	    $.ajax({
@@ -400,7 +384,7 @@
 					if(data.error != ""){
 						alert(data.error);
 					}else{
-						LoadTable('import_actived',6,'get_list_import_actived',"<'F'lip>");
+						LoadTable('import_actived',7,'get_list_import_actived',"<'F'lip>");
 						$("#add-edit-form-import-actived").dialog("close");
 					}
 				}
@@ -505,6 +489,7 @@
 					file_name: name,
 					project_other_id: $('#project_hidden_id').val(),
 					project_id: $('#hidden_project_id').val(),
+					cp: $('#client_personal').val(),
 					note: $('#note').val(),
 					type: ext
 				},
@@ -599,25 +584,6 @@
     }
     
     function SaveToDisk(fileURL, fileName) {
-//         // for non-IE
-//         if (!window.ActiveXObject) {
-//             var save = document.createElement('a');
-//             save.href = fileURL;
-//             save.target = '_blank';
-//             save.download = fileName || 'unknown';
-
-//             var event = document.createEvent('Event');
-//             event.initEvent('click', true, true);
-//             save.dispatchEvent(event);
-//             (window.URL || window.webkitURL).revokeObjectURL(save.href);
-//         }
-// 	     // for IE
-//         else if ( !! window.ActiveXObject && document.execCommand)     {
-//             var _window = window.open(fileURL, "_blank");
-//             _window.document.close();
-//             _window.document.execCommand('SaveAs', true, fileName || fileURL)
-//             _window.close();
-//         }
     	var iframe = document.createElement("iframe"); 
         iframe.src = fileURL; 
         iframe.style.display = "none"; 
@@ -730,9 +696,6 @@
 	    param.start_date_holi	= $("#start_date_holi").val();
 	    param.end_date_holi	    = $("#end_date_holi").val();
 	   
-	    
-	   
-	   
 	   if(param.person_name == ""){
 			alert("შეავსეთ სახელი!");
 		}else{
@@ -828,6 +791,10 @@
 	$(document).on("click", "#download_exel", function () {
 		SaveToDisk('client-side/info/template.xls', 'template.xls');
     });
+
+	$(document).on("click", "#download_exel_client", function () {
+		SaveToDisk('client-side/info/template.xls', 'template.xls');
+    });
     
 	$(document).on("change", "#project_type", function () {
         if($(this).val() == 2){
@@ -841,347 +808,6 @@
         }
         $( "#hide_said_menu_number" ).click();
 	});
-
-	$(document).on("click", "#holi_creap", function () {
-		start = parseInt($("#start_time").val());
-		end = parseInt($("#end_time").val());
-		ch_id = 0;
-		if(start < end){
-		    ch_id = 1;
-		}else{
-    		
-    			  alert('მიუთითეთ სწორი დრო!');
-    			  ch_id = 0;
-    		
-		}
-		if(ch_id == 1){
-    		if($('#start_time').val() != '' && $('#end_time').val() != '' && $('#ext_number').val() != ''){
-    		$("td[wday='"+$("#wday").val()+"']").css('background','#F1F1F1');
-    		$.ajax({
-    	        url: aJaxURL_object,
-    		    data: 'act=work_gr&project_id='+$('#hidden_project_id').val()+'&start_time='+$("#start_time").val()+'&end_time='+$("#end_time").val()+'&wday='+$("#wday").val() + '&ext_number=' + $("#ext_number").val() + '&type=' + $("#type").val(),
-    	        success: function(data) {
-    				if(typeof(data.error) != "undefined"){
-    					if(data.error != ""){
-    						alert(data.error);
-    					}else{
-    						CloseDialog("#add-edit-form-weekADD");
-    						$.ajax({
-    					        url: aJaxURL_object,
-    						    data: 'act=get_wk&project_id='+$('#hidden_project_id').val(),
-    					        success: function(data) {
-    								if(typeof(data.error) != "undefined"){
-    									if(data.error != ""){
-    										alert(data.error);
-    									}else{
-    		    							for(g=0;g < $(data.work).size();g++){
-    		    								for(i=parseInt(data.work[g].starttime);i < parseInt(data.work[g].endtime);i++){
-    		    					    			$("td[clock='"+i+"'][wday='"+data.work[g].wday+"']").css('background','green');
-    		    					    			$("td[clock='"+i+"'][wday='"+data.work[g].wday+"']").html(data.work[g].ext_number);
-    		    					    		}
-    										}
-    										for(o=0;o < $(data.break).size();o++){
-    		    								for(i=parseInt(data.break[o].breakstarttime);i < parseInt(data.break[o].breakendtime);i++){
-    		    									$("td[clock='"+i+"'][wday='"+data.break[o].wday+"']").css('background','yellow');
-    		    									$("td[clock='"+i+"'][wday='"+data.break[o].wday+"']").html('');
-    		    					    		}
-    										}
-    									}
-    								}
-    						    }
-    					    });
-    					}
-    				}
-    		    }
-    	    });
-		}else{
-		    alert('შეავსეთ "სამუშაო იწყება","სამუშაო მთავრდება","სადგურის რაოდენობა" !');
-		}
-		}
-	});
-
-	$(document).on("click", "#holi_creap_delete", function () {
-    	$.ajax({
-	        url: aJaxURL_object,
-		    data: 'act=delete_gr&project_id='+$('#hidden_project_id').val()+'&wday='+$("#weak_id").val(),
-	        success: function(data) {
-				if(typeof(data.error) != "undefined"){
-					if(data.error != ""){
-						alert(data.error);
-					}else{
-						$("#work_table tr td").css('background','');
-						$("td[clock]").html('');
-						$.ajax({
-					        url: aJaxURL_object,
-						    data: 'act=get_wk&project_id='+$('#hidden_project_id').val(),
-					        success: function(data) {
-								if(typeof(data.error) != "undefined"){
-									if(data.error != ""){
-										alert(data.error);
-									}else{
-		    							for(g=0;g < $(data.work).size();g++){
-		    								for(i=parseInt(data.work[g].starttime);i < parseInt(data.work[g].endtime);i++){
-		    					    			$("td[clock='"+i+"'][wday='"+data.work[g].wday+"']").css('background','green');
-		    					    			$("td[clock='"+i+"'][wday='"+data.work[g].wday+"']").html(data.work[g].ext_number);
-		    					    		}
-										}
-										for(o=0;o < $(data.break).size();o++){
-		    								for(i=parseInt(data.break[o].breakstarttime);i < parseInt(data.break[o].breakendtime);i++){
-		    									$("td[clock='"+i+"'][wday='"+data.break[o].wday+"']").css('background','yellow');
-		    									$("td[clock='"+i+"'][wday='"+data.break[o].wday+"']").html('');
-		    					    		}
-										}
-									}
-								}
-						    }
-					    });
-					}
-				}
-		    }
-	    });
-	});
-
-    $(document).on("click", "#holiday_all", function () {
-    	if ($(this).is(':checked')) {
-    		$.ajax({
-		        url: aJaxURL_object,
-			    data: 'act=add_all_holiday&project_id='+$('#hidden_project_id').val(),
-		        success: function(data) {
-					if(typeof(data.error) != "undefined"){
-						if(data.error != ""){
-							alert(data.error);
-						}else{
-							LoadTable('holiday',4,'get_holiday',"<'F'lip>");
-						}
-					}
-			    }
-		    });
-    	}else{
-    		$.ajax({
-		        url: aJaxURL_object,
-			    data: 'act=delete_all_holiday&project_id='+$('#hidden_project_id').val(),
-		        success: function(data) {
-					if(typeof(data.error) != "undefined"){
-						if(data.error != ""){
-							alert(data.error);
-						}else{
-							LoadTable('holiday',4,'get_holiday',"<'F'lip>");
-						}
-					}
-			    }
-		    });
-    	}
-    });
-
-    $(document).on("click", "#work_table tr td[clock]", function () {
-    	wday  = $(this).attr('wday');
-    	clock = $(this).attr('clock');
-    	if($(this).css('background-color') == 'rgb(0, 128, 0)' || $(this).css('background-color') == 'rgb(255, 255, 0)'){
-    		var buttons = {
-		        	"cancel": {
-			            text: "დახურვა",
-			            id: "cancel-dialog",
-			            click: function () {
-			            	$(this).dialog("close");
-			            }
-			        }
-			    };
-			GetDialog("add-edit-form-hour", 900, "auto", buttons, 'center top');
-			$.ajax({
-                url: aJaxURL_object,
-        	    data: 'act=get_hour&wday='+wday+'&clock='+clock+'&project_id='+$('#hidden_project_id').val(),
-                success: function(data) {
-        			if(typeof(data.error) != "undefined"){
-        				if(data.error != ""){
-        					alert(data.error);
-        				}else{
-        					$("#add-edit-form-hour").html(data.hour)
-        				}
-        			}
-        	    }
-            });
-    	}
-    });
-    
-    $(document).on("click", "#add_holiday", function () {
-        if($("#holiday_id").val() != 0){
-            $.ajax({
-                url: aJaxURL_object,
-        	    data: 'act=add_holiday&project_id='+$('#hidden_project_id').val()+'&holiday_id='+$("#holiday_id").val(),
-                success: function(data) {
-        			if(typeof(data.error) != "undefined"){
-        				if(data.error != ""){
-        					alert(data.error);
-        				}else{
-        					LoadTable('holiday',4,'get_holiday',"<'F'lip>");
-        				}
-        			}
-        	    }
-            });
-        }else{
-            alert('აირჩიეთ სასურველი დღე!');
-        }
-    });
-
-    $(document).on("click", "#check-all-holiday", function () {
-    	$("#table_holiday tbody INPUT[type='checkbox']").prop("checked", $("#check-all-holiday").is(":checked"));
-    });
-
-    $(document).on("click", "#delete_holiday", function () {
-        var data = $("#table_holiday tbody .check:checked").map(function () {
-            return this.value;
-        }).get();
-    	
-    
-        for (var i = 0; i < data.length; i++) {
-            $.ajax({
-                url: aJaxURL_object,
-                type: "POST",
-                data: "act=delete_holiday&id=" + data[i],
-                dataType: "json",
-                success: function (data) {
-                        if (data.error != "") {
-                            alert(data.error);
-                        } else {
-                        	LoadTable('holiday',4,'get_holiday',"<'F'lip>");
-                            $("#check-all-holiday").attr("checked", false);
-                        }
-                }
-            });
-        }
-    });
-
-    function OpenWeek(id){
-    	var buttons = {
-	        	"cancel": {
-		            text: "დახურვა",
-		            id: "cancel-dialog",
-		            click: function () {
-		            	$(this).dialog("close");
-		            }
-		        }
-		    };
-		GetDialog("add-edit-form-week", 770, "auto", buttons, 'top top');
-		$.ajax({
-            url: aJaxURL_object,
-            type: "POST",
-            data: "act=get_week&week_id=" + id + '&project_id=' + $('#hidden_project_id').val(),
-            dataType: "json",
-            success: function (data) {
-                    if (data.error != "") {
-                        alert(data.error);
-                    } else {
-                    	$('#add-edit-form-week').html(data.week);
-                    	GetButtons("add_week","delete_week");
-                    	GetDataTable('table_week', aJaxURL, 'table_week', 7, "client_id="+client_id+"&project_id="+project_id+"&wday="+id, 0, "", 1, "desc", '', "<'F'lip>");
-                    }
-            }
-        });
-    }
-
-    $(document).on("click", "#add_week", function () {
-    	var buttons = {
-    			"save": {
-		            text: "შენახვა",
-		            id: "holi_creap"
-		        },
-	        	"cancel": {
-		            text: "დახურვა",
-		            id: "cancel-dialog",
-		            click: function () {
-		            	$(this).dialog("close");
-		            }
-		        }
-		    };
-    	GetDialog("add-edit-form-weekADD", 500, "auto", buttons, 'top top');
-    	$.ajax({
-            url: aJaxURL_object,
-            type: "POST",
-            data: "act=get_weekADD&week_id=" + 1 + '&project_id=' + $('#hidden_project_id').val(),
-            dataType: "json",
-            success: function (data) {
-                    if (data.error != "") {
-                        alert(data.error);
-                    } else {
-                    	$('#add-edit-form-weekADD').html(data.weekADD);
-                    	$('#end_time,#start_time').timepicker({
-        		        	hourMax: 23,
-        		    		hourMin: 00,
-        		    		minuteMax: 55,
-        		    		minuteMin: 00,
-        		    		stepMinute: 5,
-        		    		minuteGrid: 10,
-        		    		hourGrid: 3,
-        		        	dateFormat: '',
-        		            timeFormat: 'HH:mm'
-        		    	});
-        		    	$('#addlang,#addinfosorce').button();
-                    }
-            }
-        });
-    });
-
-    $(document).on("click", "#addlang", function () {
-    	var buttons = {
-	        	"cancel": {
-		            text: "დახურვა",
-		            id: "cancel-dialog",
-		            click: function () {
-		            	$(this).dialog("close");
-		            }
-		        }
-		    };
-    	GetDialog("add-edit-form-lang", 500, "auto", buttons, 'top top');
-    	$.ajax({
-            url: aJaxURL_object,
-            type: "POST",
-            data: "act=get_langdialog&week_id=" + 1 + '&project_id=' + $('#hidden_project_id').val(),
-            dataType: "json",
-            success: function (data) {
-                    if (data.error != "") {
-                        alert(data.error);
-                    } else {
-                    	$('#add-edit-form-lang').html(data.lang);
-                    	client_id	= $("#hidden_client_id").val();
-                        project_id	= $("#hidden_project_id").val();
-                        wday = $('#wday').val();
-                        GetButtons("add_lang","delete_lang");
-                    	GetDataTable('table_lang', aJaxURL_object, 'get_list_lang', 2, "client_id="+client_id+"&project_id="+project_id+"&wday="+wday, 0, "", 1, "desc", '', "<'F'lip>");
-                    }
-            }
-        });
-    });
-
-    $(document).on("click", "#addinfosorce", function () {
-    	var buttons = {
-	        	"cancel": {
-		            text: "დახურვა",
-		            id: "cancel-dialog",
-		            click: function () {
-		            	$(this).dialog("close");
-		            }
-		        }
-		    };
-    	GetDialog("add-edit-form-infosorce", 500, "auto", buttons, 'top top');
-    	$.ajax({
-            url: aJaxURL_object,
-            type: "POST",
-            data: "act=get_infosorce&week_id=" + 1 + '&project_id=' + $('#hidden_project_id').val(),
-            dataType: "json",
-            success: function (data) {
-                    if (data.error != "") {
-                        alert(data.error);
-                    } else {
-                    	$('#add-edit-form-infosorce').html(data.infosorce);
-                    	client_id	= $("#hidden_client_id").val();
-                        project_id	= $("#hidden_project_id").val();
-                        wday = $('#wday').val();
-                        GetButtons("add_infosorce","delete_infosorce");
-                    	GetDataTable('table_infosorce', aJaxURL_object, 'get_list_infosorce', 2, "client_id="+client_id+"&project_id="+project_id+"&wday="+wday, 0, "", 1, "desc", '', "<'F'lip>");
-                    }
-            }
-        });
-    });
     
 </script>
 <style type="text/css">
@@ -1195,7 +821,9 @@
 #table_project_length,
 #table_number_length,
 #table_import_length,
+#table_import_client_length,
 #table_import_actived_length,
+#table_import_actived_client_length,
 #table_client_length,
 #table_holiday_length,
 #table_break_length,
@@ -1209,7 +837,9 @@
 #table_project_length label select,
 #table_number_length label select,
 #table_import_length label select,
+#table_import_client_length label select,
 #table_import_actived_length label select,
+#table_import_actived_client_length label select,
 #table_client_length label select,
 #table_holiday_length label select,
 #table_break_length label select,
@@ -1228,7 +858,9 @@
 }
 #table_number_paginate,
 #table_import_paginate,
+#table_import_client_paginate,
 #table_import_actived_paginate,
+#table_import_actived_client_paginate,
 #table_holiday_actived_paginate,
 #table_break_actived_paginate{
 	margin-left: -22px;
