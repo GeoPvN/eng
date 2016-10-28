@@ -213,7 +213,7 @@ switch ($action) {
             
             
             $rResult = mysql_query("SELECT  week_day_graphic.cycle,
-                            				CONCAT('სადგური ',week_day_graphic.cycle),
+                            				CONCAT('Station ',week_day_graphic.cycle),
                             				TIME_FORMAT( TIMEDIFF(  SUM( `end_time` ), SUM(  `start_time`  ) ),'%H') AS `TIME_COUNT`,
                             				TIME_FORMAT( SEC_TO_TIME(  TIME_TO_SEC( TIMEDIFF(  SUM( `end_time` ), SUM(  `start_time`  ) ) ) ),'%H') * 4 AS `TIME_COUNT_4`,
                             				ROUND((TIME_FORMAT( SEC_TO_TIME(  TIME_TO_SEC( TIMEDIFF(  SUM( `end_time` ), SUM(  `start_time`  ) ) ) ),'%H,%i') / 40),2) AS `OPER_NEED`
