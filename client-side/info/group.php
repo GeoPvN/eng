@@ -49,7 +49,8 @@
  		    }
 
      		param = new Object();
-     	    //Action
+
+         	    //Action
      		param.act	   = "save_group";
  			param.nam	   = $("#group_name").val();
  			param.pag	   = JSON.stringify(pages);
@@ -58,7 +59,7 @@
  			//var link	=  GetAjaxData(param);
 
  			if( param.nam == "" ){
- 				alert("შFill in the group name!");
+ 				alert("Fill in the group name!");
  			}else{
  	    	    $.ajax({
  	    	        url: aJaxURL,
