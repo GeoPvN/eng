@@ -1,6 +1,6 @@
 <?php
  
-$manager_host   = "127.0.0.1";
+$manager_host   = "localhost";
 $manager_user   = "admin";
 $manager_secret = "amp111";
 
