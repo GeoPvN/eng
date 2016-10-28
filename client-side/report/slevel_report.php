@@ -29,7 +29,7 @@ function getchart(start,end,number,procent,users) {
 	            zoomType: 'xy'
 	        },
         title: {
-            text: 'SL დღეების მიხედვით'
+            text: 'SL By days'
         },
         subtitle: {
             text: ''
@@ -67,7 +67,7 @@ function getchart(start,end,number,procent,users) {
                 }
             },
             labels: {
-                format: '{value} ზარი',
+                format: '{value} Call',
                 style: {
                     color: Highcharts.getOptions().colors[0]
                 }
@@ -82,7 +82,7 @@ function getchart(start,end,number,procent,users) {
                 }
             },
             labels: {
-                format: '{value} ზარი',
+                format: '{value} Call',
                 style: {
                     color: Highcharts.getOptions().colors[1]
                 }
@@ -120,25 +120,25 @@ function getchart(start,end,number,procent,users) {
     	
     	options.series[3] = {};
     	options.series[3].color = "yellow";
-    	options.series[3].name = 'SL-გეგმიური';
+    	options.series[3].name = 'SL-Planned';
     	options.series[3].data = json[0]['limit_percent'];    	
     	options.series[3].type = "spline";
     	
     	options.series[0] = {};
     	options.series[0].color = "#7CB5EC";
-    	options.series[0].name = 'ნაპასუხები ზარი';
+    	options.series[0].name = 'Answered Call';
     	options.series[0].data = json[0]['count_unanswer'];
     	options.series[0].type = "column";
     	options.series[0].yAxis= 1;
-    	options.series[0].tooltip= {valueSuffix: ' ზარი'};
+    	options.series[0].tooltip= {valueSuffix: ' Call'};
     	
     	options.series[1] = {};
     	options.series[1].color = "red";
-    	options.series[1].name = 'უპასუხო ზარი';
+    	options.series[1].name = 'Unanswered Call';
     	options.series[1].data = json[0]['unanswer'];
     	options.series[1].type = "column";
     	options.series[1].yAxis= 1;
-    	options.series[1].tooltip= {valueSuffix: ' ზარი'};
+    	options.series[1].tooltip= {valueSuffix: ' Call'};
     	
         chart = new Highcharts.Chart(options);
         $(".highcharts-axis-labels").on("click", "tspan", function() {
@@ -156,7 +156,7 @@ function getoherchart(date,number,procent,users){
 	            zoomType: 'xy'
 	        },
         title: {
-            text: 'SL საათების მიხედვით ' + date
+            text: 'SL By hours ' + date
         },
         subtitle: {
             text: ''
@@ -194,7 +194,7 @@ function getoherchart(date,number,procent,users){
                 }
             },
             labels: {
-                format: '{value} ზარი',
+                format: '{value} Call',
                 style: {
                     color: Highcharts.getOptions().colors[0]
                 }
@@ -209,7 +209,7 @@ function getoherchart(date,number,procent,users){
                 }
             },
             labels: {
-                format: '{value} ზარი',
+                format: '{value} Call',
                 style: {
                     color: Highcharts.getOptions().colors[1]
                 }
@@ -238,11 +238,11 @@ function getoherchart(date,number,procent,users){
 	    	//console.log(json[0]['count_unanswer']);
 	    	options.series[0] = {};
 	    	options.series[0].color = "#7CB5EC";
-	    	options.series[0].name = 'ნაპასუხები ზარი';
+	    	options.series[0].name = 'Answered Call';
 	    	options.series[0].data = json[0]['count_answer'];
 	    	options.series[0].type = "column";
 	    	options.series[0].yAxis= 1;
-	    	options.series[0].tooltip= {valueSuffix: ' ზარი'};
+	    	options.series[0].tooltip= {valueSuffix: ' Call'};
 	    	
 	    	options.series[2] = {};
 	    	options.series[2].color = "green";
@@ -252,15 +252,15 @@ function getoherchart(date,number,procent,users){
 	    	
 	    	options.series[1] = {};
 	    	options.series[1].color = "red";
-	    	options.series[1].name = 'უპასუხო ზარი';
+	    	options.series[1].name = 'Unanswered Call';
 	    	options.series[1].data = json[0]['unhour'];
 	    	options.series[1].type = "column";
 	    	options.series[1].yAxis= 1;
-	    	options.series[1].tooltip= {valueSuffix: ' ზარი'};
+	    	options.series[1].tooltip= {valueSuffix: ' Call'};
 
 	    	options.series[3] = {};
 	    	options.series[3].color = "yellow";
-	    	options.series[3].name = 'SL-გეგმიური';
+	    	options.series[3].name = 'SL-Planned';
 	    	options.series[3].data = json[0]['limit_percent'];
 	    	options.series[3].type = "spline";
 	        chart = new Highcharts.Chart(options);
@@ -274,7 +274,7 @@ function getoherchart1(date,number,procent,users){
 	            zoomType: 'xy'
 	        },
         title: {
-            text: 'SL საათების მიხედვით ' + date
+            text: 'SL By hours ' + date
         },
         subtitle: {
             text: ''
@@ -312,7 +312,7 @@ function getoherchart1(date,number,procent,users){
                 }
             },
             labels: {
-                format: '{value} ზარი',
+                format: '{value} Call',
                 style: {
                     color: Highcharts.getOptions().colors[0]
                 }
@@ -327,7 +327,7 @@ function getoherchart1(date,number,procent,users){
                 }
             },
             labels: {
-                format: '{value} ზარი',
+                format: '{value} Call',
                 style: {
                     color: Highcharts.getOptions().colors[1]
                 }
@@ -355,11 +355,11 @@ function getoherchart1(date,number,procent,users){
 
 	    	options.series[0] = {};
 	    	options.series[0].color = "#7CB5EC";
-	    	options.series[0].name = 'ნაპასუხები ზარი';
+	    	options.series[0].name = 'Answered Call';
 	    	options.series[0].data = json[0]['count_answer'];
 	    	options.series[0].type = "column";
 	    	options.series[0].yAxis= 1;
-	    	options.series[0].tooltip= {valueSuffix: ' ზარი'};
+	    	options.series[0].tooltip= {valueSuffix: ' Call'};
 	    	
 	    	options.series[3] = {};
 	    	options.series[3].color = "green";
@@ -369,15 +369,15 @@ function getoherchart1(date,number,procent,users){
 
 	    	options.series[1] = {};
 	    	options.series[1].color = "red";
-	    	options.series[1].name = 'უპასუხო ზარი';
+	    	options.series[1].name = 'Unanswered Call';
 	    	options.series[1].data = json[0]['unmin'];
 	    	options.series[1].type = "column";
 	    	options.series[1].yAxis= 1;
-	    	options.series[1].tooltip= {valueSuffix: ' ზარი'};
+	    	options.series[1].tooltip= {valueSuffix: ' Call'};
 
 	    	options.series[2] = {};
 	    	options.series[2].color = "yellow";
-	    	options.series[2].name = 'SL-გეგმიური';
+	    	options.series[2].name = 'SL-Planned';
 	    	options.series[2].data = json[0]['limit_percent'];
 	    	options.series[2].type = "spline";
 	        chart = new Highcharts.Chart(options);
@@ -423,13 +423,13 @@ $(document).on("click", "#show_report"  , function () 	{
 <div id="tabs" style="    width: 100%;    height: 100%;    background: #FFF;    padding: 15px;    margin-bottom: 40px;">
   <div style="width: 75%;margin: auto;margin-top: 25px;">   	 
    	 <input id="search_start" type="text" style="width: 75px;float: left;">
-   	 <label style="display: block;float: left;padding-top: 2px;">-დან</label>
+   	 <label style="display: block;float: left;padding-top: 2px;">-From</label>
    	 
    	 <input id="search_end" type="text" style="width: 75px;margin-left: 10px;float: left;">
-   	 <label style="display: block;float: left;padding-top: 2px;">-მდე</label>
+   	 <label style="display: block;float: left;padding-top: 2px;">-Up to</label>
    	 
    	 <select id="users" style="margin-left: 15px">   	 
-       	 <option value="0">ყველა</option>
+       	 <option value="0">All</option>
        	 <?php 
        	 include '../../includes/classes/core.php';
        	        $res = mysql_query("SELECT  user_info.`name`,
@@ -444,20 +444,20 @@ $(document).on("click", "#show_report"  , function () 	{
    	 </select>
    	 <br><br><br>
    	 
-   	 <label style="display: block;margin-right: 10px;float: left;padding-top: 4px;">ზარების</label>
+   	 <label style="display: block;margin-right: 10px;float: left;padding-top: 4px;">Call</label>
    	 <input id="procent" type="text" value="85" style="float: left;width: 50px;margin-left: 5px;">
    	 
    	 
    	 
-   	 <label style="display: block;margin-left: 5px;float: left;padding-top: 4px;"> % ნაპასუხები უნდა იყოს </label>
+   	 <label style="display: block;margin-left: 5px;float: left;padding-top: 4px;"> % Answered be </label>
    	 <input id="number" type="text" value="45" style="float: left;width: 50px;">
-   	 <label style="display: block;margin-left: 2px;float: left;padding-top: 4px; margin-right: 10px;"> წმ-ში</label>
+   	 <label style="display: block;margin-left: 2px;float: left;padding-top: 4px; margin-right: 10px;"> Seconds</label>
    	 
-   	 <button id="show_report">რეპორტის ჩვენება</button>
+   	 <button id="show_report">Show report</button>
    	 <br>
-   	 <label style="display: block;margin-right: 10px;float: left;padding-top: 4px;">სულ ნაპასუხები</label>
+   	 <label style="display: block;margin-right: 10px;float: left;padding-top: 4px;">All Answered</label>
    	 <input type="text" id="all_answer" style="float: left;width: 50px;" disabled>
-   	 <label style="display: block;margin-right: 10px;margin-left: 10px;float: left;padding-top: 4px;">სულ პროცენტი</label>
+   	 <label style="display: block;margin-right: 10px;margin-left: 10px;float: left;padding-top: 4px;">All Percent</label>
    	 <input type="text" id="all_procent" style="float: left;width: 50px;" disabled>
    	 <div id="chart_container" style="height: 400px; min-width: 310px; margin-top:10px;"></div><br>
    	 <div id="chart_container1" style="height: 400px; min-width: 310px; margin-top:10px;"></div>

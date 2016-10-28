@@ -540,22 +540,22 @@ td {position: relative;}
     
         <select style="width: 210px;padding: 2px;border: solid 1px #85b1de;margin-right: 15px;"  id="project_id"></select>
         <!-- select style="width: 120px;padding: 2px;border: solid 1px #85b1de;margin-right: 15px;"  id="week_num">
-        <option value="0">1 (28 დღე)</option>
-        <option value="28">2 (28 დღე)</option>
-        <option value="56">3 (28 დღე)</option>
-        <option value="84">4 (28 დღე)</option>
-        <option value="112">5 (28 დღე)</option>
-        <option value="140">6 (28 დღე)</option>
-        <option value="168">7 (28 დღე)</option>
-        <option value="196">8 (28 დღე)</option>
-        <option value="224">9 (28 დღე)</option>
-        <option value="252">10 (28 დღე)</option>
-        <option value="280">11 (28 დღე)</option>
-        <option value="308">12 (28 დღე)</option>
-        <option value="336">13 (28 დღე)</option>
-        <option value="364">14 (28 დღე)</option>
+        <option value="0">1 (28 Day)</option>
+        <option value="28">2 (28 Day)</option>
+        <option value="56">3 (28 Day)</option>
+        <option value="84">4 (28 Day)</option>
+        <option value="112">5 (28 Day)</option>
+        <option value="140">6 (28 Day)</option>
+        <option value="168">7 (28 Day)</option>
+        <option value="196">8 (28 Day)</option>
+        <option value="224">9 (28 Day)</option>
+        <option value="252">10 (28 Day)</option>
+        <option value="280">11 (28 Day)</option>
+        <option value="308">12 (28 Day)</option>
+        <option value="336">13 (28 Day)</option>
+        <option value="364">14 (28 Day)</option>
         </select-->
-        <input style="width: 60px;display: inline-block; height: 13px; position: relative;" id="year_month" value="<?php echo date('Y-m')?>" class="date1 inpt" placeholder="თარიღი"/>
+        <input style="width: 60px;display: inline-block; height: 13px; position: relative;" id="year_month" value="<?php echo date('Y-m')?>" class="date1 inpt" placeholder="Date"/>
         <br/>
         <div id="time_line" style="margin-top: 20px;"><div style="color: #2681DC;text-align: center; font-size: 14px; font-weight: bold;">Select the project and the date!</div></div>
 
