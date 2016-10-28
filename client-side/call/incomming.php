@@ -1827,7 +1827,7 @@
         <div class="callapp_filter_header"><img alt="out" src="media/images/icons/scenar_blue.png" height="14" width="14">  Method</div>
         </span>
         <span style="margin-left: 15px">
-        <label for="filter_4">Meeting</label>
+        <label for="filter_4" style="width: 60px;">Meeting</label>
         <input class="callapp_filter_body_span_input" id="filter_4" type="checkbox" value="4">
         </span>
         <span style="margin-left: 15px">
