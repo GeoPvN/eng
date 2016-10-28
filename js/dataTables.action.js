@@ -525,20 +525,20 @@ function GetDataTable3(tname, aJaxURL, action, count, data, hidden, length, sort
               { "sClass": "colum_hidden", "bSortable": false, "bSearchable": false, "aTargets": [hidden]}	//hidden collum
             ],
         "oLanguage": {																						//Localization
-            "sProcessing": "იტვირთება...",
+            "sProcessing": "Loading...",
             "sLengthMenu": "_MENU_",
-            "sZeroRecords": "ჩანაწერი ვერ მოიძებნა",
-            "sInfo": "_START_-დან _END_-მდე სულ: _TOTAL_",
-            "sInfoEmpty": "0-დან 0-მდე სულ: 0",
-            "sInfoFiltered": "(გაიფილტრა _MAX_-დან _TOTAL_ ჩანაწერი)",
+            "sZeroRecords": "Records could not be found",
+            "sInfo": "_START_-From _END_-Up to all: _TOTAL_",
+            "sInfoEmpty": "0-From 0-Up to all: 0",
+            "sInfoFiltered": "(Filtrated _MAX_-From _TOTAL_ Record)",
             "sInfoPostFix": "",
-            "sSearch": "ძიება",
+            "sSearch": "Search",
             "sUrl": "",
             "oPaginate": {
-                "sFirst": "პირველი",
-                "sPrevious": "წინა",
-                "sNext": "შემდეგი",
-                "sLast": "ბოლო"
+                "sFirst": "First",
+                "sPrevious": "Front",
+                "sNext": "Next",
+                "sLast": "last"
             }
         }
     });
@@ -682,21 +682,21 @@ function GetDataTableServer(tname, aJaxURL, action, count, data, hidden, length,
             "data": function ( d ) {d.act = action; d.check = data}
 		},
 		"stateSave": true,
-        "oLanguage": {																						//Localization
-            "sProcessing": "იტვირთება...",
-            "sLengthMenu": "ნახე _MENU_ ჩანაწერი",
-            "sZeroRecords": "ჩანაწერი ვერ მოიძებნა",
-            "sInfo": "_START_-დან _END_-მდე სულ: _TOTAL_",
-            "sInfoEmpty": "0-დან 0-მდე სულ: 0",
-            "sInfoFiltered": "(გაიფილტრა _MAX_-დან _TOTAL_ ჩანაწერი)",
+		"oLanguage": {																						//Localization
+            "sProcessing": "Loading...",
+            "sLengthMenu": "_MENU_",
+            "sZeroRecords": "Records could not be found",
+            "sInfo": "_START_-From _END_-Up to all: _TOTAL_",
+            "sInfoEmpty": "0-From 0-Up to all: 0",
+            "sInfoFiltered": "(Filtrated _MAX_-From _TOTAL_ Record)",
             "sInfoPostFix": "",
-            "sSearch": "ძიება",
+            "sSearch": "Search",
             "sUrl": "",
             "oPaginate": {
-                "sFirst": "პირველი",
-                "sPrevious": "წინა",
-                "sNext": "შემდეგი",
-                "sLast": "ბოლო"
+                "sFirst": "First",
+                "sPrevious": "Front",
+                "sNext": "Next",
+                "sLast": "last"
             }
         }
     });
@@ -1501,7 +1501,7 @@ function play(str){
 	});
 	var buttons = {
         	"cancel": {
-	            text: "დახურვა",
+	            text: "Close",
 	            id: "cancel-dialog",
 	            click: function () {
 	            	$('audio').each(function(){
