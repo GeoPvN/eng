@@ -826,7 +826,7 @@ if(fName=='add-edit-form-task'){
         if($.inArray(file_type, ['pdf','png','xls','xlsx','jpg','docx','doc','csv']) == -1){
             alert("Allowed only 'pdf', 'png', 'xls', 'xlsx', 'jpg', 'docx', 'doc', 'csv' Extension");
         }else if(file_size > '15728639'){
-            alert("ფაილის ზომა 15MB-ზე მეტია");
+            alert("File size over 15MB");
         }else{
             var id = '';
             if($("#id").val() == ''){
