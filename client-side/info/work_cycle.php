@@ -213,7 +213,7 @@
             <tr id="datatable_header">
                 <th>ID</th>
                 <th style="width: 5%;">#</th>
-                <th style="width: 30%;">Cycleს Name</th>
+                <th style="width: 30%;">Cycle Name</th>
                 <th style="width: 45%;">Shifts</th>
                 <th style="width: 20%;">Project</th>
             	<th class="check">#</th>
@@ -255,7 +255,7 @@
     	<!-- aJax -->
 	</div>
 	<!-- jQuery Dialog -->
-    <div id="add-edit-form1" class="form-dialog" title="Working Cycleს Name">
+    <div id="add-edit-form1" class="form-dialog" title="Working Cycle Name">
     <div id="dialog-form">
     	    <fieldset>
     	    	<legend>Basic Information</legend>
