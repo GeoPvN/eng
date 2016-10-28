@@ -58,7 +58,7 @@
  			//var link	=  GetAjaxData(param);
 
  			if( param.nam == "" ){
- 				alert("შFill in the group name!");
+ 				alert("Fill in the group name!");
  			}else{
  	    	    $.ajax({
  	    	        url: aJaxURL,
