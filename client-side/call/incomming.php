@@ -1831,11 +1831,11 @@
         <input class="callapp_filter_body_span_input" id="filter_4" type="checkbox" value="4">
         </span>
         <span style="margin-left: 15px">
-        <label for="filter_5">Internet</label>
+        <label for="filter_5" style="width: 60px;">Internet</label>
         <input class="callapp_filter_body_span_input" id="filter_5" type="checkbox" value="5">
         </span>
         <span style="margin-left: 15px">
-        <label for="filter_6">Phone</label>
+        <label for="filter_6" style="width: 60px;">Phone</label>
         <input class="callapp_filter_body_span_input" id="filter_6" type="checkbox" value="6">
         </span>
         </div>
