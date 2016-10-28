@@ -792,9 +792,9 @@
         var path	  = "../../media/uploads/file/";
 
         if($.inArray(file_type, ['pdf','png','xls','xlsx','jpg','docx','doc','csv']) == -1){
-            alert("დაშვებულია მხოლოდ 'pdf', 'png', 'xls', 'xlsx', 'jpg', 'docx', 'doc', 'csv' გაფართოება");
+            alert("Allowed only 'pdf', 'png', 'xls', 'xlsx', 'jpg', 'docx', 'doc', 'csv' Extension");
         }else if(file_size > '15728639'){
-            alert("ფაილის ზომა 15MB-ზე მეტია");
+            alert("File size over 15MB");
         }else{
         	$.ajaxFileUpload({
 		        url: "server-side/upload/file.action.php",
@@ -822,7 +822,7 @@
 							for(i = 0;i <= data.page.length;i++){
 								tbody += "<div id=\"first_div\">" + data.page[i].file_date + "</div>";
 								tbody += "<div id=\"two_div\">" + data.page[i].name + "</div>";
-								tbody += "<div id=\"tree_div\" onclick=\"download_file('" + data.page[i].rand_name + "')\">ჩამოტვირთვა</div>";
+								tbody += "<div id=\"tree_div\" onclick=\"download_file('" + data.page[i].rand_name + "')\">Download</div>";
 								tbody += "<div id=\"for_div\" onclick=\"delete_file('" + data.page[i].id + "')\">-</div>";
 								$("#paste_files").html(tbody);
 							}							
@@ -852,7 +852,7 @@
 				for(i = 0;i <= data.page.length;i++){
 					tbody += "<div id=\"first_div\">" + data.page[i].file_date + "</div>";
 					tbody += "<div id=\"two_div\">" + data.page[i].name + "</div>";
-					tbody += "<div id=\"tree_div\" onclick=\"download_file('" + data.page[i].rand_name + "')\">ჩამოტვირთვა</div>";
+					tbody += "<div id=\"tree_div\" onclick=\"download_file('" + data.page[i].rand_name + "')\">Download</div>";
 					tbody += "<div id=\"for_div\" onclick=\"delete_file('" + data.page[i].id + "')\">-</div>";
 					$("#paste_files").html(tbody);
 				}	

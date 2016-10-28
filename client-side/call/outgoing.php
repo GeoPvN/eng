@@ -68,11 +68,11 @@
 if(fName=='add-edit-form'){
     	var buttons = {
 				"save": {
-		            text: "შენახვა",
+		            text: "Save",
 		            id: "save-dialog"
 		        },
 	        	"cancel": {
-		            text: "დახურვა",
+		            text: "Close",
 		            id: "cancel-dialog",
 		            click: function () {
 		            	$(this).dialog("close");
@@ -97,11 +97,11 @@ if(fName=='add-edit-form'){
 if(fName=='add-edit-form-actived'){
 	var buttons = {
 			"save": {
-				 text: "აქტივაცია",
+				 text: "Activation",
 		         id: "actived-btn"
 	        },
         	"cancel": {
-	            text: "დახურვა",
+	            text: "Close",
 	            id: "cancel-dialog",
 	            click: function () {
 	            	$(this).dialog("close");
@@ -124,11 +124,11 @@ if(fName=='add-edit-form-actived'){
 if(fName=='add-edit-form-task'){
 	var buttons = {
 			"save": {
-				 text: "შენახვა",
+				 text: "Save",
 		         id: "task-btn"
 	        },
         	"cancel": {
-	            text: "დახურვა",
+	            text: "Close",
 	            id: "cancel-dialog",
 	            click: function () {
 	            	$(this).dialog("close");
@@ -517,7 +517,7 @@ if(fName=='add-edit-form-task'){
         });
     	var buttons = {
 	        	"cancel": {
-		            text: "დახურვა",
+		            text: "Close",
 		            id: "cancel-dialog",
 		            click: function () {
 		            	$(this).dialog("close");
@@ -559,7 +559,7 @@ if(fName=='add-edit-form-task'){
                                 //execute it
                             	var buttons = {
                         	        	"cancel": {
-                        		            text: "დახურვა",
+                        		            text: "Close",
                         		            id: "cancel-dialog",
                         		            click: function () {
                         		            	$(this).dialog("close");
@@ -609,7 +609,7 @@ if(fName=='add-edit-form-task'){
         });
     	var buttons = {
 	        	"cancel": {
-		            text: "დახურვა",
+		            text: "Close",
 		            id: "cancel-dialog",
 		            click: function () {
 		            	$(this).dialog("close");
@@ -634,7 +634,7 @@ if(fName=='add-edit-form-task'){
         });
     	var buttons = {
 	        	"cancel": {
-		            text: "დახურვა",
+		            text: "Close",
 		            id: "cancel-dialog",
 		            click: function () {
 		            	$(this).dialog("close");
@@ -688,14 +688,14 @@ if(fName=='add-edit-form-task'){
 				   
 			        success: function(data) {
 						if(data.status=='true'){
-							alert('შეტყობინება წარმატებით გაიგზავნა!');
+							alert('Message sent successfully!');
 							$("#mail_text").val('');
 							$("iframe").contents().find("body").html('');
 							$("#file_div_mail").html('');
 							CloseDialog("add-edit-form-mail");
 							LoadTable('mail',5,'get_list_mail',"<'F'lip>",'out_id='+$('#incomming_id').val(),aJaxURL);
 						}else{
-							alert('შეტყობინება არ გაიგზავნა!');
+							alert('Message wont send!');
 							LoadTable('mail',5,'get_list_mail',"<'F'lip>",'out_id='+$('#incomming_id').val(),aJaxURL);
 						}
 					}
@@ -720,9 +720,9 @@ if(fName=='add-edit-form-task'){
         var path	  = "../../media/uploads/file/";
 
         if($.inArray(file_type, ['pdf','png','xls','xlsx','jpg','docx','doc','csv']) == -1){
-            alert("დაშვებულია მხოლოდ 'pdf', 'png', 'xls', 'xlsx', 'jpg', 'docx', 'doc', 'csv' გაფართოება");
+            alert("Allowed only 'pdf', 'png', 'xls', 'xlsx', 'jpg', 'docx', 'doc', 'csv' Extension");
         }else if(file_size > '15728639'){
-            alert("ფაილის ზომა 15MB-ზე მეტია");
+            alert("File size over 15MB");
         }else{
         	$.ajaxFileUpload({
 		        url: "server-side/upload/file.action.php",
@@ -750,7 +750,7 @@ if(fName=='add-edit-form-task'){
 							for(i = 0;i <= data.page.length;i++){
 								tbody += "<div id=\"first_div\">" + data.page[i].file_date + "</div>";
 								tbody += "<div id=\"two_div\">" + data.page[i].name + "</div>";
-								tbody += "<div id=\"tree_div\" onclick=\"download_file('" + data.page[i].rand_name + "','"+data.page[i].name+"')\">ჩამოტვირთვა</div>";
+								tbody += "<div id=\"tree_div\" onclick=\"download_file('" + data.page[i].rand_name + "','"+data.page[i].name+"')\">Download</div>";
 								tbody += "<div id=\"for_div\" onclick=\"delete_file1('" + data.page[i].id + "')\">-</div>";
 								$("#paste_files1").html(tbody);								
 							}							
@@ -772,9 +772,9 @@ if(fName=='add-edit-form-task'){
         var path	  = "../../media/uploads/file/";
 
         if($.inArray(file_type, ['pdf','png','xls','xlsx','jpg','docx','doc','csv']) == -1){
-            alert("დაშვებულია მხოლოდ 'pdf', 'png', 'xls', 'xlsx', 'jpg', 'docx', 'doc', 'csv' გაფართოება");
+            alert("Allowed only 'pdf', 'png', 'xls', 'xlsx', 'jpg', 'docx', 'doc', 'csv' Extension");
         }else if(file_size > '15728639'){
-            alert("ფაილის ზომა 15MB-ზე მეტია");
+            alert("File size over 15MB");
         }else{
         	$.ajaxFileUpload({
 		        url: "server-side/upload/file.action.php",
@@ -802,7 +802,7 @@ if(fName=='add-edit-form-task'){
 							for(i = 0;i <= data.page.length;i++){
 								tbody += "<div id=\"first_div\">" + data.page[i].file_date + "</div>";
 								tbody += "<div id=\"two_div\">" + data.page[i].name + "</div>";
-								tbody += "<div id=\"tree_div\" onclick=\"download_file('" + data.page[i].rand_name + "','"+data.page[i].name+"')\">ჩამოტვირთვა</div>";
+								tbody += "<div id=\"tree_div\" onclick=\"download_file('" + data.page[i].rand_name + "','"+data.page[i].name+"')\">Download</div>";
 								tbody += "<div id=\"for_div\" onclick=\"delete_file('" + data.page[i].id + "', 'outgoing')\">-</div>";
 								$("#add-edit-form #paste_files").html(tbody);
 							}							
@@ -860,7 +860,7 @@ if(fName=='add-edit-form-task'){
 							for(i = 0;i <= data.page.length;i++){
 								tbody += "<div id=\"first_div\">" + data.page[i].file_date + "</div>";
 								tbody += "<div id=\"two_div\">" + data.page[i].name + "</div>";
-								tbody += "<div id=\"tree_div\" onclick=\"download_file('" + data.page[i].rand_name + "','"+data.page[i].name+"')\">ჩამოტვირთვა</div>";
+								tbody += "<div id=\"tree_div\" onclick=\"download_file('" + data.page[i].rand_name + "','"+data.page[i].name+"')\">Download</div>";
 								tbody += "<div id=\"for_div\" onclick=\"delete_file('" + data.page[i].id + "', 'task')\">-</div>";
 								$("#add-edit-form-task #paste_files").html(tbody);
 							}							
@@ -890,7 +890,7 @@ if(fName=='add-edit-form-task'){
 				for(i = 0;i <= data.page.length;i++){
 					tbody += "<div id=\"first_div\">" + data.page[i].file_date + "</div>";
 					tbody += "<div id=\"two_div\">" + data.page[i].name + "</div>";
-					tbody += "<div id=\"tree_div\" onclick=\"download_file('" + data.page[i].rand_name + "','"+data.page[i].name+"')\">ჩამოტვირთვა</div>";
+					tbody += "<div id=\"tree_div\" onclick=\"download_file('" + data.page[i].rand_name + "','"+data.page[i].name+"')\">Download</div>";
 					tbody += "<div id=\"for_div\" onclick=\"delete_file('" + data.page[i].id + "')\">-</div>";
 					$("#add-edit-form #paste_files1").html(tbody);
 				}	
@@ -912,7 +912,7 @@ if(fName=='add-edit-form-task'){
     				for(i = 0;i <= data.page.length;i++){
     					tbody += "<div id=\"first_div\">" + data.page[i].file_date + "</div>";
     					tbody += "<div id=\"two_div\">" + data.page[i].name + "</div>";
-    					tbody += "<div id=\"tree_div\" onclick=\"download_file('" + data.page[i].rand_name + "','"+data.page[i].name+"')\">ჩამოტვირთვა</div>";
+    					tbody += "<div id=\"tree_div\" onclick=\"download_file('" + data.page[i].rand_name + "','"+data.page[i].name+"')\">Download</div>";
     					tbody += "<div id=\"for_div\" onclick=\"delete_file('" + data.page[i].id + "','"+tbl+"')\">-</div>";
     					$("#add-edit-form-task #paste_files").html(tbody);
     					$("#add-edit-form #paste_files").html(tbody);
@@ -1334,7 +1334,7 @@ if(fName=='add-edit-form-task'){
 <div class="callapp_filter_show">
 <span>
 <select id="task_type" style="width: 120px;">
-<!-- <option value="1">გამავალი</option> -->
+<!-- <option value="1">Outgoing</option> -->
 <option value="2">Task</option>
 </select>
 </span>
@@ -1382,9 +1382,9 @@ if(fName=='add-edit-form-task'){
         <tr id="datatable_header">
             <th>ID</th>
             <th style="width: 30px;" id="first_th">№</th>
-            <th style="width: 100%;">თარიღი</th>
-            <th style="width: 100%;">ტელეფონი 1</th>
-            <th style="width: 100%;">ტელეფონი 2</th>
+            <th style="width: 100%;">Date</th>
+            <th style="width: 100%;">Phone 1</th>
+            <th style="width: 100%;">Phone 2</th>
             <th style="width: 100%;">სახელი გვარი</th>
             <th style="width: 100%;">პირადი ნომერი</th>
             <th style="width: 100%;">სცენარი</th>
@@ -1395,31 +1395,31 @@ if(fName=='add-edit-form-task'){
     <thead>
         <tr class="search_header">
             <th class="colum_hidden">
-        	   <input type="text" name="search_id" value="ფილტრი" class="search_init" />
+        	   <input type="text" name="search_id" value="Filter" class="search_init" />
             </th>
             <th>
-            	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+            	<input type="text" name="search_number" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>    
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>                         
             <th>
-                <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_category" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_category" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_phone" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_phone" value="Filter" class="search_init" />
             </th>
             <th style="border-right: 1px solid #E6E6E6 !important;">
             	<div class="callapp_checkbox">
@@ -1435,24 +1435,24 @@ if(fName=='add-edit-form-task'){
         <tr id="datatable_header">
             <th>ID</th>
             <th style="width: 30px;" id="first_th">№</th>
-            <th style="width: 50% !important;;">შექმნის თარიღი</th>
-            <th style="width: 100% !important;" id="jhijnik">პროექტის სახელი</th>
+            <th style="width: 50% !important;;">create Date</th>
+            <th style="width: 100% !important;" id="jhijnik">Project Name</th>
             <th class="check" style="width: 30px;" id="last_th">&nbsp;</th>
         </tr>
     </thead>
     <thead>
         <tr class="search_header">
             <th class="colum_hidden">
-        	   <input type="text" name="search_id" value="ფილტრი" class="search_init" />
+        	   <input type="text" name="search_id" value="Filter" class="search_init" />
             </th>
             <th>
-            	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+            	<input type="text" name="search_number" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>    
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>
             <th style="border-right: 1px solid #E6E6E6 !important;">
             	<div class="callapp_checkbox">
