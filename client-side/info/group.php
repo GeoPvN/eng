@@ -49,7 +49,8 @@
  		    }
 
      		param = new Object();
-     	    //Action
+
+         	    //Action
      		param.act	   = "save_group";
  			param.nam	   = $("#group_name").val();
  			param.pag	   = JSON.stringify(pages);
