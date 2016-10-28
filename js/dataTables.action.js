@@ -50,7 +50,7 @@ function GetDataTable(tname, aJaxURL, action, count, data, hidden, length, sorti
     var oTable = "";
 
     //Defoult Length
-    var dLength = [[10, 30, 50, -1], [10, 30, 50, "ყველა"]];
+    var dLength = [[10, 30, 50, -1], [10, 30, 50, "ALL"]];
 
     if (!empty(length))
         dLength = length;
@@ -149,20 +149,20 @@ function GetDataTable(tname, aJaxURL, action, count, data, hidden, length, sorti
               { "sClass": "colum_hidden", "bSortable": false, "bSearchable": false, "aTargets": [hidden]}	//hidden collum
             ],
         "oLanguage": {																						//Localization
-            "sProcessing": "იტვირთება...",
+            "sProcessing": "Loading...",
             "sLengthMenu": "_MENU_",
-            "sZeroRecords": "ჩანაწერი ვერ მოიძებნა",
-            "sInfo": "_START_-დან _END_-მდე სულ: _TOTAL_",
-            "sInfoEmpty": "0-დან 0-მდე სულ: 0",
-            "sInfoFiltered": "(გაიფილტრა _MAX_-დან _TOTAL_ ჩანაწერი)",
+            "sZeroRecords": "Records could not be found",
+            "sInfo": "_START_-From _END_-Up to all: _TOTAL_",
+            "sInfoEmpty": "0-From 0-Up to all: 0",
+            "sInfoFiltered": "(Filtrated _MAX_-From _TOTAL_ Record)",
             "sInfoPostFix": "",
-            "sSearch": "ძიება",
+            "sSearch": "Search",
             "sUrl": "",
             "oPaginate": {
-                "sFirst": "პირველი",
-                "sPrevious": "წინა",
-                "sNext": "შემდეგი",
-                "sLast": "ბოლო"
+                "sFirst": "First",
+                "sPrevious": "Front",
+                "sNext": "Next",
+                "sLast": "last"
             }
         }
     });
@@ -322,20 +322,20 @@ function GetDataTableSD(tname, aJaxURL, action, count, data, hidden, length, sor
               { "sClass": "colum_hidden", "bSortable": false, "bSearchable": false, "aTargets": [hidden]}	//hidden collum
             ],
         "oLanguage": {																						//Localization
-            "sProcessing": "იტვირთება...",
+            "sProcessing": "Loading...",
             "sLengthMenu": "_MENU_",
-            "sZeroRecords": "ჩანაწერი ვერ მოიძებნა",
-            "sInfo": "_START_-დან _END_-მდე სულ: _TOTAL_",
-            "sInfoEmpty": "0-დან 0-მდე სულ: 0",
-            "sInfoFiltered": "(გაიფილტრა _MAX_-დან _TOTAL_ ჩანაწერი)",
+            "sZeroRecords": "Records could not be found",
+            "sInfo": "_START_-From _END_-Up to all: _TOTAL_",
+            "sInfoEmpty": "0-From 0-Up to all: 0",
+            "sInfoFiltered": "(Filtrated _MAX_-From _TOTAL_ Record)",
             "sInfoPostFix": "",
-            "sSearch": "ძიება",
+            "sSearch": "Search",
             "sUrl": "",
             "oPaginate": {
-                "sFirst": "პირველი",
-                "sPrevious": "წინა",
-                "sNext": "შემდეგი",
-                "sLast": "ბოლო"
+                "sFirst": "First",
+                "sPrevious": "Front",
+                "sNext": "Next",
+                "sLast": "Last"
             }
         }
     });    
@@ -1044,11 +1044,11 @@ function MyEvent(aJaxURL, addButton, deleteButton, Check, dialogID, saveButtonID
 	$("#" + addButton).click(function() {
     	var buttons = {
 				"save": {
-		            text: "შენახვა",
+		            text: "Save",
 		            id: saveButtonID
 		        },
 	        	"cancel": {
-		            text: "დახურვა",
+		            text: "Close",
 		            id: closeButtonID,
 		            click: function () {
 		            	$(this).dialog("close");
@@ -1143,11 +1143,11 @@ function MyEvent(aJaxURL, addButton, deleteButton, Check, dialogID, saveButtonID
                 success: function (data) {
                 	var buttons = {
             				"save": {
-            		            text: "შენახვა",
+            		            text: "Save",
             		            id: saveButtonID
             		        },
             	        	"cancel": {
-            		            text: "დახურვა",
+            		            text: "Close",
             		            id: closeButtonID,
             		            click: function () {
             		            	$(this).dialog("close");
@@ -1178,13 +1178,13 @@ function MyEvent(aJaxURL, addButton, deleteButton, Check, dialogID, saveButtonID
 function GetDialog(fname, width, height, buttons, position) {
     var defoult = {
         "save": {
-            text: "შენახვა",
+            text: "Save",
             id: "save-dialog",
             click: function () {
             }
         },
         "cancel": {
-            text: "დახურვა",
+            text: "Close",
             id: "cancel-dialog",
             click: function () {
                 $(this).dialog("close");
@@ -1341,13 +1341,13 @@ function SeoY(iname, seoyURL, act, cdata, length) {
 function GetDialogCalls(fname, width, height, buttons) {
     var defoult = {
         "save": {
-            text: "შენახვა",
+            text: "Save",
             id: "save-dialog",
             click: function () {
             }
         },
         "cancel": {
-            text: "დახურვა",
+            text: "Close",
             id: "cancel-dialog",
             click: function () {
                 $(this).dialog("close");
