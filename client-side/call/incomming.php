@@ -1470,7 +1470,7 @@
 	    	 var string = $('#sms_text').val();
 	    	 var replaced = string.replace(/[^\x00-\x7F]/g, "");
 	    	 $('#sms_text').val(replaced);
-	    	 alert('Noსწორი სიმბოლო');
+	    	 alert('Invalid character');
 		 }   
 	 }
 
