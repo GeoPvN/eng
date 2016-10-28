@@ -160,7 +160,7 @@ function GetDataTable(tname, aJaxURL, action, count, data, hidden, length, sorti
             "sUrl": "",
             "oPaginate": {
                 "sFirst": "First",
-                "sPrevious": "Front",
+                "sPrevious": "Forward",
                 "sNext": "Next",
                 "sLast": "last"
             }
@@ -333,7 +333,7 @@ function GetDataTableSD(tname, aJaxURL, action, count, data, hidden, length, sor
             "sUrl": "",
             "oPaginate": {
                 "sFirst": "First",
-                "sPrevious": "Front",
+                "sPrevious": "Forward",
                 "sNext": "Next",
                 "sLast": "Last"
             }
@@ -536,7 +536,7 @@ function GetDataTable3(tname, aJaxURL, action, count, data, hidden, length, sort
             "sUrl": "",
             "oPaginate": {
                 "sFirst": "First",
-                "sPrevious": "Front",
+                "sPrevious": "Forward",
                 "sNext": "Next",
                 "sLast": "last"
             }
@@ -694,7 +694,7 @@ function GetDataTableServer(tname, aJaxURL, action, count, data, hidden, length,
             "sUrl": "",
             "oPaginate": {
                 "sFirst": "First",
-                "sPrevious": "Front",
+                "sPrevious": "Forward",
                 "sNext": "Next",
                 "sLast": "last"
             }
