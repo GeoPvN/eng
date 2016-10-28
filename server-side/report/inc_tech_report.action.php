@@ -673,6 +673,7 @@ $row_AGENT = mysql_fetch_assoc(mysql_query("SELECT COUNT(*) AS `count`
 }
 
 if($_REQUEST['act']=='tab_2'){
+    
 //----------------------------------- უპასუხო ზარები
 
 
