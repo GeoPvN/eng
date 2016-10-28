@@ -163,7 +163,7 @@ $(document).on("click", "#go_home", function () {
                         		        }
                         		};
                         		GetDialog("alert_dialog", 360, "auto", button);
-                        		$('#alert_dialog').html('Now you will not be able to break the Exit's, try again later');
+                        		$('#alert_dialog').html("Now you will not be able to break the Exit's, try again later");
                         		$('.alert_dialog-class').css('z-index','9999999');
 		                    }
 	                    }
