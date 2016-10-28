@@ -62,11 +62,11 @@ function GetPage($res='', $number)
 	<div id="dialog-form">
 			<div style="float: left; width: 580px;">	
 				<fieldset >
-			    	<legend>ინფო</legend>
+			    	<legend>Info</legend>
 					<fieldset float:left;">
 				    	<table width="100%" class="dialog-form-table">
 							<tr>
-								<td>დასახელება</td>
+								<td>Name</td>
 								<td style="width:20px;></td>
 								
 								<td colspan "5">
@@ -74,21 +74,21 @@ function GetPage($res='', $number)
 								</td>
 							</tr>
 							<tr>
-								<td style="width: 150px;"><label for="d_number">პერიოდი</label></td>
+								<td style="width: 150px;"><label for="d_number">Period</label></td>
 								<td>
 									<input type="text" id="start_date" class="idle" onblur="this.className=\'idle\'" value="' . $res['start_date']. '" />
 								</td>
-								<td style="width: 150px;"><label for="d_number">-დან</label></td>
+								<td style="width: 150px;"><label for="d_number">-From</label></td>
 								<td>
 									<input type="text" id="end_date" class="idle" onblur="this.className=\'idle\'"  value="' . $res['end_date']. '"  />
 								</td>
-								<td style="width: 150px;"><label for="d_number">-მდე</label></td>
+								<td style="width: 150px;"><label for="d_number">-Up to</label></td>
 							</tr>
 						</table>
 									
 					</fieldset>
 					<fieldset style="float: left; width: 536px;">
-						<legend>აღწერა</legend>
+						<legend>Description</legend>
 				    		<table width="100%" class="dialog-form-table">
 							<tr>
 								<td colspan="5">
@@ -102,7 +102,7 @@ function GetPage($res='', $number)
 				</fieldset>
 										
 				<fieldset style="width: 440px; float: right;">
-						<legend>მიმაგრებული ფაილები</legend>				
+						<legend>Attachments</legend>				
 				 
 		 '.show_file($res).'
  				

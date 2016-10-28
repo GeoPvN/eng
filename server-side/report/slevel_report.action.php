@@ -15,7 +15,7 @@ if($users == 0){
 //------------------------------------------------query-------------------------------------------
 
     if($done == 1){
-	$result = mysql_query("	SELECT    'SL-ფაქტიური' AS `status`,
+	$result = mysql_query("	SELECT    'SL-Actual' AS `status`,
                     	              DATE(asterisk_incomming.call_datetime) AS `date`,
                     	              ROUND((SUM(IF(asterisk_incomming.wait_time<$number, 1, 0)) / COUNT(*) ) * 100, 2) AS `percent`,
 	                                  COUNT(asterisk_incomming.wait_time ) AS `num`
@@ -23,7 +23,7 @@ if($users == 0){
                     	    WHERE     DATE(asterisk_incomming.call_datetime) BETWEEN '$start_time' AND '$end_time' AND asterisk_incomming.disconnect_cause != 'ABANDON'  $users_query
                     	    GROUP BY  DATE(asterisk_incomming.call_datetime)");
 	
-	$result1 = mysql_query(" SELECT    'SL-ფაქტიური' AS `status`,
+	$result1 = mysql_query(" SELECT    'SL-Actual' AS `status`,
                     	              DATE(asterisk_incomming.call_datetime) AS `date`,
                     	              ROUND((SUM(IF(asterisk_incomming.wait_time<$number, 1, 0)) / COUNT(*) ) * 100, 2) AS `percent`,
 	                                  COUNT(asterisk_incomming.wait_time) AS `num`
@@ -31,7 +31,7 @@ if($users == 0){
                     	    WHERE     DATE(asterisk_incomming.call_datetime) BETWEEN '$start_time' AND '$end_time' AND asterisk_incomming.disconnect_cause != 'ABANDON'  $users_query
                     	    GROUP BY  DATE(asterisk_incomming.call_datetime)");
 	
-	$result2 = mysql_query("SELECT    'SL-ფაქტიური' AS `status`,
+	$result2 = mysql_query("SELECT    'SL-Actual' AS `status`,
                     	              DATE(asterisk_incomming.call_datetime) AS `date`,
                     	              ROUND((SUM(IF(asterisk_incomming.wait_time<$number, 1, 0)) / COUNT(*) ) * 100, 2) AS `percent`,
 	                                  COUNT(asterisk_incomming.wait_time ) AS `num`
@@ -39,7 +39,7 @@ if($users == 0){
                     	    WHERE     DATE(asterisk_incomming.call_datetime) BETWEEN '$start_time' AND '$end_time' AND asterisk_incomming.disconnect_cause = 'ABANDON' 
                     	    GROUP BY  DATE(asterisk_incomming.call_datetime)");
 	
-	$all = mysql_fetch_assoc(mysql_query("SELECT      'SL-ფაქტიური' AS `status`,
+	$all = mysql_fetch_assoc(mysql_query("SELECT      'SL-Actual' AS `status`,
                 				    DATE(asterisk_incomming.call_datetime) AS `date`,
                 					ROUND((SUM(IF(asterisk_incomming.wait_time<$number, 1, 0)) / COUNT(*) ) * 100, 2) AS `percent`,
                 					COUNT(asterisk_incomming.wait_time ) AS `num`
@@ -72,7 +72,7 @@ if($users == 0){
     
     
     }elseif($done == 2){
-	$result = mysql_query(" SELECT   'SL-ფაქტიური' AS `status`,
+	$result = mysql_query(" SELECT   'SL-Actual' AS `status`,
                 	                 HOUR(asterisk_incomming.call_datetime) AS `hourCount`,
                     	             CONCAT(HOUR(asterisk_incomming.call_datetime), ':00') AS `hour`,
                     	             ROUND((SUM(IF(asterisk_incomming.wait_time<$number, 1, 0)) / COUNT(*) ) * 100, 2) AS `percent`,
@@ -81,7 +81,7 @@ if($users == 0){
                     	    WHERE    DATE(asterisk_incomming.call_datetime) = '$day' AND asterisk_incomming.disconnect_cause != 'ABANDON'  $users_query
                     	    GROUP BY HOUR(asterisk_incomming.call_datetime)");
 	
-	$result1 = mysql_query(" SELECT   'SL-ფაქტიური' AS `status`,
+	$result1 = mysql_query(" SELECT   'SL-Actual' AS `status`,
                             	     HOUR(asterisk_incomming.call_datetime) AS `hourCount`,
                             	     CONCAT(HOUR(asterisk_incomming.call_datetime), ':00') AS `hour`,
                             	     ROUND((SUM(IF(asterisk_incomming.wait_time<$number, 1, 0)) / COUNT(*) ) * 100, 2) AS `percent`,
@@ -126,7 +126,7 @@ if($users == 0){
 	        $unhour[] = 0;
 	    }
 	    
-	    $name_answer[]     = 'SL-ფაქტიური';
+	    $name_answer[]     = 'SL-Actual';
 	    $limit_number[] = (float)$number;
 	    $limit_percent[] = (float)$procent;
 	    
@@ -203,7 +203,7 @@ if($users == 0){
                 $unmin[] = 0;
             }
              
-            $name_unanswer[]     = 'SL-ფაქტიური';
+            $name_unanswer[]     = 'SL-Actual';
             $limit_number[] = (float)$number;
             $limit_percent[] = (float)$procent;
              

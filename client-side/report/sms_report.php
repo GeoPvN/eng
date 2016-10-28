@@ -37,11 +37,11 @@
 
             var buttons = {
             	"save": {
-                    text: "შენახვა",
+                    text: "Save",
                     id: "save-dialog"
                 }, 
             	"cancel": {
-                    text: "დახურვა",
+                    text: "Close",
                     id: "cancel-dialog",
                     click: function () {
                     	tinymce.remove("#action_content");
@@ -99,7 +99,7 @@
 <body>
 
 <div id="tabs">
-<div class="callapp_head">გაგზავნილი SMS<hr class="callapp_head_hr"></div>
+<div class="callapp_head">Sent SMS<hr class="callapp_head_hr"></div>
 <div class="callapp_tabs">
 
 </div>
@@ -119,38 +119,38 @@
 		<tr id="datatable_header">
            <th>ID</th>
 			<th style="width:3%;">#</th>
-			<th style="width:15%; word-break:break-all;">გამგზავნი</th>
-			<th style="width:15%; word-break:break-all;">გაგზავნის თარიღი</th>
-			<th style="width:15%; word-break:break-all;">ტელეფონი</th>
-			<th style="width:20%; word-break:break-all;">ტექსტი</th>
+			<th style="width:50%; word-break:break-all;">Sender</th>
+			<th style="width:50%; word-break:break-all;">Date</th>
+			<th style="width:50%; word-break:break-all;">Phone</th>
+			<th style="width:50%; word-break:break-all;">Text</th>
 		</tr>
 	</thead>
 	<thead>
 		<tr class="search_header">
 			<th class="colum_hidden">
-    			<input type="text" name="search_id" value="ფილტრი" class="search_init" style="width: 10px"/>
+    			<input type="text" name="search_id" value="Filter" class="search_init" style="width: 10px"/>
     		</th>
 			<th>
 				<input style="width:100%;" type="text" name="search_overhead" value="" class="search_init" />
 			</th>
 			<th>
-				<input style="width:100%;" type="text" name="search_overhead" value="ფილტრი" class="search_init" />
+				<input style="width:100%;" type="text" name="search_overhead" value="Filter" class="search_init" />
 			</th>
 			<th>
-				<input style="width:100%;" type="text" name="search_partner" value="ფილტრი" class="search_init" />
+				<input style="width:100%;" type="text" name="search_partner" value="Filter" class="search_init" />
 			</th>
 			<th>
-				<input style="width:100%;" type="text" name="search_sum_cost" value="ფილტრი" class="search_init" />
+				<input style="width:100%;" type="text" name="search_sum_cost" value="Filter" class="search_init" />
 			</th>
 			<th>
-				<input style="width:100%;" type="text" name="search_partner" value="ფილტრი" class="search_init" />
+				<input style="width:100%;" type="text" name="search_partner" value="Filter" class="search_init" />
 			</th>
 	    </tr>
 	</thead>
 </table>      
 		 
 <!-- jQuery Dialog -->
-<div id="add-edit-form" class="form-dialog" title="აქცია">
+<div id="add-edit-form" class="form-dialog" title="Sent SMS">
 <!-- aJax -->
 </div>
 
