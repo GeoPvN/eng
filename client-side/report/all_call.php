@@ -64,11 +64,11 @@
     function LoadDialog(fName){
     	var buttons = {
 				"save": {
-		            text: "შენახვა",
+		            text: "Save",
 		            id: "save-dialog"
 		        },
 	        	"cancel": {
-		            text: "დახურვა",
+		            text: "Close",
 		            id: "cancel-dialog",
 		            click: function () {
 		            	$(this).dialog("close");
@@ -212,35 +212,35 @@
     function my_filter(){
     	var myhtml = '';
     	if($.session.get("operator_id")=='on'){
-    		myhtml += '<span>ოპერატორი<close cl="operator_id">X</close></span>';
+    		myhtml += '<span>Operator<close cl="operator_id">X</close></span>';
     	}else{
     		$('#operator_id option:eq(0)').prop('selected', true);
     	}
     	if($.session.get("tab_id")=='on'){
-    		myhtml += '<span>ტაბი<close cl="tab_id">X</close></span>';
+    		myhtml += '<span>Tab<close cl="tab_id">X</close></span>';
     	}else{
     		$('#tab_id option:eq(0)').prop('selected', true);
     	}
     	if($.session.get("filter_1")=='on'){
-    		myhtml += '<span>შე. დამუშავებული<close cl="filter_1">X</close></span>';
+    		myhtml += '<span>Inc. Treated<close cl="filter_1">X</close></span>';
     	}
     	if($.session.get("filter_2")=='on'){
-    		myhtml += '<span>შე. დაუმუშავებელი<close cl="filter_2">X</close></span>';
+    		myhtml += '<span>Inc. Untreated<close cl="filter_2">X</close></span>';
     	}
     	if($.session.get("filter_3")=='on'){
-    		myhtml += '<span>შე. უპასუხო<close cl="filter_3">X</close></span>';
+    		myhtml += '<span>Inc. Unansswer<close cl="filter_3">X</close></span>';
     	}
     	if($.session.get("filter_4")=='on'){
-    		myhtml += '<span>გა. ნაპასუხები<close cl="filter_4">X</close></span>';
+    		myhtml += '<span>Out Ansswer<close cl="filter_4">X</close></span>';
     	}
     	if($.session.get("filter_5")=='on'){
-    		myhtml += '<span>გა. უპასუხო<close cl="filter_5">X</close></span>';
+    		myhtml += '<span>Out Unansswer<close cl="filter_5">X</close></span>';
     	}
     	if($.session.get("filter_6")=='on'){
-    		myhtml += '<span>ში. ნაპასუხები<close cl="filter_6">X</close></span>';
+    		myhtml += '<span>Inner Ansswer<close cl="filter_6">X</close></span>';
     	}
     	if($.session.get("filter_7")=='on'){
-    		myhtml += '<span>ში. უპასუხო<close cl="filter_7">X</close></span>';
+    		myhtml += '<span>Inner Unansswer<close cl="filter_7">X</close></span>';
     	}
     	
     	$('.callapp_tabs').html(myhtml);
@@ -322,7 +322,7 @@
         });
     	var buttons = {
 	        	"cancel": {
-		            text: "დახურვა",
+		            text: "Close",
 		            id: "cancel-dialog",
 		            click: function () {
 		            	$(this).dialog("close");
@@ -358,9 +358,9 @@
         var path	  = "../../media/uploads/file/";
 
         if($.inArray(file_type, ['pdf','png','xls','xlsx','jpg','docx','doc','csv']) == -1){
-            alert("დაშვებულია მხოლოდ 'pdf', 'png', 'xls', 'xlsx', 'jpg', 'docx', 'doc', 'csv' გაფართოება");
+            alert("Allowed only 'pdf', 'png', 'xls', 'xlsx', 'jpg', 'docx', 'doc', 'csv' type");
         }else if(file_size > '15728639'){
-            alert("ფაილის ზომა 15MB-ზე მეტია");
+            alert("File size 15MB over");
         }else{
         	$.ajaxFileUpload({
 		        url: "server-side/upload/file.action.php",
@@ -388,7 +388,7 @@
 							for(i = 0;i <= data.page.length;i++){
 								tbody += "<div id=\"first_div\">" + data.page[i].file_date + "</div>";
 								tbody += "<div id=\"two_div\">" + data.page[i].name + "</div>";
-								tbody += "<div id=\"tree_div\" onclick=\"download_file('" + data.page[i].rand_name + "')\">ჩამოტვირთვა</div>";
+								tbody += "<div id=\"tree_div\" onclick=\"download_file('" + data.page[i].rand_name + "')\">Download</div>";
 								tbody += "<div id=\"for_div\" onclick=\"delete_file('" + data.page[i].id + "')\">-</div>";
 								$("#paste_files").html(tbody);
 							}							
@@ -418,7 +418,7 @@
 				for(i = 0;i <= data.page.length;i++){
 					tbody += "<div id=\"first_div\">" + data.page[i].file_date + "</div>";
 					tbody += "<div id=\"two_div\">" + data.page[i].name + "</div>";
-					tbody += "<div id=\"tree_div\" onclick=\"download_file('" + data.page[i].rand_name + "')\">ჩამოტვირთვა</div>";
+					tbody += "<div id=\"tree_div\" onclick=\"download_file('" + data.page[i].rand_name + "')\">Download</div>";
 					tbody += "<div id=\"for_div\" onclick=\"delete_file('" + data.page[i].id + "')\">-</div>";
 					$("#paste_files").html(tbody);
 				}	
@@ -427,25 +427,6 @@
     }
 
     function SaveToDisk(fileURL, fileName) {
-//         // for non-IE
-//         if (!window.ActiveXObject) {
-//             var save = document.createElement('a');
-//             save.href = fileURL;
-//             save.target = '_blank';
-//             save.download = fileName || 'unknown';
-
-//             var event = document.createEvent('Event');
-//             event.initEvent('click', true, true);
-//             save.dispatchEvent(event);
-//             (window.URL || window.webkitURL).revokeObjectURL(save.href);
-//         }
-// 	     // for IE
-//         else if ( !! window.ActiveXObject && document.execCommand)     {
-//             var _window = window.open(fileURL, "_blank");
-//             _window.document.close();
-//             _window.document.execCommand('SaveAs', true, fileName || fileURL)
-//             _window.close();
-//         }
     	var iframe = document.createElement("iframe"); 
         iframe.src = fileURL; 
         iframe.style.display = "none"; 
@@ -466,7 +447,7 @@
 			    data: param,
 		        success: function(data) {
                     $("#sms_text").val('');
-                    alert('SMS წარმატებით გაიგზავნა');
+                    alert('SMS has been successfully sent');
                     LoadTable1_1();
                     CloseDialog("sms_dialog");
 			    }
@@ -504,7 +485,7 @@
         $('#flesh_panel_table_mini').css('display','none');
         $('#flesh_panel_table').css('display','block');
         $('#flesh_panel').css('z-index','99');
-        $('#show_flesh_panel_right').attr('title','პანელის დაპატარევება');
+        $('#show_flesh_panel_right').attr('title','Panel smaller');
     });
     $(document).on("click", "#show_flesh_panel_right", function () {
         //$('#flesh_panel').css('width','150px');
@@ -516,7 +497,7 @@
         $('#flesh_panel_table').css('display','none');
         $('#flesh_panel_table_mini').css('display','block');
         $('#flesh_panel').css('z-index','99');
-        $('#show_flesh_panel').attr('title','პანელის გადიდება');
+        $('#show_flesh_panel').attr('title','Larger panel');
     });
 
     $(document).on("click", "#save-dialog", function () {
@@ -693,7 +674,7 @@
                                 //execute it
                             	var buttons = {
                         	        	"cancel": {
-                        		            text: "დახურვა",
+                        		            text: "Close",
                         		            id: "cancel-dialog",
                         		            click: function () {
                         		            	$(this).dialog("close");
@@ -743,7 +724,7 @@
         });
     	var buttons = {
 	        	"cancel": {
-		            text: "დახურვა",
+		            text: "Close",
 		            id: "cancel-dialog",
 		            click: function () {
 		            	$(this).dialog("close");
@@ -769,7 +750,7 @@
         });
     	var buttons = {
 	        	"cancel": {
-		            text: "დახურვა",
+		            text: "Close",
 		            id: "cancel-dialog",
 		            click: function () {
 		            	$(this).dialog("close");
@@ -823,14 +804,14 @@
 				   
 			        success: function(data) {
 						if(data.status=='true'){
-							alert('შეტყობინება წარმატებით გაიგზავნა!');
+							alert('Message sent!');
 							$("#mail_text").val('');
 							$("iframe").contents().find("body").html('');
 							$("#file_div_mail").html('');
 							CloseDialog("add-edit-form-mail");
 							LoadTable1('mail',5,'get_list_mail',"<'F'lip>",'incomming_id='+$('#incomming_id').val(),aJaxURL);
 						}else{
-							alert('შეტყობინება არ გაიგზავნა!');
+							alert('Message not sent!');
 						}
 					}
 			    });
@@ -847,9 +828,9 @@
         var path	  = "../../media/uploads/file/";
 
         if($.inArray(file_type, ['pdf','png','xls','xlsx','jpg','docx','doc','csv']) == -1){
-            alert("დაშვებულია მხოლოდ 'pdf', 'png', 'xls', 'xlsx', 'jpg', 'docx', 'doc', 'csv' გაფართოება");
+            alert("Allowed only 'pdf', 'png', 'xls', 'xlsx', 'jpg', 'docx', 'doc', 'csv' type");
         }else if(file_size > '15728639'){
-            alert("ფაილის ზომა 15MB-ზე მეტია");
+            alert("File size 15MB over");
         }else{
         	$.ajaxFileUpload({
 		        url: "server-side/upload/file.action.php",
@@ -877,7 +858,7 @@
 							for(i = 0;i <= data.page.length;i++){
 								tbody += "<div id=\"first_div\">" + data.page[i].file_date + "</div>";
 								tbody += "<div id=\"two_div\">" + data.page[i].name + "</div>";
-								tbody += "<div id=\"tree_div\" onclick=\"download_file('" + data.page[i].rand_name + "','"+data.page[i].name+"')\">ჩამოტვირთვა</div>";
+								tbody += "<div id=\"tree_div\" onclick=\"download_file('" + data.page[i].rand_name + "','"+data.page[i].name+"')\">Download</div>";
 								tbody += "<div id=\"for_div\" onclick=\"delete_file1('" + data.page[i].id + "')\">-</div>";
 								$("#paste_files1").html(tbody);								
 							}							
@@ -1016,25 +997,25 @@
 
 <body>
 <div id="tabs">
-<div class="callapp_head">ზარები/ საუბრის ჩანაწერები<span class="callapp_refresh"><img alt="refresh" src="media/images/icons/refresh.png" height="14" width="14">   განახლება</span><hr class="callapp_head_hr"></div>
+<div class="callapp_head">Calls/ Record List<span class="callapp_refresh"><img alt="refresh" src="media/images/icons/refresh.png" height="14" width="14">   Update</span><hr class="callapp_head_hr"></div>
 <div class="callapp_tabs">
 
 </div>
 <div class="callapp_filter_show">
-<button id="callapp_show_filter_button">ფილტრი v</button>
+<button id="callapp_show_filter_button">Filter v</button>
     <div class="callapp_filter_body" myvar="0">
     <div style="float: left; width: 292px;">
         <span>
-        <label for="start_date" style="margin-left: 110px;">-დან</label>
+        <label for="start_date" style="margin-left: 110px;">-From</label>
         <input class="callapp_filter_body_span_input" type="text" id="start_date" style="width: 100px;">
         </span>
         <span>
-        <label for="end_date" style="margin-left: 110px;">-მდე</label>
+        <label for="end_date" style="margin-left: 110px;">-Up to</label>
         <input class="callapp_filter_body_span_input" type="text" id="end_date" style="width: 100px;">
         </span>
         <span style="margin-top: 15px;">
         <select id="operator_id" style="width: 285px;">
-        <option value="0">ყველა ოპერატორი</option>
+        <option value="0">All Operator</option>
         <?php
         include '../../includes/classes/core.php';
         
@@ -1053,10 +1034,10 @@
         </span>
         <span style="margin-top: 15px;">
         <select id="tab_id" style="width: 285px;">
-        <option value="0">ყველა ზარი</option>
-        <option value="1">გადაცემულია გასარკვევად</option>
-        <option value="2">გარკვევის პროცესშია</option>
-        <option value="3">დასრულებულია</option>
+        <option value="0">All Call</option>
+        <option value="1">Transferred out</option>
+        <option value="2">In Process</option>
+        <option value="3">Completed</option>
         </select>
         </span>
     </div>
@@ -1065,15 +1046,15 @@
         <div class="callapp_filter_header"><img alt="inc" src="media/images/icons/inc_call.png" height="14" width="14">  შემომავალი ზარი</div>
         </span>
         <span style="margin-left: 15px">        
-        <label for="filter_1">დამუშავებული</label>
+        <label for="filter_1">Treated</label>
         <input class="callapp_filter_body_span_input" id="filter_1" type="checkbox" value="1">
         </span>
         <span style="margin-left: 15px">
-        <label for="filter_2" style="">დაუმუშავებელი</label>
+        <label for="filter_2" style="">Untreated</label>
         <input class="callapp_filter_body_span_input" id="filter_2" type="checkbox" value="2">
         </span>
         <span style="margin-left: 15px">
-        <label for="filter_3">უპასუხო</label>
+        <label for="filter_3">Unansswer</label>
         <input class="callapp_filter_body_span_input" id="filter_3" type="checkbox" value="3">
         </span>        
         </div>
@@ -1082,11 +1063,11 @@
         <div class="callapp_filter_header"><img alt="out" src="media/images/icons/out_call.png" height="14" width="14">  გამავალი ზარი</div>
         </span>
         <span style="margin-left: 15px">
-        <label for="filter_4">ნაპასუხები</label>
+        <label for="filter_4">Ansswer</label>
         <input class="callapp_filter_body_span_input" id="filter_4" type="checkbox" value="4">
         </span>
         <span style="margin-left: 15px">
-        <label for="filter_5">უპასუხო</label>
+        <label for="filter_5">Unansswer</label>
         <input class="callapp_filter_body_span_input" id="filter_5" type="checkbox" value="5">
         </span>
         
@@ -1097,11 +1078,11 @@
         <div class="callapp_filter_header"><img alt="inner" src="media/images/icons/inner_call_1.png" height="14" width="14">  შიდა ზარი</div>
         </span>
         <span style="margin-left: 15px">        
-        <label for="filter_6">ნაპასუხები</label>
+        <label for="filter_6">Ansswer</label>
         <input class="callapp_filter_body_span_input" id="filter_6" type="checkbox" value="6">
         </span>
         <span style="margin-left: 15px">
-        <label for="filter_7">უპასუხო</label>
+        <label for="filter_7">Unansswer</label>
         <input class="callapp_filter_body_span_input" id="filter_7" type="checkbox" value="7">
         </span>
         
@@ -1123,43 +1104,43 @@
         <tr id="datatable_header">
             <th>ID</th>
             <th style="width: 46px;">№</th>
-            <th style="width: 150px;">თარიღი</th>
-            <th style="width: 120px;">ადრესატი</th>
-            <th style="width: 120px;">წყარო</th>
-            <th style="width: 25%;">ოპერატორი</th>
-            <th style="width: 25%;">საუბრის ხან.</th>            
-            <th style="width: 25%;">სტატუსი</th>
-            <th style="width: 25%;">მოსმენა</th>
+            <th style="width: 150px;">Date</th>
+            <th style="width: 120px;">Recipient</th>
+            <th style="width: 120px;">Source</th>
+            <th style="width: 25%;">Operator</th>
+            <th style="width: 25%;">Duration</th>            
+            <th style="width: 25%;">Status</th>
+            <th style="width: 25%;">Lisen</th>
         </tr>
     </thead>
     <thead>
        <tr class="search_header">
             <th class="colum_hidden">
-        	   <input type="text" name="search_id" value="ფილტრი" class="search_init" />
+        	   <input type="text" name="search_id" value="Filter" class="search_init" />
             </th>
             <th>
-            	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+            	<input type="text" name="search_number" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>    
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>                         
             <th>
-                <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_category" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_category" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_phone" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_phone" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_category" value="Filter" class="search_init" />
             </th>            
         </tr>
     </thead>
@@ -1167,16 +1148,16 @@
 </div>
 
 <!-- jQuery Dialog -->
-<div  id="add-edit-form" class="form-dialog" title="ყველა ზარი">
+<div  id="add-edit-form" class="form-dialog" title="All Call">
 </div>
 <!-- jQuery Dialog -->
-<div  id="add-edit-form-sms" class="form-dialog" title="ახალი SMS">
+<div  id="add-edit-form-sms" class="form-dialog" title="New SMS">
 </div>
 <!-- jQuery Dialog -->
-<div  id="add-edit-form-mail" class="form-dialog" title="ახალი E-mail">
+<div  id="add-edit-form-mail" class="form-dialog" title="New E-mail">
 </div>
 <!-- jQuery Dialog -->
-<div  id="add-edit-form-mail-shablon" class="form-dialog" title="E-mail შაბლონი">
+<div  id="add-edit-form-mail-shablon" class="form-dialog" title="E-mail Template">
 </div>
 
 </body>

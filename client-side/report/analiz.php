@@ -72,7 +72,7 @@ td:nth-child(2){
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'კლიენტი ოპერატორების მიხედვით',
+			            text: 'Client by carrier',
 			            x: -20 
 			        },
 			       
@@ -88,7 +88,7 @@ td:nth-child(2){
 			        },
 			        yAxis: {
 			            title: {
-			                text: 'ზარები'
+			                text: 'Calls'
 			            },
 			            plotLines: [{
 			                value: 0,
@@ -133,7 +133,7 @@ td:nth-child(2){
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'სულ ზარი ოპერატორების მიხედვით',
+			            text: 'Total Call by operator',
 			            x: -20 
 			        },
 			       
@@ -149,7 +149,7 @@ td:nth-child(2){
 			        },
 			        yAxis: {
 			            title: {
-			                text: 'ზარები'
+			                text: 'Calls'
 			            },
 			            plotLines: [{
 			                value: 0,
@@ -194,7 +194,7 @@ td:nth-child(2){
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'პოტენციური კლიენტი ოპერატორების მიხედვით',
+			            text: 'Potential Client by carrier',
 			            x: -20 
 			        },
 			       
@@ -210,7 +210,7 @@ td:nth-child(2){
 			        },
 			        yAxis: {
 			            title: {
-			                text: 'ზარები'
+			                text: 'Calls'
 			            },
 			            plotLines: [{
 			                value: 0,
@@ -255,7 +255,7 @@ td:nth-child(2){
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'არ დაინტერესდა ოპერატორების მიხედვით',
+			            text: 'Not interested by operator',
 			            x: -20 
 			        },
 			       
@@ -271,7 +271,7 @@ td:nth-child(2){
 			        },
 			        yAxis: {
 			            title: {
-			                text: 'ზარები'
+			                text: 'Calls'
 			            },
 			            plotLines: [{
 			                value: 0,
@@ -326,14 +326,14 @@ td:nth-child(2){
 
 <body>
 <div id="tabs" style="width: 90%;">
-		<div class="callapp_head">საერთო ანალიზი<hr class="callapp_head_hr"></div>
+		<div class="callapp_head">The analysis<hr class="callapp_head_hr"></div>
             	<div id="button_area" style="height: 34px;">
             		<div class="right" style="">
-	            		<label for="search_end_my" class="left" style="margin: 5px 0 0 9px;">დასასრული</label>
+	            		<label for="search_end_my" class="left" style="margin: 5px 0 0 9px;">Start</label>
 	            		<input style="width: 100px; margin-left: 5px; height: 11px;" type="text" name="search_end_my" id="search_end_my" class="inpt right" />
             		</div>
 	            	<div class="right" style="width: 200px;">
-	            		<label for="search_start_my" class="left" style="margin: 5px 0 0 9px;">დასაწყისი</label>
+	            		<label for="search_start_my" class="left" style="margin: 5px 0 0 9px;">End</label>
 	            		<input style="width: 100px; margin-left: 5px; height: 11px;" type="text" name="search_start_my" id="search_start_my" class="inpt right"/>
 	            	</div>
             	</div>
@@ -354,47 +354,47 @@ td:nth-child(2){
                     <thead>
                         <tr id="datatable_header">
                             <th>ID</th>
-                            <th style="width: 100%;">ოპერატორი</th>
-                            <th style="width: 100%;">სულ ზარი</th>
-                            <th style="width: 100%;">სულ ზარი %</th>
-                            <th style="width: 100%;">არ დაინტერესდა</th>
-                            <th style="width: 100%;">არ დაინტერესდა %</th>
-                            <th style="width: 100%;">პოტენციური კლიენტი</th>    
-                            <th style="width: 100%;">პოტენციური კლიენტი %</th>
-                            <th style="width: 100%;">კლიენტი</th>    
-                            <th style="width: 100%;">კლიენტი %</th>
+                            <th style="width: 100%;">Operator</th>
+                            <th style="width: 100%;">Total Call</th>
+                            <th style="width: 100%;">Total Call %</th>
+                            <th style="width: 100%;">Not interested</th>
+                            <th style="width: 100%;">Not interested %</th>
+                            <th style="width: 100%;">Potential Client</th>    
+                            <th style="width: 100%;">Potential Client %</th>
+                            <th style="width: 100%;">Client</th>    
+                            <th style="width: 100%;">Client %</th>
                         </tr>
                     </thead>
                     <thead>
                         <tr class="search_header">
                             <th class="colum_hidden">
-                            	<input type="text" name="search_id" value="ფილტრი" class="search_init" style=""/>
+                            	<input type="text" name="search_id" value="Filter" class="search_init" style=""/>
                             </th>
                             <th>
-                            	<input style="width: 120px;" type="text" name="search_number" value="ფილტრი" class="search_init" style=""></th>
+                            	<input style="width: 120px;" type="text" name="search_number" value="Filter" class="search_init" style=""></th>
                             <th>
-                                <input type="text" name="search_date" value="ფილტრი" class="search_init" style="width: 120px;"/>
+                                <input type="text" name="search_date" value="Filter" class="search_init" style="width: 120px;"/>
                             </th>    
                             <th>
-                                <input type="text" name="search_date" value="ფილტრი" class="search_init" style="width: 120px;"/>
+                                <input type="text" name="search_date" value="Filter" class="search_init" style="width: 120px;"/>
                             </th>    
                             <th>
-                                <input type="text" name="search_date" value="ფილტრი" class="search_init" style="width: 120px;"/>
+                                <input type="text" name="search_date" value="Filter" class="search_init" style="width: 120px;"/>
                             </th>    
                             <th>
-                                <input type="text" name="search_date" value="ფილტრი" class="search_init" style="width: 120px;"/>
+                                <input type="text" name="search_date" value="Filter" class="search_init" style="width: 120px;"/>
                             </th>  
                             <th>
-                                <input type="text" name="search_date" value="ფილტრი" class="search_init" style="width: 120px;"/>
+                                <input type="text" name="search_date" value="Filter" class="search_init" style="width: 120px;"/>
                             </th>  
                             <th>
-                                <input type="text" name="search_date" value="ფილტრი" class="search_init" style="width: 120px;"/>
+                                <input type="text" name="search_date" value="Filter" class="search_init" style="width: 120px;"/>
                             </th>
                             <th>
-                                <input type="text" name="search_date" value="ფილტრი" class="search_init" style="width: 120px;"/>
+                                <input type="text" name="search_date" value="Filter" class="search_init" style="width: 120px;"/>
                             </th>  
                             <th>
-                                <input type="text" name="search_date" value="ფილტრი" class="search_init" style="width: 120px;"/>
+                                <input type="text" name="search_date" value="Filter" class="search_init" style="width: 120px;"/>
                             </th>
                         </tr>
                     </thead>
@@ -424,10 +424,10 @@ td:nth-child(2){
 	</div>
 
 	<!-- jQuery Dialog -->
-	<div id="last_calls" title="ბოლო ზარები">
+	<div id="last_calls" title="Last Calls">
 	</div>
 	
 	<!-- jQuery Dialog -->
-	<div id="read_more_dialog" class="form-dialog" title="ყველა გაყიდვა">
+	<div id="read_more_dialog" class="form-dialog" title="All Sale">
 	</div>
 </body>

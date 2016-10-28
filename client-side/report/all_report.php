@@ -65,8 +65,8 @@ var dialog  = "add-edit-form";
 $(document).ready(function() {
 	GetDate("search_start");
 	GetDate("search_end");
-	$("#source_info,#service_center,#in_district,#in_type,#info_category,#info_category1,#info_category2").dropdownchecklist({ firstItemChecksAll: true, explicitClose: 'დახურვა',icon: {}, width: 150, onComplete : drawFirstLevel});
-	$("#branch").dropdownchecklist({ firstItemChecksAll: true, explicitClose: 'დახურვა',icon: {}, width: 150, onComplete : filter_sc});
+	$("#source_info,#service_center,#in_district,#in_type,#info_category,#info_category1,#info_category2").dropdownchecklist({ firstItemChecksAll: true, explicitClose: 'Close',icon: {}, width: 150, onComplete : drawFirstLevel});
+	$("#branch").dropdownchecklist({ firstItemChecksAll: true, explicitClose: 'Close',icon: {}, width: 150, onComplete : filter_sc});
 	
 	drawFirstLevel();
 });
@@ -87,7 +87,7 @@ function LoadDialog(fName){
 	var buttons = {
 			
         	"cancel": {
-	            text: "დახურვა",
+	            text: "Close",
 	            id: "cancel-dialog",
 	            click: function () {
 	            	$('#'+fName).dialog("close");
@@ -192,7 +192,7 @@ function filter_sc(){
         success: function(data) {
         	$("#ddcl-service_center").remove();
             $("#service_center").html(data.test);
-            $("#service_center").dropdownchecklist({ firstItemChecksAll: true, explicitClose: 'დახურვა',icon: {}, width: 150, zIndex: 111, onComplete : drawFirstLevel});
+            $("#service_center").dropdownchecklist({ firstItemChecksAll: true, explicitClose: 'Close',icon: {}, width: 150, zIndex: 111, onComplete : drawFirstLevel});
             drawFirstLevel();
         }
     });
@@ -202,23 +202,23 @@ function filter_sc(){
 </head>
 <body>
 	<div id="tabs" style="width: 90%; height: 1600px;">
-		<div class="callapp_head">ყველა რეპორტი<hr class="callapp_head_hr"></div>
+		<div class="callapp_head">All Operator<hr class="callapp_head_hr"></div>
          
        <div id="button_area" style="margin: 3% 0 0 0;float: none;">
          <div class="left" style="width: 175px;">
            <input type="text" name="search_start" id="search_start" style="height: 13px;"  class="inpt right"/>
              </div>
-            	<label for="search_start" class="left" style="margin:5px 0 0 3px">-დან</label>
+            	<label for="search_start" class="left" style="margin:5px 0 0 3px">-From</label>
              <div class="left" style="width: 185px;">
 	            <input type="text" name="search_end" id="search_end" style="height: 13px;" class="inpt right" />
              </div>
-            	<label for="search_end" class="left" style="margin:5px 0 0 3px">–მდე</label>
+            	<label for="search_end" class="left" style="margin:5px 0 0 3px">–Up to</label>
             </div>
             <div style="padding-left: 6px;">
                 <div style="float: left;">
-                <div>მეთოდი</div>
+                <div>Method</div>
              	<select id="source_info" multiple="multiple">
-    	            <option value="'all'" selected="selected">(ყველა)</option>
+    	            <option value="'all'" selected="selected">(All)</option>
     	            <?php 
                    	 include '../../includes/classes/core.php';
                    	        $res = mysql_query("SELECT 	`id`,
@@ -232,9 +232,9 @@ function filter_sc(){
 	            </select>
 	            </div>
 	            <div style="float: left; margin-left: 5px;">
-	            <div>მომსახურების ცენტრი</div>
+	            <div>Service Center</div>
              	<select id="service_center" multiple="multiple">
-    	            <option value="'all'" selected="selected">(ყველა)</option>
+    	            <option value="'all'" selected="selected">(All)</option>
     	            <?php 
                    	        $res = mysql_query("SELECT 	`id`,
                                         				`name`
@@ -247,9 +247,9 @@ function filter_sc(){
 	            </select>
 	            </div>
 	            <div style="float: left; margin-left: 5px;">
-	            <div>უბანი</div>
+	            <div>District</div>
              	<select id="in_district" multiple="multiple">
-    	            <option value="'all'" selected="selected">(ყველა)</option>
+    	            <option value="'all'" selected="selected">(All)</option>
     	            <?php 
                    	        $res = mysql_query("SELECT 	`id`,
                                         				`name`
@@ -262,9 +262,9 @@ function filter_sc(){
 	            </select>
 	            </div>
 	            <div style="float: left; margin-left: 5px;">
-	            <div>ტიპი</div>
+	            <div>Type</div>
              	<select id="in_type" multiple="multiple">
-    	            <option value="'all'" selected="selected">(ყველა)</option>
+    	            <option value="'all'" selected="selected">(All)</option>
     	            <?php 
                    	        $res = mysql_query("SELECT 	`id`,
                                         				`name`
@@ -277,9 +277,9 @@ function filter_sc(){
 	            </select>
 	            </div>
 	            <div style="float: left; margin-left: 5px;">
-	            <div>ფილიალი</div>
+	            <div>Branch</div>
              	<select id="branch" multiple="multiple">
-    	            <option value="'all'" selected="selected">(ყველა)</option>
+    	            <option value="'all'" selected="selected">(All)</option>
     	            <?php 
                    	        $res = mysql_query("SELECT 	`id`,
                                         				`name`
@@ -292,9 +292,9 @@ function filter_sc(){
 	            </select>
 	            </div>
 	            <div style="float: left; margin-left: 5px; margin-right: 7px;">
-	            <div>ზარის კატეგორია</div>
+	            <div>Call Category</div>
              	<select id="info_category" multiple="multiple">
-    	            <option value="'all'" selected="selected">(ყველა)</option> 
+    	            <option value="'all'" selected="selected">(All)</option> 
     	            <?php 
                    	        $res = mysql_query("SELECT 	`id`,
                                         				`name`
@@ -307,9 +307,9 @@ function filter_sc(){
 	            </select>
 	            </div>
 	            <div style="float: left;">
-	            <div>ზარის ქვე-კატეგორია 1</div>
+	            <div>Call Sub-Category 1</div>
              	<select id="info_category1" multiple="multiple">
-    	            <option value="'all'" selected="selected">(ყველა)</option>
+    	            <option value="'all'" selected="selected">(All)</option>
     	            <?php 
                    	        $res = mysql_query("SELECT 	`id`,
                                         				`name`
@@ -322,9 +322,9 @@ function filter_sc(){
 	            </select>
 	            </div>
 	            <div style="float: left; margin-left: 5px;">
-	            <div>ზარის ქვე-კატეგორია 2</div>
+	            <div>Call Sub-Category 2</div>
              	<select id="info_category2" multiple="multiple">
-    	            <option value="'all'" selected="selected">(ყველა)</option>
+    	            <option value="'all'" selected="selected">(All)</option>
     	            <?php 
                    	        $res = mysql_query("SELECT 	`id`,
                                         				`name`
@@ -356,49 +356,49 @@ function filter_sc(){
                     <tr id="datatable_header">
                         <th>ID</th>
                         <th style="width: 46px;">№</th>
-                        <th style="width: 120px;">თარიღი</th>
-                        <th style="width: 120px;">ტელეფონი</th>
-                        <th style="width: 25%;">აბონენტი</th>
-                        <th style="width: 25%;">აბონენტის ნომერი</th>
-                        <th style="width: 25%;">მ/ცენტრი</th>
-                        <th style="width: 25%;">კატეგორია</th>
-                        <th style="width: 25%;">რეაგირება</th>
+                        <th style="width: 120px;">Date</th>
+                        <th style="width: 120px;">Phone</th>
+                        <th style="width: 25%;">Customers</th>
+                        <th style="width: 25%;">Customers Number</th>
+                        <th style="width: 25%;">Service Center</th>
+                        <th style="width: 25%;">Category</th>
+                        <th style="width: 25%;">Responses</th>
                     </tr>
                 </thead>
                 <thead>
                     <tr class="search_header">
                         <th class="colum_hidden">
-                    	   <input type="text" name="search_id" value="ფილტრი" class="search_init" />
+                    	   <input type="text" name="search_id" value="Filter" class="search_init" />
                         </th>
                         <th>
-                        	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+                        	<input type="text" name="search_number" value="Filter" class="search_init" />
                         </th>
                         <th>
-                            <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                            <input type="text" name="search_date" value="Filter" class="search_init" />
                         </th>
                         <th>
-                            <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                            <input type="text" name="search_date" value="Filter" class="search_init" />
                         </th>                         
                         <th>
-                            <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                            <input type="text" name="search_category" value="Filter" class="search_init" />
                         </th>            
                         <th>
-                            <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                            <input type="text" name="search_category" value="Filter" class="search_init" />
                         </th>
                         <th>
-                            <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                            <input type="text" name="search_category" value="Filter" class="search_init" />
                         </th>
                         <th>
-                            <input type="text" name="search_phone" value="ფილტრი" class="search_init" />
+                            <input type="text" name="search_phone" value="Filter" class="search_init" />
                         </th>
                         <th>
-                            <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                            <input type="text" name="search_category" value="Filter" class="search_init" />
                         </th>            
                     </tr>
                 </thead>
             </table>
 <!-- jQuery Dialog -->
-<div  id="add-edit-form" class="form-dialog" title="შემომავალი ზარი">
+<div  id="add-edit-form" class="form-dialog" title="Incomming Call">
 </div>
 </body>
 </html>

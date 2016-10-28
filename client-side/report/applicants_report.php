@@ -36,7 +36,7 @@ var end		= $("#search_end").val();
 $(document).ready(function() {
 	GetDate("search_start");
 	GetDate("search_end");
-	$("#dropdown").dropdownchecklist({ firstItemChecksAll: true, explicitClose: 'დახურვა',icon: {}, width: 200, onComplete : drawFirstLevel});
+	$("#dropdown").dropdownchecklist({ firstItemChecksAll: true, explicitClose: 'Close',icon: {}, width: 200, onComplete : drawFirstLevel});
 	drawFirstLevel();
 	$("#back").button({ disabled: true });
 	$("#back").button({ icons: { primary: "ui-icon-arrowthick-1-w" }});
@@ -87,7 +87,7 @@ function drawFirstLevel(){
 			            }
 			        },
 			        tooltip: {
-			            pointFormat: 'რაოდენობა : <b>{point.y:.0f}</b>'
+			            pointFormat: 'Count : <b>{point.y:.0f}</b>'
 			        },
 	                dataLabels: {
 	                    enabled: true,
@@ -103,7 +103,7 @@ function drawFirstLevel(){
 	                },
 	                series: [{
 	                    type: 'column',
-	                    name: 'კატეგორიები',
+	                    name: 'Categories',
 	                    data: []
 	                }]
 	            }
@@ -154,7 +154,7 @@ $(document).on("click", ".download1", function () {
 	link = 'http://10.0.18.18:8080/records/' + link;
 	var btn = {
 	        "cancel": {
-	            text: "დახურვა",
+	            text: "Close",
 	            id: "cancel-dialog",
 	            click: function () {
 	                $(this).dialog("close");
@@ -173,7 +173,7 @@ $(document).on("click", ".download", function () {
 	link = 'http://10.0.18.18:8080/records/' + link;
 	var btn = {
 	        "cancel": {
-	            text: "დახურვა",
+	            text: "Close",
 	            id: "cancel-dialog",
 	            click: function () {
 	                $(this).dialog("close");
@@ -260,7 +260,7 @@ $(document).on("click", "#show_copy_prit_exel1", function () {
 </head>
 <body>
 	<div id="tabs" style="width: 90%; height: 850px;">
-		<div class="callapp_head">მომართვები განმცხადებლის მიხედვით<hr class="callapp_head_hr"></div>
+		<div class="callapp_head">According to the appeals by the applicant<hr class="callapp_head_hr"></div>
          
        <div id="button_area" style="margin: 3% 0 0 0">
          <div class="left" style="width: 175px;">
@@ -273,7 +273,7 @@ $(document).on("click", "#show_copy_prit_exel1", function () {
             	<label for="search_end" class="left" style="margin:5px 0 0 3px">–მდე</label>
         	<div class="left" style="width: 200px;margin-left: 20px;">
          	<select id="dropdown" multiple="multiple">
-	            <option value="0" selected="selected">(ყველა)</option>
+	            <option value="0" selected="selected">(All)</option>
 	            <?php 
                	 include '../../includes/classes/core.php';
                	        $res = mysql_query("SELECT 	`id`,
@@ -287,7 +287,7 @@ $(document).on("click", "#show_copy_prit_exel1", function () {
                	 <option value="0">არ არის შევსებული</option>
             </select>
 	        </div>
-           <label class="left" style="margin:5px 0 0 40px">ზარების  ჯამური რაოდენობა: </label> <label id="total_quantity" class="left" style="margin:5px 0 0 2px; font-weight: bold;">5</label>
+           <label class="left" style="margin:5px 0 0 40px">Total number of calls: </label> <label id="total_quantity" class="left" style="margin:5px 0 0 2px; font-weight: bold;">5</label>
        <br /><br /><br />
             </div>
 		<div id="chart_container" style="width: 100%; height: 480px; margin-top:-30px;"></div>
@@ -310,24 +310,24 @@ $(document).on("click", "#show_copy_prit_exel1", function () {
                 <thead>
                     <tr id="datatable_header">
                         <th>ID</th>
-                        <th style="width:70%">დასახელება</th>
-                        <th style="width:15%">რაოდენობა</th>
-                        <th style="width:15%">პროცენტი</th>
+                        <th style="width:70%">Name</th>
+                        <th style="width:15%">Count</th>
+                        <th style="width:15%">Percent</th>
                     </tr>
                 </thead>
                 <thead>
                     <tr class="search_header">
                         <th class="colum_hidden">
-                        	<input type="text" name="search_id" value="ფილტრი" class="search_init" />
+                        	<input type="text" name="search_id" value="Filter" class="search_init" />
                         </th>
                         <th>
-                        	<input type="text" name="search_number" value="ფილტრი" class="search_init">
+                        	<input type="text" name="search_number" value="Filter" class="search_init">
                         </th>
                         <th>
-                        	<input type="text" name="search_object" value="ფილტრი" class="search_init">
+                        	<input type="text" name="search_object" value="Filter" class="search_init">
                         </th>
                         <th>
-                            <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                            <input type="text" name="search_date" value="Filter" class="search_init" />
                         </th>
 
                     </tr>
@@ -362,49 +362,49 @@ $(document).on("click", "#show_copy_prit_exel1", function () {
     <tr id="datatable_header">
         <th>ID</th>
         <th style="width: 30px;">№</th>
-        <th style="width: 150px;">თარიღი</th>
-        <th style="width: 15%;">ტელეფონი</th>
-        <th style="width: 20%;">სახელი</th>
-        <th style="width: 25%;">კატეგორია 1</th>
-        <th style="width: 25%;">კატეგორია 1_1</th>            
-        <th style="width: 25%;">კატეგორია 1_1_1</th>
-        <th style="width: 50%;">კომენტარი</th>
+        <th style="width: 150px;">Date</th>
+        <th style="width: 15%;">Phone</th>
+        <th style="width: 20%;">Name</th>
+        <th style="width: 25%;">Category 1</th>
+        <th style="width: 25%;">Category 1_1</th>            
+        <th style="width: 25%;">Category 1_1_1</th>
+        <th style="width: 50%;">Comment</th>
     </tr>
 </thead>
 <thead>
     <tr class="search_header">
         <th class="colum_hidden">
-    	   <input type="text" name="search_id" value="ფილტრი" class="search_init" />
+    	   <input type="text" name="search_id" value="Filter" class="search_init" />
         </th>
         <th>
-        	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+        	<input type="text" name="search_number" value="Filter" class="search_init" />
         </th>
         <th>
-            <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+            <input type="text" name="search_date" value="Filter" class="search_init" />
         </th>    
         <th>
-            <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+            <input type="text" name="search_date" value="Filter" class="search_init" />
         </th>
         <th>
-            <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+            <input type="text" name="search_date" value="Filter" class="search_init" />
         </th>                         
         <th>
-            <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+            <input type="text" name="search_category" value="Filter" class="search_init" />
         </th>
         <th>
-            <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+            <input type="text" name="search_category" value="Filter" class="search_init" />
         </th>
         <th>
-            <input type="text" name="search_phone" value="ფილტრი" class="search_init" />
+            <input type="text" name="search_phone" value="Filter" class="search_init" />
         </th>
         <th>
-            <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+            <input type="text" name="search_category" value="Filter" class="search_init" />
         </th>            
     </tr>
 </thead>
 </table>
 </div>
- <div  id="add-edit-form" class="form-dialog" title="შემომავალი ზარი">	</div>
+ <div  id="add-edit-form" class="form-dialog" title="Incomming Call">	</div>
 </body>
 </html>
 

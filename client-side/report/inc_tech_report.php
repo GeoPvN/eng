@@ -129,7 +129,7 @@
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'ნაპასუხები ზარები ოპერატორების მიხედვით',
+			            text: 'Answered calls by carrier',
 			            x: -20 
 			        },
 			       
@@ -142,7 +142,7 @@
 			        },
 			        yAxis: {
 			            title: {
-			                text: 'ზარები'
+			                text: 'Calls'
 			            },
 			            plotLines: [{
 			                value: 0,
@@ -208,7 +208,7 @@
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'კავშირის გაწყვეტის მიზეზი',
+			            text: 'Disconnect cause',
 			            x: -20 
 			        },
 			        subtitle: {
@@ -223,7 +223,7 @@
 			        },
 			        yAxis: {
 			            title: {
-			                text: 'ზარები'
+			                text: 'Calls'
 			            },
 			            plotLines: [{
 			                value: 0,
@@ -289,7 +289,7 @@
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'ნაპასუხები ზარები საათების მიხედვით',
+			            text: 'Answered Calls საათების მიხედვით',
 			            x: -20 
 			        },
 			        subtitle: {
@@ -305,7 +305,7 @@
 			        },
 			        yAxis: {
 			            title: {
-			                text: 'ზარები'
+			                text: 'Calls'
 			            },
 			            plotLines: [{
 			                value: 0,
@@ -371,7 +371,7 @@
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'ნაპასუხები ზარები კვირის დღეების მიხედვით',
+			            text: 'Answered Calls კვირის Dayების მიხედვით',
 			            x: -20 
 			        },
 			        subtitle: {
@@ -387,7 +387,7 @@
 			        },
 			        yAxis: {
 			            title: {
-			                text: 'ზარები'
+			                text: 'Calls'
 			            },
 			            plotLines: [{
 			                value: 0,
@@ -454,7 +454,7 @@
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'ნაპასუხები ზარები დღეების მიხედვით',
+			            text: 'Answered Calls Dayების მიხედვით',
 			            x: -20 
 			        },
 			        subtitle: {
@@ -470,7 +470,7 @@
 			        },
 			        yAxis: {
 			            title: {
-			                text: 'ზარები'
+			                text: 'Calls'
 			            },
 			            plotLines: [{
 			                value: 0,
@@ -537,7 +537,7 @@
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'კავშირის გაწყვეტის მიზეზი',
+			            text: 'Disconnect cause',
 			            x: -20 
 			        },
 			        subtitle: {
@@ -553,7 +553,7 @@
 			        },
 			        yAxis: {
 			            title: {
-			                text: 'ზარები'
+			                text: 'Calls'
 			            },
 			            plotLines: [{
 			                value: 0,
@@ -620,7 +620,7 @@
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'უპასუხო ზარები რიგის მიხედვით',
+			            text: 'Unanswered Calls By Queue',
 			            x: -20 
 			        },
 			        subtitle: {
@@ -636,7 +636,7 @@
 			        },
 			        yAxis: {
 			            title: {
-			                text: 'ზარები'
+			                text: 'Calls'
 			            },
 			            plotLines: [{
 			                value: 0,
@@ -703,7 +703,7 @@
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'ნაპასუხები ზარები რიგის მიხედვით',
+			            text: 'Answered Calls Queueს მიხედვით',
 			            x: -20 
 			        },
 			        subtitle: {
@@ -719,7 +719,7 @@
 			        },
 			        yAxis: {
 			            title: {
-			                text: 'ზარები'
+			                text: 'Calls'
 			            },
 			            plotLines: [{
 			                value: 0,
@@ -787,7 +787,7 @@
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'უპასუხო ზარები დღეების მიხედვით',
+			            text: 'Unanswered Calls Dayების მიხედვით',
 			            x: -20 
 			        },
 			        subtitle: {
@@ -803,7 +803,7 @@
 			        },
 			        yAxis: {
 			            title: {
-			                text: 'ზარები'
+			                text: 'Calls'
 			            },
 			            plotLines: [{
 			                value: 0,
@@ -872,7 +872,7 @@
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'უპასუხო ზარები საათების  მიხედვით',
+			            text: 'Unanswered Calls საათების  მიხედვით',
 			            x: -20 
 			        },
 			        subtitle: {
@@ -888,7 +888,7 @@
 			        },
 			        yAxis: {
 			            title: {
-			                text: 'ზარები'
+			                text: 'Calls'
 			            },
 			            plotLines: [{
 			                value: 0,
@@ -956,7 +956,7 @@
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'უპასუხო ზარები კვირის დღეების მიხედვით',
+			            text: 'Unanswered Calls კვირის Dayების მიხედვით',
 			            x: -20 
 			        },
 			        subtitle: {
@@ -972,7 +972,7 @@
 			        },
 			        yAxis: {
 			            title: {
-			                text: 'ზარები'
+			                text: 'Calls'
 			            },
 			            plotLines: [{
 			                value: 0,
@@ -1190,7 +1190,7 @@
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'ნაპასუხები ზარები წამების მიხედვით',
+			            text: 'Answered Calls წამების მიხედვით',
 			            x: -20 
 			        },
 			        subtitle: {
@@ -1206,7 +1206,7 @@
 			        },
 			        yAxis: {
 			            title: {
-			                text: 'ზარები'
+			                text: 'Calls'
 			            },
 			            plotLines: [{
 			                value: 0,
@@ -1333,9 +1333,9 @@
 			
 			
 			if(parame.queuet==''){
-				alert('აირჩიე რიგი');
+				alert('Choose Queue');
 			}else if(parame.agent==''){
-				alert('აირჩიე ოპერატორი');
+				alert('Choose Operator');
 			}else{
 				$('#loading1').css('display','block');
 				$('#tab-0,#tab-1,#tab-2,#tab-3').css('display','none');
@@ -1721,19 +1721,19 @@
     <p><img src="media/images/loader.gif" /></p>
 </div>
 <div id="tabs" style="width: 90%;">
-		<div class="callapp_head">ტექნიკური შემომავალი<hr class="callapp_head_hr"></div>
+		<div class="callapp_head">Technical incoming<hr class="callapp_head_hr"></div>
 		
-        <label>სტატუსი</label>
+        <label>Tabs</label>
 		<select id="change_tab" >
-		<option value="0">მთავარი</option>
-		<option value="1">ნაპასუხები</option>
-		<option value="2">უპასუხო</option>
-		<option value="3">ზარების განაწილება</option>
+		<option value="0">Main</option>
+		<option value="1">Answered</option>
+		<option value="2">Unanswered</option>
+		<option value="3">Call Distribution</option>
 		</select>
 		<div class="clear"></div>
 		
 		<div style="width: 27%; float:left;">
-			<span>აირჩიე რიგი</span>
+			<span>Choose Queue</span>
 			<hr>
 			
 			    <table border="0" cellspacing="0" cellpadding="8">
@@ -1764,7 +1764,7 @@
 				</table>
 			</div>
 			<div style="width: 27%; float:left; margin-left:75px;">
-				<span>აირჩიე ოპერატორი</span>
+				<span>Choose Operator</span>
 				<hr>
 				<table border="0" cellspacing="0" cellpadding="8" >
 					<tbody><tr>
@@ -1794,11 +1794,11 @@
 			</div>
 			<div class="clear"></div>
 			<div id="rest" style="width: 100%; float:none;">
-				<h2>თარიღის ამორჩევა</h2>
+				<h2>Dateს ამორჩევა</h2>
 				<hr>
 				<div id="button_area">
 	            	<div class="left" style="width: 180px;">
-	            		<label for="search_start" class="left" style="margin: 6px 0 0 9px; font-size: 12px;">დასაწყისი</label>
+	            		<label for="search_start" class="left" style="margin: 6px 0 0 9px; font-size: 12px;">დაStart</label>
 	            		<input type="text" name="search_start" id="start_time" value="" class="inpt right" style="width: 80px; height: 16px;"/>
 	            	</div>
 	            	<div class="right" style="width: 190px;">
@@ -1818,13 +1818,13 @@
                 <table>                
                 <tr>
                 	<th></th>
-                    <th>სულ</th>
-                    <th>ნაპასუხები</th>
-                    <th>უპასუხო</th>
+                    <th>Total</th>
+                    <th>Answered</th>
+                    <th>Unanswered</th>
                     <th>დამუშავებული</th>
                     <th>დაუმუშავებული</th>
-                    <th>ნაპასუხებია %</th>
-                    <th>უპასუხოა %</th>
+                    <th>Answeredა %</th>
+                    <th>Unansweredა %</th>
                     <th>დამუშავებულია %</th>
                     <th>დაუმუშავებულია %</th>
                 </tr>
@@ -1855,7 +1855,7 @@
             <div style="width: 49%;float: left;margin-right: 20px;">
                 <div class="clear"></div>
                 <div>
-                    <span style="float: left;">რეპორტ ინფო</span>
+                    <span style="float: left;">Report Info</span>
                     <button style="float: right;" id="report_info_but">Excel</button>
                 </div>
                 <div class="clear"></div>
@@ -1863,20 +1863,20 @@
                 <table>
                 
                 <tr>
-                    <td>რიგი:</td>
+                    <td>Queue:</td>
                     <td></td>
                 </tr>
                 <tr>
-	                	<td>საწყისი თარიღი:</td>
+	                	<td>Start Date:</td>
 	                    <td></td>
                 </tr>
                 
                 <tr>
-                       <td>დასრულების თარიღი:</td>
+                       <td>End Date:</td>
                        <td></td>
                 </tr>
                 <tr>
-                       <td>პერიოდი:</td>
+                       <td>Period:</td>
                        <td></td>
                 </tr>
                 </table>
@@ -1886,27 +1886,27 @@
                <div style="width: 49%;float: left;"> 
                 <div class="clear"></div>
                 <div>
-                    <span style="float: left;">ნაპასუხები ზარები</span>
+                    <span style="float: left;">Answered Calls</span>
                     <button style="float: right;" id="answer_call_info_but">Excel</button>
                 </div>
                 <div class="clear"></div>
                 <div id="answer_call_info">
                 <table>
                 <tr> 
-                  <td>ნაპასუხები ზარები</td>
+                  <td>Answered Calls</td>
                   <td></td>
                 </tr>
                
                 <tr>
-                  <td>საშ. ხანგძლივობა:</td>
+                  <td>Avg. Duration:</td>
                   <td></td>
                 </tr>
                 <tr>
-                  <td>სულ საუბრის ხანგძლივობა:</td>
+                  <td>Total საუბრის ხანგძლივობა:</td>
                   <td> </td>
                 </tr>
                 <tr>
-                  <td>ლოდინის საშ. ხანგძლივობა:</td>
+                  <td>ლოდინის Avg. Duration:</td>
                   <td></td>
                 </tr>
                 </table>
@@ -1915,20 +1915,20 @@
         </div>
         <br>
         <div class="clear"></div>
-		<div><span style="float: left;">ნაპასუხები ზარები ოპერატორების მიხედვით</span><button style="float: right;" id="answer_call_by_queue_but">Excel</button></div>
+		<div><span style="float: left;">Answered calls by carrier</span><button style="float: right;" id="answer_call_by_queue_but">Excel</button></div>
 		<div class="clear"></div>
 		<div id="answer_call_by_queue">
         <table>
             <thead>
             <tr>
-                  <th>ოპერატორი</th>
-                  <th>ზარები</th>
-                  <th>% ზარები</th>
+                  <th>Operator</th>
+                  <th>Calls</th>
+                  <th>% Calls</th>
                   <th>ზარის დრო</th>
                   <th>% ზარის დრო</th>
                   <th>საშ. ზარის ხანგძლივობა</th>
                   <th>ლოდინის დრო</th>
-                  <th>საშ. ლოდინის ხანგძლივობა</th>
+                  <th>Avg. Wait Time</th>
             </tr>
             </thead>
             <tbody>
@@ -1970,14 +1970,14 @@
         <div width="99%">
             <div style="width: 49%;float: left;margin-right: 20px;">
             <div class="clear"></div>
-    		<div><span style="float: left;">ნაპასუხები ზარები რიგის მიხედვით</span><button style="float: right;" id="answer_call_but">Excel</button></div>
+    		<div><span style="float: left;">Answered Calls Queueს მიხედვით</span><button style="float: right;" id="answer_call_but">Excel</button></div>
     		<div class="clear"></div>
     		    <div id="answer_call">
                 <table>
                 <thead>
                 <tr> 
-                    <th>რიგი</th>
-                    <th>სულ</th>
+                    <th>Queue</th>
+                    <th>Total</th>
                     <th>%</th>
                 </tr>
                 </thead>
@@ -1998,15 +1998,15 @@
         <div width="99%">
             <div style="width: 49%;float: left;margin-right: 20px;">
             <div class="clear"></div>
-    		<div><span style="float: left;">კავშირის გაწყვეტის მიზეზი</span><button style="float: right;" id="disconnection_cause_but">Excel</button></div>
+    		<div><span style="float: left;">Disconnect cause</span><button style="float: right;" id="disconnection_cause_but">Excel</button></div>
     		<div class="clear"></div>
     		    <div id="disconnection_cause">
                 <table>
                 <thead>
                 <tr>
-                    <th>მიზეზი</th>
-                    <th>სულ</th>
-                    <th>სულ</th>
+                    <th>Cause</th>
+                    <th>Total</th>
+                    <th>Total</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -2016,7 +2016,7 @@
 						<td></td>
 					</tr>
 					<tr>
-						<td>აბონენტმა გათიშა:</td>
+						<td>Customers cut off the line:</td>
 						<td></td>
 						<td></td>
 					</tr>
@@ -2036,26 +2036,26 @@
 		    <div width="99%">
             <div style="width: 49%;float: left;margin-right: 20px;">
             <div class="clear"></div>
-    		<div><span style="float: left;">რეპორტ ინფო</span><button style="float: right;" id="report_info_but">Excel</button></div>
+    		<div><span style="float: left;">Report Info</span><button style="float: right;" id="report_info_but">Excel</button></div>
     		<div class="clear"></div>
     		    <div id="report_info">
 				<table>
 				<tbody>
 				<tr>
-                    <td>რიგი:</td>
+                    <td>Queue:</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>საწყისი თარიღი:</td>
+                    <td>Start Date:</td>
                     <td></td>
                 </tr>
                 
                 <tr>
-                       <td>დასრულების თარიღი:</td>
+                       <td>End Date:</td>
                        <td></td>
                 </tr>
                 <tr>
-                       <td>პერიოდი:</td>
+                       <td>Period:</td>
                        <td></td>
                 </tr>
 				</tbody>
@@ -2065,12 +2065,12 @@
 			
             <div style="width: 49%;float: left;">
             <div class="clear"></div>
-    		<div><span style="float: left;">უპასუხო ზარები</span><button style="float: right;" id="unanswer_call_but">Excel</button></div>
+    		<div><span style="float: left;">Unanswered Calls</span><button style="float: right;" id="unanswer_call_but">Excel</button></div>
     		<div class="clear"></div>
     		<div id="unanswer_call">
 				<table>
 		        <tr> 
-                  <td>უპასუხო ზარების რაოდენობა:</td>
+                  <td>Unanswered Callsს რაოდენობა:</td>
 		          <td></td>
 	            </tr>
                 <tr>
@@ -2082,7 +2082,7 @@
 		          <td></td>
 	            </tr>
                 <tr>
-                  <td>საშ. საწყისი პოზიცია რიგში:</td>
+                  <td>საშ. Start პოზიცია რიგში:</td>
                   <td></td>
                 </tr>
 	          </table>
@@ -2095,25 +2095,25 @@
             <div width="99%">
             <div style="width: 49%;float: left;margin-right: 20px;">
             <div class="clear"></div>
-    		<div><span style="float: left;">კავშირის გაწყვეტის მიზეზი</span><button style="float: right;" id="disconnection_cause_unanswer_but">Excel</button></div>
+    		<div><span style="float: left;">Disconnect cause</span><button style="float: right;" id="disconnection_cause_unanswer_but">Excel</button></div>
     		<div class="clear"></div>
     		    <div id="disconnection_cause_unanswer">
 				<table>
 				<thead>
 				<tr>
-					<th>მიზეზი</th>
-					<th>სულ</th>
+					<th>Cause</th>
+					<th>Total</th>
 					<th>%</th>
 				</tr>
 				</thead >
 				<tbody>
                 <tr> 
-                  <td>აბონენტმა გათიშა</td>
+                  <td>Customers cut off the line</td>
 			      <td></td>
 			      <td></td>
 		        </tr>
 			    <tr> 
-                  <td>დრო ამოიწურა</td>
+                  <td>Time out</td>
 			      <td></td>
 			      <td></td>
 		        </tr>
@@ -2131,15 +2131,15 @@
 			<div width="99%">
             <div style="width: 49%;float: left;margin-right: 20px;">
             <div class="clear"></div>
-    		<div><span style="float: left;">უპასუხო ზარები რიგის მიხედვით</span><button style="float: right;" id="unanswered_calls_by_queue_but">Excel</button></div>
+    		<div><span style="float: left;">Unanswered Calls By Queue</span><button style="float: right;" id="unanswered_calls_by_queue_but">Excel</button></div>
     		<div class="clear"></div>
     		    <div id="unanswered_calls_by_queue">
 			
 				<table>
 				<thead>
                 <tr> 
-				   	<th>რიგი</th>
-					<th>სულ</th>
+				   	<th>Queue</th>
+					<th>Total</th>
 					<th>%</th>
                 </tr>
 				</thead>
@@ -2161,25 +2161,25 @@
 		   <div width="99%">
             <div style="width: 49%;float: left;margin-right: 20px;">
             <div class="clear"></div>
-    		<div><span style="float: left;">რეპორტ ინფო</span><button style="float: right;" id="report_info_but">Excel</button></div>
+    		<div><span style="float: left;">Report Info</span><button style="float: right;" id="report_info_but">Excel</button></div>
     		<div class="clear"></div>
     		    <div id="report_info">
 				<table>
 				<tr>
-                    <td>რიგი:</td>
+                    <td>Queue:</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>საწყისი თარიღი:</td>
+                    <td>Start Date:</td>
                     <td></td>
                 </tr>
                 
                 <tr>
-                       <td>დასრულების თარიღი:</td>
+                       <td>End Date:</td>
                        <td></td>
                 </tr>
                 <tr>
-                       <td>პერიოდი:</td>
+                       <td>Period:</td>
                        <td></td>
                 </tr>
 				</tbody>
@@ -2189,16 +2189,16 @@
 			
             <div style="width: 49%;float: left;">
             <div class="clear"></div>
-    		<div><span style="float: left;">სულ</span><button style="float: right;" id="totals_but">Excel</button></div>
+    		<div><span style="float: left;">Total</span><button style="float: right;" id="totals_but">Excel</button></div>
     		<div class="clear"></div>
     		<div id="totals">
     			<table>
 		        <tr> 
-                  <td>ნაპასუხები ზარების რაოდენობა:</td>
+                  <td>Answered Calls:</td>
 		          <td></td>
 	            </tr>
                 <tr>
-                  <td>უპასუხო ზარების რაოდენობა:</td>
+                  <td>Unanswered Callsა:</td>
                   <td></td>
                 </tr>
 	          </table>
@@ -2209,20 +2209,20 @@
 		<div class="clear"></div>
 		
 		    <div class="clear"></div>
-    		<div><span style="float: left;">ზარის განაწილება დღეების მიხედვით</span><button style="float: right;" id="call_distribution_per_day_but">Excel</button></div>
+    		<div><span style="float: left;">Call distribution by days</span><button style="float: right;" id="call_distribution_per_day_but">Excel</button></div>
     		<div class="clear"></div>
     		    <div id="call_distribution_per_day">
 		        <table>
 				<thead>
 				<tr>
-					<th>თარიღი</th>
-					<th>სულ</th>
-					<th>ნაპასუხები</th>
-					<th>% ნაპასუხები</th>
-					<th>უპასუხო</th>
-					<th>% უპასუხო</th>
-					<th>საშ. ხანგძლივობა</th>
-					<th>საშ. ლოდინის ხანგძლივობა</th>
+					<th>Date</th>
+					<th>Total</th>
+					<th>Answered</th>
+					<th>% Answered</th>
+					<th>Unanswered</th>
+					<th>% Unanswered</th>
+					<th>Avg. Duration</th>
+					<th>Avg. Wait Time</th>
 				</tr>
 				</thead>
 				<tbody>
@@ -2246,20 +2246,20 @@
 			<div class="clear"></div>
 		
 		    <div class="clear"></div>
-    		<div><span style="float: left;">ზარის განაწილება საათების მიხედვით</span><button style="float: right;" id="call_distribution_per_hour_but">Excel</button></div>
+    		<div><span style="float: left;">Call distribution by hours</span><button style="float: right;" id="call_distribution_per_hour_but">Excel</button></div>
     		<div class="clear"></div>
     		    <div id="call_distribution_per_hour">
 			<table>
 				<thead>
 				<tr>
-                    <th>საათი</th>
-                    <th>სულ</th>
-                    <th>ნაპასუხები</th>
-                    <th>% ნაპასუხები</th>
-                    <th>უპასუხო</th>
-                    <th>% უპასუხო</th>
-                    <th>საშ. ხანგძლივობა</th>
-                    <th>საშ. ლოდინის ხანგძლივობა</th>
+                    <th>Hour</th>
+                    <th>Total</th>
+                    <th>Answered</th>
+                    <th>% Answered</th>
+                    <th>Unanswered</th>
+                    <th>% Unanswered</th>
+                    <th>Avg. Duration</th>
+                    <th>Avg. Wait Time</th>
                 </tr>
 				</thead>
 				<tbody>
@@ -2282,20 +2282,20 @@
 			  <div class="clear"></div>
 		
 		    <div class="clear"></div>
-    		<div><span style="float: left;">ზარის განაწილება კვირის დღეების მიხედვით</span><button style="float: right;" id="call_distribution_per_day_of_week_but">Excel</button></div>
+    		<div><span style="float: left;">Call distribution by week days</span><button style="float: right;" id="call_distribution_per_day_of_week_but">Excel</button></div>
     		<div class="clear"></div>
     		    <div id="call_distribution_per_day_of_week">
 			<table>
 				<thead>
 				<tr>
-                    <th>დღე</th>
-                    <th>სულ</th>
-                    <th>ნაპასუხები</th>
-                    <th>% ნაპასუხები</th>
-                    <th>უპასუხო</th>
-                    <th>% უპასუხო</th>
-                    <th>საშ. ხანგძლივობა</th>
-                    <th>საშ. ლოდინის ხანგძლივობა</th>
+                    <th>Day</th>
+                    <th>Total</th>
+                    <th>Answered</th>
+                    <th>% Answered</th>
+                    <th>Unanswered</th>
+                    <th>% Unanswered</th>
+                    <th>Avg. Duration</th>
+                    <th>Avg. Wait Time</th>
                 </tr>
 				</thead>
 				<tbody>
@@ -2317,37 +2317,37 @@
 		 </div>
 		
 <!-- jQuery Dialog -->
-<div id="add-edit-form" class="form-dialog" title="ნაპასუხები ზარები">
+<div id="add-edit-form" class="form-dialog" title="Answered Calls">
 <div id="test"></div>
 </div>
 
 <!-- jQuery Dialog -->
-<div id="add-edit-form-unanswer" class="form-dialog" title="უპასუხო ზარები">
+<div id="add-edit-form-unanswer" class="form-dialog" title="Unanswered Calls">
 <div id="test"></div>
 </div>
 
 <!-- jQuery Dialog -->
-<div id="add-edit-form-undone" class="form-dialog" title="დაუმუშავებელი ზარები">
+<div id="add-edit-form-undone" class="form-dialog" title="Uncultivated Calls">
 <div id="test"></div>
 </div>
 
 <!-- jQuery Dialog -->
-<div id="add-edit-form1" class="form-dialog" title="გამავალი ზარი">
+<div id="add-edit-form1" class="form-dialog" title="Outgoing call">
 <!-- aJax -->
 </div>
 
 <!-- jQuery Dialog -->
-<div id="add-edit-form2" class="form-dialog" title="გამავალი ზარი">
+<div id="add-edit-form2" class="form-dialog" title="Outgoing call">
 <!-- aJax -->
 </div>
 
-<div id="add-responsible-person" class="form-dialog" title="პასუხისმგებელი პირი">
+<div id="add-responsible-person" class="form-dialog" title="Responsible Person">
 <!-- aJax -->
 </div>
 <!-- jQuery Dialog -->
-<div id="audio_dialog" title="ჩანაწერი">
+<div id="audio_dialog" title="Record">
 </div>
 <!-- jQuery Dialog -->
-<div id="new_dialog" title="დიალოგი">
+<div id="new_dialog" title="Dialog">
 </div>
 </body>
