@@ -171,7 +171,7 @@ switch ($action) {
                                         week_day_graphic.start_time,
                                         week_day_graphic.end_time,
                                         TIME_FORMAT(  TIMEDIFF( `end_time`,`start_time` ),'%H') AS `TIME_COUNT`,
-                                        IF(week_day_graphic.type=1,'სამუშაო საათი','არა სამუშაო საათი'),
+                                        IF(week_day_graphic.type=1,'Working საათი','არა Working საათი'),
                                         (SELECT  GROUP_CONCAT(`language`.`name`)
                                         FROM `week_day_graphic` AS te1
                                         LEFT JOIN week_day_lang ON te1.id = week_day_lang.week_day_graphic_id AND week_day_lang.actived = 1
@@ -338,7 +338,7 @@ switch ($action) {
                                                   WHERE  actived=1 AND week_day_graphic.id=$new_cycle"));
             }else {
                 
-                $error = 'მოცემული დღე უკვე არის სიაში';
+                $error = 'მოცემული Day უკვე არის სიაში';
             }
             
              
@@ -372,7 +372,7 @@ switch ($action) {
                                VALUES
                                      ('$_SESSION[USERID]', $_REQUEST[week_day_graphic_id], '$_REQUEST[spoken_lang_id]');");
              }else {
-                 $error='მოცემული ენა უკვე არის სიაში';
+                 $error='მოცემული Language უკვე არის სიაში';
              }  
              $cycl=mysql_fetch_assoc(mysql_query("SELECT cycle AS cycle
                                                   FROM  `week_day_graphic`
@@ -660,7 +660,7 @@ function GetHour($wday,$clock,$project_id){
 	    </style>
         <div id="dialog-form">
     	    <fieldset style="width: 175px;">
-    	       <legend>ძირითადი ინფორმაცია</legend>
+    	       <legend>Basic Information</legend>
                 <div style="width: 855px;">
                 <table id="table_hour">
                     <tr>
@@ -681,13 +681,13 @@ function GetHour($wday,$clock,$project_id){
                             }
                             
                             $req = mysql_fetch_array($res = mysql_query("SELECT  CASE
-                                                            WHEN week_day_id = 1 THEN 'ორშ'
-                                                            WHEN week_day_id = 2 THEN 'სამ'
-                                                            WHEN week_day_id = 3 THEN 'ოთხ'
-                                                            WHEN week_day_id = 4 THEN 'ხუთ'
-                                                            WHEN week_day_id = 5 THEN 'პარ'
-                                                            WHEN week_day_id = 6 THEN 'შაბ'
-                                                            WHEN week_day_id = 7 THEN 'კვი'
+                                                            WHEN week_day_id = 1 THEN 'Monday'
+                                                            WHEN week_day_id = 2 THEN 'Tuesday'
+                                                            WHEN week_day_id = 3 THEN 'Wednesday'
+                                                            WHEN week_day_id = 4 THEN 'Thursday'
+                                                            WHEN week_day_id = 5 THEN 'Friday'
+                                                            WHEN week_day_id = 6 THEN 'Saturday'
+                                                            WHEN week_day_id = 7 THEN 'Sunday'
                                                             END AS `week_day`,
                                                             TIME_FORMAT(start_time,'%H:%i') AS `start_time`,
                                                             TIME_FORMAT(end_time,'%H:%i') AS `end_time`,
@@ -786,13 +786,13 @@ function GetHour($wday,$clock,$project_id){
                                                         TIME_FORMAT(start_time,'%H'),
                                                         TIME_FORMAT(end_time,'%H'),
                                                         CASE 
-                                    						WHEN week_day_id = 1 THEN 'ორშ'
-                                    						WHEN week_day_id = 2 THEN 'სამ'
-                                    						WHEN week_day_id = 3 THEN 'ოთხ'
-                                    						WHEN week_day_id = 4 THEN 'ხუთ'
-                                    						WHEN week_day_id = 5 THEN 'პარ'
-                                    						WHEN week_day_id = 6 THEN 'შაბ'
-                                    						WHEN week_day_id = 7 THEN 'კვი'
+                                    						WHEN week_day_id = 1 THEN 'Monday'
+                                    						WHEN week_day_id = 2 THEN 'Tuesday'
+                                    						WHEN week_day_id = 3 THEN 'Wednesday'
+                                    						WHEN week_day_id = 4 THEN 'Thursday'
+                                    						WHEN week_day_id = 5 THEN 'Friday'
+                                    						WHEN week_day_id = 6 THEN 'Saturday'
+                                    						WHEN week_day_id = 7 THEN 'Sunday'
                                     				    END AS `week_day`
                                                 FROM `week_day_graphic`
                                                 WHERE project_id = '$project_id' AND week_day_id = '$wday' AND actived = 1 AND type = 2 ");
@@ -843,7 +843,7 @@ function GetPage($res,$increment){
 	    
                        
                        <fieldset style="" id="holiday">
-                <legend>სამუშაო დღე/სთ</legend>
+                <legend>Working Day/H</legend>
 	            <span class="hide_said_menu">x</span>
 	    <style>
 	    #work_table{
@@ -894,7 +894,7 @@ function GetPage($res,$increment){
                 	    <th style="width: ;">23:00</th>
                     </tr>
     	            <tr id="wday1">
-                        <td onclick="OpenWeek(1)">ორშ</td>
+                        <td onclick="OpenWeek(1)">Monday</td>
                 	    <td style="" clock="0"  check_clock="" wday="1" ></td>
                 	    <td style="" clock="1"  check_clock="" wday="1" ></td>
                 	    <td style="" clock="2"  check_clock="" wday="1" ></td>
@@ -921,7 +921,7 @@ function GetPage($res,$increment){
                 	    <td style="" clock="23"  check_clock="" wday="1" ></td>
                     </tr>
 	                <tr id="wday2">
-                        <td onclick="OpenWeek(2)">სამ</td>
+                        <td onclick="OpenWeek(2)">Tuesday</td>
                 	    <td style="" clock="0"  check_clock="" wday="2" ></td>
                 	    <td style="" clock="1"  check_clock="" wday="2" ></td>
                 	    <td style="" clock="2"  check_clock="" wday="2" ></td>
@@ -948,7 +948,7 @@ function GetPage($res,$increment){
                 	    <td style="" clock="23"  check_clock="" wday="2" ></td>
                     </tr>
 	                <tr id="wday3">
-                        <td onclick="OpenWeek(3)">ოთხ</td>
+                        <td onclick="OpenWeek(3)">Wednesday</td>
                 	    <td style="" clock="0"  check_clock="" wday="3" ></td>
                 	    <td style="" clock="1"  check_clock="" wday="3" ></td>
                 	    <td style="" clock="2"  check_clock="" wday="3" ></td>
@@ -975,7 +975,7 @@ function GetPage($res,$increment){
                 	    <td style="" clock="23"  check_clock="" wday="3" ></td>
                     </tr>
 	                <tr id="wday4">
-                        <td onclick="OpenWeek(4)">ხუთ</td>
+                        <td onclick="OpenWeek(4)">Thursday</td>
                 	    <td style="" clock="0"  check_clock="" wday="4" ></td>
                 	    <td style="" clock="1"  check_clock="" wday="4" ></td>
                 	    <td style="" clock="2"  check_clock="" wday="4" ></td>
@@ -1002,7 +1002,7 @@ function GetPage($res,$increment){
                 	    <td style="" clock="23"  check_clock="" wday="4" ></td>
                     </tr>
 	                <tr id="wday5">
-                        <td onclick="OpenWeek(5)">პარ</td>
+                        <td onclick="OpenWeek(5)">Friday</td>
                 	    <td style="" clock="0"  check_clock="" wday="5" ></td>
                 	    <td style="" clock="1"  check_clock="" wday="5" ></td>
                 	    <td style="" clock="2"  check_clock="" wday="5" ></td>
@@ -1029,7 +1029,7 @@ function GetPage($res,$increment){
                 	    <td style="" clock="23"  check_clock="" wday="5" ></td>
                     </tr>
 	                <tr id="wday6">
-                        <td onclick="OpenWeek(6)">შაბ</td>
+                        <td onclick="OpenWeek(6)">Saturday</td>
                 	    <td style="" clock="0"  check_clock="" wday="6" ></td>
                 	    <td style="" clock="1"  check_clock="" wday="6" ></td>
                 	    <td style="" clock="2"  check_clock="" wday="6" ></td>
@@ -1085,46 +1085,46 @@ function GetPage($res,$increment){
 	            </table>
 	            <table class="dialog-form-table">
                     <tr>
-                       <td style="width: 210px;"><label for="queue_scenar">საანგარიშო პერიოდი</label></td>    
+                       <td style="width: 210px;"><label for="queue_scenar">Calculating Period</label></td>    
 	                   <td></td>
                     </tr>
     	            <tr>
-                       <td><input style="width: 150px; float: left;" id="start_date_holi" type="text"><span style="margin-top: 5px;float: left;">-დან</span></td>
-	                   <td><input style="width: 150px; float: left;" id="end_date_holi" type="text"><span style="margin-top: 5px;float: left;">-მდე</span></td>
+                       <td><input style="width: 150px; float: left;" id="start_date_holi" type="text"><span style="margin-top: 5px;float: left;">-From</span></td>
+	                   <td><input style="width: 150px; float: left;" id="end_date_holi" type="text"><span style="margin-top: 5px;float: left;">-Up to</span></td>
                     </tr>
 	            </table>
 	            <table class="dialog-form-table">
                     <tr>
 	                   <td><input id="holiday_all" type="checkbox"></td>
-                       <td style="width: ;"><label for="holiday_id">დღესასწაულები</label></td>
+                       <td style="width: ;"><label for="holiday_id">Holidays</label></td>
                 	   <td style="width: ;"><select id="holiday_id" style="width:253px;">'.GetHoliday().'</select></td>
-	                   <td style="width: ;"><button id="add_holiday">დამატება</button></td>
-                	   <td style="width: ;"><button id="delete_holiday">წაშლა</button></td>
+	                   <td style="width: ;"><button id="add_holiday">Add</button></td>
+                	   <td style="width: ;"><button id="delete_holiday">Delete</button></td>
                     </tr>
 	            </table>
                 <table class="display" id="table_holiday" >
                     <thead>
                         <tr id="datatable_header">
                             <th>ID</th>
-                            <th style="width: 29%;">თარიღი</th>
-                            <th style="width: 40%;;">სახელი</th>
-                            <th style="width: 29%;">კატეგორია</th>
+                            <th style="width: 29%;">Date</th>
+                            <th style="width: 40%;;">Name</th>
+                            <th style="width: 29%;">Category</th>
 							<th style="width: 30px;" class="check">&nbsp;</th>
 						</tr>
                     </thead>
                     <thead>
                         <tr class="search_header">
                             <th class="colum_hidden">
-                        	   <input type="text" name="search_id" value="ფილტრი" class="search_init" />
+                        	   <input type="text" name="search_id" value="Filter" class="search_init" />
                             </th>
                             <th>
-                            	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+                            	<input type="text" name="search_number" value="Filter" class="search_init" />
                             </th>
                             <th>
-                                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                                <input type="text" name="search_date" value="Filter" class="search_init" />
                             </th>
                             <th>
-                                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                                <input type="text" name="search_date" value="Filter" class="search_init" />
                             </th>
 							<th>
 				            	<div class="callapp_checkbox">
@@ -1148,55 +1148,55 @@ function GetPage($res,$increment){
 function GetDialogWeek($cycle,$project_id){
     $data = '<div id="dialog-form">
         	    <fieldset>
-        	       <legend>ძირითადი ინფორმაცია</legend>
+        	       <legend>Basic Information</legend>
                     <input id="hidde_cycle" type="hidden" value="'.$cycle.'">
                     <div id="button_area">
-                        <button id="add_week">დამატება</button>
-                        <button id="delete_week">წაშლა</button>
+                        <button id="add_week">Add</button>
+                        <button id="delete_week">Delete</button>
                     </div>
     				<table class="display" id="table_week" >
                         <thead>
                             <tr id="datatable_header">
                                 <th>ID</th>
                                 <th style="width: 70px;">№</th>
-                                <th style="width: 70px;">სამუშაო დღე</th>
-                                <th style="width: 70px;">დასაწყისი</th>
-                                <th style="width: 70px;">დასასრული</th>
-                                <th style="width: 70px;">სთ</th>
-                                <th style="width: 95px;">სამუშაოს ტიპი</th>
-                                <th style="width: 95px;">ენა</th>
-                                <th style="width: 95px;">ინფ. წყარო</th>
+                                <th style="width: 70px;">Working Day</th>
+                                <th style="width: 70px;">Start</th>
+                                <th style="width: 70px;">End</th>
+                                <th style="width: 70px;">Hour</th>
+                                <th style="width: 95px;">Workingს Type</th>
+                                <th style="width: 95px;">Language</th>
+                                <th style="width: 95px;">Inf. source</th>
     							<th style="width: 11px;" class="check">&nbsp;</th>
     						</tr>
                         </thead>
                         <thead>
                             <tr class="search_header">
                                 <th class="colum_hidden">
-                            	   <input type="text" name="search_id" value="ფილტრი" class="search_init" />
+                            	   <input type="text" name="search_id" value="Filter" class="search_init" />
                                 </th>
                                 <th>
-                                	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+                                	<input type="text" name="search_number" value="Filter" class="search_init" />
                                 </th>
                                 <th>
-                                	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+                                	<input type="text" name="search_number" value="Filter" class="search_init" />
                                 </th>
                                 <th>
-                                	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+                                	<input type="text" name="search_number" value="Filter" class="search_init" />
                                 </th>
                                 <th>
-                                	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+                                	<input type="text" name="search_number" value="Filter" class="search_init" />
                                 </th>
                                 <th>
-                                    <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                                    <input type="text" name="search_date" value="Filter" class="search_init" />
                                 </th>
                                 <th>
-                                    <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                                    <input type="text" name="search_date" value="Filter" class="search_init" />
                                 </th>
                                 <th>
-                                    <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                                    <input type="text" name="search_date" value="Filter" class="search_init" />
                                 </th>
                                 <th>
-                                    <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                                    <input type="text" name="search_date" value="Filter" class="search_init" />
                                 </th>
     							<th>
     				            	<div class="callapp_checkbox">
@@ -1212,7 +1212,7 @@ function GetDialogWeek($cycle,$project_id){
                             <th>&nbsp;</th>
                             <th>&nbsp;</th>
                             <th>&nbsp;</th>
-                            <th id="qnt">სულ:</th>
+                            <th id="qnt">All:</th>
                             <th id="qnt">&nbsp;</th>
                             <th>&nbsp;</th>
                             <th>&nbsp;</th>
@@ -1230,38 +1230,38 @@ function GetDialogCikle($project_id){
     $data = '
          <div id="dialog-form">
         	    <fieldset>
-        	       <legend>ძირითადი ინფორმაცია</legend>
+        	       <legend>Basic Information</legend>
                     <div id="button_area">
-                        <button id="add_weeks">დამატება</button>
-                        <button id="delete_weeks">წაშლა</button>
+                        <button id="add_weeks">Add</button>
+                        <button id="delete_weeks">Delete</button>
                     </div>
     				<table class="display" id="table_cikle" style="width: 100%;">
                         <thead>
                             <tr id="datatable_header">
                                 <th>ID</th>
-                                <th style="width: 50%;">სატელეფონო სადგური</th>
-                                <th style="width: 40%;">სთ/კვირა</th>
-                                <th style="width: 40%;">სთ/თვე</th>
-                                <th style="width: 40%;">საჭირო ოპ. თვე</th>
+                                <th style="width: 50%;">Telephone Station</th>
+                                <th style="width: 40%;">H/Week</th>
+                                <th style="width: 40%;">H/Month</th>
+                                <th style="width: 40%;">Need Op. Month</th>
     							<th style="width: 10%;" class="check">&nbsp;</th>
     						</tr>
                         </thead>
                         <thead>
                             <tr class="search_header">
                                 <th class="colum_hidden">
-                            	   <input type="text" name="search_id" value="ფილტრი" class="search_init" />
+                            	   <input type="text" name="search_id" value="Filter" class="search_init" />
                                 </th>
                                 <th>
-                                	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+                                	<input type="text" name="search_number" value="Filter" class="search_init" />
                                 </th>
                                 <th>
-                                	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+                                	<input type="text" name="search_number" value="Filter" class="search_init" />
                                 </th>
                                 <th>
-                                	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+                                	<input type="text" name="search_number" value="Filter" class="search_init" />
                                 </th>
                                 <th>
-                                	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+                                	<input type="text" name="search_number" value="Filter" class="search_init" />
                                 </th>
     							<th>
     				            	<div class="callapp_checkbox">
@@ -1274,7 +1274,7 @@ function GetDialogCikle($project_id){
                         <tfoot>
                         <tr>
                             <th>&nbsp;</th>
-                            <th id="qnt">სულ:</th>
+                            <th id="qnt">All:</th>
                             <th id="qnt">&nbsp;</th>
                             <th id="qnt">&nbsp;</th>
                             <th id="qnt">&nbsp;</th>
@@ -1322,26 +1322,26 @@ function GetDialogWeekAdd($week_id,$project_id,$get_weekADD_id){
     }
     $data = '<div id="dialog-form">
         	    <fieldset>
-        	       <legend>ძირითადი ინფორმაცია</legend>
+        	       <legend>Basic Information</legend>
                     <table class="dialog-form-table">
                         <tr>
-                           <td ><button id="addlang">სასაუბრო ენა</button></td>
-                           <td ><button id="addinfosorce">ინფორმაციის წყარო</button></td>
+                           <td ><button id="addlang">Spoken language</button></td>
+                           <td ><button id="addinfosorce">Information Source</button></td>
                         </tr>
 	               </table>
                    <table class="dialog-form-table">
                     <tr>
-                       <td style="width: 150px;">სამუშაო<br>დღე</td>
-                       <td style="width: 99px;">სამუშაო<br>იწყება</td>
-                       <td style="width: 99px;">სამუშაო<br>მთავრდება</td>
-                       <td style="width: 150px;">სამუშაოს<br>ტიპი</td>
-                       <td style="width: 99px;">24 სთ</td>
+                       <td style="width: 150px;">Working<br>Day</td>
+                       <td style="width: 99px;">Working<br>Starts</td>
+                       <td style="width: 99px;">Working<br>Ending</td>
+                       <td style="width: 150px;">Workingს<br>Type</td>
+                       <td style="width: 99px;">24 H</td>
                     </tr>
                     <tr>
                         <td><select style="width: 130px;" id="week_day_id" class="idls object">'.GetDay($w_d_id).'</select></td>
                         <td><input id="start_time" type="text" style="width: 60px;" value="'.$start.'"></td>
                         <td><input id="end_time" type="text" style="width: 60px;" value="'.$end.'"></td>
-                        <td><select id="type"><option value="1" '.$select1.'>სამუშაო სთ.</option><option value="2" '.$select2.'>არა სამუშაო სთ.</option></select></td>
+                        <td><select id="type"><option value="1" '.$select1.'>Working H.</option><option value="2" '.$select2.'>Non-Working H.</option></select></td>
                         <td><input type="checkbox" id="24st"></td>
                     </tr>
 	              </table>
@@ -1355,34 +1355,34 @@ function GetDialogWeekAdd($week_id,$project_id,$get_weekADD_id){
 function GetDialogLangAdd($week_id,$project_id){
     $data = '<div id="dialog-form">
         	    <fieldset>
-        	       <legend>ძირითადი ინფორმაცია</legend>
+        	       <legend>Basic Information</legend>
                     <table class="dialog-form-table">
                         <tr>
-                           <td>სასაუბრო ენა</td>
+                           <td>Spoken language</td>
                         </tr>
                         <tr>
                            <td><select id="spoken_lang_id">'.GetLang().'</select></td>
                         </tr>
 	               </table>
                     <div id="button_area">
-                        <button id="add_lang">დამატება</button>
-                        <button id="delete_lang">წაშლა</button>
+                        <button id="add_lang">Add</button>
+                        <button id="delete_lang">Delete</button>
                     </div>
     				<table class="display" id="table_lang" style="width: 100%;">
                         <thead>
                             <tr id="datatable_header">
                                 <th>ID</th>
-                                <th style="width: 90%;">სასაუბრო ენა</th>
+                                <th style="width: 90%;">Spoken language</th>
     							<th style="width: 10%;" class="check">&nbsp;</th>
     						</tr>
                         </thead>
                         <thead>
                             <tr class="search_header">
                                 <th class="colum_hidden">
-                            	   <input type="text" name="search_id" value="ფილტრი" class="search_init" />
+                            	   <input type="text" name="search_id" value="Filter" class="search_init" />
                                 </th>
                                 <th>
-                                	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+                                	<input type="text" name="search_number" value="Filter" class="search_init" />
                                 </th>
     							<th>
     				            	<div class="callapp_checkbox">
@@ -1402,34 +1402,34 @@ function GetDialogLangAdd($week_id,$project_id){
 function GetDialogInfoSorceAdd($week_id,$project_id){
     $data = '<div id="dialog-form">
         	    <fieldset>
-        	       <legend>ძირითადი ინფორმაცია</legend>
+        	       <legend>Basic Information</legend>
                     <table class="dialog-form-table">
                         <tr>
-                           <td>ინფორმაციის წყარო</td>
+                           <td>Information Source</td>
                         </tr>
                         <tr>
                            <td><select id="information_source_id">'.GetInfoSource().'</select></td>
                         </tr>
 	               </table>
                    <div id="button_area">
-                        <button id="add_infosorce">დამატება</button>
-                        <button id="delete_infosorce">წაშლა</button>
+                        <button id="add_infosorce">Add</button>
+                        <button id="delete_infosorce">Delete</button>
                    </div>
                    <table class="display" id="table_infosorce" style="width: 100%;">
                         <thead>
                             <tr id="datatable_header">
                                 <th>ID</th>
-                                <th style="width: 90%;">ინფორმაციის წყარო</th>
+                                <th style="width: 90%;">Information Source</th>
     							<th style="width: 10%;" class="check">&nbsp;</th>
     						</tr>
                         </thead>
                         <thead>
                             <tr class="search_header">
                                 <th class="colum_hidden">
-                            	   <input type="text" name="search_id" value="ფილტრი" class="search_init" />
+                            	   <input type="text" name="search_id" value="Filter" class="search_init" />
                                 </th>
                                 <th>
-                                	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+                                	<input type="text" name="search_number" value="Filter" class="search_init" />
                                 </th>
     							<th>
     				            	<div class="callapp_checkbox">
