@@ -255,7 +255,7 @@
     	<!-- aJax -->
 	</div>
 	<!-- jQuery Dialog -->
-    <div id="add-edit-form1" class="form-dialog" title="Working Cycle Name">
+    <div id="add-edit-form1" class="form-dialog" title="Working Cycle Name"> 
     <div id="dialog-form">
     	    <fieldset>
     	    	<legend>Basic Information</legend>
