@@ -824,7 +824,7 @@ if(fName=='add-edit-form-task'){
         var path	  = "../../media/uploads/file/";
 
         if($.inArray(file_type, ['pdf','png','xls','xlsx','jpg','docx','doc','csv']) == -1){
-            alert("დაშვებულია მხოლოდ 'pdf', 'png', 'xls', 'xlsx', 'jpg', 'docx', 'doc', 'csv' გაფართოება");
+            alert("Allowed only 'pdf', 'png', 'xls', 'xlsx', 'jpg', 'docx', 'doc', 'csv' Extension");
         }else if(file_size > '15728639'){
             alert("ფაილის ზომა 15MB-ზე მეტია");
         }else{
@@ -962,7 +962,7 @@ if(fName=='add-edit-form-task'){
 			    data: param,
 		        success: function(data) {
                     $("#sms_text").val('');
-                    alert('SMS წარმატებით გაიგზავნა');
+                    alert('Message sent successfully');
                     CloseDialog("sms_dialog");
 			    }
 		    });
@@ -995,7 +995,7 @@ if(fName=='add-edit-form-task'){
             $('.quest_body').css('display','block');
             $('#next_quest').prop('disabled', true);
             $(this).attr('who',1);
-            $('#show_all_scenario span').text('სცენარის მიხედვით');
+            $('#show_all_scenario span').text('By scenario');
             $('#back_quest,#next_quest').css('display','none');
             $('.quest_body').attr('style','height: 130px;border: 1px solid #CCCCCC;padding: 0 10px;float: left;margin-right: 5px;width: 260px;margin-top: 5px;');
             $('.myhr,.last_quest').css('display','none');
@@ -1007,7 +1007,7 @@ if(fName=='add-edit-form-task'){
                 $('.1').css('display','block');
                 $('#next_quest').prop('disabled', false);
                 $(this).attr('who',0);
-                $('#show_all_scenario span').text('ყველას ჩვენება');
+                $('#show_all_scenario span').text('Show All');
                 $('#back_quest,#next_quest').css('display','block');
                 $('.myhr').css('display','block');
             }

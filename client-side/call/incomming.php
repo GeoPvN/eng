@@ -1013,7 +1013,7 @@
             $('.1').css('display','block');
             $('#next_quest').prop('disabled', false);
             $(this).attr('who',0);
-            $('#show_all_scenario span').text('Allს ჩვენება');
+            $('#show_all_scenario span').text('Show All');
             $('#back_quest,#next_quest').css('display','block');
             $('.myhr').css('display','block');
         }
@@ -1029,7 +1029,7 @@
         $('#flesh_panel_table_mini').css('display','none');
         $('#flesh_panel_table').css('display','block');
         $('#flesh_panel').css('z-index','99');
-        $('#show_flesh_panel_right').attr('title','პანელის დაპატარევება');
+        $('#show_flesh_panel_right').attr('title','minimize panel');
         $.session.set("checker_st", "2");
     });
     $(document).on("click", "#show_flesh_panel_right", function () {
@@ -1042,7 +1042,7 @@
         $('#show_flesh_panel_right').attr('id','show_flesh_panel');
         $('#flesh_panel_table_mini').css('display','block');
         $('#flesh_panel').css('z-index','99');
-        $('#show_flesh_panel').attr('title','პანელის გადიდება');
+        $('#show_flesh_panel').attr('title','maxsimize panel');
         $.session.set("checker_st", "1");
     });
 
@@ -1182,7 +1182,7 @@
 			if($('#incomming_cat_1').val() == 0 || $('#incomming_cat_1_1').val() == 0 || $('#incomming_cat_1_1_1').val() == 0 || $('#source_info_id').val() == 0 || $('#in_type_id').val() == 0 || $('#inc_status_id').val() == 0 || $('#service_center_id').val() == 0 || ($('#cl_ab_num').val() != '' && ab_num < 10)){
 				$("#service_center_id_chosen,#source_info_id_chosen,#incomming_cat_1_chosen,#incomming_cat_1_1_chosen,#incomming_cat_1_1_1_chosen,#in_type_id_chosen,#inc_status_id_chosen").css('border','0');
 				if($('#cl_ab_num').val() != '' && ab_num < 10){
-					alert('Customersს ნომერი შედგება ზუსტად 10 ციფრისგან!')
+					alert('Customers There are exactly 10 digits!')
 				}
 				if($('#inc_status_id').val() == 0){
 					$("#inc_status_id_chosen").css('border','1px solid red');
@@ -1388,14 +1388,14 @@
 				   
 			        success: function(data) {
 						if(data.status=='true'){
-							alert('შეტყობინება წარმატებით გაიგზავნა!');
+							alert('Message sent successfully!');
 							$("#mail_text").val('');
 							$("iframe").contents().find("body").html('');
 							$("#file_div_mail").html('');
 							CloseDialog("add-edit-form-mail");
 							LoadTable1('mail',5,'get_list_mail',"<'F'lip>",'incomming_id='+$('#incomming_id').val(),aJaxURL);
 						}else{
-							alert('შეტყობინება არ გაიგზავნა!');
+							alert('Message not sent!');
 						}
 					}
 			    });
@@ -1412,9 +1412,9 @@
         var path	  = "../../media/uploads/file/";
 
         if($.inArray(file_type, ['pdf','png','xls','xlsx','jpg','docx','doc','csv']) == -1){
-            alert("დაშვებულია მხოლოდ 'pdf', 'png', 'xls', 'xlsx', 'jpg', 'docx', 'doc', 'csv' გაფართოება");
+            alert("Allowed only 'pdf', 'png', 'xls', 'xlsx', 'jpg', 'docx', 'doc', 'csv' Extension");
         }else if(file_size > '15728639'){
-            alert("ფაილის ზომა 15MB-ზე მეტია");
+            alert("File size over 15MB");
         }else{
         	$.ajaxFileUpload({
 		        url: "server-side/upload/file.action.php",
@@ -1489,7 +1489,7 @@
 			    data: param,
 		        success: function(data) {
 					$("#sms_text").val('');
-					alert('SMS წარმატებით გაიგზავნა');
+					alert('Message sent successfully');
 					LoadTable1('sms',5,'get_list_sms',"<'F'lip>",'incomming_id='+$('#incomming_id').val(),aJaxURL);
 					CloseDialog("sms_dialog");
 			    }
