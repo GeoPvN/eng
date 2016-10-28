@@ -1006,12 +1006,12 @@
     <div class="callapp_filter_body" myvar="0">
     <div style="float: left; width: 292px;">
         <span>
-        <label for="start_date" style="margin-left: 110px;">-From</label>
-        <input class="callapp_filter_body_span_input" type="text" id="start_date" style="width: 100px;">
+        <label for="start_date" style="margin-left: 92px;">-From</label>
+        <input class="callapp_filter_body_span_input" type="text" id="start_date" style="width: 85px;">
         </span>
         <span>
-        <label for="end_date" style="margin-left: 110px;">-Up to</label>
-        <input class="callapp_filter_body_span_input" type="text" id="end_date" style="width: 100px;">
+        <label for="end_date" style="margin-left: 92px;">-Up to</label>
+        <input class="callapp_filter_body_span_input" type="text" id="end_date" style="width: 85px;">
         </span>
         <span style="margin-top: 15px;">
         <select id="operator_id" style="width: 285px;">
