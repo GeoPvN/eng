@@ -116,7 +116,7 @@ switch ($action) {
         if(check_name($name)==0){
             AddCycle($name,$project_id);
         }else{
-            $error = 'ესეთი სახელით უკვე არსებობს ციკლი!';
+            $error = 'ესეთი Nameთ უკვე არსებობს ციკლი!';
         }
         break;
         case 'update_cycle':
@@ -267,23 +267,23 @@ function GetPage($lg)
 	$data = '
 	<div id="dialog-form">
 	    <fieldset>
-	    	<legend>ძირითადი ინფორმაცია</legend>
+	    	<legend>Basic Information</legend>
             <!-- ID -->
 			<input type="hidden" id="cycle_id" value="' . $lg . '" />
 			<input type="hidden" id="next_project" value="' . $req1[1] . '" />
 	    	<table class="dialog-form-table">
 			    <tr>
-			        <td style="width: 190px;"><label for="name">სახელი</label></td>
+			        <td style="width: 190px;"><label for="name">Name</label></td>
 				</tr>
 			    <tr>
 					<td>
 						<input type="text" id="name" value="'.$req1[0].'" />
 					</td>
 				    <td>
-				        <button id="add_button1">დამატება</button>
+				        <button id="add_button1">Add</button>
 				    </td>
 				    <td>
-                        <button id="delete_button1">წაშლა</button>
+                        <button id="delete_button1">Delete</button>
 				    </td>
 				</tr>
 			    
@@ -292,45 +292,45 @@ function GetPage($lg)
                 <thead>
                     <tr id="datatable_header">
                         <th>ID</th>
-						<th style="width: 11%;">რიგითობა</th>
-                        <th style="width: 14%;">დასახელება</th>
-                        <th style="width: 12%;">დასაწყისი</th>
-                        <th style="width: 12%;">დასასრული</th>
-                        <th style="width: 14%;">სამუშაო ტიპი</th>
-                        <th style="width: 13%;">გადახდახი/არაგადახდადი</th>
-                        <th style="width: 16%;">კომენტარი</th>
-                        <th style="width: 10%;">ფერი</th>
+						<th style="width: 11%;">Sequence</th>
+                        <th style="width: 14%;">Name</th>
+                        <th style="width: 12%;">Start</th>
+                        <th style="width: 12%;">End</th>
+                        <th style="width: 14%;">Type of work</th>
+                        <th style="width: 13%;">Paid / not paid</th>
+                        <th style="width: 16%;">Comments</th>
+                        <th style="width: 10%;">Color</th>
                     	<th class="check">#</th>
                     </tr>
                 </thead>
                 <thead>
                     <tr class="search_header">
                         <th class="colum_hidden">
-                            <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                            <input type="text" name="search_category" value="Filter" class="search_init" />
                         </th>
                         <th>
-                            <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                            <input type="text" name="search_category" value="Filter" class="search_init" />
                         </th>
 						<th>
-                            <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                            <input type="text" name="search_category" value="Filter" class="search_init" />
                         </th>
                         <th>
-                            <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                            <input type="text" name="search_category" value="Filter" class="search_init" />
                         </th>
                         <th>
-                            <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                            <input type="text" name="search_category" value="Filter" class="search_init" />
                         </th>
                         <th>
-                            <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                            <input type="text" name="search_category" value="Filter" class="search_init" />
                         </th>
                         <th>
-                            <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                            <input type="text" name="search_category" value="Filter" class="search_init" />
                         </th>
                         <th>
-                            <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                            <input type="text" name="search_category" value="Filter" class="search_init" />
                         </th>
                         <th>
-                            <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                            <input type="text" name="search_category" value="Filter" class="search_init" />
                         </th>
                         <th>
                         	<div class="callapp_checkbox">
@@ -369,12 +369,12 @@ if($res == ''){
     $data = '
 	<div id="dialog-form">
 	    <fieldset>
-	    	<legend>ძირითადი ინფორმაცია</legend>
+	    	<legend>Basic Information</legend>
             <!-- ID -->
 			<input type="hidden" id="detail_id" value="' . $res[id] . '" />
 	    	<table class="dialog-form-table">
 			    <tr>
-			        <td style="width: 190px;"><label for="work_shift_id">ცვლები</label></td>
+			        <td style="width: 190px;"><label for="work_shift_id">Shifts</label></td>
 			    </tr>
 			    <tr>
 					<td>
@@ -384,7 +384,7 @@ if($res == ''){
 			</table>
 			<table class="dialog-form-table">
 			    <tr>
-			        <td style="width: 190px;"><label for="num">რიგითობა</label></td>
+			        <td style="width: 190px;"><label for="num">Sequence</label></td>
 				</tr>
 				<tr>
 					<td>

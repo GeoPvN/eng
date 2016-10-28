@@ -273,7 +273,7 @@ switch ($action) {
                      VALUES
                      ('$user', '$project_id', '$holiday_id')");
         }else{
-            $error = 'ეს დასვენების დღე უკვე დამატებულია!';
+            $error = 'This holiday has been added!';
         }
             
         break;
