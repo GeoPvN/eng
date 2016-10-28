@@ -79,11 +79,11 @@
 		    param.img 	= img_name;
 
 			if(param.n == ""){
-				alert("შეავსეთ სახელი და გვარი!");
+				alert("Fill in the name!");
 			}else if(param.p == 0){
-				alert("შეავსეთ თანამდებობა!");
+				alert("Fill Position!");
 			}else if(param.user && !param.userp){
-				alert("შეავსეთ პაროლი")
+				alert("Fill Password")
 			}else{
 			    $.ajax({
 			        url: aJaxURL,
@@ -108,7 +108,7 @@
 		});
 
 	    $(document).on("click", "#choose_buttondisabled", function () {
-		    alert('თუ გსურთ ახალი სურათის ატვირთვა, წაშალეთ მიმდინარე შურათი!');
+		    alert('If you want to upload a new image, delete the current picture!');
 		});
 
 	    
@@ -120,9 +120,9 @@
 	        var path	  = "../../media/uploads/file/";
 
 	        if($.inArray(file_type, ['png','jpg']) == -1){
-	            alert("დაშვებულია მხოლოდ 'png', 'jpg'  გაფართოება");
+	            alert("Allowed only 'png', 'jpg'  Extension");
 	        }else if(file_size > '15728639'){
-	            alert("ფაილის ზომა 15MB-ზე მეტია");
+	            alert("File size over 15MB");
 	        }else{
 	            if($("#pers_id").val() == ''){
 		            users_id = $("#is_user").val();
@@ -244,11 +244,11 @@
 
 <body>
 <div id="tabs" style="width: 90%">
-<div class="callapp_head">თანამშრომლები<hr class="callapp_head_hr"></div>
+<div class="callapp_head">Staff<hr class="callapp_head_hr"></div>
     
     <div style="margin-top: 15px;">
-        <button id="add_button">დამატება</button>
-        <button id="delete_button">წაშლა</button>
+        <button id="add_button">Add</button>
+        <button id="delete_button">Delete</button>
     </div>
     
 <div class="callapp_filter_show">
@@ -266,38 +266,38 @@
     <thead>
         <tr id="datatable_header">
             <th>ID</th>
-            <th style="width: 50%">მომხმარებელი</th>
-            <th style="width: 50%">ფილიალი</th>
-            <th style="width: 50%">სერვის ცენტრი</th>
-            <th style="width: 50%">ექსთენშენი</th>
-            <th class="min">პირადი ნომერი</th>
-            <th class="min">თანამდებობა</th>
-            <th class="aver">მისამართი</th>
+            <th style="width: 50%">User name</th>
+            <th style="width: 50%">Branch</th>
+            <th style="width: 50%">Service center</th>
+            <th style="width: 50%">extention</th>
+            <th class="min">Tin</th>
+            <th class="min">Position</th>
+            <th class="aver">Address</th>
             <th class="check">#</th>
         </tr>
     </thead>
     <thead>
         <tr class="search_header">
             <th class="colum_hidden">
-            	<input type="text" name="search_id" value="ფილტრი" class="search_init" />
+            	<input type="text" name="search_id" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_name" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_name" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_tin" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_tin" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_tin" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_tin" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_position" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_position" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_tin" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_tin" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_position" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_position" value="Filter" class="search_init" />
             </th>
             <th>
                 <input type="text" name="search_address" value="ფილტრი" class="search_init" />
@@ -314,17 +314,17 @@
 </div>
 
     <!-- jQuery Dialog -->
-    <div id="add-edit-form" class="form-dialog" title="თანამშრომლები">
+    <div id="add-edit-form" class="form-dialog" title="Staff">
     	<!-- aJax -->
 	</div>
     <!-- jQuery Dialog -->
-    <div id="image-form" class="form-dialog" title="თანამშრომლის სურათი">
+    <div id="image-form" class="form-dialog" title="Employee Photo">
     	<img id="view_img" src="media/uploads/images/worker/0.jpg">
 	</div>
 	 <!-- jQuery Dialog -->
-    <div id="add-group-form" class="form-dialog" title="ჯგუფი">
+    <div id="add-group-form" class="form-dialog" title="Group">
 	</div>
-	<div id="add-edit-form-img" class="form-dialog" title="თანამშრომლის სურათი">
+	<div id="add-edit-form-img" class="form-dialog" title="Employee Photo">
 	</div>
 	
 </body>

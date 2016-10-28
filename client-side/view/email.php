@@ -172,7 +172,7 @@
 		    	 var string = $('#content').val();
 		    	 var replaced = string.replace(/[^\x00-\x7F]/g, "");
 		    	 $('#content').val(replaced);
-		    	 alert('არასწორი სიმბოლო');
+		    	 alert('Invalid character');
 			 }   
 		 }
 	    // Add - Save
@@ -186,7 +186,7 @@
 	    	
 	    	
 			if(param.SUBJECT == ""){
-				alert("შეავსეთ ველი!");
+				alert("fill  a gap!");
 			}else {
 			    $.ajax({
 			        url: aJaxURL,
@@ -219,28 +219,28 @@
 
 <body>
 <div id="tabs">
-<div class="callapp_head">ელ-ფოსტის შაბლონი<hr class="callapp_head_hr"></div>
+<div class="callapp_head">E-mail Template<hr class="callapp_head_hr"></div>
 
 <div class="callapp_filter_show">
             	<div id="button_area">
-        			<button id="add_button">დამატება</button>
-        			<button id="delete_button">წაშლა</button>
+        			<button id="add_button">Add</button>
+        			<button id="delete_button">Delete</button>
         		</div>
                 <table class="display" id="table_index">
                     <thead >
                         <tr id="datatable_header">
                             <th>ID</th>
-                            <th style="width: 100%;">სახელი</th>
+                            <th style="width: 100%;">Name</th>
                             <th class="check" style="width: 30px;">&nbsp;</th>
                         </tr>
                     </thead>
                     <thead>
                         <tr class="search_header">
                             <th class="colum_hidden">
-                                <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                                <input type="text" name="search_category" value="Filter" class="search_init" />
                             </th>
                             <th>
-                                <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                                <input type="text" name="search_category" value="Filter" class="search_init" />
                             </th>
                             <th>
                             	<div class="callapp_checkbox">
@@ -254,7 +254,7 @@
             </div>
     
     <!-- jQuery Dialog -->
-    <div id="add-edit-form" class="form-dialog" title="ახალი  E-mail">
+    <div id="add-edit-form" class="form-dialog" title="New  E-mail">
     	<!-- aJax -->
 	</div>
 </body>

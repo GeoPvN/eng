@@ -30,7 +30,7 @@
 			GetDialog(fName, 575, "auto", "");
 
 			var group_id = $("#group_id").val();
-			var ff = [[-1], [ "ყველა"]]
+			var ff = [[-1], [ "All"]]
 			GetDataTable("pages", aJaxURL, "get_pages_list&group_id=" + group_id, 2, "", 0, ff, 1, "asc", "", "<'F'lip>");
 
 		}
@@ -58,7 +58,7 @@
  			//var link	=  GetAjaxData(param);
 
  			if( param.nam == "" ){
- 				alert("შეიყვანეთ ჯგუფის სახელი!");
+ 				alert("შFill in the group name!");
  			}else{
  	    	    $.ajax({
  	    	        url: aJaxURL,
@@ -117,11 +117,11 @@
 
 <body>
 <div id="tabs" style="width: 90%">
-<div class="callapp_head">ჯგუფები<hr class="callapp_head_hr"></div>
+<div class="callapp_head">Group<hr class="callapp_head_hr"></div>
     
     <div style="margin-top: 15px;">
-        <button id="add_button">დამატება</button>
-        <button id="delete_button">წაშლა</button>
+        <button id="add_button">Add</button>
+        <button id="delete_button">Delete</button>
     </div>
     
 <div class="callapp_filter_show">
@@ -139,17 +139,17 @@
     <thead>
         <tr id="datatable_header">
             <th>ID</th>
-            <th style="width: 100%">ჯგუფის სახელი</th>
+            <th style="width: 100%">Group Name</th>
                 <th class="check">#</th>
             </tr>
         </thead>
         <thead>
             <tr class="search_header">
                 <th class="colum_hidden">
-                	<input type="text" name="search_id" value="ფილტრი" class="search_init" />
+                	<input type="text" name="search_id" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_address" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_address" value="Filter" class="search_init" />
                 </th>
                 <th>
                 	<input type="checkbox" name="check-all" id="check-all">
@@ -160,15 +160,11 @@
 </div>
 
     <!-- jQuery Dialog -->
-    <div id="add-edit-form" class="form-dialog" title="თანამშრომლები">
+    <div id="add-edit-form" class="form-dialog" title="Group">
     	<!-- aJax -->
 	</div>
     <!-- jQuery Dialog -->
-    <div id="image-form" class="form-dialog" title="პროდუქციის სურათი">
-    	<img id="view_img" src="media/uploads/images/worker/0.jpg">
-	</div>
-	 <!-- jQuery Dialog -->
-    <div id="add-group-form" class="form-dialog" title="ჯგუფი">
+    <div id="add-group-form" class="form-dialog" title="Group">
 	</div>
 </body>
 </html>

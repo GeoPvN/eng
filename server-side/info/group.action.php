@@ -256,22 +256,22 @@ function GetGroupPage($res = ''){
 	$data = '
 	<div id="dialog-form">
  	    <fieldset>
-	    	<legend>ჯგუფი</legend>
+	    	<legend>Group</legend>
 			<div style=" margin-top: 2px; ">
 				<div style="width: 170px; display: inline;">
-					<label for="group_name" style="float: left;">ჯგუფის სახელი :</label>
+					<label for="group_name" style="float: left;">Group Name:</label>
 					<input type="text" id="group_name" class="idle" onblur="this.className=\'idle\'" onfocus="this.className=\'activeField\'" style="display: inline; margin-left: 25px;width: 400px;" value="'.GetGroupNameById($res).'"/>
 				</div>
 			</div>
         </fieldset>	
  	    <fieldset>
-	    	<legend>გვერდები</legend>									
+	    	<legend>Pages</legend>									
             <div id="dynamic" style="margin-top: 25px;">
                 <table class="display" id="pages" style="width: 100% !important; ">
                     <thead>
                         <tr style=" white-space: no-wrap;" id="datatable_header">
                             <th >ID</th> 
-                            <th style="width: 315px  !important;">გვერდის სახელი</th>
+                            <th style="width: 315px  !important;">Page Name</th>
                             <th style="width: 25px !important;">#</th>   
                         </tr>
                     </thead>

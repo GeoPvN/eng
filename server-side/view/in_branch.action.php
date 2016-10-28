@@ -102,7 +102,7 @@ switch ($action) {
 				}
 								
 			} else {
-				$error = '"' . $info_sorce_name . '" უკვე არის სიაში!';
+				$error = '"' . $info_sorce_name . '" It is already in the list!';
 				
 			}
 		}
@@ -178,11 +178,11 @@ function GetPage($res = '')
 	$data = '
 	<div id="dialog-form">
 	    <fieldset>
-	    	<legend>ძირითადი ინფორმაცია</legend>
+	    	<legend>Basic information</legend>
 
 	    	<table class="dialog-form-table">
                 <tr>
-					<td style="width: 170px;"><label for="CallType">ფილიალი</label></td>
+					<td style="width: 170px;"><label for="CallType">Name</label></td>
 					<td>
 						<input type="text" id="name" class="idle address" onblur="this.className=\'idle address\'" onfocus="this.className=\'activeField address\'" value="' . $res['name'] . '" />
 					</td>

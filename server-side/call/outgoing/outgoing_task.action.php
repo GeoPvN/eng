@@ -103,17 +103,17 @@ switch ($action) {
         $rResult = mysql_query("SELECT 	`logs`.`id`,
                         				`logs`.`row_id`,
                         				`logs`.`date`,
-                        				IF(`logs`.`event` = 1,'დამატება',IF(`logs`.actived = 0,'წაშლა','განახლება')) AS `act`,
+                        				IF(`logs`.`event` = 1,'Add',IF(`logs`.actived = 0,'Delete','Update')) AS `act`,
                         				`user_info`.`name`,
     									CASE
-    											WHEN `logs`.`collumn` = 'task_date' then 'ფორმირების თარიღი'
-                                                WHEN `logs`.`collumn` = 'task_start_date' then 'პერიოდი დასაწყისი'
-                                                WHEN `logs`.`collumn` = 'task_end_date' then 'პერიოდი დასასრული'
-                                                WHEN `logs`.`collumn` = 'task_description' then 'კომენტარი'
-                                                WHEN `logs`.`collumn` = 'task_note' then 'შედეგი'
-                                                WHEN `logs`.`collumn` = 'task_status' then 'სტატუსი'
-                                                WHEN `logs`.`collumn` = 'task_recipient' then 'პასუხისმგებელი პირი'
-                                                WHEN `logs`.`collumn` = 'user' then 'დამფორმირებელი'
+    											WHEN `logs`.`collumn` = 'task_date' then 'Date '
+                                                WHEN `logs`.`collumn` = 'task_start_date' then 'Period Start'
+                                                WHEN `logs`.`collumn` = 'task_end_date' then 'Period End'
+                                                WHEN `logs`.`collumn` = 'task_description' then 'Comment'
+                                                WHEN `logs`.`collumn` = 'task_note' then 'Result'
+                                                WHEN `logs`.`collumn` = 'task_status' then 'Status'
+                                                WHEN `logs`.`collumn` = 'task_recipient' then 'responsible person'
+                                                WHEN `logs`.`collumn` = 'user' then 'User Name'
     									END AS `colum`,
                         				`logs`.`old_value`,
                         				`logs`.`new_value`
@@ -451,19 +451,19 @@ function GetPage($res)
 	$data  .= '
 	<div id="dialog-form">
 	    <fieldset style="width: 430px;  float: left;">
-	       <legend>ძირითადი ინფორმაცია</legend>
+	       <legend>basic information</legend>
 	       <table>
 	               <tr>
-                       <td style="width: 220px;"><label for="task_controler_id">პასუხისმგებელი სამსახური</label></td>
-	                   <td style="width: 220px;"><label for="task_recipient_id">პასუხისმგებელი პირი</label></td>
+                       <td style="width: 220px;"><label for="task_controler_id">Responsible department</label></td>
+	                   <td style="width: 220px;"><label for="task_recipient_id">Responsible person</label></td>
 	               </tr>	              
 	               <tr>
                        <td><select style="width: 200px;" id="task_departament_id" '.$dis.'>'.GetDepartament($res[task_departament_id]).'</select></td>
 	                   <td><select style="width: 200px;" id="task_recipient_id" '.$dis.'>'.getUsers($res[task_recipient_id]).'</select></td>
 	               </tr>
                    <tr>
-                       <td style="width: 160px;"><label for="task_status_id">სტატუსი</label></td>
-                       <td><label for="task_start_date">ფორმირების თარიღი</label></td>
+                       <td style="width: 160px;"><label for="task_status_id">Status</label></td>
+                       <td><label for="task_start_date">Date</label></td>
                    </tr>
                    <tr>
                        <td><select style="width: 200px;" id="task_status_id">'.getStatusTask($res[task_status_id]).'</select></td>
@@ -471,17 +471,17 @@ function GetPage($res)
                    </tr>
 	               <tr>
 	                   
-	                   <td><label for="task_start_date">პერიოდი</label></td>
+	                   <td><label for="task_start_date">Period</label></td>
 	                   <td><label></label></td>
 	               </tr>	              
 	               <tr>
-	                   <td><input '.$dis.' style="float: left;width: 130px;" id="task_start_date" type="text" value="'.$res[task_start_date].'"><label for="task_start_date" style="float: left;margin-top: 7px;margin-left: 2px;">-დან</label></td>
-	                   <td><input '.$dis.' style="float: left;width: 130px;" id="task_end_date" type="text" value="'.$res[task_end_date].'"><label for="task_end_date" style="float: left;margin-top: 7px;margin-left: 2px;">-მდე</label></td>
+	                   <td><input '.$dis.' style="float: left;width: 130px;" id="task_start_date" type="text" value="'.$res[task_start_date].'"><label for="task_start_date" style="float: left;margin-top: 7px;margin-left: 2px;">-From</label></td>
+	                   <td><input '.$dis.' style="float: left;width: 130px;" id="task_end_date" type="text" value="'.$res[task_end_date].'"><label for="task_end_date" style="float: left;margin-top: 7px;margin-left: 2px;">-Up to</label></td>
 	               </tr>
 	                       
 	                       
 	               <tr>
-	                   <td><label for="original_phone">ტელეფონი</label></td>
+	                   <td><label for="original_phone">Phone</label></td>
 	               </tr>
 	               <tr>
 	                   <td colspan=2><textarea disabled style="resize: vertical;width: 410px;" id="original_phone">'.$res[phone].'</textarea></td>
@@ -489,13 +489,13 @@ function GetPage($res)
 	                       
 	                       
 	               <tr>
-	                   <td><label for="task_description">კომენტერი</label></td>
+	                   <td><label for="task_description">Comment</label></td>
 	               </tr>
 	               <tr>
 	                   <td colspan=2><textarea '.$dis.' style="resize: vertical;width: 410px;" id="task_description">'.$res[task_description].'</textarea></td>
 	               </tr>
 	               <tr>
-	                   <td><label for="task_note">შედეგი</label></td>
+	                   <td><label for="task_note">Result</label></td>
 	               </tr>
 	               <tr>
 	                   <td colspan=2><textarea style="resize: vertical;width: 410px;" id="task_note">'.$res[task_note].'</textarea></td>
@@ -504,14 +504,14 @@ function GetPage($res)
 	    </fieldset>
 	    
         <div id="side_menu" style="'.$dammale.' float: left;height: 485px;width: 80px;margin-left: 10px; background: #272727; color: #FFF;margin-top: 6px;">
-	       <spam class="info" style="display: block;padding: 10px 5px;  cursor: pointer;" onclick="show_right_side(\'info\')"><img style="padding-left: 22px;padding-bottom: 5px;" src="media/images/icons/info.png" alt="24 ICON" height="24" width="24"><div style="text-align: center;">ინფო</div></spam>
-	       <spam class="record" style="display: block;padding: 10px 5px;  cursor: pointer;" onclick="show_right_side(\'record\')"><img style="padding-left: 22px;padding-bottom: 5px;" src="media/images/icons/record.png" alt="24 ICON" height="24" width="24"><div style="text-align: center;">ჩანაწერი</div></spam>
-	       <spam class="file" style="display: block;padding: 10px 5px;  cursor: pointer;" onclick="show_right_side(\'file\')"><img style="padding-left: 22px;padding-bottom: 5px;" src="media/images/icons/file.png" alt="24 ICON" height="24" width="24"><div style="text-align: center;">ფაილი</div></spam>
+	       <spam class="info" style="display: block;padding: 10px 5px;  cursor: pointer;" onclick="show_right_side(\'info\')"><img style="padding-left: 22px;padding-bottom: 5px;" src="media/images/icons/info.png" alt="24 ICON" height="24" width="24"><div style="text-align: center;">Info</div></spam>
+	       <spam class="record" style="display: block;padding: 10px 5px;  cursor: pointer;" onclick="show_right_side(\'record\')"><img style="padding-left: 22px;padding-bottom: 5px;" src="media/images/icons/record.png" alt="24 ICON" height="24" width="24"><div style="text-align: center;">Record</div></spam>
+	       <spam class="file" style="display: block;padding: 10px 5px;  cursor: pointer;" onclick="show_right_side(\'file\')"><img style="padding-left: 22px;padding-bottom: 5px;" src="media/images/icons/file.png" alt="24 ICON" height="24" width="24"><div style="text-align: center;">File</div></spam>
 	    </div>
 	    
 	    <div style="width: 615px;float: left;margin-left: 10px;" id="right_side">
             <fieldset style="display:none;     width: 675px;" id="info">
-                <legend>მომართვის ავტორი</legend>
+                <legend>Request Author</legend>
 	            <span class="hide_said_menu">x</span>';
                 
 	    if($res['incomming_call_id'] == ''){
@@ -730,7 +730,7 @@ function GetPage($res)
                         </table>                	    
     	                <table class="margin_top_10">
         	                <tr>
-        	                    <td><label for="client_person_note">შენიშვნა</label></td>
+        	                    <td><label for="client_person_note">Note</label></td>
         	                </tr>
         	                <tr>
         	                    <td><textarea id="client_person_note" style="resize: vertical;width: 565px;">'.$res['client_person_note'].'</textarea></td>
@@ -743,13 +743,13 @@ function GetPage($res)
             $data .='</fieldset>
             
             <fieldset style="display:none;" id="record">
-                <legend>ჩანაწერები</legend>
+                <legend>Records</legend>
 	            <span class="hide_said_menu">x</span>
 	                '.show_record($res).'
             </fieldset>
             
             <fieldset style="display:none; width:600px;" id="file">
-                <legend>ფაილი</legend>
+                <legend>File</legend>
 	            <span class="hide_said_menu">x</span>
 	                '.show_file($res).'
             </fieldset></div>
@@ -782,7 +782,7 @@ function show_record($res){
         $str_record_incomming .= '<tr>
                                     <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">'.$record_res_incomming[datetime].'</td>
                             	    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">'.$record_res_incomming[duration].'</td>
-                            	    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;cursor: pointer;" onclick="listen(\''.$record_res_incomming[file_name].'\')"><span>მოსმენა</span></td>
+                            	    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;cursor: pointer;" onclick="listen(\''.$record_res_incomming[file_name].'\')"><span>Listen</span></td>
                         	      </tr>';
     }
     
@@ -804,19 +804,19 @@ function show_record($res){
         $str_record_outgoing .= '<tr>
                                     <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">'.$record_res_outgoing[call_datetime].'</td>
                             	    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">'.$record_res_outgoing[duration].'</td>
-                            	    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;cursor: pointer;" onclick="listen(\''.$record_res_outgoing[file_name].'\')"><span>მოსმენა</span></td>
+                            	    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;cursor: pointer;" onclick="listen(\''.$record_res_outgoing[file_name].'\')"><span>Listen</span></td>
                         	      </tr>';
     }
     
     if($str_record_outgoing == ''){
         $str_record_outgoing = '<tr>
-                                    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;" colspan=3>ჩანაწერი არ მოიძებნა</td>
+                                    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;" colspan=3>No records found</td>
                         	      </tr>';
     }
     
     if($str_record_incomming == ''){
         $str_record_incomming = '<tr>
-                                    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;" colspan=3>ჩანაწერი არ მოიძებნა</td>
+                                    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;" colspan=3>No records found</td>
                         	      </tr>';
     }
     
@@ -827,23 +827,23 @@ function show_record($res){
                     </audio>
                </div>
                <fieldset style="display:block !important; margin-top: 10px;">
-                    <legend>შემომავალი ზარი</legend>
+                    <legend>Incoming calls</legend>
     	            <table style="margin: auto;">
     	               <tr>
-    	                   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">თარიღი</td>
-                    	   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">ხანგძლივობა</td>
-                    	   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">მოსმენა</td>
+    	                   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">Date</td>
+                    	   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">Duration</td>
+                    	   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">Listen</td>
                 	    </tr>
     	                '.$str_record_incomming.'
             	    </table>
 	            </fieldset>
 	            <fieldset style="display:block !important; margin-top: 10px;">
-                    <legend>გამავალი ზარი</legend>
+                    <legend>Outgoing call</legend>
     	            <table style="margin: auto;">
     	               <tr>
-    	                   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">თარიღი</td>
-                    	   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">ხანგძლივობა</td>
-                    	   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">მოსმენა</td>
+    	                   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">Date</td>
+                    	   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">Duration</td>
+                    	   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">Listen</td>
                 	    </tr>
     	                '.$str_record_outgoing.'
             	    </table>
@@ -876,16 +876,16 @@ function show_file($res){
     while ($file_res_incomming = mysql_fetch_assoc($file_incomming)) {
         $str_file_incomming .= '<div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 180px;float:left;">'.$file_res_incomming[file_date].'</div>
                             	<div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 189px;float:left;">'.$file_res_incomming[name].'</div>
-                            	<div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;cursor: pointer;width: 160px;float:left;" onclick="download_file(\''.$file_res_incomming[rand_name].'\')">ჩამოტვირთვა</div>
+                            	<div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;cursor: pointer;width: 160px;float:left;" onclick="download_file(\''.$file_res_incomming[rand_name].'\')">Download</div>
                             	<div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;cursor: pointer;width: 20px;float:left;" onclick="delete_file(\''.$file_res_incomming[id].'\',\'task\')">-</div>';
     }
     $data = '<div style="margin-top: 15px;>
                     <div style="width: 100%; border:1px solid #CCC;float: left;">    	            
-    	                   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 180px;float:left;">თარიღი</div>
-                    	   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 189px;float:left;">დასახელება</div>
-                    	   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 160px;float:left;">ჩამოტვირთვა</div>
+    	                   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 180px;float:left;">Date</div>
+                    	   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 189px;float:left;">Name</div>
+                    	   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 160px;float:left;">Download</div>
                            <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 20px;float:left;">-</div>
-    	                   <div style="text-align: center;vertical-align: middle;float: left;width: 595px;"><button id="upload_file1" style="cursor: pointer;background: none;border: none;width: 100%;height: 25px;padding: 0;margin: 0;">აირჩიეთ ფაილი</button><input style="display:none;" type="file" name="file_name1" id="file_name1"></div>
+    	                   <div style="text-align: center;vertical-align: middle;float: left;width: 595px;"><button id="upload_file1" style="cursor: pointer;background: none;border: none;width: 100%;height: 25px;padding: 0;margin: 0;">Choose</button><input style="display:none;" type="file" name="file_name1" id="file_name1"></div>
                            <div id="paste_files">
                            '.$str_file_incomming.'
                            </div>

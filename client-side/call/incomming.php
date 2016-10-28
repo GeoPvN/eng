@@ -890,7 +890,7 @@
     function LoadDialog_shablon(){
 		var button = {
            		"save": {
-           			text: "განახლება",
+           			text: "Update",
            			id: "shablon_dialog",
            			click: function () {
            			}
@@ -1734,20 +1734,20 @@
 
 <body>
 <div id="tabs">
-<div class="callapp_head">Incoming Communication <span class="callapp_refresh"><img alt="refresh" src="media/images/icons/refresh.png" height="14" width="14">   განახლება</span><hr class="callapp_head_hr"></div>
+<div class="callapp_head">Incoming Communication <span class="callapp_refresh"><img alt="refresh" src="media/images/icons/refresh.png" height="14" width="14">   Update</span><hr class="callapp_head_hr"></div>
 <div class="callapp_tabs">
 
 </div>
 <div class="callapp_filter_show">
 <button id="callapp_show_filter_button">Filter <div id="shh" style="background: url('media/images/icons/show.png'); width: 24px; height: 9px;background-position: 0 0px;margin-top: 5px;float: right;"></div></button>
     <div class="callapp_filter_body" myvar="1">
-    <div style="float: left; width: 292px;">
+    <div style="float: left; width: 310px;">
         <span>
-        <label for="start_date" style="margin-left: 110px;">-დან</label>
+        <label for="start_date" style="margin-left: 110px;">- From</label>
         <input class="callapp_filter_body_span_input" type="text" id="start_date" style="width: 100px;">
         </span>
         <span>
-        <label for="end_date" style="margin-left: 110px;">-მდე</label>
+        <label for="end_date" style="margin-left: 110px;">- Up to</label>
         <input class="callapp_filter_body_span_input" type="text" id="end_date" style="width: 100px;">
         </span>
         <span style="margin-top: 15px;">

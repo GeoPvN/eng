@@ -25,7 +25,7 @@ switch ($action) {
 									   sent_sms.date,
 									   sent_sms.phone,
 									   sent_sms.content,
-									   IF(sent_sms.`status`=1,'გაგზავნილი','არ გაეგზავნა')AS sent_status
+									   IF(sent_sms.`status`=1,'Sended','No Send')AS sent_status
 								FROM `sent_sms`
 								WHERE sent_sms.incomming_call_id=$inc_id");
 
@@ -58,7 +58,7 @@ switch ($action) {
 					if(!ChecksourceExist($source_name, $source_id)){
 						Addsource($source_name,$content);
 					} else {
-						$error = '"' . $source_name . '" უკვე არის სიაში!';
+						$error = '"' . $source_name . '" Is already on the list!';
 					
 					}
 			}else {
@@ -142,22 +142,22 @@ function GetPage($res = '')
 					<legend>SMS</legend>
 			    	<table class="dialog-form-table">
 						<tr>
-							<td style="width: 180px;"><label for="d_number">ადრესატი</label></td>
+							<td style="width: 180px;"><label for="d_number">Recipient</label></td>
 						</tr>
 			    		<tr>
 							<td style="width: 180px;">
-								<span id="errmsg" style="color: red; display: none;">მხოლოდ რიცხვი</span>
+								<span id="errmsg" style="color: red; display: none;">Only the number of</span>
 								<input onkeypress="{if (event.which != 8 &amp;&amp; event.which != 0 &amp;&amp; event.which!=46 &amp;&amp; (event.which < 48 || event.which > 57)) {$(\'#errmsg\').html(\'მხოლოდ რიცხვი\').show().fadeOut(\'slow\'); return false;}}" type="text" id="sms_phone" class="idle" onblur="this.className=\'idle\'" onfocus="this.className=\'activeField\'" value="' . $res['phone'] . '"/>
 							</td>
 							<td>
 								<button id="copy_phone" class="center">copy</button>
 							</td>
 							<td style="width: 69px;">
-								<button id="sms_shablon" class="center">შაბლონი</button>
+								<button id="sms_shablon" class="center">Template</button>
 							</td>
 						</tr>
 						<tr>
-							<td style="width: 180px;"><label for="content">ტექსტი</label></td>
+							<td style="width: 180px;"><label for="content">Text</label></td>
 						</tr>
 					
 						<tr>
@@ -175,7 +175,7 @@ function GetPage($res = '')
 							</td>
 							
 							<td style="width: 69px;">
-								<button id="send_sms" class="center">გაგზავნა</button>
+								<button id="send_sms" class="center">Send</button>
 							</td>
 						</tr>	
 					</table>

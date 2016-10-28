@@ -38,7 +38,7 @@ switch ($action) {
 									   sent_mail.date,
 									   sent_mail.address,
 									   sent_mail.`subject`,
-									   IF(sent_mail.`status`=2,'გაგზავნილი','არ გაიგზავნა')
+									   IF(sent_mail.`status`=2,'Sended','No Sended')
 								FROM sent_mail
 								WHERE sent_mail.incomming_call_id='$inc_id'
 				");
@@ -294,7 +294,7 @@ function GetPage($out_id, $res){
 	    	<table class="dialog-form-table">
 				
 				<tr>
-					<td style="width: 90px; "><label for="d_number">ადრესატი:</label></td>
+					<td style="width: 90px; "><label for="d_number">To:</label></td>
 					<td>
 						<input type="text" style="width: 490px !important;"id="mail_address" class="idle address" onblur="this.className=\'idle address\'" onfocus="this.className=\'activeField address\'" value="' . $res['address'] . '" />
 					</td>
@@ -312,7 +312,7 @@ function GetPage($out_id, $res){
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 90px;"><label for="d_number">სათაური:</label></td>
+					<td style="width: 90px;"><label for="d_number">Subject:</label></td>
 					<td>
 						<input type="text" style="width: 490px !important;" id="mail_text" class="idle address" onblur="this.className=\'idle address\'" onfocus="this.className=\'activeField address\'" value="' . $res['subject'] . '" />
 					</td>
@@ -327,16 +327,16 @@ function GetPage($out_id, $res){
 			</table>
 			<div style="margin-top: 15px;">
                     <div style="width: 100%; border:1px solid #CCC;float: left;">    	            
-    	                   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 180px;float:left;">თარიღი</div>
-                    	   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 189px;float:left;">დასახელება</div>
-                    	   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 160px;float:left;">ჩამოტვირთვა</div>
+    	                   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 180px;float:left;">Date</div>
+                    	   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 189px;float:left;">Name</div>
+                    	   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 160px;float:left;">Download</div>
                            <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 20px;float:left;">-</div>
-    	                   <div style="text-align: center;vertical-align: middle;float: left;width: 595px;"><button id="choose_button_mail" style="cursor: pointer;background: none;border: none;width: 100%;height: 25px;padding: 0;margin: 0;">აირჩიეთ ფაილი</button><input style="display:none;" type="file" name="choose_mail_file" id="choose_mail_file"></div>
+    	                   <div style="text-align: center;vertical-align: middle;float: left;width: 595px;"><button id="choose_button_mail" style="cursor: pointer;background: none;border: none;width: 100%;height: 25px;padding: 0;margin: 0;">Choose</button><input style="display:none;" type="file" name="choose_mail_file" id="choose_mail_file"></div>
                            <div id="paste_files1">';
 	while ($file_body = mysql_fetch_array($file)) {
 	    $data .= '<div id="first_div">'.$file_body[0].'</div>
         	        <div id="two_div">'.$file_body[1].'</div>
-        	        <div id="tree_div" onclick="download_file(\''.$file_body[2].'\',\''.$file_body[1].'\')">ჩამოტვირთვა</div>
+        	        <div id="tree_div" onclick="download_file(\''.$file_body[2].'\',\''.$file_body[1].'\')">Download</div>
         	            <div id="for_div" onclick="delete_file1(\''.$file_body[3].'\')">-</div>';
 	}
                            $data .='</div>
@@ -347,7 +347,7 @@ function GetPage($out_id, $res){
 			<table class="dialog-form-table">
 			<tr>
 					<td style="width: 69px;">
-						<button id="email_shablob" class="center">შაბლონი</button>
+						<button id="email_shablob" class="center">Template</button>
 					</td>		
 					<td>
 						<div class="file-uploader">
@@ -369,7 +369,7 @@ function GetPage($out_id, $res){
 					<td style="width: 69px;">
 					</td>
 					<td style="width: 69px;">
-						<button id="send_email" class="center">გაგზავნა</button>
+						<button id="send_email" class="center">Send</button>
 					</td>
 				</tr>
 			</table>
@@ -393,7 +393,7 @@ function GetShablon() {
         $tbody .= '<tr>
                     <td>'.$req[0].'</td>
                     <td>'.$req[1].'</td>
-                    <td><span onclick="pase_body(\'body_'.$req[0].'\',\''.$req[1].'\')">არჩევა</span> <div id="body_'.$req[0].'" style="display:none;">'.$req[2].'</div></td>
+                    <td><span onclick="pase_body(\'body_'.$req[0].'\',\''.$req[1].'\')">Choose</span> <div id="body_'.$req[0].'" style="display:none;">'.$req[2].'</div></td>
                    </tr>';
     }
     $data = '<div id="dialog-form">
@@ -402,8 +402,8 @@ function GetShablon() {
                         <thead>
                             <tr>
                                 <th>№</th>
-                                <th>სათაური</th>
-                                <th>ქმედება</th>
+                                <th>title</th>
+                                <th>action</th>
                             </tr>
                         </thead>
                         <tbody>

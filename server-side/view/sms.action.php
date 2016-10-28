@@ -56,10 +56,10 @@ switch ($action) {
 	    $rResult = mysql_query("SELECT 	`logs`.`id`,
                         				`logs`.`row_id`,
                         				`logs`.`date`,
-                        				IF(`logs`.`event` = 1,'დამატება',IF(`logs`.actived = 0,'წაშლა','განახლება')) AS `act`,
+                        				IF(`logs`.`event` = 1,'Add',IF(`logs`.actived = 0,'Delete','Update')) AS `act`,
                         				`user_info`.`name`,
 										CASE 
-												WHEN `logs`.`collumn` = 'name' then 'დასახელება'
+												WHEN `logs`.`collumn` = 'name' then 'Name'
 										END AS `colum`,
                         				`logs`.`old_value`,
                         				`logs`.`new_value`
@@ -105,7 +105,7 @@ switch ($action) {
 				}
 								
 			} else {
-				$error = '"' . $department_name . '" უკვე არის სიაში!';
+				$error = '"' . $department_name . '" It is already in the list!';
 				
 			}
 		}
@@ -183,17 +183,17 @@ function GetPage($res = '')
 	$data = '
 	<div id="dialog-form">
 	    <fieldset>
-	    	<legend>ძირითადი ინფორმაცია</legend>
+	    	<legend>Basic information</legend>
 
 	    	<table class="dialog-form-table" style="width: 100%;">
 				<tr>
-					<td style="width: 80px;"><label for="CallType">სახელი</label></td>
+					<td style="width: 80px;"><label for="CallType">Name</label></td>
 					<td>
 						<input style="width: 100%;" type="text" id="name" value="'.$res[name].'">
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 80px;"><label for="CallType">შინაარსი</label></td>
+					<td style="width: 80px;"><label for="CallType">Content</label></td>
 					<td>	
 						<textarea maxlength="150" style="width:100%; resize: vertical;height: 165px;" id="content" name="call_content" cols="300" rows="10">'.$res[message].'</textarea>
 					</td>

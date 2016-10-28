@@ -57,7 +57,7 @@
 	    	}
 			
 			if(param.cat == ""){
-				alert("შეავსეთ პროდუქტის კატეგორია!");
+				alert("Fill in the product category!");
 			}else {
 			    $.ajax({
 			        url: aJaxURL,
@@ -156,10 +156,10 @@
 
 <body>
 <div id="tabs">
-<div class="callapp_head">მომსახურების ცენტრი  / უბანი<hr class="callapp_head_hr"></div>
+<div class="callapp_head">Service Center  / District<hr class="callapp_head_hr"></div>
 <div id="button_area">
-	<button id="add_button">დამატება</button>
-	<button id="delete_button">წაშლა</button>
+	<button id="add_button">Add</button>
+	<button id="delete_button">Delete</button>
 </div>
 <table id="table_right_menu">
 <tr>
@@ -176,28 +176,28 @@
         <tr id="datatable_header">
             <th>ID</th>
             <th style="width: 5%;">№</th>
-            <th style="width: 40%;">მომსახურების ცენტრი</th>
-            <th style="width: 40%;">უბანი</th>
-            <th style="width: 20%;">ფილიალი</th>
+            <th style="width: 40%;">Service Center</th>
+            <th style="width: 40%;">District</th>
+            <th style="width: 20%;">branch</th>
             <th class="check">#</th>
         </tr>
     </thead>
     <thead>
         <tr class="search_header">
             <th class="colum_hidden">
-            	<input type="text" name="search_id" value="ფილტრი" class="search_init" />
+            	<input type="text" name="search_id" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_category" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_category" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_sub_category" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_sub_category" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_sub_category" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_sub_category" value="Filter" class="search_init" />
             </th>
             <th>
             	<div class="callapp_checkbox">
@@ -214,46 +214,46 @@
             <tr id="datatable_header">
                 <th>ID</th>
                 <th style="width: 7%;">№</th>
-                <th style="width: 15%;">ქმედების თარიღი</th>
-                <th style="width: 15%;">მომხმარებელი</th>
-                <th style="width: 15%;">ქმედება</th>
-                <th style="width: 15%;">ველი</th>
-                <th style="width: 15%;">ძველი მნიშვნელობა</th>
-                <th style="width: 20%;">ახალი მნიშვნელობა</th>
+                <th style="width: 15%;">Date</th>
+                <th style="width: 15%;">User Name</th>
+                <th style="width: 15%;">Action</th>
+                <th style="width: 15%;">Fild</th>
+                <th style="width: 15%;">Old value</th>
+                <th style="width: 20%;">New value</th>
             </tr>
         </thead>
         <thead>
             <tr class="search_header">
                 <th class="colum_hidden">
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
             </tr>
         </thead>
     </table>
     
     <!-- jQuery Dialog -->
-    <div id="add-edit-form" class="form-dialog" title="მომსახურების ცენტრი / ფილიალი / უბანი">
+    <div id="add-edit-form" class="form-dialog" title="Service Center / branch / District">
     	<!-- aJax -->
 	</div>
 </body>

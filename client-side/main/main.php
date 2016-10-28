@@ -384,7 +384,7 @@ function incomming_call(){
     	        	}
     	        },
     	        tooltip: {
-                    pointFormat: 'ზარი: <b>{point.y:.0f}</b>'
+                    pointFormat: 'Call: <b>{point.y:.0f}</b>'
                 },
     	        plotOptions: {
     	            line: {
@@ -442,7 +442,7 @@ function outgoing_call(){
     	        	}
     	        },
     	        tooltip: {
-                    pointFormat: 'ზარი: <b>{point.y:.0f}</b>'
+                    pointFormat: 'Call: <b>{point.y:.0f}</b>'
                 },
     	        plotOptions: {
     	            line: {
@@ -561,7 +561,7 @@ function answer_unanswer(){
                     enabled: false
                 },
                 tooltip: {
-                    pointFormat: 'ზარი: <b>{point.y:.0f}</b>'
+                    pointFormat: 'Call: <b>{point.y:.0f}</b>'
                 },
                 series: data.answer_unanswer,
                 plotOptions: {
@@ -611,7 +611,7 @@ function space(){
                 },
                 colors: ['#AD2C2C', '#50AD4B'],
                 title: {
-                    text: 'სულ<br>ადგილი<br>'+data.space.total_space+'GB',
+                    text: 'Full<br>Space<br>'+data.space.total_space+'GB',
                     align: 'center',
                     verticalAlign: 'middle',
                     style: { "color": "#000", "fontSize": "18px", "fontWeight": "bold" },
@@ -662,7 +662,7 @@ function live_operators(){
                 
                 xAxis: {
                     categories: [
-                        'ოპერატორები'
+                        'Operators'
                     ],
                     crosshair: true
                 },
@@ -775,7 +775,7 @@ function go_sl(){
     <div id="box_content">
         <div class="mini_boxs">
         <div class="box_main">
-            <div class="box_head">ოპერატორები LIVE</div>
+            <div class="box_head">Operators LIVE</div>
             <div class="box_body">
                 <div>
                      <div id="operators" style="min-width: 250px; max-width: 250px; height: 150px;margin: 0 auto;"></div>
@@ -784,7 +784,7 @@ function go_sl(){
         </div>
         
         <div class="box_main">
-            <div class="box_head">შემომავალი ზარები</div>
+            <div class="box_head">Incoming Calls</div>
             <div class="box_body">
                 <div>
                     <table class="box_tab_table_content">
@@ -793,7 +793,7 @@ function go_sl(){
                                 <div id="incomming_call" style="width: 180px; height: 145px; margin: 0 auto"></div>
                             </td>
                             <td>
-                                <div class="now_res"><span id="incomming_call_today">0</span><br> დღეს</div>
+                                <div class="now_res"><span id="incomming_call_today">0</span><br> Today</div>
                             </td>
                         </tr>
                     </table>
@@ -802,7 +802,7 @@ function go_sl(){
         </div>
         
         <div class="box_main">
-            <div class="box_head">ნაპასუხები / უპასუხო</div>
+            <div class="box_head">Answered / Unanswered</div>
             <div class="box_body">
                 <div>
                     <table class="box_tab_table_content">
@@ -811,8 +811,8 @@ function go_sl(){
                                 <div id="answer_unanswer" style="width: 160px; height: 146px; margin: 0 auto"></div>
                             </td>
                             <td>
-                                <div class="now_res" style="margin-top: 20px;"><span id="answer">0</span><br> ნაპასუხები</div>
-                                <div class="now_res" style="margin-top: 13px;"><span id="unanswer">0</span><br> უპასუხო</div>
+                                <div class="now_res" style="margin-top: 20px;"><span id="answer">0</span><br> Answered</div>
+                                <div class="now_res" style="margin-top: 13px;"><span id="unanswer">0</span><br> Unanswered</div>
                             </td>
                         </tr>
                     </table>
@@ -821,7 +821,7 @@ function go_sl(){
         </div>
         
         <div class="box_main top_margin_25">
-            <div class="box_head">ზარები LIVE</div>
+            <div class="box_head">Calls LIVE</div>
             <div class="box_body">
                 <div>
                     <table class="box_tab_table_content" style="margin-top: 35px;">
@@ -839,7 +839,7 @@ function go_sl(){
                         </tr>
                         <tr>
                             <td>
-                                <div class="phone_box_hint"><div class="phone_content_box"> <div class="color_box circle_red"></div><div class="name_box">საუბრობს</div> </div><div class="phone_content_box"> <div class="color_box circle_yellow"></div><div class="name_box">რიგშია</div> </div></div>
+                                <div class="phone_box_hint"><div class="phone_content_box"> <div class="color_box circle_red"></div><div class="name_box">Speaks</div> </div><div class="phone_content_box"> <div class="color_box circle_yellow"></div><div class="name_box">Queued</div> </div></div>
                             </td>
                         </tr>
                     </table>
@@ -849,7 +849,7 @@ function go_sl(){
         </div>
         
         <div class="box_main top_margin_25">
-            <div class="box_head">გამავალი ზარები</div>
+            <div class="box_head">Outgoing calls</div>
             <div class="box_body">
                 <div>
                     <table class="box_tab_table_content">
@@ -858,7 +858,7 @@ function go_sl(){
                                 <div id="outgoing_call" style="width: 180px; height: 145px; margin: 0 auto"></div>
                             </td>
                             <td>
-                                <div class="now_res"><span id="outgoing_call_day">0</span><br> დღეს</div>
+                                <div class="now_res"><span id="outgoing_call_day">0</span><br> Today</div>
                             </td>
                         </tr>
                     </table>
@@ -876,21 +876,21 @@ function go_sl(){
         </div>
         
         <div class="box_main top_margin_25">
-            <div class="box_head">სიახლე</div>
+            <div class="box_head">News</div>
             <div class="box_body">
                 <div>
                     <table class="box_tab_table">
-                        <tr><td>პერსონალური</td><!--  td class="gray_blue">სულ</td--></tr>
+                        <tr><td>Personal</td><!--  td class="gray_blue">სულ</td--></tr>
                     </table>
                     <table class="box_tab_table_content">
                         <tr>
                             <td>
                                 <div class="circle circle_yellow" id="news_now">0</div>
-                                <div class="box_tab_table_content_text">წაუკითხავი</div>
+                                <div class="box_tab_table_content_text">Unread</div>
                             </td>
                             <td>
                                 <div class="circle circle_blue" id="news_arch">0</div>
-                                <div class="box_tab_table_content_text">არქივში</div>
+                                <div class="box_tab_table_content_text">Archive</div>
                             </td>
                         </tr>
                     </table>
@@ -898,7 +898,7 @@ function go_sl(){
                         <tr>
                             <td>
                                 <div class="circle circle_green">0</div>
-                                <div class="box_tab_table_content_text">წაკითხული</div>
+                                <div class="box_tab_table_content_text">Read</div>
                             </td>
                         </tr>
                     </table>
@@ -907,7 +907,7 @@ function go_sl(){
         </div>
         
         <div class="box_main top_margin_25">
-            <div class="box_head">შიდა ზარები</div>
+            <div class="box_head">Internal Calls</div>
             <div class="box_body">
                 <div>
                     <table class="box_tab_table_content">
@@ -916,7 +916,7 @@ function go_sl(){
                                 <div id="inner_call" style="width: 180px; height: 145px; margin: 0 auto"></div>
                             </td>
                             <td>
-                                <div class="now_res"><span id="inner_call_day">0</span><br> დღეს</div>
+                                <div class="now_res"><span id="inner_call_day">0</span><br> Today</div>
                             </td>
                         </tr>
                     </table>
@@ -925,7 +925,7 @@ function go_sl(){
         </div>
         
         <div class="box_main top_margin_25">
-            <div class="box_head">ლოდინის საშ ხან-ბა გათიშვამდე</div>
+            <div class="box_head">AVG waiting time before hangup</div>
             <div class="box_body">
                 <div id="duration">
                     <div class="content_duration"><div class="total_duration">00:00</div><div class="min_duration"><div class="min_icon"></div><div class="min_value">00:00</div></div><div class="max_duration"><div class="max_icon"></div><div class="max_value">00:00</div></div> </div>
@@ -934,21 +934,21 @@ function go_sl(){
         </div>
         
         <div class="box_main top_margin_25">
-            <div class="box_head">დავალებები</div>
+            <div class="box_head">Tasks</div>
             <div class="box_body">
                 <div>
                     <table class="box_tab_table">
-                        <tr><td>პერსონალური</td><td class="gray_blue">სულ</td></tr>
+                        <tr><td>Personal</td><td class="gray_blue">All</td></tr>
                     </table>
                     <table class="box_tab_table_content">
                         <tr>
                             <td>
                                 <div class="circle circle_yellow" id="task_new">0</div>
-                                <div class="box_tab_table_content_text">ახალი</div>
+                                <div class="box_tab_table_content_text">New</div>
                             </td>
                             <td>
                                 <div class="circle circle_blue" id="task_done">0</div>
-                                <div class="box_tab_table_content_text">მოგვარებულია</div>
+                                <div class="box_tab_table_content_text">Resolved</div>
                             </td>
                         </tr>
                     </table>
@@ -956,11 +956,11 @@ function go_sl(){
                         <tr>
                             <td>
                                 <div class="circle circle_green" id="task_proces">0</div>
-                                <div class="box_tab_table_content_text" style="margin-top: 4px;">გარკვევის პროცესშია</div>
+                                <div class="box_tab_table_content_text" style="margin-top: 4px;">In Progres</div>
                             </td>
                             <td>
                                 <div class="circle circle_red" id="task_delete">0</div>
-                                <div class="box_tab_table_content_text">გაუქმებულია</div>
+                                <div class="box_tab_table_content_text">Cancelled</div>
                             </td>
                         </tr>
                     </table>
@@ -981,7 +981,7 @@ function go_sl(){
         </div>
         
         <div class="box_main top_margin_25">
-            <div class="box_head">თავისუფალი ადგილი დისკზე</div>
+            <div class="box_head">Free hard disk space</div>
             <div class="box_body">
                 <div>
                     <div id="space" style="min-width: 250px; height: 150px; max-width: 250px;margin: 0 auto"></div>

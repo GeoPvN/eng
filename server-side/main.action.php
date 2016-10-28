@@ -73,13 +73,13 @@ switch ($action) {
         $data['task'] = array('task_new'=>$task_new_count[0],'task_proces'=>$task_proces_count[0],'task_done'=>$task_done_count[0],'task_delete'=>$task_delete_count);
         break;
     case 'answer_unanswer':
-        $answer_unanswer = mysql_query("  SELECT 'ნაპასუხები' AS `answer`,COUNT(*) AS `answer_count`
+        $answer_unanswer = mysql_query("  SELECT 'Answered' AS `answer`,COUNT(*) AS `answer_count`
                                                             FROM `asterisk_incomming`
                                                             WHERE disconnect_cause != 'ABANDON'
                                                             AND   NOT ISNULL(disconnect_cause)
                                                             AND   DATE(`call_datetime`) = DATE(NOW())
                                                             UNION ALL
-                                                            SELECT 'უპასუხო' AS `unanswer`,COUNT(*) AS `answer_count`
+                                                            SELECT 'Unanswered' AS `unanswer`,COUNT(*) AS `answer_count`
                                                             FROM `asterisk_incomming`
                                                             WHERE disconnect_cause = 'ABANDON'
                                                             
@@ -88,20 +88,20 @@ switch ($action) {
             $count[] = intval($res[answer_count]);
         }
         
-        $answer_unanswer_today = mysql_query("  SELECT 'ნაპასუხები' AS `answer`,COUNT(*) AS `answer_count`
+        $answer_unanswer_today = mysql_query("  SELECT 'Answered' AS `answer`,COUNT(*) AS `answer_count`
                                                 FROM `asterisk_incomming`
                                                 WHERE disconnect_cause != 'ABANDON'
                                                 AND    NOT ISNULL(disconnect_cause)
                                                 AND   DATE(`call_datetime`) = DATE(NOW())
                                                 UNION ALL
-                                                SELECT 'უპასუხო' AS `unanswer`,COUNT(*) AS `answer_count`
+                                                SELECT 'Unanswered' AS `unanswer`,COUNT(*) AS `answer_count`
                                                 FROM `asterisk_incomming`
                                                 WHERE disconnect_cause = 'ABANDON'
                                                 AND   DATE(`call_datetime`) = DATE(NOW())");
         while($res_today = mysql_fetch_assoc($answer_unanswer_today)){
             $count_today[] = intval($res_today[answer_count]);
         }
-        $data['answer_unanswer'][] = array('name'=>'ზარი','data'=>array(array('ნაპასუხები', $count[0]),array('უპასუხო', $count[1])));
+        $data['answer_unanswer'][] = array('name'=>'Call','data'=>array(array('Answered', $count[0]),array('Unanswered', $count[1])));
         $data['answer_unanswer_today'] = array('ans'=>$count_today[0],'unans'=>$count_today[1]);
         break;
     case 'sl':
@@ -144,7 +144,7 @@ switch ($action) {
                                                         SUBSTR(free_space,1,2) AS `free_space`
                                                 FROM    `hdd`"));
         $data['space']['total_space'] = $space['total_space'];
-        $data['space']['array_space'][]  = array('type'=>'pie','name'=>'ადგილი','innerSize'=>'100%','data'=>array(array('დაკავებული', intval($space['busy_space']) ),array('თავისუფალი', intval($space['free_space']) )));
+        $data['space']['array_space'][]  = array('type'=>'pie','name'=>'Place','innerSize'=>'100%','data'=>array(array('Used', intval($space['busy_space']) ),array('Free', intval($space['free_space']) )));
         break;
     case 'live_operators':
         $in_busy = mysql_fetch_assoc(mysql_query("  SELECT COUNT(*) AS `in_busy`
@@ -152,9 +152,9 @@ switch ($action) {
                                                     WHERE DATE(asterisk_incomming.datetime) = DATE(NOW())
                                                     AND ISNULL(asterisk_incomming.disconnect_cause)
                                                     AND NOT ISNULL(dst_extension)"));
-        $data['live_operators'][] = array('name'=>'თავის','data'=>array((8-intval($in_busy[in_busy]))));
-        $data['live_operators'][] = array('name'=>'დაკავ','data'=>array(intval($in_busy[in_busy])));
-        $data['live_operators'][] = array('name'=>'გამორთ','data'=>array(0));
+        $data['live_operators'][] = array('name'=>'Free','data'=>array((8-intval($in_busy[in_busy]))));
+        $data['live_operators'][] = array('name'=>'Busy','data'=>array(intval($in_busy[in_busy])));
+        $data['live_operators'][] = array('name'=>'OFF','data'=>array(0));
         break;
     case 'live_calls':
         $in_talk = mysql_fetch_assoc(mysql_query("  SELECT COUNT(*) AS `in_talk`
@@ -182,10 +182,10 @@ switch ($action) {
                                     GROUP BY asterisk_incomming.user_id");
         $ope = '<div class="row header">
                   <div class="cell">
-                    ოპერატორი
+                    operator
                   </div>
                   <div class="cell" style="width: 95px;">
-                    ნაპასუხები ზარი
+                    Answered Call
                   </div>
                   
                 </div>';
@@ -213,13 +213,13 @@ switch ($action) {
                                         GROUP BY asterisk_incomming.user_id");
         $ope_avg = '<div class="row header">
                       <div class="cell">
-                        ოპერატორი
+                        operator
                       </div>
                       <div class="cell" style="width: 75px;">
-                        საუბ. ხ-ბა.
+                        duration
                       </div>
                       <div class="cell" style="width: 81px;">
-                        საუბ. საშ. ხ-ბა
+                       AVG duration
                       </div>
                     </div>';
         while ($operator_avg_res = mysql_fetch_assoc($operator_avg)){

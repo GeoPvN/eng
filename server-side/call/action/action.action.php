@@ -160,11 +160,11 @@ function GetPage($res='', $number)
 	<div id="dialog-form">
 			<div style="float: left; width: 580px;">	
 				<fieldset >
-			    	<legend>ინფო</legend>
+			    	<legend>Info</legend>
 					<fieldset float:left;">
 				    	<table width="100%" class="dialog-form-table">
 							<tr>
-								<td>დასახელება</td>
+								<td>Name</td>
 								<td style="width:20px;></td>
 								
 								<td colspan "5">
@@ -172,21 +172,21 @@ function GetPage($res='', $number)
 								</td>
 							</tr>
 							<tr>
-								<td style="width: 150px;"><label for="d_number">პერიოდი</label></td>
+								<td style="width: 150px;"><label for="d_number">Period</label></td>
 								<td>
 									<input type="text" id="start_date" class="idle" onblur="this.className=\'idle\'" value="' . $res['start_date']. '" />
 								</td>
-								<td style="width: 150px;"><label for="d_number">-დან</label></td>
+								<td style="width: 150px;"><label for="d_number">-From</label></td>
 								<td>
 									<input type="text" id="end_date" class="idle" onblur="this.className=\'idle\'"  value="' . $res['end_date']. '"  />
 								</td>
-								<td style="width: 150px;"><label for="d_number">-მდე</label></td>
+								<td style="width: 150px;"><label for="d_number">-Up to</label></td>
 							</tr>
 						</table>
 									
 					</fieldset>
 					<fieldset style="float: left; width: 536px;">
-						<legend>აღწერა</legend>
+						<legend>Description</legend>
 				    		<table width="100%" class="dialog-form-table">
 							<tr>
 								<td colspan="5">
@@ -200,7 +200,7 @@ function GetPage($res='', $number)
 				</fieldset>
 										
 				<fieldset style="width: 440px; float: right;">
-						<legend>მიმაგრებული ფაილები</legend>				
+						<legend>Attachments</legend>				
 				 
 		 '.show_file($res).'
  				
@@ -233,16 +233,16 @@ function show_file($res){
     while ($file_res_incomming = mysql_fetch_assoc($file_incomming)) {
         $str_file_incomming .= '<div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 180px;float:left;">'.$file_res_incomming[file_date].'</div>
                             	<div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 189px;float:left;">'.$file_res_incomming[name].'</div>
-                            	<div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;cursor: pointer;width: 160px;float:left;" onclick="download_file(\''.$file_res_incomming[rand_name].'\')">ჩამოტვირთვა</div>
+                            	<div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;cursor: pointer;width: 160px;float:left;" onclick="download_file(\''.$file_res_incomming[rand_name].'\')">Download</div>
                             	<div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;cursor: pointer;width: 20px;float:left;" onclick="delete_file(\''.$file_res_incomming[id].'\')">-</div>';
     }
     $data = '<div style="margin-top: 15px;">
                     <div style="width: 100%;  border:1px solid #CCC;float: left;">    	            
-    	                   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 180px;float:left;">თარიღი</div>
-                    	   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 189px;float:left;">დასახელება</div>
-                    	   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 160px;float:left;">ჩამოტვირთვა</div>
+    	                   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 180px;float:left;">Date</div>
+                    	   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 189px;float:left;">Name</div>
+                    	   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 160px;float:left;">Download</div>
                            <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 20px;float:left;">-</div>
-    	                   <div style="text-align: center;vertical-align: middle;float: left;width: 595px;"><button id="upload_file" style="cursor: pointer;background: none;border: none;width: 100%;height: 25px;padding: 0;margin: 0;">აირჩიეთ ფაილი</button><input style="display:none;" type="file" name="file_name" id="file_name"></div>
+    	                   <div style="text-align: center;vertical-align: middle;float: left;width: 595px;"><button id="upload_file" style="cursor: pointer;background: none;border: none;width: 100%;height: 25px;padding: 0;margin: 0;">Choose</button><input style="display:none;" type="file" name="file_name" id="file_name"></div>
                            <div id="paste_files">
                            '.$str_file_incomming.'
                            </div>

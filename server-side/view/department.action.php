@@ -55,10 +55,10 @@ switch ($action) {
 	    $rResult = mysql_query("SELECT 	`logs`.`id`,
                         				`logs`.`row_id`,
                         				`logs`.`date`,
-                        				IF(`logs`.`event` = 1,'დამატება',IF(`logs`.actived = 0,'წაშლა','განახლება')) AS `act`,
+                        				IF(`logs`.`event` = 1,'Add',IF(`logs`.actived = 0,'Delete','Update')) AS `act`,
                         				`user_info`.`name`,
 										CASE 
-												WHEN `logs`.`collumn` = 'name' then 'დასახელება'
+												WHEN `logs`.`collumn` = 'name' then 'Name'
 										END AS `colum`,
                         				`logs`.`old_value`,
                         				`logs`.`new_value`
@@ -104,7 +104,7 @@ switch ($action) {
 				}
 								
 			} else {
-				$error = '"' . $department_name . '" უკვე არის სიაში!';
+				$error = '"' . $department_name . '" It is already in the list!';
 				
 			}
 		}
@@ -180,11 +180,11 @@ function GetPage($res = '')
 	$data = '
 	<div id="dialog-form">
 	    <fieldset>
-	    	<legend>ძირითადი ინფორმაცია</legend>
+	    	<legend>Basic Information</legend>
 
 	    	<table class="dialog-form-table">
 				<tr>
-					<td style="width: 170px;"><label for="CallType">სახელი</label></td>
+					<td style="width: 170px;"><label for="CallType">Name</label></td>
 					<td>
 						<input type="text" id="name" class="idle address" onblur="this.className=\'idle address\'" onfocus="this.className=\'activeField address\'" value="' . $res['name'] . '" />
 					</td>

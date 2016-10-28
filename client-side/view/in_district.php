@@ -39,7 +39,7 @@
 	    	param.name		= $("#name").val();
 	    	
 			if(param.name == ""){
-				alert("შეავსეთ ველი!");
+				alert("fill  a gap!");
 			}else {
 			    $.ajax({
 			        url: aJaxURL,
@@ -82,10 +82,10 @@
 
 <body>
 <div id="tabs">
-<div class="callapp_head">უბანი<hr class="callapp_head_hr"></div>
+<div class="callapp_head">District<hr class="callapp_head_hr"></div>
 <div id="button_area">
-	<button id="add_button">დამატება</button>
-	<button id="delete_button">წაშლა</button>
+	<button id="add_button">Add</button>
+	<button id="delete_button">Delete</button>
 </div>
 <table id="table_right_menu">
 <tr>
@@ -101,19 +101,19 @@
         <thead>
             <tr id="datatable_header">
                 <th>ID</th>
-                <th style="width: 100%;">უბანი</th>
+                <th style="width: 100%;">District</th>
             	<th class="check">#</th>
             </tr>
         </thead>
         <thead>
             <tr class="search_header">
                 <th class="colum_hidden">
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
-              <th>
+                <th>
                 	<div class="callapp_checkbox">
                         <input type="checkbox" id="check-all" name="check-all" />
                         <label for="check-all"></label>
@@ -125,7 +125,7 @@
 
     
     <!-- jQuery Dialog -->
-    <div id="add-edit-form" class="form-dialog" title="უბანი">
+    <div id="add-edit-form" class="form-dialog" title="District">
     	<!-- aJax -->
 	</div>
 </body>

@@ -69,7 +69,7 @@ switch ($action) {
 					if(!ChecksourceExist($source_name, $source_id)){
 						Addsource($source_name,$content);
 					} else {
-						$error = '"' . $source_name . '" უკვე არის სიაში!';
+						$error = '"' . $source_name . '" It is already in the list!';
 					}
 			}else {
 				Savesource($source_id, $source_name,$content);
@@ -229,7 +229,7 @@ function GetPage($res = ''){
 	<div id="dialog-form">
 	   		<table class="dialog-form-table">
 				<tr>
-					<td style="width: 90px;"><label for="d_number">სათაური:</label></td>
+					<td style="width: 90px;"><label for="d_number">Subject:</label></td>
 					<td>
 						<input type="text" style="width: 443px !important;" id="SUBJECT" class="idle address" onblur="this.className=\'idle address\'" onfocus="this.className=\'activeField address\'" value="' . $res['subject'] . '" />
 					</td>

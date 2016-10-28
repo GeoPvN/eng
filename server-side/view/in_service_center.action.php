@@ -70,11 +70,11 @@ switch ($action) {
                         				`logs`.`row_id`,
                         				`logs`.`date`,
                                         `user_info`.`name`,
-                        				IF(`logs`.`event` = 1,'დამატება',IF(`logs`.actived = 0,'წაშლა','განახლება')) AS `act`,
+                        				IF(`logs`.`event` = 1,'Add',IF(`logs`.actived = 0,'Delete','Update')) AS `act`,
 										CASE 
-												WHEN `logs`.`collumn` = 'name' then 'დასახელება'
-                                                WHEN `logs`.`collumn` = 'parent' then 'უბანი'
-												WHEN `logs`.`collumn` = 'branch' then 'ფილიალი'
+												WHEN `logs`.`collumn` = 'name' then 'Name'
+                                                WHEN `logs`.`collumn` = 'parent' then 'District'
+												WHEN `logs`.`collumn` = 'branch' then Branch'
 										END AS `colum`,
                         				`logs`.`old_value`,
                         				`logs`.`new_value`
@@ -117,7 +117,7 @@ switch ($action) {
 			if(!CheckCategoryExist($cat_name, $par_id)){
 				AddCategory($cat_name, $par_id, $branch_id);
 			} else {
-				$error = '"' . $cat_name . '" უკვე არის სიაში!';
+				$error = '"' . $cat_name . '" It is already in the list!';
 			}
 		}else{
 			SaveCategory($cat_id, $cat_name, $par_id, $branch_id);
@@ -240,29 +240,29 @@ function GetPage($res = '')
 	$data = '
 	<div id="dialog-form">
 	    <fieldset>
-	    	<legend>ძირითადი ინფორმაცია</legend>
+	    	<legend>Basic information</legend>
 	    	
 	    	<table class="dialog-form-table">
 	            <tr>
-					<td style="width: 170px;"><label for="parent_id">უბანი</label></td>
+					<td style="width: 170px;"><label for="parent_id">District</label></td>
 					<td>
 						<input type="checkbox" id="ubani" '.(($res[parent_id]>0)?'checked':"").'>
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 170px;"><label for="category">ქვე კატეგორია</label></td>
+					<td style="width: 170px;"><label for="category">Sub Category</label></td>
 					<td>
 						<input type="text" id="category" class="idle address" onblur="this.className=\'idle address\'" onfocus="this.className=\'activeField address\'" value="' . $res['name'] . '" />
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 170px;"><label for="parent_id">კატეგორია</label></td>
+					<td style="width: 170px;"><label for="parent_id">Category</label></td>
 					<td>
 						<select id="parent_id" class="idls large">' . Get_Category($res['parent_id'])  . '</select>
 					</td>
 				</tr>
 				<tr id="br_show">
-					<td style="width: 170px;"><label for="parent_id">ფილიალი</label></td>
+					<td style="width: 170px;"><label for="parent_id">branch</label></td>
 					<td>
 						<select id="branch_id" class="idls large">' . branch($res['branch_id'])  . '</select>
 					</td>

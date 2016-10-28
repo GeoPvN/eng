@@ -65,11 +65,11 @@ switch ($action) {
                         				`logs`.`row_id`,
                         				`logs`.`date`,
                                     	`user_info`.`name`,
-                        				IF(`logs`.`event` = 1,'დამატება',IF(`logs`.actived = 0,'წაშლა','განახლება')) AS `act`,
+                        				IF(`logs`.`event` = 1,'Add',IF(`logs`.actived = 0,'Delete','Update')) AS `act`,
 										CASE 
-												WHEN `logs`.`collumn` = 'name' then 'კატეგორია'
-                                                WHEN `logs`.`collumn` = 'parent' then 'ქვე-კატეგორია'
-                                                WHEN `logs`.`collumn` = 'client' then 'კლიენტი'
+												WHEN `logs`.`collumn` = 'name' then 'Category'
+                                                WHEN `logs`.`collumn` = 'parent' then 'Sub-Category'
+                                                WHEN `logs`.`collumn` = 'client' then 'Client'
 										END AS `colum`,
                         				`logs`.`old_value`,
                         				`logs`.`new_value`
@@ -110,7 +110,7 @@ switch ($action) {
 			if(!CheckCategoryExist($cat_name, $par_id)){
 				AddCategory($cat_name, $par_id);
 			} else {
-				$error = '"' . $cat_name . '" უკვე არის სიაში!';
+				$error = '"' . $cat_name . '" It is already in the list!';
 			}
 		}else{
 			SaveCategory($cat_id, $cat_name, $par_id);
@@ -234,23 +234,23 @@ function GetPage($res = '')
 	$data = '
 	<div id="dialog-form">
 	    <fieldset>
-	    	<legend>ძირითადი ინფორმაცია</legend>
+	    	<legend>Basic Information</legend>
 	    	
 	    	<table class="dialog-form-table">
 				<tr>
-					<td style="width: 170px;"><label for="category">ქვე კატეგორია</label></td>
+					<td style="width: 170px;"><label for="category">Sub Category</label></td>
 					<td>
 						<input type="text" id="category" class="idle address" onblur="this.className=\'idle address\'" onfocus="this.className=\'activeField address\'" value="' . $res['name'] . '" />
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 170px;"><label for="parent_id">კატეგორია</label></td>
+					<td style="width: 170px;"><label for="parent_id">Category</label></td>
 					<td>
 						<select id="parent_id" class="idls large">' . Get_Category($res['parent_id'])  . '</select>
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 170px;"><label for="client_id">ორგანიზაცია</label></td>
+					<td style="width: 170px;"><label for="client_id">Organization</label></td>
 					<td>
 						<select id="client_id" class="idls large">' . Get_Client($res['client_id'])  . '</select>
 					</td>

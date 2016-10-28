@@ -1329,13 +1329,13 @@ if(fName=='add-edit-form-task'){
 
 <body>
 <div id="tabs">
-<div class="callapp_head">გამავალი კომუნიკაცია<span class="callapp_refresh"><img alt="refresh" src="media/images/icons/refresh.png" height="14" width="14">   განახლება</span><hr class="callapp_head_hr"></div>
+<div class="callapp_head">Outgoing communications<span class="callapp_refresh"><img alt="refresh" src="media/images/icons/refresh.png" height="14" width="14">  Update</span><hr class="callapp_head_hr"></div>
 
 <div class="callapp_filter_show">
 <span>
 <select id="task_type" style="width: 120px;">
 <!-- <option value="1">გამავალი</option> -->
-<option value="2">დავალება</option>
+<option value="2">Task</option>
 </select>
 </span>
 <span>
@@ -1343,15 +1343,15 @@ if(fName=='add-edit-form-task'){
 </select>
 </span>
 
-<button id="callapp_show_filter_button" style="float: right;">ფილტრი v</button>
+<button id="callapp_show_filter_button" style="float: right;">Filter v</button>
     <div class="callapp_filter_body" myvar="0">
     <div style="float: right; width: 60%;">
         <span>
-        <label for="start_date" style="margin-left: 90px;top: 4px;position: relative;">-დან</label>
+        <label for="start_date" style="margin-left: 90px;top: 4px;position: relative;">-From</label>
         <input class="callapp_filter_body_span_input" type="text" id="start_date" style="width: 80px;">
         </span>
         <span>
-        <label for="end_date" style="margin-left: 90px;top: 4px;position: relative;">-მდე</label>
+        <label for="end_date" style="margin-left: 90px;top: 4px;position: relative;">-Up to</label>
         <input class="callapp_filter_body_span_input" type="text" id="end_date" style="width: 80px;">
         </span>
         
@@ -1360,7 +1360,7 @@ if(fName=='add-edit-form-task'){
         </select>
         </span>
         <span>
-        <button id="fillter" style="padding: 2px 4px 4px 4px; border: 1px solid; margin: 0;">გაფილტვრა</button>
+        <button id="fillter" style="padding: 2px 4px 4px 4px; border: 1px solid; margin: 0;">Filtering</button>
         </span>
         
     </div>
@@ -1463,55 +1463,55 @@ if(fName=='add-edit-form-task'){
         </tr>
     </thead>
 </table>
-<button id="add_button_task" style="position: absolute;top: 95px;margin: 0px;border: 1px solid #A3D0E4;background: #E6F2F8;color: #555555;font-weight: normal;">ახალი დავალება</button>
-<button id="delete_button_task" style="position: absolute;top: 95px;left: 250px;margin: 0px;border: 1px solid #A3D0E4;background: #E6F2F8;color: #555555;font-weight: normal;">წაშლა</button>
+<button id="add_button_task" style="position: absolute;top: 95px;margin: 0px;border: 1px solid #A3D0E4;background: #E6F2F8;color: #555555;font-weight: normal;">New Task</button>
+<button id="delete_button_task" style="position: absolute;top: 95px;left: 250px;margin: 0px;border: 1px solid #A3D0E4;background: #E6F2F8;color: #555555;font-weight: normal;">Delete</button>
 <table class="display" id="table_task" style="display: none;">
     <thead>
         <tr id="datatable_header">
             <th>ID</th>
             <th style="width: 30px;">№</th>
-            <th style="width: 50%;">ფორმირების თარიღი</th>
-            <th style="width: 50%;">დასაწყისი</th>
-            <th style="width: 50%;">დასასრული</th>
-            <th style="width: 50%;">დამფორმირებელი</th>
-            <th style="width: 50%;">აბონენტი</th>
-            <th style="width: 50%;">აბონენტის №</th>
-            <th style="width: 50%;">პასუხისმგებელი პირი</th>
-            <th style="width: 50%;">სტატუსი</th>
+            <th style="width: 50%;">Date</th>
+            <th style="width: 50%;">Start</th>
+            <th style="width: 50%;">End</th>
+            <th style="width: 50%;">User Name</th>
+            <th style="width: 50%;">Customers</th>
+            <th style="width: 50%;">Customers №</th>
+            <th style="width: 50%;">Responsible Person</th>
+            <th style="width: 50%;">Status</th>
             <th class="check" style="width: 30px;">&nbsp;</th>
         </tr>
     </thead>
     <thead>
         <tr class="search_header">
             <th class="colum_hidden">
-        	   <input type="text" name="search_id" value="ფილტრი" class="search_init" />
+        	   <input type="text" name="search_id" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>    
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>            
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th> 
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>    
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>
             <th>
-            	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+            	<input type="text" name="search_number" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>    
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>
             <th>
-            	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+            	<input type="text" name="search_number" value="Filter" class="search_init" />
             </th>
             <th style="border-right: 1px solid #E6E6E6 !important;">
             	<div class="callapp_checkbox">
@@ -1527,39 +1527,39 @@ if(fName=='add-edit-form-task'){
             <tr id="datatable_header">
                 <th>ID</th>
                 <th style="width: 7%;">№</th>
-                <th style="width: 15%;">ქმედების თარიღი</th>
-                <th style="width: 15%;">ქმედება</th>
-                <th style="width: 15%;">მომხმარებელი</th>
-                <th style="width: 15%;">ველი</th>
-                <th style="width: 15%;">ძველი მნიშვნელობა</th>
-                <th style="width: 20%;">ახალი მნიშვნელობა</th>
+                <th style="width: 15%;">Action Date</th>
+                <th style="width: 15%;">Action</th>
+                <th style="width: 15%;">Users</th>
+                <th style="width: 15%;">column</th>
+                <th style="width: 15%;">Old Value</th>
+                <th style="width: 20%;">New Value</th>
             </tr>
         </thead>
         <thead>
             <tr class="search_header">
                 <th class="colum_hidden">
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
             </tr>
         </thead>
@@ -1602,28 +1602,28 @@ if(fName=='add-edit-form-task'){
 }
 </style>
 <div id="flesh_panel">
-<div class="callapp_head" style="text-align: right;"><img id="show_flesh_panel" title="პანელის გადიდება" alt="arrow" src="media/images/icons/arrow_left.png" height="18" width="18">ქოლ-ცენტრი<hr class="callapp_head_hr"></div>
+<div class="callapp_head" style="text-align: right;"><img id="show_flesh_panel" title="პანელის გადიდება" alt="arrow" src="media/images/icons/arrow_left.png" height="18" width="18">Call Centre<hr class="callapp_head_hr"></div>
 <table id="flesh_panel_table_mini">
 </table>
 </div>
 
 <!-- jQuery Dialog -->
-<div  id="add-edit-form" class="form-dialog" title="გამავალი კომუნიკაცია">
+<div  id="add-edit-form" class="form-dialog" title="Outgoing communications">
 </div>
 <!-- jQuery Dialog -->
-<div  id="add-edit-form-sms" class="form-dialog" title="ახალი SMS">
+<div  id="add-edit-form-sms" class="form-dialog" title="New SMS">
 </div>
 <!-- jQuery Dialog -->
-<div  id="add-edit-form-mail" class="form-dialog" title="ახალი E-mail">
+<div  id="add-edit-form-mail" class="form-dialog" title="New E-mail">
 </div>
 <!-- jQuery Dialog -->
-<div  id="add-edit-form-mail-shablon" class="form-dialog" title="E-mail შაბლონი">
+<div  id="add-edit-form-mail-shablon" class="form-dialog" title="E-mail template">
 </div>
 <!-- jQuery Dialog -->
-<div  id="add-edit-form-actived" class="form-dialog" title="პირის აქტივაცია">
+<div  id="add-edit-form-actived" class="form-dialog" title="Activation person">
 </div>
 <!-- jQuery Dialog -->
-<div  id="add-edit-form-task" class="form-dialog" title="დავალება">
+<div  id="add-edit-form-task" class="form-dialog" title="Task">
 </div>
 
 </body>

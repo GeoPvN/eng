@@ -88,7 +88,7 @@ switch ($action) {
 			if($CheckUser){
 				AddWorker($user_id, $name, $tin, $position, $address, $image, $password, $home_number, $mobile_number, $comment,  $user, $userpassword, $group_permission, $dep_id, $service_center_id, $branch_id);
 				}else{
-					$error = "მომხმარებელი ასეთი სახელით  უკვე არსებობს\nაირჩიეთ სხვა მომხმარებლის სახელი";
+					$error = "User name already exists\nPlease choose another name";
 				}
 		}else{
 			SaveWorker($persons_id, $user_id, $name, $tin, $position, $address, $image, $password, $home_number, $mobile_number, $comment,  $user, $userpassword, $group_permission, $dep_id, $service_center_id, $branch_id);
@@ -461,71 +461,71 @@ function GetPage($res = '')
 	$data = '
 	<div id="dialog-form">
 	    <fieldset>
-	    	<legend>ძირითადი ინფორმაცია</legend>
+	    	<legend>Basic information</legend>
 
 	    	<table class="dialog-form-table">
 				<tr>
-					<td style="width: 170px;"><label for="name">სახელი, გვარი</label></td>
+					<td style="width: 170px;"><label for="name">Name, Surname</label></td>
 					<td>
 						<input type="text" id="name" class="idle" onblur="this.className=\'idle\'" onfocus="this.className=\'activeField\'" value="' . $res['name'] . '" />
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 170px;"><label for="ext">ექსთენშენი</label></td>
+					<td style="width: 170px;"><label for="ext">Extention</label></td>
 					<td>
 						<input type="text" id="ext" class="idle" onblur="this.className=\'idle\'" onfocus="this.className=\'activeField\'" value="' . $res['ext'] . '" />
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 170px;"><label for="tin">პირადი ნომერი</label></td>
+					<td style="width: 170px;"><label for="tin">Tin</label></td>
 					<td>
 						<input type="text" id="tin" class="idle user_id" onblur="this.className=\'idle user_id\'" onfocus="this.className=\'activeField user_id\'" value="' . $res['tin'] . '" />
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 170px;"><label for="position">თანამდებობა</label></td>
+					<td style="width: 170px;"><label for="position">Position</label></td>
 					<td>
 						<select id="position" class="idls">' . GetPosition($res['position']) . '</select>
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 170px;"><label for="dep_id">დეპარტამენტი</label></td>
+					<td style="width: 170px;"><label for="dep_id">Department</label></td>
 					<td>
 						<select id="dep_id" class="idls">' . GetDepart($res['dep_id']) . '</select>
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 170px;"><label for="branch_id">ფილიალი</label></td>
+					<td style="width: 170px;"><label for="branch_id">Branch</label></td>
 					<td>
 						<select id="branch_id" class="idls" style="width: 230px;">' . GetBranch($res['branch_id']) . '</select>
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 170px;"><label for="service_center_id">მომსახ. ცენტრ</label></td>
+					<td style="width: 170px;"><label for="service_center_id">Services Center</label></td>
 					<td>
 						<select id="service_center_id" class="idls" style="width: 230px;">' . GetServiceCenter($res['service_center_id'],$res['branch_id']) . '</select>
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 170px;"><label for="address">მისამართი</label></td>
+					<td style="width: 170px;"><label for="address">Address</label></td>
 					<td>
 						<input type="text" id="address" class="idle address" onblur="this.className=\'idle address\'" onfocus="this.className=\'activeField address\'" value="' . $res['address'] . '" />
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 170px;"><label for="home_number">სახლის ტელ: </label></td>
+					<td style="width: 170px;"><label for="home_number">Home Phone: </label></td>
 					<td>
 						<input type="text" id="home_number" class="idle address" onblur="this.className=\'idle address\'" onfocus="this.className=\'activeField address\'" value="' . $res['home_number'] . '" />
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 170px;"><label for="mobile_number">მობილური ტელ: </label></td>
+					<td style="width: 170px;"><label for="mobile_number">Mobile Phone: </label></td>
 					<td>
 						<input type="text" id="mobile_number" class="idle address" onblur="this.className=\'idle address\'" onfocus="this.className=\'activeField address\'" value="' . $res['mobile_number'] . '" />
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 170px;"><label for="comment">შენიშვნა: </label></td>
+					<td style="width: 170px;"><label for="comment">Content: </label></td>
 					<td valign="top">
 						<textarea id="comment" class="idle"  style="width: 226px !important;resize: vertical;">' . $res['comment'] . '</textarea>
 					</td>
@@ -533,28 +533,28 @@ function GetPage($res = '')
 			</table>
 			<!-- ID -->
 			<div id="accordion">
-			  <h3>მომხმარებელი</h3>
+			  <h3>User</h3>
 			  <div>
 				<div>
-					<div style="width: 170px; display: inline;"><label for="user" style="float:left;">მომხმარებელი :</label>
-						<input type="text" id="user" class="idle" onblur="this.className=\'idle\'" onfocus="this.className=\'activeField\'" value="' . $res['username'] . '" style="display: inline; margin-left: 51px;"/>
+					<div style="width: 170px; display: inline;"><label for="user" style="float:left;">Username :</label>
+						<input type="text" id="user" class="idle" onblur="this.className=\'idle\'" onfocus="this.className=\'activeField\'" value="' . $res['username'] . '" style="display: inline; margin-left: 11px;"/>
 					</div>
 				</div>
 				<div style=" margin-top: 2px; ">
-					<div style="width: 170px; display: inline;"><label for="user_password" style="float:left;">პაროლი :</label>
-						<input type="password" id="user_password" class="idle" onblur="this.className=\'idle\'" onfocus="this.className=\'activeField\'" value="' . $res['user_password'] . '" style="display: inline; margin-left: 87px;"/>
+					<div style="width: 170px; display: inline;"><label for="user_password" style="float:left;">Password :</label>
+						<input type="password" id="user_password" class="idle" onblur="this.className=\'idle\'" onfocus="this.className=\'activeField\'" value="' . $res['user_password'] . '" style="display: inline; margin-left: 14px;"/>
 					</div>
 				</div>
 				<div style=" margin-top: 2px; ">
-					<div style="width: 170px; display: inline; margin-top: 5px;"><label for="group_permission" style="float:left;">ჯგუფი :</label>
-						<select id="group_permission" class="idls" style="display: inline; margin-left: 101px;">' . GetGroupPermission( $res['group_id'] ) . '</select>
+					<div style="width: 170px; display: inline; margin-top: 5px;"><label for="group_permission" style="float:left;">Group :</label>
+						<select id="group_permission" class="idls" style="display: inline; margin-left: 32px;">' . GetGroupPermission( $res['group_id'] ) . '</select>
 					</div>
 				</div>
 			  </div>
 			</div>
         </fieldset>
  	    <fieldset>
-	    	<legend>თანამშრომლის სურათი</legend>
+	    	<legend>Employee Photo</legend>
 
 	    	<table class="dialog-form-table" width="100%">
 	    		<tr>
@@ -573,7 +573,7 @@ function GetPage($res = '')
 					<td style="padding-left: 5px;">
 						<div style="margin-top:10px; width: 127px; margin-left: -5px;" class="file-uploader">
 							<input id="choose_file" type="file" name="choose_file" class="input" style="display: none;">
-							<button id="choose_button'.$disable_img.'" class="center" >აირჩიეთ ფაილი</button>
+							<button id="choose_button'.$disable_img.'" class="center" >Choose</button>
 						</div>
 					</td>
 				</tr>

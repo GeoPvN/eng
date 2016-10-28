@@ -230,7 +230,7 @@ switch ($action) {
 		    array( 'db' => '`service_center`.`name`',     		    'dt' => 6 ),
 		    array( 'db' => '`ic1`.`name`',	            'dt' => 7 ),
 		    array( 'db' => '`inc_status`.`name`',		        'dt' => 8 ),
-		    array( 'db' => 'IF ((`asterisk_incomming`.`disconnect_cause` = "ABANDON"),"",concat("<p style=\"padding: 3px 0;\" onclick=play(","\"",date_format(cast(`asterisk_incomming`.`call_datetime` AS date),"%Y/%m/%d/"),`asterisk_incomming`.`file_name`,"\"",")>მოსმენა</p>"))',	            'dt' => 9 ),
+		    array( 'db' => 'IF ((`asterisk_incomming`.`disconnect_cause` = "ABANDON"),"",concat("<p style=\"padding: 3px 0;\" onclick=play(","\"",date_format(cast(`asterisk_incomming`.`call_datetime` AS date),"%Y/%m/%d/"),`asterisk_incomming`.`file_name`,"\"",")>Listen</p>"))',	            'dt' => 9 ),
 		    array( 'db' => '(CASE WHEN (`incomming_call`.`inc_status_id` IS NOT NULL) THEN	"<div class=gr></div>"	WHEN (isnull(`incomming_call`.`inc_status_id`)	AND (`asterisk_incomming`.`disconnect_cause` <> "ABANDON")) THEN "<div class=ye></div>"	WHEN (`asterisk_incomming`.`disconnect_cause` = "ABANDON") THEN	"<div class=re></div>"	END) AS `status_color`',	    'dt' => 10 )
 		
 		);
@@ -240,7 +240,7 @@ switch ($action) {
 		    'user' => 'root',
 		    'pass' => 'Gl-1114',
 		    'db'   => 'epro',
-		    'host' => 'localhost'
+		    'host' => '212.72.155.176'
 		);
 		
 		
@@ -1090,19 +1090,19 @@ function GetPage($res,$increment,$open_number,$queue)
 	       <table class="dialog-form-table">
 	           
     	       <tr>
-	               <td style="width: 125px;"><label for="incomming_id">მომართვის №</label></td>
+	               <td style="width: 125px;"><label for="incomming_id">Application №</label></td>
 	           </tr>
 	           <tr>
 	               <td><input disabled style="width: 125px;" id="incomming_id" type="text" value="'.(($res['id']=='')?$increment:$res['id']).'"></td>
                </tr>
 	           <tr>
-	               <td style="width: 125px;"><label for="incomming_date">თარიღი</label></td>
+	               <td style="width: 125px;"><label for="incomming_date">Date</label></td>
 	           </tr>
 	           <tr>
 	               <td><input disabled style="width: 125px;" id="incomming_date" type="text" value="'.(($res['call_date']=='')?date("Y-m-d H:i:s"):$res['call_date']).'"></td>
                </tr>
 	           <tr>
-	               <td><label for="incomming_phone">ტელეფონი</td>
+	               <td><label for="incomming_phone">Phone</td>
     	       </tr>
                <tr>
 	               <td><input disabled style="width: 125px;" id="incomming_phone" type="text" value="'.$res['phone'].'"></td>
@@ -1111,13 +1111,13 @@ function GetPage($res,$increment,$open_number,$queue)
 	       
 	       <table class="dialog-form-table">
 	           <tr>
-	               <td><label for="inc_status_id">რეაგირება</label></td>
+	               <td><label for="inc_status_id">Responses</label></td>
 	           </tr>
 	           <tr>
 	               <td><select id="inc_status_id" style="width: 130px;">'.get_IncStatus($res['inc_status_id']).'</select></td>
 	           </tr>
 	           <tr>
-	               <td><label for="incomming_comment">დამატებითი ინფორმაცია</label></td>
+	               <td><label for="incomming_comment">For more information</label></td>
 	           </tr>
 	           <tr>
 	               <td><textarea id="incomming_comment" style="resize: vertical;width: 125px;height: 285px;">'.$res['comment'].'</textarea></td>
@@ -1128,15 +1128,15 @@ function GetPage($res,$increment,$open_number,$queue)
 	    
 	    
         <div id="side_menu" style="float: left;height: 585px;width: 80px;margin-left: 10px; background: #272727; color: #FFF;">
-	       <spam class="info" style="display: block;padding: 10px 5px;  cursor: pointer;" onclick="show_right_side(\'info\')"><img style="padding-left: 22px;padding-bottom: 5px;" src="media/images/icons/info.png" alt="24 ICON" height="24" width="24"><div style="text-align: center;">ინფო</div></spam>
-	       <spam class="scenar" style="display: block;padding: 10px 5px;  cursor: pointer;" onclick=""><img style="padding-left: 22px;padding-bottom: 5px;" src="media/images/icons/scenar.png" alt="24 ICON" height="24" width="24"><div style="text-align: center;">ბილინგი</div></spam>
-	       <spam class="task" style="display: block;padding: 10px 5px;  cursor: pointer;" onclick="show_right_side(\'task\')"><img style="padding-left: 22px;padding-bottom: 5px;" src="media/images/icons/task.png" alt="24 ICON" height="24" width="24"><div style="text-align: center;">დავალება</div></spam>
+	       <spam class="info" style="display: block;padding: 10px 5px;  cursor: pointer;" onclick="show_right_side(\'info\')"><img style="padding-left: 22px;padding-bottom: 5px;" src="media/images/icons/info.png" alt="24 ICON" height="24" width="24"><div style="text-align: center;">Info</div></spam>
+	       <spam class="scenar" style="display: block;padding: 10px 5px;  cursor: pointer;" onclick=""><img style="padding-left: 22px;padding-bottom: 5px;" src="media/images/icons/scenar.png" alt="24 ICON" height="24" width="24"><div style="text-align: center;">Billing</div></spam>
+	       <spam class="task" style="display: block;padding: 10px 5px;  cursor: pointer;" onclick="show_right_side(\'task\')"><img style="padding-left: 22px;padding-bottom: 5px;" src="media/images/icons/task.png" alt="24 ICON" height="24" width="24"><div style="text-align: center;">Task</div></spam>
 	       <spam class="sms" style="display: block;padding: 10px 5px;  cursor: pointer;" onclick="show_right_side(\'sms\')"><img style="padding-left: 22px;padding-bottom: 5px;" src="media/images/icons/sms.png" alt="24 ICON" height="24" width="24"><div style="text-align: center;">SMS</div></spam>
 	       <spam class="mail" style="display: block;padding: 10px 5px;  cursor: pointer;" onclick="show_right_side(\'mail\')"><img style="padding-left: 22px;padding-bottom: 5px;" src="media/images/icons/mail.png" alt="24 ICON" height="24" width="24"><div style="text-align: center;">E-mail</div></spam>
-	       <spam class="record" style="display: block;padding: 10px 5px;  cursor: pointer;" onclick="show_right_side(\'record\')"><img style="padding-left: 22px;padding-bottom: 5px;" src="media/images/icons/record.png" alt="24 ICON" height="24" width="24"><div style="text-align: center;">ჩანაწერი</div></spam>
-	       <spam class="file" style="display: block;padding: 10px 5px;  cursor: pointer;" onclick="show_right_side(\'file\')"><img style="padding-left: 22px;padding-bottom: 5px;" src="media/images/icons/file.png" alt="24 ICON" height="24" width="24"><div style="text-align: center;">ფაილი</div></spam>
-	       <spam class="question" style="display: block;padding: 10px 5px;  cursor: pointer;" onclick="show_right_side(\'question\')"><img style="padding-left: 22px;padding-bottom: 5px;" src="media/images/icons/question.png" alt="24 ICON" height="24" width="24"><div style="text-align: center;">შეკითხვა</div></spam>
-	       <spam class="box" style="display: block;padding: 10px 5px;  cursor: pointer;" onclick=""><img style="padding-left: 22px;padding-bottom: 5px;" src="media/images/icons/box.png" alt="24 ICON" height="24" width="24"><div style="text-align: center;">კანცელა<br>რია</div></spam>
+	       <spam class="record" style="display: block;padding: 10px 5px;  cursor: pointer;" onclick="show_right_side(\'record\')"><img style="padding-left: 22px;padding-bottom: 5px;" src="media/images/icons/record.png" alt="24 ICON" height="24" width="24"><div style="text-align: center;">Record</div></spam>
+	       <spam class="file" style="display: block;padding: 10px 5px;  cursor: pointer;" onclick="show_right_side(\'file\')"><img style="padding-left: 22px;padding-bottom: 5px;" src="media/images/icons/file.png" alt="24 ICON" height="24" width="24"><div style="text-align: center;">File</div></spam>
+	       <spam class="question" style="display: block;padding: 10px 5px;  cursor: pointer;" onclick="show_right_side(\'question\')"><img style="padding-left: 22px;padding-bottom: 5px;" src="media/images/icons/question.png" alt="24 ICON" height="24" width="24"><div style="text-align: center;">question</div></spam>
+	       <spam class="box" style="display: block;padding: 10px 5px;  cursor: pointer;" onclick=""><img style="padding-left: 22px;padding-bottom: 5px;" src="media/images/icons/box.png" alt="24 ICON" height="24" width="24"><div style="text-align: center;">Chancel<br>lery</div></spam>
        </div>
 	    
 	    <div style="width: 900px;float: left;margin-left: 10px;" id="right_side">
@@ -1146,9 +1146,9 @@ function GetPage($res,$increment,$open_number,$queue)
 	                    
                         <table class="margin_top_10">
     	                   <tr>
-        	                   <td><label style="width: 280px;" for="source_info_id">მეთოდი</label></td>
-        	                   <td><label style="width: 280px;" for="service_center_id">მომსახურების ცენტრი</label></td>
-        	                   <td><label style="width: 280px;" for="in_district_id">უბანი</label></td>
+        	                   <td><label style="width: 280px;" for="source_info_id">Method</label></td>
+        	                   <td><label style="width: 280px;" for="service_center_id">Service Center</label></td>
+        	                   <td><label style="width: 280px;" for="in_district_id">district</label></td>
             	           </tr>
             	           <tr>
             	               <td><select id="source_info_id" style="width: 245px;">'.getsource_info_id($res['source_info_id']).'</select></td>
@@ -1164,9 +1164,9 @@ function GetPage($res,$increment,$open_number,$queue)
 	                   
 	                   <table class="margin_top_10">
                            <tr>
-                               <td style="width: 280px;"><label for="cl_id">კანცელარიის ნომერი</label></td>
-                               <td style="width: 280px;"><label for="cl_name">განმცხადებელი</label></td>
-	                           <td style="width: 240px;"><label for="in_type_id">ტიპი</label></td>
+                               <td style="width: 280px;"><label for="cl_id">Chancellery number</label></td>
+                               <td style="width: 280px;"><label for="cl_name">The applicant</label></td>
+	                           <td style="width: 240px;"><label for="in_type_id">Type</label></td>
                            </tr>
                            <tr>
                                <td><input type="text" style="width: 240px; resize: vertical;" id="cl_id" value="'.$res['cl_id'].'"></td>
@@ -1174,9 +1174,9 @@ function GetPage($res,$increment,$open_number,$queue)
                                <td><select style="width: 245px;" id="in_type_id">'.getin_type_id($res['in_type_id']).'</select></td>
                            </tr>
                            <tr>
-                               <td style="width: 280px;"><label for="cl_ab_num">აბონენტის ნომერი</label></td>
-                               <td style="width: 280px;"><label for="cl_ab">აბონენტი</label></td>
-	                           <td style="width: 240px;"><label for="cl_debt">მიმდინარე დავალიანება</label></td>
+                               <td style="width: 280px;"><label for="cl_ab_num">Customer Number</label></td>
+                               <td style="width: 280px;"><label for="cl_ab">Customer</label></td>
+	                           <td style="width: 240px;"><label for="cl_debt">Current debt</label></td>
                            </tr>
                            <tr>
                                <td><input type="text" style="width: 200px; resize: vertical;float: left;" id="cl_ab_num" maxlength="10" onkeypress=\'return event.charCode >= 48 && event.charCode <= 57\' value="'.(($res['cl_ab_num']=='')?$phone_check[1]:$res[cl_ab_num]).'"> <button id="go" style="cursor: pointer;float: right;margin-right: 34px;border: 0;padding: 7px;background: green;">GO</button></td>
@@ -1184,9 +1184,9 @@ function GetPage($res,$increment,$open_number,$queue)
                                <td><input type="text" style="width: 240px; resize: vertical;" id="cl_debt" value="'.$res['cl_debt'].'"></td>
                            </tr>
                            <tr>
-                               <td style="width: 280px;"><label for="cl_phone">ტელეფონის ნომერი</label></td>
-	                           <td style="width: 240px;"><label for="branch_id">ფილიალი</label></td>
-                               <td style="width: 240px;"><label for="cl_addres">მისამართი</label></td>
+                               <td style="width: 280px;"><label for="cl_phone">Phone</label></td>
+	                           <td style="width: 240px;"><label for="branch_id">branch</label></td>
+                               <td style="width: 240px;"><label for="cl_addres">Address</label></td>
                            </tr>
                            <tr>
                                <td><input type="text" style="width: 240px; resize: vertical;" id="cl_phone" value="'.(($res['cl_phone']=='')?$phone_check[2]:$res[cl_phone]).'"></td>
@@ -1201,9 +1201,9 @@ function GetPage($res,$increment,$open_number,$queue)
 	                    <br>
                         <table class="margin_top_10">
             	           <tr>
-            	               <td><label style="width: 280px;" for="incomming_cat_1">ზარის კატეგორია</label></td>
-            	               <td><label style="width: 280px;" for="incomming_cat_1_1">ზარის ქვე-კატეგორია 1</label></td>
-	                           <td><label style="width: 280px;" for="incomming_cat_1_1_1">ზარის ქვე-კატეგორია 2</label></td>
+            	               <td><label style="width: 280px;" for="incomming_cat_1">Call Category</label></td>
+            	               <td><label style="width: 280px;" for="incomming_cat_1_1">Call Sub-Category 1</label></td>
+	                           <td><label style="width: 280px;" for="incomming_cat_1_1_1">Call Sub-Category 2</label></td>
             	           </tr>
             	           <tr>
 	                           <td><select id="incomming_cat_1" style="width: 245px;">'.get_cat_1($res['cat_1']).'</select></td>
@@ -1219,15 +1219,15 @@ function GetPage($res,$increment,$open_number,$queue)
             	        <div id="check_history" style="padding-top: 15px;">
             	            <div style="float: left; width: 878px;">
         	                <span style="float: left;">
-                            <label for="start_check" style="margin-left: 110px;">-დან</label>
+                            <label for="start_check" style="margin-left: 110px;">-From</label>
                             <input class="callapp_filter_body_span_input date_input" type="text" id="start_check" style="width: 100px;" value="'.date('Y-m-d', strtotime('-10 days')).'">
                             </span>
                             <span style="float: left;margin-left: 12px;">
-                            <label for="end_check" style="margin-left: 110px;">-მდე</label>
+                            <label for="end_check" style="margin-left: 110px;">-Up to</label>
                             <input class="callapp_filter_body_span_input date_input" type="text" id="end_check" style="width: 100px;" value="'.date('Y-m-d').'">
                             </span>
             	            <span style="float: left;margin-left: 12px;">
-                            <label for="check_ab" style="margin-left: 195px;">აბონენტი</label>
+                            <label for="check_ab" style="margin-left: 195px;">Customers</label>
                             <input class="callapp_filter_body_span_input" type="text" id="check_ab" style="width: 185px;">
                             </span>
                             <span style="margin-left: 25px;float: left;">
@@ -1238,36 +1238,36 @@ function GetPage($res,$increment,$open_number,$queue)
                                 <thead>
                                     <tr id="datatable_header">
                                         <th>ID</th>
-                                        <th style="width: 120px;">თარიღი</th>
-                                        <th style="width: 120px;">აბონენტიოს ნომერი</th>
-                                        <th style="width: 25%;">ტელეფონის ნომერი</th>
-                                        <th style="width: 25%;">კომენტარი</th>
-                                        <th style="width: 25%;">შედეგი</th>
-                                        <th style="width: 25%;">სტატუსი</th>
+                                        <th style="width: 120px;">Date</th>
+                                        <th style="width: 120px;">Number of customers</th>
+                                        <th style="width: 25%;">Phone</th>
+                                        <th style="width: 25%;">Comment</th>
+                                        <th style="width: 25%;">Result</th>
+                                        <th style="width: 25%;">Status</th>
                                     </tr>
                                 </thead>
                                 <thead>
                                     <tr class="search_header">
                                         <th class="colum_hidden">
-                                    	   <input type="text" name="search_id" value="ფილტრი" class="search_init" />
+                                    	   <input type="text" name="search_id" value="Filter" class="search_init" />
                                         </th>             
                                         <th>
-                                            <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                                            <input type="text" name="search_category" value="Filter" class="search_init" />
                                         </th>            
                                         <th>
-                                            <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                                            <input type="text" name="search_category" value="Filter" class="search_init" />
                                         </th>
                                         <th>
-                                            <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                                            <input type="text" name="search_category" value="Filter" class="search_init" />
                                         </th>
                                         <th>
-                                            <input type="text" name="search_phone" value="ფილტრი" class="search_init" />
+                                            <input type="text" name="search_phone" value="Filter" class="search_init" />
                                         </th>
                                         <th>
-                                            <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                                            <input type="text" name="search_category" value="Filter" class="search_init" />
                                         </th>
             	                        <th>
-                                            <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                                            <input type="text" name="search_category" value="Filter" class="search_init" />
                                         </th>          
                                     </tr>
                                 </thead>
@@ -1277,35 +1277,35 @@ function GetPage($res,$increment,$open_number,$queue)
             </fieldset>
     	    
             <fieldset style="display:none;" id="task">
-                <legend>დავალების ფორმირება</legend>
+                <legend>Task Formation</legend>
 	            <span class="hide_said_menu">x</span>
 	            <table>
 	               <tr>
-                       <td style="width: 280px;"><label for="task_status_id">სტატუსი</label></td>
-                       <td style="width: 280px;"><label for="task_send">ფორმირება</label></td>
+                       <td style="width: 280px;"><label for="task_status_id">Status</label></td>
+                       <td style="width: 280px;"><label for="task_send">Formation</label></td>
 	               </tr>	              
 	               <tr>
 	                   <td><select id="task_status_id" style="width: 240px;" disabled>'.getStatusTask($res[task_status_id]).'</select></td>
 	                   <td style="width: 280px;"><input '.$disa.' type="checkbox" id="task_send" value="0" '.(($res[task_date]=='')?'':'checked').'/></td>
 	               </tr>
 	               <tr>
-	                   <td><label for="task_start_date">ფორმირების თარიღი</label></td>
-	                   <td><label for="task_start_date">პერიოდი</label></td>
+	                   <td><label for="task_start_date">Formation Date</label></td>
+	                   <td><label for="task_start_date">Period</label></td>
 	                   <td><label></label></td>
 	               </tr>	              
 	               <tr>
 	                   <td><input style="float: left;width: 235px;" id="task_create_date" type="text" value="'.(($res[task_date]=='')?date("Y-m-d h:i:s"):$res[task_date]).'"></label></td>
-	                   <td><input style="float: left;width: 235px;" id="task_start_date" type="text" value="'.$res[task_start_date].'"><label for="task_start_date" style="float: left;margin-top: 7px;margin-left: 2px;">-დან</label></td>
-	                   <td><input style="float: left;width: 235px;" id="task_end_date" type="text" value="'.$res[task_end_date].'"><label for="task_end_date" style="float: left;margin-top: 7px;margin-left: 2px;">-მდე</label></td>
+	                   <td><input style="float: left;width: 235px;" id="task_start_date" type="text" value="'.$res[task_start_date].'"><label for="task_start_date" style="float: left;margin-top: 7px;margin-left: 2px;">-For</label></td>
+	                   <td><input style="float: left;width: 235px;" id="task_end_date" type="text" value="'.$res[task_end_date].'"><label for="task_end_date" style="float: left;margin-top: 7px;margin-left: 2px;">-Up to</label></td>
 	               </tr>
 	               <tr>
-	                   <td><label for="task_description">კომენტერი</label></td>
+	                   <td><label for="task_description">Comment</label></td>
 	               </tr>
 	               <tr>
 	                   <td colspan=3><textarea style="resize: vertical;width: 800px;" id="task_description">'.$res[task_description].'</textarea></td>
 	               </tr>
 	               <tr>
-	                   <td><label for="task_note">შედეგი</label></td>
+	                   <td><label for="task_note">Result</label></td>
 	               </tr>
 	               <tr>
 	                   <td colspan=3><textarea style="resize: vertical;width: 800px;" id="task_note" disabled>'.$res[task_note].'</textarea></td>
@@ -1318,34 +1318,34 @@ function GetPage($res,$increment,$open_number,$queue)
 	            <span class="hide_said_menu">x</span>	 
 	            <div class="margin_top_10">           
 	            <div id="button_area">
-                    <button id="add_sms">ახალი SMS</button>
+                    <button id="add_sms">New SMS</button>
                 </div>
                 <table class="display" id="table_sms" >
                     <thead>
                         <tr id="datatable_header">
                             <th>ID</th>
-                            <th style="width: 100%;">თარიღი</th>
-                            <th style="width: 100%;">ადრესატი</th>
-                            <th style="width: 100%;">ტექსტი</th>
-                            <th style="width: 100%;">სტატუსი</th>
+                            <th style="width: 100%;">Date</th>
+                            <th style="width: 100%;">Addres</th>
+                            <th style="width: 100%;">Text</th>
+                            <th style="width: 100%;">Status</th>
                         </tr>
                     </thead>
                     <thead>
                         <tr class="search_header">
                             <th class="colum_hidden">
-                        	   <input type="text" name="search_id" value="ფილტრი" class="search_init" />
+                        	   <input type="text" name="search_id" value="Filter" class="search_init" />
                             </th>
                             <th>
-                            	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+                            	<input type="text" name="search_number" value="Filter" class="search_init" />
                             </th>
                             <th>
-                                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                                <input type="text" name="search_date" value="Filter" class="search_init" />
                             </th>
                             <th>
-                                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                                <input type="text" name="search_date" value="Filter" class="search_init" />
                             </th>
                             <th>
-                                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                                <input type="text" name="search_date" value="Filter" class="search_init" />
                             </th>
                         </tr>
                     </thead>
@@ -1358,34 +1358,34 @@ function GetPage($res,$increment,$open_number,$queue)
 	            <span class="hide_said_menu">x</span>
 	            <div class="margin_top_10">           
 	            <div id="button_area">
-                    <button id="add_mail">ახალი E-mail</button>
+                    <button id="add_mail">New E-mail</button>
                 </div>
                 <table class="display" id="table_mail" >
                     <thead>
                         <tr id="datatable_header">
                             <th>ID</th>
-                            <th style="width: 100%;">თარიღი</th>
-                            <th style="width: 100%;">ადრესატი</th>
-                            <th style="width: 100%;">გზავნილი</th>
-                            <th style="width: 100%;">სტატუსი</th>
+                            <th style="width: 100%;">Date</th>
+                            <th style="width: 100%;">Address</th>
+                            <th style="width: 100%;">message</th>
+                            <th style="width: 100%;">status</th>
                         </tr>
                     </thead>
                     <thead>
                         <tr class="search_header">
                             <th class="colum_hidden">
-                        	    <input type="text" name="search_id" value="ფილტრი" class="search_init" />
+                        	    <input type="text" name="search_id" value="Filter" class="search_init" />
                             </th>
                             <th>
-                            	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+                            	<input type="text" name="search_number" value="Filter" class="search_init" />
                             </th>
                             <th>
-                                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                                <input type="text" name="search_date" value="Filter" class="search_init" />
                             </th>
                             <th>
-                                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                                <input type="text" name="search_date" value="Filter" class="search_init" />
                             </th>
                             <th>
-                                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                                <input type="text" name="search_date" value="Filter" class="search_init" />
                             </th>
                         </tr>
                     </thead>
@@ -1394,39 +1394,39 @@ function GetPage($res,$increment,$open_number,$queue)
             </fieldset>
             
             <fieldset style="display:none;" id="record">
-                <legend>ჩანაწერები</legend>
+                <legend>Records</legend>
 	            <span class="hide_said_menu">x</span>
 	                '.show_record($res).'
             </fieldset>
             
             <fieldset style="display:none;" id="file">
-                <legend>ფაილი</legend>
+                <legend>File</legend>
 	            <span class="hide_said_menu">x</span>
 	                '.show_file($res).'
             </fieldset>
 	                    
 	        <fieldset style="display:none;" id="question">
-                <legend>შეკითხვა</legend>
+                <legend>question</legend>
 	            <span class="hide_said_menu">x</span>
 	                    <div style="margin-top:30px;">
 	                <table class="display" id="table_question">
                     <thead>
                         <tr id="datatable_header">
                             <th>ID</th>
-                            <th style="width: 50%;">კითხვა</th>
-                            <th style="width: 50%;">პასუხი</th>
+                            <th style="width: 50%;">Question</th>
+                            <th style="width: 50%;">Answer</th>
                         </tr>
                     </thead>
                     <thead>
                         <tr class="search_header">
                             <th class="colum_hidden">
-                        	    <input type="text" name="search_id" value="ფილტრი" class="search_init" />
+                        	    <input type="text" name="search_id" value="Filter" class="search_init" />
                             </th>
                             <th>
-                                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                                <input type="text" name="search_date" value="Filter" class="search_init" />
                             </th>
                             <th>
-                                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                                <input type="text" name="search_date" value="Filter" class="search_init" />
                             </th>
                         </tr>
                     </thead>
@@ -1452,22 +1452,22 @@ function GetSmsSendPage() {
 					<legend>SMS</legend>
 			    	<table class="dialog-form-table">
 						<tr>
-							<td><label for="d_number">ადრესატი</label></td>
+							<td><label for="d_number">Addess</label></td>
 						</tr>
 			    		<tr>
 							<td>
-								<span id="errmsg" style="color: red; display: none;">მხოლოდ რიცხვი</span>
+								<span id="errmsg" style="color: red; display: none;">Only the number of</span>
 								<input type="text" id="sms_phone" placeholder="9955XXXXXXXX" value="">
 							</td>
 							<td>
 								<button id="copy_phone">Copy</button>
 							</td>
 							<td>
-								<button id="sms_shablon">შაბლონი</button>
+								<button id="sms_shablon">Template</button>
 							</td>
 						</tr>
 						<tr>
-							<td><label for="content">ტექსტი</label></td>
+							<td><label for="content">Text</label></td>
 						</tr>
 					
 						<tr>
@@ -1485,7 +1485,7 @@ function GetSmsSendPage() {
 							</td>
 							
 							<td>
-								<button id="send_sms">გაგზავნა</button>
+								<button id="send_sms">Send</button>
 							</td>
 						</tr>	
 					</table>
@@ -1501,7 +1501,7 @@ function GetMailSendPage(){
         	    	<table class="dialog-form-table">
         				
         				<tr>
-        					<td style="width: 90px; "><label for="d_number">ადრესატი:</label></td>
+        					<td style="width: 90px; "><label for="d_number">Addressee:</label></td>
         					<td>
         						<input type="text" style="width: 490px !important;"id="mail_address" value="" />
         					</td>
@@ -1519,7 +1519,7 @@ function GetMailSendPage(){
         					</td>
         				</tr>
         				<tr>
-        					<td style="width: 90px;"><label for="d_number">სათაური:</label></td>
+        					<td style="width: 90px;"><label for="d_number">title:</label></td>
         					<td>
         						<input type="text" style="width: 490px !important;" id="mail_text" value="" />
         					</td>
@@ -1552,7 +1552,7 @@ $record_incomming = mysql_query("SELECT  `datetime`,
         $str_record_incomming .= '<tr>
                                     <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">'.$record_res_incomming[datetime].'</td>
                             	    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">'.$record_res_incomming[duration].'</td>
-                            	    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;cursor: pointer;" onclick="listen(\''.$record_res_incomming[file_name].'\')"><span>მოსმენა</span></td>
+                            	    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;cursor: pointer;" onclick="listen(\''.$record_res_incomming[file_name].'\')"><span>Listen</span></td>
                         	      </tr>';
     }
     
@@ -1574,19 +1574,19 @@ $record_incomming = mysql_query("SELECT  `datetime`,
         $str_record_outgoing .= '<tr>
                                     <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">'.$record_res_outgoing[call_datetime].'</td>
                             	    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">'.$record_res_outgoing[duration].'</td>
-                            	    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;cursor: pointer;" onclick="listen(\''.$record_res_outgoing[file_name].'\')"><span>მოსმენა</span></td>
+                            	    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;cursor: pointer;" onclick="listen(\''.$record_res_outgoing[file_name].'\')"><span>Listen</span></td>
                         	      </tr>';
     }
     
     if($str_record_outgoing == ''){
         $str_record_outgoing = '<tr>
-                                    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;" colspan=3>ჩანაწერი არ მოიძებნა</td>
+                                    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;" colspan=3>No records found</td>
                         	      </tr>';
     }
     
     if($str_record_incomming == ''){
         $str_record_incomming = '<tr>
-                                    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;" colspan=3>ჩანაწერი არ მოიძებნა</td>
+                                    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;" colspan=3>No records found</td>
                         	      </tr>';
     }
     
@@ -1597,23 +1597,23 @@ $record_incomming = mysql_query("SELECT  `datetime`,
                     </audio>
                </div>
                <fieldset style="display:block !important; margin-top: 10px;">
-                    <legend>შემომავალი ზარი</legend>
+                    <legend>Incoming calls</legend>
     	            <table style="margin: auto;">
     	               <tr>
-    	                   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">თარიღი</td>
-                    	   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">ხანგძლივობა</td>
-                    	   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">მოსმენა</td>
+    	                   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">Date</td>
+                    	   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">Duration</td>
+                    	   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">Listen</td>
                 	    </tr>
     	                '.$str_record_incomming.'
             	    </table>
 	            </fieldset>
 	            <fieldset style="display:block !important; margin-top: 10px;">
-                    <legend>გამავალი ზარი</legend>
+                    <legend>Outgoing call</legend>
     	            <table style="margin: auto;">
     	               <tr>
-    	                   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">თარიღი</td>
-                    	   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">ხანგძლივობა</td>
-                    	   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">მოსმენა</td>
+    	                   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">Date</td>
+                    	   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">Duration</td>
+                    	   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">Listen</td>
                 	    </tr>
     	                '.$str_record_outgoing.'
             	    </table>
@@ -1631,16 +1631,16 @@ function show_file($res){
     while ($file_res_incomming = mysql_fetch_assoc($file_incomming)) {
         $str_file_incomming .= '<div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 180px;float:left;">'.$file_res_incomming[file_date].'</div>
                             	<div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 189px;float:left;">'.$file_res_incomming[name].'</div>
-                            	<div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;cursor: pointer;width: 160px;float:left;" onclick="download_file(\''.$file_res_incomming[rand_name].'\')">ჩამოტვირთვა</div>
+                            	<div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;cursor: pointer;width: 160px;float:left;" onclick="download_file(\''.$file_res_incomming[rand_name].'\')">Download</div>
                             	<div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;cursor: pointer;width: 20px;float:left;" onclick="delete_file(\''.$file_res_incomming[id].'\')">-</div>';
     }
     $data = '<div style="margin-top: 15px;">
                     <div style="width: 68%; margin-left: 130px; border:1px solid #CCC;float: left;">    	            
-    	                   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 180px;float:left;">თარიღი</div>
-                    	   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 189px;float:left;">დასახელება</div>
-                    	   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 160px;float:left;">ჩამოტვირთვა</div>
+    	                   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 180px;float:left;">Date</div>
+                    	   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 189px;float:left;">Name</div>
+                    	   <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 160px;float:left;">Download</div>
                            <div style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;width: 20px;float:left;">-</div>
-    	                   <div style="text-align: center;vertical-align: middle;float: left;width: 595px;"><button id="upload_file" style="cursor: pointer;background: none;border: none;width: 100%;height: 25px;padding: 0;margin: 0;">აირჩიეთ ფაილი</button><input style="display:none;" type="file" name="file_name" id="file_name"></div>
+    	                   <div style="text-align: center;vertical-align: middle;float: left;width: 595px;"><button id="upload_file" style="cursor: pointer;background: none;border: none;width: 100%;height: 25px;padding: 0;margin: 0;">Choose</button><input style="display:none;" type="file" name="file_name" id="file_name"></div>
                            <div id="paste_files">
                            '.$str_file_incomming.'
                            </div>
@@ -1671,8 +1671,8 @@ function getShablon(){
     $data = '<table id="box-table-b1">
 				<tr class="odd">
 					<th style="width: 26px;">#</th>
-					<th style="width: 160px;">ტექსტი</th>
-					<th>ქმედება</th>
+					<th style="width: 160px;">Text</th>
+					<th>Action</th>
 				</tr> ';
 
     while( $res3 = mysql_fetch_assoc($req)){
@@ -1680,7 +1680,7 @@ function getShablon(){
         $data .= '<tr class="odd">
 					<td>' . $res3[id] . '</td>
 					<td style="width: 30px !important;">' . $res3['name'] . '</td>
-					<td style="font-size: 10px !important;"><button style="width: 45px;" class="download_shablon" sms_id="' . $res3['id'] . '" number="' . $res3['message'] . '">არჩევა</button></td>
+					<td style="font-size: 10px !important;"><button style="width: 45px;" class="download_shablon" sms_id="' . $res3['id'] . '" number="' . $res3['message'] . '">Choose</button></td>
 				 </tr>';
 
     }
