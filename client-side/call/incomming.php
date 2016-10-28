@@ -1001,7 +1001,7 @@
         $('.quest_body').css('display','block');
         $('#next_quest').prop('disabled', true);
         $(this).attr('who',1);
-        $('#show_all_scenario span').text('სცენარის მიხედვით');
+        $('#show_all_scenario span').text('By Scenario');
         $('#back_quest,#next_quest').css('display','none');
         $('.quest_body').attr('style','height: 130px;border: 1px solid #CCCCCC;padding: 0 10px;float: left;margin-right: 5px;width: 260px;margin-top: 5px;');
         $('.myhr,.last_quest').css('display','none');
@@ -1442,7 +1442,7 @@
 							for(i = 0;i <= data.page.length;i++){
 								tbody += "<div id=\"first_div\">" + data.page[i].file_date + "</div>";
 								tbody += "<div id=\"two_div\">" + data.page[i].name + "</div>";
-								tbody += "<div id=\"tree_div\" onclick=\"download_file('" + data.page[i].rand_name + "','"+data.page[i].name+"')\">ჩამოტვირთვა</div>";
+								tbody += "<div id=\"tree_div\" onclick=\"download_file('" + data.page[i].rand_name + "','"+data.page[i].name+"')\">Download</div>";
 								tbody += "<div id=\"for_div\" onclick=\"delete_file1('" + data.page[i].id + "')\">-</div>";
 								$("#paste_files1").html(tbody);								
 							}							
