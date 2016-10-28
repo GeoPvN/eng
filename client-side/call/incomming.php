@@ -1808,7 +1808,7 @@
         </div>
         </span>
         <span style="margin-left: 15px">
-        <label for="filter_2" style="">Uncultivated</label>
+        <label for="filter_2" style="">Untreated</label>
         <div class="callapp_checkbox" style="margin-top: -16px;margin-left: -15px;">
           <input class="callapp_filter_body_span_input" id="filter_2" type="checkbox" value="2"/>
           <label for="filter_2" style="background: #ECAF00;"></label>
