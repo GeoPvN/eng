@@ -114,7 +114,7 @@
             position: relative;
             float: right;
             width: 70px;
-            top: 42px;
+            top: 28px;
         	z-index: 99;
         	border: 1px solid #E6E6E6;
         	padding: 4px;
