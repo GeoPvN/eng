@@ -4,79 +4,70 @@
    ******************************
 */
 	include('../../../includes/classes/core.php');
-	$action = $_REQUEST['act'];
-	$start		=	$_REQUEST['start'];
-    $end		=	$_REQUEST['end'];
-    $error 		= '';
-    $data       = '';
+	
+	$action  = $_REQUEST['act'];
+	$start	 = $_REQUEST['start'];
+    $end	 = $_REQUEST['end'];
+    $user_id = $_SESSION[USERID];
+    $error 	 = '';
+    $data    = '';
 
 	switch ($action) {
 	    case 'get_list':
-    	    $count	= $_REQUEST['count'];
-		    $hidden	= $_REQUEST['hidden'];
+    	    $count = $_REQUEST['count'];
     	    $person_id  =   $_REQUEST['person_id'];
     	    $password   =   $_REQUEST['password'];
+    	    
+    	    $check_group = mysql_fetch_assoc(mysql_query("SELECT group_id 
+                                                          FROM  `users`
+                                                          WHERE  id = $user_id"));
+    	    
+    	    $check_user = '';
+    	    
+    	    if ($check_group[group_id] != 1 && $check_group[group_id] != 3 && $check_group[group_id] != 5) {
+    	        $check_user = "AND users.id = $user_id";
+    	    }
    	    
     	    if($person_id==0){
     	        $checker = "";
     	    }else{
-    	        $checker = "AND WA.person_id = $person_id";
+    	        $checker = "AND users.group_id = $person_id";
     	    }
 
-    	    $rResult = mysql_query("SELECT 		WA.id AS `id`,
-                            					DATE(WA.start_date) AS `date`,
-                            					user_info.`name` AS `person`,
-                            					IF(ISNULL(TIMEDIFF(PWG.`end`,PWG.`start`)),'00:00:00',TIMEDIFF(PWG.`end`,PWG.`start`)),
-                            					SEC_TO_TIME(
-                            										IF(IF(ISNULL(TIME_TO_SEC(TIME(WA.end_date)) - TIME_TO_SEC(TIME(WA.start_date))),0,TIME_TO_SEC(TIME(WA.end_date)) - TIME_TO_SEC(TIME(WA.start_date)))=0,'00:00:00',
-                            											SUM(
-                            											IF(ISNULL(TIME_TO_SEC(TIME(WA.end_date)) - TIME_TO_SEC(TIME(WA.start_date))),0,TIME_TO_SEC(TIME(WA.end_date)) - TIME_TO_SEC(TIME(WA.start_date)))
-                            											)
-                            												-
-                            											SUM(
-                            											IF(ISNULL(TIME_TO_SEC(TIME(WAB.`end_date`)) - TIME_TO_SEC(TIME(WAB.`start_date`))),0,TIME_TO_SEC(TIME(WAB.`end_date`)) - TIME_TO_SEC(TIME(WAB.`start_date`)))
-                            											)
-                            										)
-                            										),
-                            					IF(ISNULL(SEC_TO_TIME(SUM(TIME_TO_SEC(PWB.`end`)) - SUM(TIME_TO_SEC(PWB.`start`)))),'00:00:00',SEC_TO_TIME(SUM(TIME_TO_SEC(PWB.`end`)) - SUM(TIME_TO_SEC(PWB.`start`)))) AS `break_time`,
-                            					IF(ISNULL(SEC_TO_TIME(SUM(TIME_TO_SEC(WAB.end_date)) - SUM(TIME_TO_SEC(WAB.start_date)))),'00:00:00',SEC_TO_TIME(
-                            																										IF(0>SUM(TIME_TO_SEC(IF(ISNULL(WAB.end_date) AND ISNULL(WAB.start_date),0,WAB.end_date)))
-                            																										-
-                            																										SUM(TIME_TO_SEC(IF(ISNULL(WAB.end_date) AND ISNULL(WAB.start_date),0,WAB.start_date))),0,
-                            																										SUM(TIME_TO_SEC(IF(ISNULL(WAB.end_date) AND ISNULL(WAB.start_date),0,WAB.end_date)))
-                            																										-
-                            																										SUM(TIME_TO_SEC(IF(ISNULL(WAB.end_date) AND ISNULL(WAB.start_date),0,WAB.start_date)))
-                            																										)
-                            																										)) AS `real_break_time`
-                        			FROM 		`worker_action` AS `WA`
-                        			JOIN       	user_info ON WA.person_id = user_info.user_id
-                        			LEFT JOIN   worker_action_break AS `WAB` ON WA.id = WAB.worker_action_id
-                        			LEFT JOIN		person_work_graphic AS PWG ON DATE(WA.start_date) = DATE(PWG.`start`) AND WA.person_id = PWG.person_id AND PWG.actived = 1
-                        			LEFT JOIN		work_graphic_break AS PWB ON PWB.wg_id = PWG.wg_id
-									WHERE       DATE(WA.start_date) >= '$start' and DATE(WA.start_date) <= '$end' $checker
+    	   $rResult = mysql_query(" SELECT 		WA.id AS `id`,
+                                                DATE(WA.start_date) AS `date`,
+                                                user_info.`name` AS `person`,
+    	                                        `group`.`name`,
+                                                IF(ISNULL(TIMEDIFF(work_shift.`end_date`,work_shift.`start_date`)),'00:00:00',TIMEDIFF(TIMEDIFF(work_shift.`end_date`,work_shift.`start_date`),TIMEDIFF(work_real_break.`end_break`,work_real_break.`start_break`))) AS `r`,
+                                                SEC_TO_TIME(SUM(IF(TIME_TO_SEC(IF(TIME(IFNULL(WA.end_date,'00:00:00'))=0,TIME(NOW()),TIME(WA.end_date)))< TIME_TO_SEC(TIME(WA.start_date)),((24*60*60)-(TIME_TO_SEC(TIME(WA.start_date))))+TIME_TO_SEC(IF(TIME(IFNULL(WA.end_date,'00:00:00'))=0,TIME(NOW()),TIME(WA.end_date))),TIME_TO_SEC(IF(TIME(IFNULL(WA.end_date,'00:00:00'))=0,TIME(NOW()),TIME(WA.end_date)))-TIME_TO_SEC(TIME(WA.start_date))))) AS `real_work`,
+                                                IF(ISNULL(TIMEDIFF(work_real_break.`end_break`,work_real_break.`start_break`)),'00:00:00',TIMEDIFF(work_real_break.`end_break`,work_real_break.`start_break`)) AS `r2`,
+                                                IFNULL(SEC_TO_TIME(SUM(IF(TIME_TO_SEC(IF(TIME(IFNULL(WAB.end_date,'00:00:00'))=0,TIME(NOW()),TIME(WAB.end_date)))< TIME_TO_SEC(TIME(WAB.start_date)),((24*60*60)-(TIME_TO_SEC(TIME(WAB.start_date))))+TIME_TO_SEC(IF(TIME(IFNULL(WAB.end_date,'00:00:00'))=0,TIME(NOW()),TIME(WAB.end_date))),TIME_TO_SEC(IF(TIME(IFNULL(WAB.end_date,'00:00:00'))=0,TIME(NOW()),TIME(WAB.end_date)))-TIME_TO_SEC(TIME(WAB.start_date))))),'00:00:00') AS `real_break_time`
+                                    FROM 		`worker_action` AS `WA`
+    	                            JOIN       	users ON users.id = WA.person_id
+                                    JOIN       	user_info ON user_info.user_id = WA.person_id
+    	                            JOIN        `group` ON users.group_id = `group`.id
+                                    LEFT JOIN   worker_action_break AS `WAB` ON WA.id = WAB.worker_action_id
+                                    LEFT JOIN   work_real ON DATE(WA.start_date) = DATE(work_real.date) AND users.id = work_real.user_id
+                                    LEFT JOIN   work_real_break ON work_real.id = work_real_break.work_real_id
+                                    LEFT JOIN   work_shift ON work_real.work_shift_id = work_shift.id
+									WHERE       DATE(WA.start_date) >= '$start' and DATE(WA.start_date) <= '$end' AND users.group_id!=5 AND users.id !=1 $checker $check_user
 									GROUP BY 	DATE(WA.start_date) , WA.person_id
-									ORDER BY   	WA.start_date
-    	    						");
+									ORDER BY   	WA.start_date");
 												
-
+			$output = array("aaData"	=> array());
 			
-    	   $data = array(
-    				"aaData"	=> array()
-    		);
-
-    		while ( $aRow = mysql_fetch_array( $rResult ) )
-    		{
-    			$row = array();
-    			for ( $i = 0 ; $i < $count ; $i++ )
-    			{
-    				/* General output */
-    				$row[] = $aRow[$i];
-    				
-    			}
-    			$data['aaData'][] = $row;
-    		}
+			while ( $aRow = mysql_fetch_array( $rResult ) ){
+			    
+				$row = array();
+				for ( $i = 0 ; $i < $count ; $i++ )
+				{
+					/* General output */
+					$row[] = $aRow[$i];
+				}
+				$output['aaData'][] = $row;
+			}
 			
-			echo json_encode( $data );
+			echo json_encode( $output );
 
 
 	        break;

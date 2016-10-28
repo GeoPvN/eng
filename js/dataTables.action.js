@@ -380,7 +380,7 @@ function GetDataTableSD(tname, aJaxURL, action, count, data, hidden, length, sor
 }
 
 
-function GetDataTable3(tname, aJaxURL, action, count, data, hidden, length, sorting, sortMeth, total, colum_change) {
+function GetDataTable3(tname, aJaxURL, action, count, data, hidden, length, sorting, sortMeth, total) {
     if (empty(data))
         data = "";
     
@@ -419,7 +419,7 @@ function GetDataTable3(tname, aJaxURL, action, count, data, hidden, length, sort
         "bDestroy": true, 																				//Reinicialization table
         "bJQueryUI": true, 																				//Add jQuery ThemeRoller
         //"bStateSave": true, 																			//state saving
-        "sDom": colum_change,
+        "sDom": "<'dataTable_buttons'T><'H'lfrt><'dataTable_content't><'F'ip>",
 		"oTableTools": imex,
         "sPaginationType": "full_numbers",
         "bProcessing": true,
@@ -543,35 +543,33 @@ function GetDataTable3(tname, aJaxURL, action, count, data, hidden, length, sort
         }
     });
     
-  //new $.fn.dataTable.ColReorder(oTable);
-    $("#"+tname+" thead input, .dataTables_scrollFoot .dataTable tfoot input").keyup(function () {
-    	
+    $("#" + tname + " thead input").keyup(function () {
         /* Filter on the column (the index) of this element */
-        oTable.fnFilter(this.value, $("#"+tname+" thead input, .dataTables_scrollFoot .dataTable tfoot input").index(this));
+        oTable.fnFilter(this.value, $("#" + tname + " thead input").index(this));
     });
-
+    
     /*
-    * Support functions to provide a little bit of 'user friendlyness' to the textboxes in
+    * Support functions to provide a little bit of 'user friendlyness' to the textboxes in 
     * the footer
     */
-    $("#"+tname+" thead input, .dataTables_scrollFoot .dataTable tfoot input").each(function (i) {
+    $("#" + tname + " thead input").each(function (i) {
         asInitVals[i] = this.value;
     });
 
-    $("#"+tname+" thead input,  .dataTables_scrollFoot .dataTable tfoot input").focus(function () {
+    $("#" + tname + " thead input").focus(function () {
         if (this.className == "search_init") {
             this.className = "";
             this.value = "";
         }
     });
 
-    $("#"+tname+" thead input, .dataTables_scrollFoot .dataTable tfoot input").blur(function (i) {
+    $("#" + tname + " thead input").blur(function (i) {
         if (this.value == "") {
             this.className = "search_init";
-            this.value = asInitVals[$("#"+tname+" thead input, .dataTables_scrollFoot .dataTable tfoot input").index(this)];
+            this.value = asInitVals[$("#" + tname + " thead input").index(this)];
         }
     });
-
+        
     $(".DTTT_button").hover(
 		  function () {
 		    $(this).addClass("ui-state-hover");
@@ -579,7 +577,7 @@ function GetDataTable3(tname, aJaxURL, action, count, data, hidden, length, sort
 		  function () {
 		    $(this).removeClass("ui-state-hover");
 		  }
-    );	
+    );    
 }
 
 function onhovercolor(color){
