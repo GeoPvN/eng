@@ -48,7 +48,7 @@
 	    	param.name1		= $("#name1").val();
 	    	
 			if(param.name == ""){
-				alert("შეავსეთ ველი!");
+				alert("შეავსეთ Field!");
 			}else {
 			    $.ajax({
 			        url: aJaxURL,
@@ -140,7 +140,7 @@
 
 <body>
 <div id="tabs">
-<div class="callapp_head">განყოფილება<hr class="callapp_head_hr"></div>
+<div class="callapp_head">SL<hr class="callapp_head_hr"></div>
 
 <table id="table_right_menu">
 <tr>
@@ -156,21 +156,21 @@
         <thead>
             <tr id="datatable_header">
                 <th>ID</th>
-                <th style="width: 50%;">წამი</th>
-                <th style="width: 50%;">პროცენტი</th>
+                <th style="width: 50%;">Seconds</th>
+                <th style="width: 50%;">Percent</th>
             	<th class="check">#</th>
             </tr>
         </thead>
         <thead>
             <tr class="search_header">
                 <th class="colum_hidden">
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
                 	<div class="callapp_checkbox">
@@ -187,39 +187,39 @@
             <tr id="datatable_header">
                 <th>ID</th>
                 <th style="width: 7%;">№</th>
-                <th style="width: 15%;">ქმედების თარიღი</th>
-                <th style="width: 15%;">ქმედება</th>
-                <th style="width: 15%;">მომხმარებელი</th>
-                <th style="width: 15%;">ველი</th>
-                <th style="width: 15%;">ძველი მნიშვნელობა</th>
-                <th style="width: 20%;">ახალი მნიშვნელობა</th>
+                <th style="width: 15%;">Date</th>
+                <th style="width: 15%;">Action</th>
+                <th style="width: 15%;">Users</th>
+                <th style="width: 15%;">Field</th>
+                <th style="width: 15%;">Old Value</th>
+                <th style="width: 20%;">New Value</th>
             </tr>
         </thead>
         <thead>
             <tr class="search_header">
                 <th class="colum_hidden">
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
             </tr>
         </thead>
@@ -227,7 +227,7 @@
 
     
     <!-- jQuery Dialog -->
-    <div id="add-edit-form" class="form-dialog" title="განყოფილება">
+    <div id="add-edit-form" class="form-dialog" title="SL">
     	<!-- aJax -->
 	</div>
 </body>

@@ -133,17 +133,17 @@ function GetPage($res = '')
 	$data = '
 	<div id="dialog-form">
 	    <fieldset>
-	    	<legend>ძირითადი ინფორმაცია</legend>
+	    	<legend>Basic Information</legend>
 
 	    	<table class="dialog-form-table">
 				<tr>
-					<td style="width: 100px;"><label for="name">წამი</label></td>
+					<td style="width: 100px;"><label for="name">Seconds</label></td>
 					<td>
 						<input style="width: 45px;" type="text" id="name" value="' . $res['sl_min'] . '" />
 					</td>
 				</tr>
                 <tr>
-					<td style="width: 100px;"><label for="name1">პროცენტი</label></td>
+					<td style="width: 100px;"><label for="name1">Percent</label></td>
 					<td>
 						<input style="width: 45px;" type="text" id="name1" value="' . $res['sl_procent'] . '" />
 					</td>
