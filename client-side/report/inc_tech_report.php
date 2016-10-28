@@ -289,7 +289,7 @@
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'Answered Calls საათების მიხედვით',
+			            text: 'Answered Calls by time',
 			            x: -20 
 			        },
 			        subtitle: {
@@ -371,7 +371,7 @@
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'Answered Calls კვირის Dayების მიხედვით',
+			            text: 'Answered Calls by weekdays',
 			            x: -20 
 			        },
 			        subtitle: {
@@ -454,7 +454,7 @@
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'Answered Calls Dayების მიხედვით',
+			            text: 'Answered Calls by Day',
 			            x: -20 
 			        },
 			        subtitle: {
@@ -703,7 +703,7 @@
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'Answered Calls Queueს მიხედვით',
+			            text: 'Answered Calls by Queue',
 			            x: -20 
 			        },
 			        subtitle: {
@@ -787,7 +787,7 @@
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'Unanswered Calls Dayების მიხედვით',
+			            text: 'Unanswered Calls by Day',
 			            x: -20 
 			        },
 			        subtitle: {
@@ -872,7 +872,7 @@
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'Unanswered Calls საათების  მიხედვით',
+			            text: 'Unanswered Calls by time',
 			            x: -20 
 			        },
 			        subtitle: {
@@ -956,7 +956,7 @@
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'Unanswered Calls კვირის Dayების მიხედვით',
+			            text: 'Unanswered Calls by weekdays',
 			            x: -20 
 			        },
 			        subtitle: {
@@ -1044,7 +1044,7 @@
 			                  },
 			                  colors: ['#538DD5', '#FA3A3A'],
 			                  title: {
-			                      text: 'ტექნიკური ინფორმაცია'
+			                      text: 'Technical information'
 			                  },
 			                  tooltip: {
 			                      formatter: function() {
@@ -1073,7 +1073,7 @@
 			                  },
 			                  series: [{
 			                      type: 'pie',
-			                      name: 'კატეგორიები',
+			                      name: 'Categories',
 			                     // color: '#FA3A3A',
 			                      data: []
 			                  }]
@@ -1118,7 +1118,7 @@
 			                  },
 			                  colors: ['#538DD5', '#76933C'],
 			                  title: {
-			                      text: 'ტექნიკური ინფორმაცია'
+			                      text: 'Technical information'
 			                  },
 			                  tooltip: {
 			                      formatter: function() {
@@ -1147,7 +1147,7 @@
 			                  },
 			                  series: [{
 			                      type: 'pie',
-			                      name: 'კატეგორიები',
+			                      name: 'Categories',
 			                     // color: '#FA3A3A',
 			                      data: []
 			                  }]
@@ -1190,7 +1190,7 @@
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'Answered Calls წამების მიხედვით',
+			            text: 'Answered Calls by seconds',
 			            x: -20 
 			        },
 			        subtitle: {
@@ -1415,13 +1415,13 @@
  		function GetDialog_audio(fname, width, height, buttons,distroy) {
  		    var defoult = {
  		        "save": {
- 		            text: "შენახვა",
+ 		            text: "save",
  		            id: "save-dialog",
  		            click: function () {
  		            }
  		        },
  		        "cancel": {
- 		            text: "დახურვა",
+ 		            text: "Close",
  		            id: "cancel-dialog",
  		            click: function () {
  		                $(this).dialog("close");
@@ -1483,7 +1483,7 @@
 					$("#add-edit-form").html(data.page.answear_dialog);
 					var button = {
 							"cancel": {
-					            text: "დახურვა",
+					            text: "Close",
 					            id: "cancel-dialog",
 					            click: function () {
 					                $(this).dialog("close");
@@ -1536,7 +1536,7 @@
 					$("#add-edit-form-unanswer").html(data.page.answear_dialog);
 					var button = {
 							"cancel": {
-					            text: "დახურვა",
+					            text: "Close",
 					            id: "cancel-dialog",
 					            click: function () {
 					                $(this).dialog("close");
@@ -1589,7 +1589,7 @@
 					$("#add-edit-form-undone").html(data.page.answear_dialog);
 					var button = {
 							"cancel": {
-					            text: "დახურვა",
+					            text: "Close",
 					            id: "cancel-dialog",
 					            click: function () {
 					                $(this).dialog("close");
@@ -1740,7 +1740,7 @@
 					<tbody>
 					<tr>
 					   	<td>
-							ხელმისაწვდომია<br><br>
+							Available<br><br>
 						    <select name="List_Queue_available" multiple="multiple" id="myform_List_Queue_from" size="10" style="height: 100px;width: 125px;" >
 							    <option value="2022028">2022028</option>
 							</select>
@@ -1754,7 +1754,7 @@
 							<a  onclick="go_first('Queue')"><img src="media/images/go-first.png" width="16" height="16" border="0"></a>
 						</td>
 						<td>
-							არჩეული<br><br>
+							Selected<br><br>
 						    <select size="10" name="List_Queue[]" multiple="multiple" style="height: 100px;width: 125px;" id="myform_List_Queue_to">
 								
 						    </select>
@@ -1768,7 +1768,7 @@
 				<hr>
 				<table border="0" cellspacing="0" cellpadding="8" >
 					<tbody><tr>
-					   <td>ხელმისაწვდომია<br><br>
+					   <td>Available<br><br>
 					    <select size="10" name="List_Agent_available" multiple="multiple" id="myform_List_Agent_from" style="height: 100px;width: 125px;">
 							<option value="99">99</option>
 							<option value="TD5">TD5</option>
@@ -1783,7 +1783,7 @@
 							<a  onclick="go_first('Agent')"><img src="media/images/go-first.png" width="16" height="16" border="0"></a>
 					</td>
 					<td>
-						არჩეული<br><br>
+						Selected<br><br>
 					    <select size="10" name="List_Agent[]" multiple="multiple" style="height: 100px;width: 125px;" id="myform_List_Agent_to" >
 					
 					    </select>
@@ -1794,25 +1794,25 @@
 			</div>
 			<div class="clear"></div>
 			<div id="rest" style="width: 100%; float:none;">
-				<h2>Dateს ამორჩევა</h2>
+				<h2>Choose date</h2>
 				<hr>
 				<div id="button_area">
-	            	<div class="left" style="width: 180px;">
-	            		<label for="search_start" class="left" style="margin: 6px 0 0 9px; font-size: 12px;">დაStart</label>
+	            	<div class="left" style="width: 160px;">
+	            		<label for="search_start" class="left" style="margin: 6px 0 0 9px; font-size: 12px;">Start Date</label>
 	            		<input type="text" name="search_start" id="start_time" value="" class="inpt right" style="width: 80px; height: 16px;"/>
 	            	</div>
-	            	<div class="right" style="width: 190px;">
-	            		<label for="search_end" class="left" style="margin: 6px 0 0 9px; font-size: 12px;">დასასრული</label>
+	            	<div class="right" style="width: 160px;">
+	            		<label for="search_end" class="left" style="margin: 6px 0 0 9px; font-size: 12px;">End Date</label>
 	            		<input type="text" name="search_end" id="end_time" value="" class="inpt right" style="width: 80px; height: 16px;"/>
             		</div>	
             	</div>
             	
-            		<input style="margin-left: 15px;" id="show_report" name="show_report" type="submit" value="რეპორტების ჩვენება">
+            		<input style="margin-left: 15px;" id="show_report" name="show_report" type="submit" value="Show Report">
             	
 		<div class="clear"></div>
 		<div id="tab-0">	
 		<div class="clear"></div>
-		<div><span style="float: left;">ტექნიკური ინფორმაცია</span><button style="float: right;" id="technik_info_but">Excel</button></div>
+		<div><span style="float: left;">Technical information</span><button style="float: right;" id="technik_info_but">Excel</button></div>
 		<div class="clear"></div>
 		<div id="technik_info">
                 <table>                
@@ -1821,15 +1821,15 @@
                     <th>Total</th>
                     <th>Answered</th>
                     <th>Unanswered</th>
-                    <th>დამუშავებული</th>
-                    <th>დაუმუშავებული</th>
-                    <th>Answeredა %</th>
-                    <th>Unansweredა %</th>
-                    <th>დამუშავებულია %</th>
-                    <th>დაუმუშავებულია %</th>
+                    <th>Processed</th>
+                    <th>Untreated</th>
+                    <th>Answered%</th>
+                    <th>Unanswered %</th>
+                    <th>Processed %</th>
+                    <th>Untreated %</th>
                 </tr>
                 <tr>
-                    <td>ზარი</td>
+                    <td>Call</td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -1902,11 +1902,11 @@
                   <td></td>
                 </tr>
                 <tr>
-                  <td>Total საუბრის ხანგძლივობა:</td>
+                  <td>Total Avg Duration:</td>
                   <td> </td>
                 </tr>
                 <tr>
-                  <td>ლოდინის Avg. Duration:</td>
+                  <td>Avg Waiting time:</td>
                   <td></td>
                 </tr>
                 </table>
@@ -1924,11 +1924,11 @@
                   <th>Operator</th>
                   <th>Calls</th>
                   <th>% Calls</th>
-                  <th>ზარის დრო</th>
-                  <th>% ზარის დრო</th>
-                  <th>საშ. ზარის ხანგძლივობა</th>
-                  <th>ლოდინის დრო</th>
-                  <th>Avg. Wait Time</th>
+                  <th>Duration</th>
+                  <th>% Duration</th>
+                  <th>AVG Duration</th>
+                  <th>Waiting time</th>
+                  <th>Avg. Waiting time</th>
             </tr>
             </thead>
             <tbody>
@@ -1942,15 +1942,15 @@
         <div width="99%">
             <div style="width: 49%;float: left;margin-right: 20px;">
             <div class="clear"></div>
-    		<div><span style="float: left;">მომსახურების დონე(Service Level)</span><button style="float: right;" id="service_level_but">Excel</button></div>
+    		<div><span style="float: left;">Service Level</span><button style="float: right;" id="service_level_but">Excel</button></div>
     		<div class="clear"></div>
     		<div id="service_level">
                 <table>
                 <thead>
                 <tr> 
-                    <th>პასუხი</th>
-                    <th>რაოდენობა</th>
-                    <th>დელტა</th>
+                    <th>Answer</th>
+                    <th>count</th>
+                    <th>Delta</th>
                     <th>%</th>
                 </tr>
                 </thead>
@@ -1970,7 +1970,7 @@
         <div width="99%">
             <div style="width: 49%;float: left;margin-right: 20px;">
             <div class="clear"></div>
-    		<div><span style="float: left;">Answered Calls Queueს მიხედვით</span><button style="float: right;" id="answer_call_but">Excel</button></div>
+    		<div><span style="float: left;">Answered Calls by Queue</span><button style="float: right;" id="answer_call_but">Excel</button></div>
     		<div class="clear"></div>
     		    <div id="answer_call">
                 <table>

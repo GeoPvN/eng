@@ -337,20 +337,20 @@ $row_answer = mysql_fetch_assoc(mysql_query("	SELECT  COUNT(*) AS `count`,
     $data['page']['report_info'] = '
     
                 <tr>
-                    <td>რიგი:</td>
+                    <td>Queue:</td>
                     <td>'.$queue.'</td>
                 </tr>
                 <tr>
-                    <td>საწყისი თარიღი:</td>
+                    <td>Start date:</td>
                     <td>'.$start_time.'</td>
                 </tr>
                 <tr>
-                    <td>დასრულების თარიღი:</td>
+                    <td>End date:</td>
                     <td>'.$end_time.'</td>
                 </tr>
                 <tr>
-                    <td>პერიოდი:</td>
-                    <td>'.$day_format.' დღე</td>
+                    <td>period:</td>
+                    <td>'.$day_format.' Day</td>
                 </tr>
     
 							';
@@ -492,43 +492,43 @@ while ($row_answer_que = mysql_fetch_assoc($answer_que)){
 	$data['page']['service_level'] = '
 							
 							<tr class="odd">
-						 		<td>15 წამში</td>
+						 		<td>15 seconds</td>
 					 			<td>'.$w15.'</td>
 					 			<td></td>
 					 			<td>'.$p15.'%</td>
 					 		</tr>
 				 			<tr>
-						 		<td>30 წამში</td>
+						 		<td>30 seconds</td>
 					 			<td>'.$w30.'</td>
 					 			<td>'.$d30.'</td>
 					 			<td>'.$p30.'%</td>
 					 		</tr>
 				 			<tr class="odd">
-						 		<td>45 წამში</td>
+						 		<td>45 seconds</td>
 					 			<td>'.$w45.'</td>
 					 			<td>'.$d45.'</td>
 					 			<td>'.$p45.'%</td>
 					 		</tr>
 				 			<tr>
-						 		<td>60 წამში</td>
+						 		<td>60 seconds</td>
 					 			<td>'.$w60.'</td>
 					 			<td>'.$d60.'</td>
 					 			<td>'.$p60.'%</td>
 					 		</tr>
 				 			<tr class="odd">
-						 		<td>75 წამში</td>
+						 		<td>75 seconds</td>
 					 			<td>'.$w75.'</td>
 					 			<td>'.$d75.'</td>
 					 			<td>'.$p75.'%</td>
 					 		</tr>
 					 		<tr>
-						 		<td>90 წამში</td>
+						 		<td>90 seconds</td>
 					 			<td>'.$w90.'</td>
 					 			<td>'.$d90.'</td>
 					 			<td>'.$p90.'%</td>
 					 		</tr>
 					 		<tr class="odd">
-						 		<td>90+ წამში</td>
+						 		<td>90+ seconds</td>
 					 			<td>'.$w91.'</td>
 					 			<td>'.$d91.'</td>
 					 			<td>100%</td>
@@ -557,24 +557,22 @@ $row_clock = mysql_fetch_assoc(mysql_query("	SELECT	ROUND((SUM(wait_time) / COUN
 	$data['page']['answer_call_info'] = '
 
                    	<tr>
-					<td>ნაპასუხები ზარები</td>
-					<td>'.$row_answer[count].' ზარი</td>
+					<td>Answered Calls</td>
+					<td>'.$row_answer[count].' Call</td>
 					</tr>
 					
 					<tr>
-					<td>საშ. ხანგძლივობა:</td>
-					<td>'.$row_clock[sec].' წამი</td>
+					<td>AVG Duration:</td>
+					<td>'.$row_clock[sec].' Seconds</td>
 					</tr>
 					<tr>
-					<td>სულ საუბრის ხანგძლივობა:</td>
-					<td>'.$row_clock[min].' წუთი</td>
+					<td>Total Duration:</td>
+					<td>'.$row_clock[min].' Minutes</td>
 					</tr>
 					<tr>
-					<td>ლოდინის საშ. ხანგძლივობა:</td>
-					<td>'.$row_clock[hold].' წამი</td>
-					</tr>
-
-							';
+					<td>AVG Waiting time:</td>
+					<td>'.$row_clock[hold].' Minutes</td>
+					</tr>';
 	
 //---------------------------------------------
 
@@ -681,19 +679,19 @@ if($_REQUEST['act']=='tab_2'){
 	$data['page']['unanswer_call'] = '
 
                    	<tr>
-					<td>უპასუხო ზარების რაოდენობა:</td>
-					<td>'.$row_abadon[count].' ზარი</td>
+					<td>Unanswered calls Count:</td>
+					<td>'.$row_abadon[count].' Call</td>
 					</tr>
 					<tr>
-					<td>ლოდინის საშ. დრო კავშირის გაწყვეტამდე:</td>
-					<td>'.$row_abadon[sec].' წამი</td>
+					<td>AVG Waiting time before hangup:</td>
+					<td>'.$row_abadon[sec].' Second</td>
 					</tr>
 					<tr>
-					<td>საშ. რიგში პოზიცია კავშირის გაწყვეტამდე:</td>
+					<td>AVG position in queue before hangup:</td>
 					<td>1</td>
 					</tr>
 					<tr>
-					<td>საშ. საწყისი პოზიცია რიგში:</td>
+					<td>AVG Starting position in queue:</td>
 					<td>1</td>
 					</tr>
 
@@ -752,12 +750,12 @@ if($_REQUEST['act']=='tab_3'){
 	$data['page']['totals'] = '
 
                    	<tr> 
-                  <td>ნაპასუხები ზარების რაოდენობა:</td>
-		          <td>'.$row_answer[count].' ზარი</td>
+                  <td>Answered calls count:</td>
+		          <td>'.$row_answer[count].' Call</td>
 	            </tr>
                 <tr>
-                  <td>უპასუხო ზარების რაოდენობა:</td>
-                  <td>'.$row_abadon[count].' ზარი</td>
+                  <td>Unanswered calls count:</td>
+                  <td>'.$row_abadon[count].' Call</td>
                 </tr>
 		        
 
