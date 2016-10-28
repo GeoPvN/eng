@@ -41,11 +41,11 @@
 			case "add-edit-form":
 		    	var buttons = {
 						"save": {
-				            text: "შენახვა",
+				            text: "Save",
 				            id: "save-dialog"
 				        },
 			        	"cancel": {
-				            text: "დახურვა",
+				            text: "Close",
 				            id: "cancel-dialog",
 				            click: function () {
 				            	$(this).dialog("close");
@@ -76,11 +76,11 @@
 		   case "add-edit-form-project":
 		    	var buttons = {
 						"save": {
-				            text: "შენახვა",
+				            text: "Save",
 				            id: "save-project"
 				        },
 			        	"cancel": {
-				            text: "დახურვა",
+				            text: "Close",
 				            id: "cancel-dialog",
 				            click: function () {
 				            	$(this).dialog("close");
@@ -122,11 +122,11 @@
 		   case "add-edit-form-import":
 		    	var buttons = {
 						"save": {
-				            text: "შენახვა",
+				            text: "Save",
 				            id: "save-template"
 				        },
 			        	"cancel": {
-				            text: "დახურვა",
+				            text: "Close",
 				            id: "cancel-dialog",
 				            click: function () {
 				            	$(this).dialog("close");
@@ -138,11 +138,11 @@
 		   case "add-edit-form-import-actived":
 		    	var buttons = {
 						"save": {
-				            text: "შენახვა",
+				            text: "Save",
 				            id: "save-template-actived"
 				        },
 			        	"cancel": {
-				            text: "დახურვა",
+				            text: "Close",
 				            id: "cancel-dialog",
 				            click: function () {
 				            	$(this).dialog("close");
@@ -156,11 +156,11 @@
 		   case "add-edit-form-client":
 		    	var buttons = {
 						"save": {
-				            text: "შენახვა",
+				            text: "Save",
 				            id: "save-client_person"
 				        },
 			        	"cancel": {
-				            text: "დახურვა",
+				            text: "Close",
 				            id: "cancel-dialog",
 				            click: function () {
 				            	$(this).dialog("close");
@@ -172,11 +172,11 @@
 		   case "add-edit-form-number":
 		    	var buttons = {
 						"save": {
-				            text: "შენახვა",
+				            text: "Save",
 				            id: "save-number"
 				        },
 			        	"cancel": {
-				            text: "დახურვა",
+				            text: "Close",
 				            id: "cancel-dialog",
 				            click: function () {
 				            	$(this).dialog("close");
@@ -279,7 +279,7 @@
     	var buttons = {
 						
 			        	"cancel": {
-				            text: "დახურვა",
+				            text: "Close",
 				            id: "cancel-dialog",
 				            click: function () {
 				            	$(this).dialog("close");
@@ -662,7 +662,7 @@
 	   
 	   
 	   if(param.person_name == ""){
-			alert("შეავსეთ სახელი!");
+			alert("enter name!");
 		}else{
 		    $.ajax({
 		        url: aJaxURL_client,
@@ -697,7 +697,7 @@
 	    param.end_date_holi	    = $("#end_date_holi").val();
 	   
 	   if(param.person_name == ""){
-			alert("შეავსეთ სახელი!");
+			alert("enter name!");
 		}else{
 		    $.ajax({
 		        url: aJaxURL_object,
@@ -736,7 +736,7 @@
 	   
 	   
 	   if(param.person_name == ""){
-			alert("შეავსეთ სახელი!");
+			alert("enter name!");
 		}else{
 		    $.ajax({
 		        url: aJaxURL_sub_project,
@@ -773,7 +773,7 @@
 					}else{
 						var buttons = {
 					        	"cancel": {
-						            text: "დახურვა",
+						            text: "Close",
 						            id: "cancel-dialog",
 						            click: function () {
 						            	$(this).dialog("close");
@@ -915,22 +915,22 @@
 			    <thead>
 			        <tr class="search_header">
 			            <th class="colum_hidden">
-			        	   <input type="text" name="search_id" value="ფილტრი" class="search_init" />
+			        	   <input type="text" name="search_id" value="Filter" class="search_init" />
 			            </th>
 			            <th>
-			            	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+			            	<input type="text" name="search_number" value="Filter" class="search_init" />
 			            </th>
 			            <th>
-			                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+			                <input type="text" name="search_date" value="Filter" class="search_init" />
 			            </th>    
 			            <th>
-			                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+			                <input type="text" name="search_date" value="Filter" class="search_init" />
 			            </th>
 			            <th>
-			                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+			                <input type="text" name="search_date" value="Filter" class="search_init" />
 			            </th>                         
 			            <th>
-			                <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+			                <input type="text" name="search_category" value="Filter" class="search_init" />
 			            </th>
 			            <th style="border-right: 1px solid #E6E6E6 !important;">
 			            	<div class="callapp_checkbox">
