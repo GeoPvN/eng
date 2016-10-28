@@ -61,9 +61,9 @@ $(document).ready(function () {
 	                alert(data.error);
 	            }else {
 					if(data.check==1){
-						$('#opper_status').html('სისტემიდან გასული');
+						$('#opper_status').html('Logged out');
     				}else{
-    	            	$('#opper_status').html('სისტემაში შემოსული');
+    	            	$('#opper_status').html('Log In');
     				}
 		    	}
 	        }
@@ -137,7 +137,7 @@ $(document).on("click", "#go_home", function () {
         	                                });
         	                        		var button = {
         	                        				"cancel": {
-        	                        		            text: "დახურვა",
+        	                        		            text: "Close",
         	                        		            id: "cancel-dialog",
         	                        		            click: function () {
         	                        		                $(this).dialog("close");
@@ -145,7 +145,7 @@ $(document).on("click", "#go_home", function () {
         	                        		        }
         	                        		};
         	                        		GetDialog("alert_dialog", 360, "auto", button);
-        	                        		$('#alert_dialog').html('ოპერაცია წარმატებით განხორციელდა');
+        	                        		$('#alert_dialog').html('The operation was successful');
         	                        		$('.alert_dialog-class').css('z-index','9999999');
         	                        	}
         	                        }
@@ -155,7 +155,7 @@ $(document).on("click", "#go_home", function () {
 		                    }else{
 		                    	var button = {
                         				"cancel": {
-                        		            text: "დახურვა",
+                        		            text: "Close",
                         		            id: "cancel-dialog",
                         		            click: function () {
                         		                $(this).dialog("close");
@@ -163,7 +163,7 @@ $(document).on("click", "#go_home", function () {
                         		        }
                         		};
                         		GetDialog("alert_dialog", 360, "auto", button);
-                        		$('#alert_dialog').html('ამჟამად თქვენ ვერ შეძლებთ შესვენებაზე გასვლას, სცადეთ მოგვიანებით');
+                        		$('#alert_dialog').html('Now you will not be able to break the Exit's, try again later');
                         		$('.alert_dialog-class').css('z-index','9999999');
 		                    }
 	                    }
@@ -171,7 +171,7 @@ $(document).on("click", "#go_home", function () {
 	            }
 	        },
 		      "cancel": {
-		            text: "დახურვა",
+		            text: "Close",
 		            id: "cancel-dialog",
 		            click: function () {
 		                $(this).dialog("close");
@@ -208,7 +208,7 @@ $(document).on("click", "#come_in", function () {
             	if(data.status==3){
             		var button = {
             				"cancel": {
-            		            text: "დახურვა",
+            		            text: "Close",
             		            id: "cancel-dialog",
             		            click: function () {
             		                $(this).dialog("close");
@@ -216,12 +216,12 @@ $(document).on("click", "#come_in", function () {
             		        }
             		};
             		GetDialog("alert_dialog", 360, "auto", button);
-            		$('#alert_dialog').html('ოპერაცია წარმატებით განხორციელდა');
+            		$('#alert_dialog').html('The operation was successful');
             		$('.alert_dialog-class').css('z-index','9999999');
                 	$('#disable_all').css('z-index', 0);
             		$('#come_in').css('z-index', 1);
             		$('#disable_all').css('background', 'none');
-            		$('#opper_status').html('სისტემაში შემოსული');
+            		$('#opper_status').html('Log In');
             		$("#dis_timer").css('display','none');
             	}
             }
@@ -244,7 +244,7 @@ $(document).on("click", "#report tbody tr", function () {
             	var button = {
           		      
             	        "cancel": {
-            	            text: "დახურვა",
+            	            text: "Close",
             	            id: "cancel-dialog",
             	            click: function () {
             	                $(this).dialog("close");
@@ -293,7 +293,7 @@ $(document).on("click", "#balance", function () {
      			
     			var button = {
           				      "cancel": {
-            			            text: "დახურვა",
+            			            text: "Close",
             			            id: "cancel-dialog",
             			            click: function () {
             			                $(this).dialog("close");
@@ -316,7 +316,7 @@ $(document).on("click", "#exel_button", function () {
 
 	var button = {
 		      "cancel": {
-		            text: "დახურვა",
+		            text: "Close",
 		            id: "cancel-dialog",
 		            click: function () {
 		                $(this).dialog("close");
@@ -383,7 +383,7 @@ $(document).on("click", "#goexcel", function (e) {
 </script>
 <body onselectstart='return false;'>
 <div style="margin-top: 15px;">
-	<div style="margin-left: 298px; font-size: 17px; margin-top: -10px; color: #000;">სტატუსი:</div>
+	<div style="margin-left: 298px; font-size: 17px; margin-top: -10px; color: #000;">Status:</div>
     <div id="opper_status" style="margin-left: 380px; margin-top: -15px; color: red; font-size: 15px;">
     </div>
     <div id="ContentHolder">  
@@ -396,7 +396,7 @@ $(document).on("click", "#goexcel", function (e) {
             					<div class="tile_icon" style="margin-top: 10px;">
             					<img src="media/images/w_come_in.png" alt="" style="background-position: -116px -18px; width: 50px; height: 50px;" />
         					</div>
-        					<p style="margin-top: 22px; margin-left: 80px">მოსვლა</p>
+        					<p style="margin-top: 22px; margin-left: 80px">Come in</p>
             				</div>
                         </td>
                         <td style="padding: 30px 100px 50px 50px;">
@@ -404,7 +404,7 @@ $(document).on("click", "#goexcel", function (e) {
             					<div class="tile_icon" style="margin-top: 10px;">
             					<img src="media/images/w_go_home.png" alt="" style="background-position: -116px -18px; width: 50px; height: 50px;" />
         					</div>
-        					<p style="margin-top: 22px; margin-left: 80px">გასვლა</p>
+        					<p style="margin-top: 22px; margin-left: 80px">Exit</p>
             				</div>
                         </td>
                     </tr>
@@ -413,7 +413,7 @@ $(document).on("click", "#goexcel", function (e) {
                             <div  class="tile_large" id="relax" style="background: #A0C64B;" >
         					<div class="tile_icon" style="margin-top: 10px;">
         					<img src="media/images/w_relax.png" alt="" style="background-position: -116px -18px; width: 50px; height: 50px;" />
-        					</div><p style="margin-top: 22px; margin-left: 80px">შესვენებაზე გასვლა</p>
+        					</div><p style="margin-top: 22px; margin-left: 80px">შესვენებაზე Exit</p>
             				</div>
                         </td>
                         <td style="padding: 30px 100px 50px 50px;">
@@ -421,7 +421,7 @@ $(document).on("click", "#goexcel", function (e) {
             					<div class="tile_icon" style="margin-top: 10px;">
             					<img src="media/images/w_back.png" alt="" style="background-position: -116px -18px; width: 50px; height: 50px;" />
         					</div>
-        					<p style="margin-top: 22px; margin-left: 80px"> შესვენებიდან მოსვლა</p>
+        					<p style="margin-top: 22px; margin-left: 80px"> შესვენებიდან Come in</p>
             				</div>
                         </td>
                     </tr -->
@@ -431,7 +431,7 @@ $(document).on("click", "#goexcel", function (e) {
             					<div class="tile_icon" style="margin-top: 10px;">
             					<img src="media/images/w_balance.png" alt="" style="background-position: -116px -18px; width: 50px; height: 50px;" />
         					</div>
-        					<p style="margin-top: 22px; margin-left: 80px">ბალანსი</p>
+        					<p style="margin-top: 22px; margin-left: 80px">Balance</p>
             				</div>
                        </td>
                     </tr>
@@ -440,28 +440,28 @@ $(document).on("click", "#goexcel", function (e) {
         </div>
     </div>
         
-    <div id="timer_html" class="form-dialog" title="ტაიმერი">
+    <div id="timer_html" class="form-dialog" title="Timer">
     	<!-- aJax -->
-    	<div style="text-align: center;font-size: 15px;margin-top: 12px;">თქვენ დარჩენილი გაქვთ <span id="timer_value" style="font-size: 18px;font-weight: bold;">0</span> წამი</div>
+    	<div style="text-align: center;font-size: 15px;margin-top: 12px;">You have left <span id="timer_value" style="font-size: 18px;font-weight: bold;">0</span> Seconds</div>
 	</div>
 	
-	<div id="lg_out" class="form-dialog" title="ქმედება">
-    	<!-- aJax -->
-	</div>
-	
-	<div id="balance-form" class="form-dialog" title="ბალანსი">
+	<div id="lg_out" class="form-dialog" title="Action">
     	<!-- aJax -->
 	</div>
 	
-	<div id="balance-form-deep" class="form-dialog" title="ბალანსი">
+	<div id="balance-form" class="form-dialog" title="Balance">
     	<!-- aJax -->
 	</div>
 	
-	<div id="balance-form-excel" class="form-dialog" title="ექსელში გატანა">
+	<div id="balance-form-deep" class="form-dialog" title="Balance">
+    	<!-- aJax -->
+	</div>
+	
+	<div id="balance-form-excel" class="form-dialog" title="Excel export">
 
 	</div>
 	
-	<div id="alert_dialog" class="form-dialog" title="შეტყობინება">
+	<div id="alert_dialog" class="form-dialog" title="Message">
 
 	</div>
 	

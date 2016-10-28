@@ -57,7 +57,7 @@ switch ($action) {
 		    if(!CheckActivitiesCatExist($name)){
 			AddLang($name);
 		    }else{
-                $error = 'ეს "' . $name . '" კატეგორია უკვე არის სიაში!';
+                $error = 'This "' . $name . '" Category is already in the list!';
             }
 		}else {
 			SaveLang($lang_id, $name);
@@ -132,13 +132,13 @@ function GetPage($res = '')
 	$data = '
 	<div id="dialog-form">
 	    <fieldset>
-	    	<legend>ძირითადი ინფორმაცია</legend>
+	    	<legend>Basic Information</legend>
             <!-- ID -->
 			<input type="hidden" id="lang_id" value="' . $res['id'] . '" />
 	    	<table class="dialog-form-table">
 
 			    <tr>
-					<td style="width: 170px;"><label for="name">სახელი</label></td>
+					<td style="width: 170px;"><label for="name">Name</label></td>
 					<td>
 						<input type="text" id="name" value="' . $res['name'] . '" />
 					</td>

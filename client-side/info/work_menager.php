@@ -179,7 +179,7 @@ function opendialog(work_shift,color,date,rigi_num,work_real_id){
 	if(color != 'red'){
 		var buttons = {
 				"save": {
-		            text: "შენახვა",
+		            text: "Save",
 		            id: "save-dialog",
 		            click: function () {
 		            	param 			    = new Object();
@@ -200,7 +200,7 @@ function opendialog(work_shift,color,date,rigi_num,work_real_id){
 		            }
 		        },
 	        	"cancel": {
-		            text: "დახურვა",
+		            text: "Close",
 		            id: "cancel-dialog",
 		            click: function () {
 		            	$(this).dialog("close");
@@ -241,7 +241,7 @@ $(document).on("change", ".cycle", function () {
 		
 		var buttons = {
 				"save": {
-		            text: "შენახვა",
+		            text: "Save",
 		            id: "save-dialog",
 		            click: function () {
 			            m = (parseInt($("#cvlis_nomeri").val())-1);
@@ -273,7 +273,7 @@ $(document).on("change", ".cycle", function () {
 		            }
 		        },
 	        	"cancel": {
-		            text: "დახურვა",
+		            text: "Close",
 		            id: "cancel-dialog",
 		            click: function () {
 		            	$(this).dialog("close");
@@ -303,7 +303,7 @@ function openhour(date,date1,id){
         	
             var buttons = {
                 	"cancel": {
-                        text: "დახურვა",
+                        text: "Close",
                         id: "cancel-dialog",
                         click: function () {
                         	$(this).dialog("close");
@@ -361,7 +361,7 @@ $(document).on("click", ".user_break", function () {
     var user_name = $(this).html()
 	var buttons = {
         	"cancel": {
-	            text: "დახურვა",
+	            text: "Close",
 	            id: "cancel-dialog",
 	            click: function () {
 	            	openhour($("#load_date").val());
@@ -393,7 +393,7 @@ $(document).on("click", ".user_break", function () {
 function LoadDialog(fname){
 	var buttons = {
 			"save": {
-	            text: "შენახვა",
+	            text: "Save",
 	            id: "save-dialog",
 	            click: function () {
 	            	param 		      = new Object();
@@ -412,14 +412,14 @@ function LoadDialog(fname){
 		                    	LoadTable('index',4,'get_index',"<'F'lip>",'work_real_id='+$('#r_id').val(),aJaxURL);
 		                    	$("#"+fname).dialog("close");
 		                    }else{
-		                        alert('შუალედი ცდება მიმდინარე სამუშაო გრაფიკსი, მიუთითეთ კორექტული შუალედი!');
+		                        alert('Graphics mistaken lag current job, indicate the correct lag!');
 		                    }
 	                    }
 	                });
 	            }
 	        },
         	"cancel": {
-	            text: "დახურვა",
+	            text: "Close",
 	            id: "cancel-dialog",
 	            click: function () {
 	            	//openhour($("#load_date").val());
@@ -463,7 +463,7 @@ $(document).on("change", "#cheker", function () {
             		$('#cvlis_nomeri').prop('disabled', true);
             	}
             }else{
-                alert('შუალედი ცდება მიმდინარე სამუშაო გრაფიკსი, მიუთითეთ კორექტული შუალედი!')
+                alert('Graphics mistaken lag current job, indicate the correct lag!')
             }
         }
     });
@@ -557,45 +557,45 @@ td {position: relative;}
         </select-->
         <input style="width: 60px;display: inline-block; height: 13px; position: relative;" id="year_month" value="<?php echo date('Y-m')?>" class="date1 inpt" placeholder="თარიღი"/>
         <br/>
-        <div id="time_line" style="margin-top: 20px;"><div style="color: #2681DC;text-align: center; font-size: 14px; font-weight: bold;">აირჩიეთ პროექტი და თარიღი!</div></div>
+        <div id="time_line" style="margin-top: 20px;"><div style="color: #2681DC;text-align: center; font-size: 14px; font-weight: bold;">Select the project and the date!</div></div>
 
     </div>
 <div id="test"></div>
-<div id="add-edit-form" class="form-dialog" title="ცვლის დამატება">
+<div id="add-edit-form" class="form-dialog" title="Add Shifts">
 <div id="dialog-form">
     <fieldset>
-        <legend>ცვლა</legend>
+        <legend>Shift</legend>
         <select style="width: 190px;margin-bottom: 25px;" id="shift_id"></select>
         <table class="display" id="table_hist">
         <thead>
             <tr id="datatable_header">
                 <th>ID</th>
-                <th style="width: 50%;">ცვლილების თარიღი</th>
-                <th style="width: 50%;">ცვლილების სტატუსი</th>
-                <th style="width: 50%;">ცვლილების ავტორი</th>
-                <th style="width: 50%;">ცვლილებამდე</th>
-                <th style="width: 50%;">ცვლილების შემდეგ</th>
+                <th style="width: 50%;">Change Date</th>
+                <th style="width: 50%;">Change Status</th>
+                <th style="width: 50%;">Change Author</th>
+                <th style="width: 50%;">Before Change</th>
+                <th style="width: 50%;">After Change</th>
             </tr>
         </thead>
         <thead>
             <tr class="search_header">
                 <th class="colum_hidden">
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
             </tr>
         </thead>
@@ -603,21 +603,21 @@ td {position: relative;}
     </fieldset>
 </div>
 </div>
-<div id="start_date" class="form-dialog" title="ციკლის დაწყების თარიღი">
+<div id="start_date" class="form-dialog" title="Cycle start date">
 <div id="dialog-form">
     <fieldset style="height: 80px;">
-        <legend>ციკლის დაწყების თარიღი</legend>
+        <legend>Cycle start date</legend>
         <select style="width: 190px;" id="cycle_start_date"></select>
         <input type="number" id="cvlis_nomeri" min="1" max="22" style="margin-top: 15px;float: left;" value="1">
-        <label style="float: left;margin-left: 70px;margin-top: -25px;width: 105px;" for="cheker">გააგრძელე ციკლი წინა თვიდან</label><input type="checkbox" id="cheker" style="margin-top: -28px; margin-left: 180px;float:left;">
+        <label style="float: left;margin-left: 70px;margin-top: -25px;width: 105px;" for="cheker">Continue the cycle of the previous month</label><input type="checkbox" id="cheker" style="margin-top: -28px; margin-left: 180px;float:left;">
     </fieldset>
 </div>
 </div>
-<div id="wfm_hour" class="form-dialog" title="საათების მიხედვით">
+<div id="wfm_hour" class="form-dialog" title="By hours">
 </div>
-<div id="add_break" class="form-dialog" title="შესვენების დამატება">
+<div id="add_break" class="form-dialog" title="Adding a break">
 </div>
-<div id="add-edit-form-user" class="form-dialog" title="შესვენების დამატება">
+<div id="add-edit-form-user" class="form-dialog" title="Adding a break">
 </div>
 </body>
 </html>

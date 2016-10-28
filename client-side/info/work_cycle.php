@@ -30,7 +30,7 @@
 			/* Dialog Form Selector Name, Buttons Array */
 			var buttons = {
 					"save": {
-			            text: "შენახვა",
+			            text: "Save",
 			            id: "cycle_save",
 			            click: function () {
 			            	param 			    = new Object();
@@ -58,7 +58,7 @@
 			    	    	$(this).dialog("close");
 			            }
 			        },"cancel": {
-			            text: "დახურვა",
+			            text: "Close",
 			            id: "cancel-dialog",
 			            click: function () {
 			            	$(this).dialog("close");
@@ -76,7 +76,7 @@
 		$(document).on("click", "#add_button2", function () {
 			var buttons = {
 					"save": {
-			            text: "შენახვა",
+			            text: "Save",
 			            id: "save_dialog",
 			            click: function () {
 			            	param 			    = new Object();
@@ -86,7 +86,7 @@
 			    	    	param.project_id    = $("#add-edit-form1 #project_id").val()
 			    	    	
 			    			if(param.name == ""){
-			    				alert("შეავსეთ ველი!");
+			    				alert("Fill in the fields!");
 			    			}else {
 			    			    $.ajax({
 			    			        url: aJaxURL,
@@ -108,7 +108,7 @@
 			    			
 			            }
 			        },"cancel": {
-			            text: "დახურვა",
+			            text: "Close",
 			            id: "cancel-dialog",
 			            click: function () {
 			            	$(this).dialog("close");
@@ -149,7 +149,7 @@
 	    	param.num           = $("#num").val();
 	    	
 			if(param.name == ""){
-				alert("შეავსეთ ველი!");
+				alert("Fill in the fields!");
 			}else {
 			    $.ajax({
 			        url: aJaxURL,
@@ -192,11 +192,11 @@
 
 <body>
 <div id="tabs" style="width: 100%;">
-<div class="callapp_head">სამუშაო ციკლი<hr class="callapp_head_hr"></div>
+<div class="callapp_head">Working Cycle<hr class="callapp_head_hr"></div>
 <div id="button_area">
-	<button id="add_button" style="display: none;">დამატება</button>
-	<button id="add_button2">დამატება</button>
-	<button id="delete_button">წაშლა</button>
+	<button id="add_button" style="display: none;">Add</button>
+	<button id="add_button2">Add</button>
+	<button id="delete_button">Delete</button>
 </div>
 <table id="table_right_menu">
 <tr>
@@ -213,28 +213,28 @@
             <tr id="datatable_header">
                 <th>ID</th>
                 <th style="width: 5%;">#</th>
-                <th style="width: 30%;">ციკლის დასახელება</th>
-                <th style="width: 45%;">ცვლები</th>
-                <th style="width: 20%;">პროექტი</th>
+                <th style="width: 30%;">Cycleს Name</th>
+                <th style="width: 45%;">Shifts</th>
+                <th style="width: 20%;">Project</th>
             	<th class="check">#</th>
             </tr>
         </thead>
         <thead>
             <tr class="search_header">
                 <th class="colum_hidden">
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
                 	<div class="callapp_checkbox">
@@ -248,20 +248,20 @@
 
     
     <!-- jQuery Dialog -->
-    <div id="add-edit-form" class="form-dialog" title="ციკლი">
+    <div id="add-edit-form" class="form-dialog" title="Cycle">
     	<!-- aJax -->
 	</div>
-	<div id="add-edit-form2" class="form-dialog2" title="ცვლები">
+	<div id="add-edit-form2" class="form-dialog2" title="Shifts">
     	<!-- aJax -->
 	</div>
 	<!-- jQuery Dialog -->
-    <div id="add-edit-form1" class="form-dialog" title="სამუშაო ციკლის დასახელება">
+    <div id="add-edit-form1" class="form-dialog" title="Working Cycleს Name">
     <div id="dialog-form">
     	    <fieldset>
-    	    	<legend>ძირითადი ინფორმაცია</legend>
+    	    	<legend>Basic Information</legend>
     	    	<table class="dialog-form-table">
     	    	    <tr>
-    			        <td style="width: 190px;"><label for="name">პროექტი</label></td>
+    			        <td style="width: 190px;"><label for="name">Project</label></td>
     				</tr>
     			    <tr>
                         <td>
@@ -269,7 +269,7 @@
     					</td>
     				</tr>
     			    <tr>
-    			        <td style="width: 190px;"><label for="name">დასახელება</label></td>
+    			        <td style="width: 190px;"><label for="name">Name</label></td>
     				</tr>
     			    <tr>
                         <td>

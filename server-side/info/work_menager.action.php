@@ -313,24 +313,24 @@ switch ($action) {
     			<tr>
         			<td style="width: 350px;padding-right: 2px;">
             			<table id="pirveli">
-            			<tr><td colspan=4 style="border: none;height: 30px;"><div style="display:inline;cursor:pointer;" value="'.$new_line.'" id="add_new_line">დამატება</div><div style="display:inline;margin-left:10px;cursor:pointer;" id="del_new_line">წაშლა</div></td></tr>
-            			<tr><td>სადგ.</td><td>ოპერატორი</td><td>ციკლი</td><td>X</td></tr>
+            			<tr><td colspan=4 style="border: none;height: 30px;"><div style="display:inline;cursor:pointer;" value="'.$new_line.'" id="add_new_line">Add</div><div style="display:inline;margin-left:10px;cursor:pointer;" id="del_new_line">Delete</div></td></tr>
+            			<tr><td>Stations.</td><td>Operator</td><td>Cycle</td><td>X</td></tr>
             			'.$marcxena.'
             			</table>
             			<table id="qveda_pirveli" style="margin-top: 7px;">
             			<tr>
-            			<td style="height: 14px;">გეგმიური სთ/დღე</td>
+            			<td style="height: 14px;">Regular hours / day</td>
             			</tr>
             			<tr>
-            			<td>საოპერაციო სთ/დღე</td>
+            			<td>Operating hours / day</td>
             			</tr>
             			<tr>
-            			<td>სხვაობა</td>
+            			<td>Difference</td>
             			</tr>
             			</table>
             			<table id="qveda_pirveli1" style="margin-top: 5px;">
             			<tr>
-            			<td>პროექტის ცვლები</td>
+            			<td>Project Shifts</td>
             			</tr>
             			'.$shift.'
             			</table>
@@ -358,7 +358,7 @@ switch ($action) {
             			</tbody>
             			<tbody style="border-top: 8px solid #fff;">
             			<tr style="margin-top: 5px;">
-            			<td colspan='.$month_day.' style="text-align: center;">ოპ. რაოდენობა</td>
+            			<td colspan='.$month_day.' style="text-align: center;">Op. Points</td>
             			</tr>
             			'.$cvla_op.'
             			</tbody>
@@ -367,7 +367,7 @@ switch ($action) {
         			<td style="width: 80px;">
             			<table id="mesame">
             			<tr>
-            			<td style="height: 46px;">სულ სთ/თვე</td>
+            			<td style="height: 46px;">Total hours / month</td>
             			</tr>
             			'.$marjvena.'
             			</table>
@@ -483,34 +483,34 @@ switch ($action) {
         
         $data['break'] = '<div id="dialog-form">
                             <fieldset>
-                            <legend>საათების მიხედვით</legend>
+                            <legend>By hours</legend>
                             <div style="margin: 10px 0;">
-                                <button id="add_button_user">დამატება</button>
-                                <button id="delete_button_user">წაშლა</button>
+                                <button id="add_button_user">Add</button>
+                                <button id="delete_button_user">Delete</button>
                             </div>
                             <table class="display" id="table_index" style="width: 100%;">
                                 <thead>
                                     <tr id="datatable_header">
                                         <th>ID</th>
-                                        <th style="width: 45%;">დასახელება</th>
-                                        <th style="width: 25%;">დასაწყისი</th>
-                                        <th style="width: 25%;">დასასრული</th>
+                                        <th style="width: 45%;">Name</th>
+                                        <th style="width: 25%;">Start</th>
+                                        <th style="width: 25%;">End</th>
                                         <th class="check" style="width: 30px;">&nbsp;</th>
                                     </tr>
                                 </thead>
                                 <thead>
                                     <tr class="search_header">
                                         <th class="colum_hidden">
-                                    	   <input type="text" name="search_id" value="ფილტრი" class="search_init" />
+                                    	   <input type="text" name="search_id" value="Filter" class="search_init" />
                                         </th>
                                         <th>
-                                        	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+                                        	<input type="text" name="search_number" value="Filter" class="search_init" />
                                         </th>
                                         <th>
-                                            <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                                            <input type="text" name="search_date" value="Filter" class="search_init" />
                                         </th>    
                                         <th>
-                                            <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                                            <input type="text" name="search_date" value="Filter" class="search_init" />
                                         </th>
                                         <th style="border-right: 1px solid #E6E6E6 !important;">
                                         	<div class="callapp_checkbox">
@@ -788,9 +788,9 @@ switch ($action) {
         
         $data['page'] = '<div id="dialog-form">
                             <fieldset>
-                            <legend>საათების მიხედვით</legend>
+                            <legend>By hours</legend>
                                 <div>
-                                    <select id="select_viwe"><option value="1" '.(($new_viwe==1)?'selected="selected"':"").'>ცხრილის სახით</option><option value="2" '.(($new_viwe==2)?'selected="selected"':"").'>გრაფიკული სახით</option></select>
+                                    <select id="select_viwe"><option value="1" '.(($new_viwe==1)?'selected="selected"':"").'>Table</option><option value="2" '.(($new_viwe==2)?'selected="selected"':"").'>Graphic</option></select>
                                     <table style="margin-top:10px;">
                                     <tr>
                                     <td>
@@ -811,7 +811,7 @@ switch ($action) {
                                 	</td>
                     	            <td>
                     	            <table id="work_table" style="width: 60px;">
-                                    <tr><td style="border-top: 2px solid;">სულ სთ</td></tr>
+                                    <tr><td style="border-top: 2px solid;">Total hours</td></tr>
                     	            <tr><td style="height: 11px;"></td></tr>
                                 	            '.$fff.'
                                 	                <tr><td style="font-weight: bold;">'.AddPlayTime($times).'</td></tr>
@@ -819,7 +819,7 @@ switch ($action) {
             	                    </td>
             	                    <td>
                                 	<table id="work_table" style="width: 60px;">
-                                    <tr><td style="border-top: 2px solid;">დასვ. სთ</td></tr>
+                                    <tr><td style="border-top: 2px solid;">Break H</td></tr>
                     	            <tr><td style="height: 11px;"></td></tr>
                                 	            '.$ffq.'
                                 	                <tr><td style="font-weight: bold;">'.AddPlayTime($time_break).'</td></tr>
@@ -827,7 +827,7 @@ switch ($action) {
                                 	</td>
             	                    <td>
                                 	<table id="work_table" style="width: 60px;">
-                                    <tr><td style="border-top: 2px solid;">სამუ. სთ</td></tr>
+                                    <tr><td style="border-top: 2px solid;">Work H</td></tr>
                     	            <tr><td style="height: 11px;"></td></tr>
                                 	            '.$ffe.'
                                 	                <tr><td style="font-weight: bold;">'.AddPlayTime($time_work).'</td></tr>
@@ -835,7 +835,7 @@ switch ($action) {
                                     </td>
                                 	<td>
                                 	<table id="work_table" style="width: 70px;">
-                                    <tr><td style="border-top: 2px solid;">შევსების %</td></tr>
+                                    <tr><td style="border-top: 2px solid;">Fill %</td></tr>
                     	            <tr><td style="height: 11px;"></td></tr>
                                 	            '.$gay.'
                                 	                <tr><td style="font-weight: bold;">'.$gay_total_last.'</td></tr>
@@ -919,23 +919,23 @@ function get_work_activities_detail($id){
 function get_page($res){
     $data = '<div id="dialog-form">
                             <fieldset>
-                            <legend>საათების მიხედვით</legend>
+                            <legend>By hours</legend>
                                 <table>
                                     <tr>
-                                        <td colspan=2>აქტივობა</td>
+                                        <td colspan=2>Activity</td>
                                     </tr>
                                     <tr>
                                         <td colspan=2><select id="work_activities_id" style="width: 100%;">'.get_work_activities($res[work_activities_id]).'</select></td>
                                     </tr>
                                     <tr>
-                                        <td colspan=2>პერიოდი</td>
+                                        <td colspan=2>Period</td>
                                     </tr>
                                     <tr>
                                         <td colspan=2><select id="work_activities_detail_id" style="width: 100%;">'.get_work_activities_detail($res[work_activities_id]).'</select></td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 100px;">დასაწყისი</td>
-                                        <td>დასასრული</td>
+                                        <td style="width: 100px;">Start</td>
+                                        <td>End</td>
                                     </tr>
                                     <tr>
                                         <td><input type="text" id="start_break" style="width: 70px;" value="'.$res[start].'"></td>

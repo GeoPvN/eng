@@ -39,7 +39,7 @@
 	    	param.name		    = $("#name").val();
 	    	
 			if(param.name == ""){
-				alert("შეავსეთ ველი!");
+				alert("Fill in the fields!");
 			}else {
 			    $.ajax({
 			        url: aJaxURL,
@@ -82,10 +82,10 @@
 
 <body>
 <div id="tabs">
-<div class="callapp_head">აქტივობების კატეგორია<hr class="callapp_head_hr"></div>
+<div class="callapp_head">Activities Category<hr class="callapp_head_hr"></div>
 <div id="button_area">
-	<button id="add_button">დამატება</button>
-	<button id="delete_button">წაშლა</button>
+	<button id="add_button">Add</button>
+	<button id="delete_button">Delete</button>
 </div>
 <table id="table_right_menu">
 <tr>
@@ -102,20 +102,20 @@
             <tr id="datatable_header">
                 <th>ID</th>
                 <th style="width: 5%;">№</th>
-                <th style="width: 95%;">დასახელება</th>
+                <th style="width: 95%;">Name</th>
             	<th class="check">#</th>
             </tr>
         </thead>
         <thead>
             <tr class="search_header">
                 <th class="colum_hidden">
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
                 	<div class="callapp_checkbox">
@@ -129,7 +129,7 @@
 
     
     <!-- jQuery Dialog -->
-    <div id="add-edit-form" class="form-dialog" title="აქტივობების კატეგორია">
+    <div id="add-edit-form" class="form-dialog" title="Activities Category">
     	<!-- aJax -->
 	</div>
 </body>

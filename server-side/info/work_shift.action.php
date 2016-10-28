@@ -210,60 +210,60 @@ function GetPage($res = '')
 	$data = '
 	<div id="dialog-form">
 	    <fieldset>
-	    	<legend>ძირითადი ინფორმაცია</legend>
+	    	<legend>Basic Information</legend>
             <!-- ID -->
 			<input type="hidden" id="lang_id" value="' . $res['id'] . '" />
 	    	<table class="dialog-form-table">
 			    <tr>
-					<td style="width: 170px;"><label for="project_id">პროექტი</label></td>
+					<td style="width: 170px;"><label for="project_id">Project</label></td>
 					<td>
 						<select id="project_id" style="width: 174px;">'.GetProject($res['project_id']).'</select>
 					</td>
 				</tr>
 			    <tr>
-					<td style="width: 170px;"><label for="name">სახელი</label></td>
+					<td style="width: 170px;"><label for="name">Name</label></td>
 					<td>
 						<input type="text" id="name" value="' . $res['name'] . '" />
 					</td>
 				</tr>
 			    <tr>
-					<td style="width: 170px;"><label for="pay">ანაზღაურებადი/არა ანაზღაურებადი</label></td>
+					<td style="width: 170px;"><label for="pay">Paid / not paid</label></td>
 					<td>
 						<select id="pay" style="width: 174px;">'.GetPay($res['pay']).'</select>
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 170px;"><label for="type">სამუშაო ტიპი</label></td>
+					<td style="width: 170px;"><label for="type">Type of work</label></td>
 					<td>
 						<select id="type" style="width: 174px;">'.GetShitType($res['type']).'</select>
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 170px;"><label for="color">ფერი</label></td>
+					<td style="width: 170px;"><label for="color">Color</label></td>
 					<td>
 						<input type="color" id="color" value="' . $res['color'] . '" />
 					</td>
 				</tr>
                 <tr>
-					<td style="width: 170px;"><label for="start_date">დასაწყისი</label></td>
+					<td style="width: 170px;"><label for="start_date">Start</label></td>
 					<td>
 						<input type="text" id="start_date" value="' . $res['start_date'] . '" />
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 170px;"><label for="end_date">დასასრული</label></td>
+					<td style="width: 170px;"><label for="end_date">End</label></td>
 					<td>
 						<input type="text" id="end_date" value="' . $res['end_date'] . '" />
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 170px;"><label for="timeout">შესვენების ხან-ბა</label></td>
+					<td style="width: 170px;"><label for="timeout">The duration of the break</label></td>
 					<td>
 						<input type="text" id="timeout" value="' . $res['timeout'] . '" />
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 170px;"><label for="">შესვენების პერიოდი</label></td>
+					<td style="width: 170px;"><label for="">Break Period</label></td>
 					<td>
 						<input style="width: 55px;float:left;" type="text" id="start_timeout" value="' . $res['start_timeout'] . '" />
 					
@@ -271,7 +271,7 @@ function GetPage($res = '')
 					</td>
 				</tr>	    
 				<tr>
-					<td style="width: 170px;"><label for="comment">კომენტარი</label></td>
+					<td style="width: 170px;"><label for="comment">Comments</label></td>
 					<td>
 						<textarea  id="comment" style="resize: vertical;">' . $res['comment'] . '</textarea>
 					</td>

@@ -56,7 +56,7 @@ function LoadDialog(f){
 			$.getJSON(aJaxURL, param, function(json) {
 				LoadTable();
 				$("#add-edit-form").dialog("close");
-		});} else alert('მიუთითეთ კორექტული დრო');
+		});} else alert('Enter the correct time');
 
 
 	});
@@ -71,7 +71,7 @@ function LoadTable(){
 
 $(document).on("change", "#wday", function () {
 if($("#project_id").val() == 0){
-	alert('აირჩიეთ პროექტი!');
+	alert('Select Project!');
 }else{
 	$.ajax({
         url: aJaxURL,
@@ -120,11 +120,11 @@ $(document).on("click", "#show_copy_prit_exel", function () {
 <body>
 <div id="script" style="display:none;"></div>
 <div id="tabs" style="width: 90%">
-<div class="callapp_head">სამუშაო გრაფიკები<hr class="callapp_head_hr"></div>
+<div class="callapp_head">Work Schedules<hr class="callapp_head_hr"></div>
 
 <div id="button_area" style="margin-top: 15px;">
-<button id="add">დამატება</button>
-<button id="dis">წაშლა</button>
+<button id="add">Add</button>
+<button id="dis">Delete</button>
 </div>
 
 <div class="callapp_filter_show">
@@ -142,22 +142,22 @@ $(document).on("click", "#show_copy_prit_exel", function () {
     <thead>
         <tr id="datatable_header">
             <th>ID</th>
-            <th style="width:50%">მუშაობის დასაწყისი</th>
-            <th style="width:50%">სამუშაოს დასასრული</th>
+            <th style="width:50%">Start of work</th>
+            <th style="width:50%">End of work</th>
             <th style="width: 35px">#</th>
         </tr>
     </thead>
     <thead>
         <tr class="search_header">
             <th class="colum_hidden">
-            	<input type="text" name="search_id" value="ფილტრი" class="search_init" style=""/>
+            	<input type="text" name="search_id" value="Filter" class="search_init" style=""/>
             </th>
 			<th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>
 
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>
             <th>
                 <div class="callapp_checkbox">
@@ -170,7 +170,7 @@ $(document).on("click", "#show_copy_prit_exel", function () {
 </table>
 </div>
 
-<div  id="add-edit-form" class="form-dialog" title="შეარჩიეთ გრაფიკი">
+<div  id="add-edit-form" class="form-dialog" title="Select Chart">
 </div>
 </body>
 </html>

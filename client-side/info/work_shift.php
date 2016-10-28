@@ -114,12 +114,12 @@
 
 <body>
 <div id="tabs" style="width: 95.5%;">
-<div class="callapp_head">ცვლები<hr class="callapp_head_hr"></div>
+<div class="callapp_head">Shifts<hr class="callapp_head_hr"></div>
 
 
 <div id="button_area">
-	<button id="add_button">დამატება</button>
-	<button id="delete_button">წაშლა</button>
+	<button id="add_button">Add</button>
+	<button id="delete_button">Delete</button>
 </div>
 <table id="table_right_menu">
 <tr>
@@ -135,49 +135,49 @@
         <thead>
             <tr id="datatable_header">
                 <th>ID</th>
-                <th style="width: 13%;">დასახელება</th>
-                <th style="width: 8%;">დასაწყისი</th>
-                <th style="width: 8%;">დასასრული</th>
-                <th style="width: 8%;">შესვენება</th>
-                <th style="width: 14%;">სამუშაო ტიპი</th>
-                <th style="width: 12%;">ანაზღაურებადი/არა ანაზღაურებადი</th>
-                <th style="width: 14%;">კომენტარი</th>
-                <th style="width: 14%;">პროექტი</th>
-                <th style="width: 5%;">ფერი</th>
+                <th style="width: 13%;">Name</th>
+                <th style="width: 8%;">Start</th>
+                <th style="width: 8%;">End</th>
+                <th style="width: 8%;">Break</th>
+                <th style="width: 14%;">Type of work</th>
+                <th style="width: 12%;">Paid / not paid</th>
+                <th style="width: 14%;">Comments</th>
+                <th style="width: 14%;">Project</th>
+                <th style="width: 5%;">Color</th>
             	<th class="check">#</th>
             </tr>
         </thead>
         <thead>
             <tr class="search_header">
                 <th class="colum_hidden">
-                    <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input style="width: 95%;" type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input style="width: 95%;" type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input style="width: 95%;" type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input style="width: 95%;" type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input style="width: 95%;" type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input style="width: 95%;" type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input style="width: 95%;" type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input style="width: 95%;" type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input style="width: 95%;" type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input style="width: 95%;" type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input style="width: 95%;" type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input style="width: 95%;" type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input style="width: 95%;" type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input style="width: 95%;" type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input style="width: 95%;" type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input style="width: 95%;" type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
-                    <input style="width: 95%;" type="text" name="search_category" value="ფილტრი" class="search_init" />
+                    <input style="width: 95%;" type="text" name="search_category" value="Filter" class="search_init" />
                 </th>
                 <th>
                 	<div class="callapp_checkbox">
@@ -191,7 +191,7 @@
 
     
     <!-- jQuery Dialog -->
-    <div id="add-edit-form" class="form-dialog" title="ცვლები">
+    <div id="add-edit-form" class="form-dialog" title="Shifts">
     	<!-- aJax -->
 	</div>
 </body>

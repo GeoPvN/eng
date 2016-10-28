@@ -6,7 +6,7 @@
     var colum_number      = 5;
     var main_act          = "get_list";
     var change_colum_main = "<'dataTable_buttons'T><'F'Cfipl>";
-    var lenght = [[10, 30, 50, -1], [10, 30, 50, "ყველა"]];
+    var lenght = [[10, 30, 50, -1], [10, 30, 50, "All"]];
      
     $(document).ready(function () {
     	GetButtons("add_button","delete_button");
@@ -24,11 +24,11 @@
     function LoadDialog(fName){
     	var buttons = {
 				"save": {
-		            text: "შენახვა",
+		            text: "Save",
 		            id: "save_queue"
 		        },
 	        	"cancel": {
-		            text: "დახურვა",
+		            text: "Close",
 		            id: "cancel-dialog",
 		            click: function () {
 		            	$(this).dialog("close");
@@ -246,18 +246,18 @@
 
 <body>
 <div id="tabs" style="width: 90%">
-<div class="callapp_head">რიგი<hr class="callapp_head_hr"></div>
+<div class="callapp_head">Queue<hr class="callapp_head_hr"></div>
 <div style="margin-bottom: 5px;">
-<div id="instruqcia">ინსტრუქცია</div>
+<div id="instruqcia">Instructions</div>
 <table id="stepby">
 <tr>
-<td  onclick="location.href='index.php?pg=18';" >კითხვა/პასუხი >></td><td onclick="location.href='index.php?pg=17';" >სცენარის კატეგორია >></td><td onclick="location.href='index.php?pg=16';">სცენარი >></td><td style="color: #FFF;background: #2681DC;" onclick="location.href='index.php?pg=15';">რიგი >></td><td onclick="location.href='index.php?pg=14';">კლიენტები</td>
+<td  onclick="location.href='index.php?pg=18';" >Question / Answer >></td><td onclick="location.href='index.php?pg=17';" >Scenario Category >></td><td onclick="location.href='index.php?pg=16';">Scenario >></td><td style="color: #FFF;background: #2681DC;" onclick="location.href='index.php?pg=15';">Queue >></td><td onclick="location.href='index.php?pg=14';">Clients</td>
 </tr>
 </table>
 </div>
     <div style="margin-top: 15px;">
-        <button id="add_button">დამატება</button>
-        <button id="delete_button">წაშლა</button>
+        <button id="add_button">Add</button>
+        <button id="delete_button">Delete</button>
     </div>
     
 <div class="callapp_filter_show">    
@@ -276,29 +276,29 @@
     <thead>
         <tr id="datatable_header">
             <th>ID</th>
-            <th style="width: 100%;">დასახელება</th>
-            <th style="width: 100%;">ნომერი</th>
-            <th style="width: 100%;">სცენარი</th>
-            <th style="width: 100%;">შიდა ნომრები</th>
+            <th style="width: 100%;">Name</th>
+            <th style="width: 100%;">Number</th>
+            <th style="width: 100%;">Scenario</th>
+            <th style="width: 100%;">Extension</th>
             <th class="check" style="width: 20px;">&nbsp;</th>
         </tr>
     </thead>
     <thead>
         <tr class="search_header">
             <th class="colum_hidden">
-        	   <input type="text" name="search_id" value="ფილტრი" class="search_init" />
+        	   <input type="text" name="search_id" value="Filter" class="search_init" />
             </th>
             <th>
-            	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+            	<input type="text" name="search_number" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>    
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>                         
             <th>
             	<div class="callapp_checkbox">
@@ -313,10 +313,10 @@
 
 
 <!-- jQuery Dialog -->
-<div  id="add-edit-form" class="form-dialog" title="შემომავალი ზარი">
+<div  id="add-edit-form" class="form-dialog" title="Incomming Call">
 </div>
 <!-- jQuery Dialog -->
-<div  id="add-edit-form-in_num" class="form-dialog" title="შიდა ნომერი">
+<div  id="add-edit-form-in_num" class="form-dialog" title="Extension">
 </div>
 
 </body>

@@ -198,48 +198,48 @@ function GetPage($res = '')
 	$data = '
 	<div id="dialog-form">
 	    <fieldset>
-	    	<legend>ძირითადი ინფორმაცია</legend>
+	    	<legend>Basic Information</legend>
             <!-- ID -->
 			<input type="hidden" id="lang_id" value="' . $res['id'] . '" />
 	    	<table class="dialog-form-table">
 			    <tr>
-					<td style="width: 170px;"><label for="project_id">პროექტი</label></td>
+					<td style="width: 170px;"><label for="project_id">Project</label></td>
 					<td>
 						<select id="project_id" style="width: 174px;">'.GetProject($res['project_id']).'</select>
 					</td>
 				</tr>
 			    <tr>
-					<td style="width: 170px;"><label for="name">სახელი</label></td>
+					<td style="width: 170px;"><label for="name">Name</label></td>
 					<td>
 						<input type="text" id="name" value="' . $res['name'] . '" />
 					</td>
 				</tr>
 			    <tr>
-					<td style="width: 170px;"><label for="pay">ანაზღაურებადი/არა ანაზღაურებადი</label></td>
+					<td style="width: 170px;"><label for="pay">Paid / not paid</label></td>
 					<td>
 						<select id="pay" style="width: 174px;">'.GetPay($res['pay']).'</select>
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 170px;"><label for="type">კატეგორია</label></td>
+					<td style="width: 170px;"><label for="type">Category</label></td>
 					<td>
 						<select id="type" style="width: 174px;">'.GetShitType($res['work_activities_cat_id']).'</select>
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 170px;"><label for="color">ფერი</label></td>
+					<td style="width: 170px;"><label for="color">Color</label></td>
 					<td>
 						<input type="color" id="color" value="' . $res['color'] . '" />
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 170px;"><label for="color">ხანგრძლივობა</label></td>
+					<td style="width: 170px;"><label for="color">Duration</label></td>
 					<td>
 						<input type="text" id="timer" value="' . $res['timer'] . '" />
 					</td>
 				</tr>
 				<tr>
-					<td style="width: 170px;"><label for="comment">კომენტარი</label></td>
+					<td style="width: 170px;"><label for="comment">Comments</label></td>
 					<td>
 						<textarea  id="comment" style="resize: vertical;">' . $res['comment'] . '</textarea>
 					</td>

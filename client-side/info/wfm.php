@@ -697,7 +697,7 @@ $(document).on("click", "#holi_creap", function () {
 		    }
 	    });
 	}else{
-	    alert('შეავსეთ "სამუშაო დღე", "სამუშაო იწყება","სამუშაო მთავრდება","სადგურის რაოდენობა" !');
+	    alert('Fill out the "Business Day", "work begins", "stop working", "station" New!');
 	}
 	}
 });
@@ -750,7 +750,7 @@ $(document).on("click", "#add_holiday", function () {
     	    }
         });
     }else{
-        alert('აირჩიეთ სასურველი დღე!');
+        alert('Select the desired day!');
     }
 });
 
@@ -785,7 +785,7 @@ $(document).on("click", "#add_cirkle", function () {
 	if($('#project_id').val()!=0){
     	var buttons = {
             	"cancel": {
-    	            text: "დახურვა",
+    	            text: "Close",
     	            id: "cancel-dialog",
     	            click: function () {
     	            	$(this).dialog("close");
@@ -810,14 +810,14 @@ $(document).on("click", "#add_cirkle", function () {
             }
         });
 	}else{
-	    alert('აირჩიეთ პროექტი!')
+	    alert('Select the project!');
 	}
 });
 
 $(document).on("click", "#add_weeks", function () {
 		var buttons = {
             	"cancel": {
-    	            text: "დახურვა",
+    	            text: "Close",
     	            id: "cancel-dialog",
     	            click: function () {
     	            	$(this).dialog("close");
@@ -847,11 +847,11 @@ $(document).on("click", "#add_weeks", function () {
 $(document).on("dblclick", "#table_week tbody tr", function () {
 	var buttons = {
 			"save": {
-	            text: "შენახვა",
+	            text: "Save",
 	            id: "holi_creap"
 	        },
         	"cancel": {
-	            text: "დახურვა",
+	            text: "Close",
 	            id: "cancel-dialog",
 	            click: function () {
 	            	$(this).dialog("close");
@@ -890,7 +890,7 @@ $(document).on("dblclick", "#table_cikle tbody tr", function () {
 	var buttons = {
 			
         	"cancel": {
-	            text: "დახურვა",
+	            text: "Close",
 	            id: "cancel-dialog",
 	            click: function () {
 	            	$(this).dialog("close");
@@ -919,11 +919,11 @@ $(document).on("dblclick", "#table_cikle tbody tr", function () {
 $(document).on("click", "#add_week", function () {
 	var buttons = {
 			"save": {
-	            text: "შენახვა",
+	            text: "Save",
 	            id: "holi_creap"
 	        },
         	"cancel": {
-	            text: "დახურვა",
+	            text: "Close",
 	            id: "cancel-dialog",
 	            click: function () {
 	            	$(this).dialog("close");
@@ -961,7 +961,7 @@ $(document).on("click", "#add_week", function () {
 $(document).on("click", "#addlang", function () {
 	var buttons = {
         	"cancel": {
-	            text: "დახურვა",
+	            text: "Close",
 	            id: "cancel-dialog",
 	            click: function () {
 	            	$(this).dialog("close");
@@ -1009,7 +1009,7 @@ $(document).on("click", "#add_lang", function () {
             }
         });
 	}else{
-	    alert('მიუთითეთ სასაუბრო ენა!');
+	    alert("Enter the's language!");
 	}
 });
 
@@ -1027,14 +1027,14 @@ $(document).on("click", "#add_infosorce", function () {
             }
         });
 	}else{
-	    alert('მიუთითეთ ინფორმაციის წყარო!');
+	    alert('Enter the source of the information!');
 	}
 });
 
 $(document).on("click", "#addinfosorce", function () {
 	var buttons = {
         	"cancel": {
-	            text: "დახურვა",
+	            text: "Close",
 	            id: "cancel-dialog",
 	            click: function () {
 	            	$(this).dialog("close");
@@ -1141,8 +1141,8 @@ $(document).on("click", "#addinfosorce", function () {
         display:none;
         }
 	    </style>
-               <td style="width: ;"><button id="add_cirkle">სამუშაო გრაფიკი</button></td>
-                <span style="margin-right: 10px;width: 250px;">აირჩიე პროექტი</span><select id="project_id"></select>
+               <td style="width: ;"><button id="add_cirkle">Working Time</button></td>
+                <span style="margin-right: 10px;width: 250px;">Choose a project</span><select id="project_id"></select>
 	            <table class="dialog-form-table" id="work_table">
                     <tr>
                         <th style="border-top: 2px solid black;" class="left_border_bold"></th>
@@ -1271,7 +1271,7 @@ $(document).on("click", "#addinfosorce", function () {
                 	    <th style="width: ;" class="right_border_bold">45</th>
                     </tr>
     	            <tr id="wday1">
-                        <td onclick="" class="left_border_bold" style="">ორშ</td>
+                        <td onclick="" class="left_border_bold" style="">Mon</td>
                         <?php 
                         for($i = 0;$i <= 23;$i++){
                             if (strlen($i) != 2){
@@ -1290,7 +1290,7 @@ $(document).on("click", "#addinfosorce", function () {
                 	    
                     </tr>
 	                <tr id="wday2">
-                        <td onclick="" class="left_border_bold" style="">სამ</td>
+                        <td onclick="" class="left_border_bold" style="">Tues</td>
                 	    <?php 
                         for($i = 0;$i <= 23;$i++){
                             if (strlen($i) != 2){
@@ -1308,7 +1308,7 @@ $(document).on("click", "#addinfosorce", function () {
                         ?>
                     </tr>
 	                <tr id="wday3">
-                        <td onclick="" class="left_border_bold" style="">ოთხ</td>
+                        <td onclick="" class="left_border_bold" style="">Wed</td>
                 	    <?php 
                         for($i = 0;$i <= 23;$i++){
                             if (strlen($i) != 2){
@@ -1326,7 +1326,7 @@ $(document).on("click", "#addinfosorce", function () {
                         ?>
                     </tr>
 	                <tr id="wday4">
-                        <td onclick="" class="left_border_bold" style="">ხუთ</td>
+                        <td onclick="" class="left_border_bold" style="">Thur</td>
                 	    <?php 
                         for($i = 0;$i <= 23;$i++){
                             if (strlen($i) != 2){
@@ -1344,7 +1344,7 @@ $(document).on("click", "#addinfosorce", function () {
                         ?>
                     </tr>
 	                <tr id="wday5">
-                        <td onclick="" class="left_border_bold" style="">პარ</td>
+                        <td onclick="" class="left_border_bold" style="">Fri</td>
                 	    <?php 
                         for($i = 0;$i <= 23;$i++){
                             if (strlen($i) != 2){
@@ -1362,7 +1362,7 @@ $(document).on("click", "#addinfosorce", function () {
                         ?>
                     </tr>
 	                <tr id="wday6">
-                        <td onclick="" class="left_border_bold" style="">შაბ</td>
+                        <td onclick="" class="left_border_bold" style="">Sat</td>
                 	    <?php 
                         for($i = 0;$i <= 23;$i++){
                             if (strlen($i) != 2){
@@ -1380,7 +1380,7 @@ $(document).on("click", "#addinfosorce", function () {
                         ?>
                     </tr>
 	                <tr id="wday7" style="border-bottom: 2px solid black;">
-                        <td onclick="" class="left_border_bold" style="">კვი</td>
+                        <td onclick="" class="left_border_bold" style="">Sun</td>
                 	    <?php 
                         for($i = 0;$i <= 23;$i++){
                             if (strlen($i) != 2){
@@ -1400,46 +1400,46 @@ $(document).on("click", "#addinfosorce", function () {
 	            </table>
 	            <table class="dialog-form-table">
                     <tr>
-                       <td style="width: 210px;"><label for="queue_scenar">საანგარიშო პერიოდი</label></td>    
+                       <td style="width: 210px;"><label for="queue_scenar">Calculating Period</label></td>    
 	                   <td></td>
                     </tr>
     	            <tr>
-                       <td><input style="width: 150px; float: left;" id="start_date_holi" type="text"><span style="margin-top: 5px;float: left;">-დან</span></td>
-	                   <td><input style="width: 150px; float: left;" id="end_date_holi" type="text"><span style="margin-top: 5px;float: left;">-მდე</span></td>
+                       <td><input style="width: 150px; float: left;" id="start_date_holi" type="text"><span style="margin-top: 5px;float: left;">-From</span></td>
+	                   <td><input style="width: 150px; float: left;" id="end_date_holi" type="text"><span style="margin-top: 5px;float: left;">-Up to</span></td>
                     </tr>
 	            </table>
 	            <table class="dialog-form-table">
                     <tr>
 	                   <td><input id="holiday_all" type="checkbox"></td>
-                       <td style="width: ;"><label for="holiday_id">დღესასწაულები</label></td>
+                       <td style="width: ;"><label for="holiday_id">Holidays</label></td>
                 	   <td style="width: ;"><select id="holiday_id" style="width:253px;">'.GetHoliday().'</select></td>
-	                   <td style="width: ;"><button id="add_holiday">დამატება</button></td>
-                	   <td style="width: ;"><button id="delete_holiday">წაშლა</button></td>
+	                   <td style="width: ;"><button id="add_holiday">Add</button></td>
+                	   <td style="width: ;"><button id="delete_holiday">Delete</button></td>
                     </tr>
 	            </table>
                 <table class="display" id="table_holiday" >
                     <thead>
                         <tr id="datatable_header">
                             <th>ID</th>
-                            <th style="width: 29%;">თარიღი</th>
-                            <th style="width: 40%;;">სახელი</th>
-                            <th style="width: 29%;">კატეგორია</th>
+                            <th style="width: 29%;">Date</th>
+                            <th style="width: 40%;;">Name</th>
+                            <th style="width: 29%;">Category</th>
 							<th style="width: 30px;" class="check">&nbsp;</th>
 						</tr>
                     </thead>
                     <thead>
                         <tr class="search_header">
                             <th class="colum_hidden">
-                        	   <input type="text" name="search_id" value="ფილტრი" class="search_init" />
+                        	   <input type="text" name="search_id" value="Filter" class="search_init" />
                             </th>
                             <th>
-                            	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+                            	<input type="text" name="search_number" value="Filter" class="search_init" />
                             </th>
                             <th>
-                                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                                <input type="text" name="search_date" value="Filter" class="search_init" />
                             </th>
                             <th>
-                                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                                <input type="text" name="search_date" value="Filter" class="search_init" />
                             </th>
 							<th>
 				            	<div class="callapp_checkbox">
@@ -1454,18 +1454,18 @@ $(document).on("click", "#addinfosorce", function () {
 
 
 <!-- jQuery Dialog -->
-<div  id="add-edit-form" class="form-dialog" title="შემომავალი ზარი">
+<div  id="add-edit-form" class="form-dialog" title="Incomming Call">
 </div>
-	<div  id="add-edit-form-hour" class="form-dialog" title="წუთი">
+	<div  id="add-edit-form-hour" class="form-dialog" title="Minutes">
 	</div>
-	<div  id="add-edit-form-weekADD" class="form-dialog" title="დამატება">
+	<div  id="add-edit-form-weekADD" class="form-dialog" title="Add">
 	</div>
-	<div  id="add-edit-form-week" class="form-dialog" title="სადგური/ სამუშაო დრო/ კვირა">
+	<div  id="add-edit-form-week" class="form-dialog" title="Station / working time / week">
 	</div>
-	<div  id="add-edit-form-cikle" class="form-dialog" title="სატელეფონო სადგური/სთ/ოპერატორი">
+	<div  id="add-edit-form-cikle" class="form-dialog" title="Telephone station / hour / operator">
 	</div>
-	<div  id="add-edit-form-lang" class="form-dialog" title="სასაუბრო ენა">
+	<div  id="add-edit-form-lang" class="form-dialog" title="S language">
 	</div>
-	<div  id="add-edit-form-infosorce" class="form-dialog" title="ინფორმაციის წყარო">
+	<div  id="add-edit-form-infosorce" class="form-dialog" title="Information Source">
 	</div>
 </body>
