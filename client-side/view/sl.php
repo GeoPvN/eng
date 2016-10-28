@@ -118,7 +118,7 @@
         	z-index: 99;
         	border: 1px solid #E6E6E6;
         	padding: 4px;
-        }
+        } 
         
         .ColVis, .dataTable_buttons{
         	z-index: 100;
