@@ -91,7 +91,7 @@ switch ($action) {
 	    $i=1;
 	    while ($req1 = mysql_fetch_array($res1)){
 	        $data['end'][$i] = "<script>
-	        $('#pasteTable').append('<tr><td style=\"width: 200px;\"><label for=\"\">შესვენება იწყება ($i)</label></td><td ><label for=\"\">შესვენება მთავრდება ($i)</label></td></tr><tr><td><input class=\"breakStart$i\" style=\"width:145px;\" 	type=\"text\" value=\"\" /></td><td><input class=\"breakEnd$i\"   style=\"width:145px;\"  type=\"text\" value=\"\" /></td></tr>');
+	        $('#pasteTable').append('<tr><td style=\"width: 200px;\"><label for=\"\">Break starts ($i)</label></td><td ><label for=\"\">Break ends ($i)</label></td></tr><tr><td><input class=\"breakStart$i\" style=\"width:145px;\" 	type=\"text\" value=\"\" /></td><td><input class=\"breakEnd$i\"   style=\"width:145px;\"  type=\"text\" value=\"\" /></td></tr>');
 	        $('.breakStart$i,.breakEnd$i').timepicker({
     	        hourMax: $req1[1],
     	        hourMin: $req1[0],
@@ -260,19 +260,19 @@ function page()
 	$data =  '
         	<div id="dialog-form">
         		<fieldset >
-        	    	<legend >ძირითადი ინფორმაცია</legend>
+        	    	<legend >Basic Information</legend>
         	    	<table class="dialog-form-table">
         	            <tr>
-        					<td style="width: 200px;"><label for="">პროექტი</label></td>
-        	                <td ><label for="">კვირის დღე</label></td>
+        					<td style="width: 200px;"><label for="">Project</label></td>
+        	                <td ><label for="">Day of week</label></td>
         				</tr>
         	            <tr>
         					<td style="width: 200px;"><select id="project_id" style="width:150px;">'.getProject($res[project_id]).'</select></td>
         					<td ><select id="wday" style="width:150px;">'.getWday($res[week_day_id]).'</select></td>
         				</tr>
         				<tr>
-        					<td style="width: 200px;"><label for="">მუშაობის დასაწყისი</label></td>
-        					<td ><label for="">მუშაობის დასასრული</label></td>
+        					<td style="width: 200px;"><label for="">Start of work</label></td>
+        					<td ><label for="">End of work</label></td>
         				</tr>
         			    <tr>
         					<td id="pasteStart"><input id="start" style="width:145px;" 	type="text" value="'.$res[start].'" /></td>
@@ -298,8 +298,8 @@ function page()
 	                    $i=1;
         	            while ($res1 = mysql_fetch_array( $rResult1 )){
         	                $data .= '<tr>
-                	                    <td style="width: 200px;"><label for="">შესვენება იწყება ('.$i.')</label></td>
-                	                    <td ><label for="">შესვენება მთავრდება ('.$i.')</label></td>
+                	                    <td style="width: 200px;"><label for="">Break starts ('.$i.')</label></td>
+                	                    <td ><label for="">Break ends ('.$i.')</label></td>
                 	                  </tr>
         	                          <tr>
         	                           <td><input class="breakStart'.$i.'" my_id'.$i.'="'.$res1[id].'" style="width:145px;" type="text" value="'.$res1[break_start].'" /></td>
