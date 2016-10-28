@@ -7,7 +7,7 @@ $agent = $_REQUEST['agent'];
 $queuet = $_REQUEST['queuet'];
 
 $row_done_blank = mysql_query(" SELECT  COUNT(incomming_call.id) as `count`,
-                                        CONCAT('ნაპასუხბი',' ',COUNT(*)) AS `cause`
+                                        CONCAT('Answered',' ',COUNT(*)) AS `cause`
                                 FROM 	incomming_call
                                 JOIN    asterisk_incomming ON incomming_call.asterisk_incomming_id = asterisk_incomming.id
                                 WHERE   DATE(incomming_call.date) >= '$start'
@@ -22,7 +22,7 @@ $row_done_blank = mysql_query(" SELECT  COUNT(incomming_call.id) as `count`,
 
 
 $result = mysql_query("SELECT   COUNT(*) AS `count`,
-                    			CONCAT('ნაპასუხბი',' ',COUNT(*)) AS `cause`
+                    			CONCAT('Answered',' ',COUNT(*)) AS `cause`
                         FROM 	`asterisk_incomming`
                         WHERE	disconnect_cause != 'ABANDON' 
                         AND DATE(call_datetime) >= '$start'
@@ -35,9 +35,9 @@ $row1 = array();
 $rows = array();
 while($r = mysql_fetch_array($result)) {
     $r1 = mysql_fetch_array($row_done_blank);
-	$row[0] = 'დაუმუშავებელი: '.($r[0] - $r1[0]);
+	$row[0] = 'untreated: '.($r[0] - $r1[0]);
 	$row[1] = (float)($r[0] - $r1[0]);
-	$row1[0] = 'დამუშავებული: '.$r1[0];
+	$row1[0] = 'treated: '.$r1[0];
 	$row1[1] = (float)$r1[0];
 	array_push($rows,$row);
 	array_push($rows,$row1);

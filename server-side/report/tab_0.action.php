@@ -7,7 +7,7 @@ $agent = $_REQUEST['agent'];
 $queuet = $_REQUEST['queuet'];
 
 $result = mysql_query("SELECT   COUNT(*) AS `count`,
-                    			'ნაპასუხები' AS `cause`
+                    			'Answered' AS `cause`
                         FROM 	`asterisk_incomming`
                         WHERE	disconnect_cause != 'ABANDON' 
                         AND DATE(call_datetime) >= '$start'
@@ -16,7 +16,7 @@ $result = mysql_query("SELECT   COUNT(*) AS `count`,
                         AND dst_extension in ($agent)
                         UNION ALL
                         SELECT 	COUNT(*) AS `count`,
-                        		'უპასუხო' AS `cause`
+                        		'Unanswered' AS `cause`
                         FROM 	`asterisk_incomming`
                         WHERE	disconnect_cause = 'ABANDON'
                         AND DATE(call_datetime) >= '$start'

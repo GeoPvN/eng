@@ -25,7 +25,7 @@ $data		= array('page' => array(
                     				dst_queue,
                     				dst_extension,
                     				SEC_TO_TIME(duration),
-                    				CONCAT('<p onclick=play(', '\'',DATE_FORMAT(DATE(call_datetime),'%Y/%m/%d/'), file_name, '\'',  ')>მოსმენა</p>', '<a download=\"audio.wav\" href=\"http://212.72.155.176:8000/', DATE_FORMAT(DATE(call_datetime),'%Y/%m/%d/'), file_name, '\">ჩამოტვირთვა</a>') AS `file`
+                    				CONCAT('<p onclick=play(', '\'',DATE_FORMAT(DATE(call_datetime),'%Y/%m/%d/'), file_name, '\'',  ')>Listen</p>', '<a download=\"audio.wav\" href=\"http://212.72.155.176:8000/', DATE_FORMAT(DATE(call_datetime),'%Y/%m/%d/'), file_name, '\">Download</a>') AS `file`
 	                        FROM 	`asterisk_incomming`
                             WHERE disconnect_cause != 'ABANDON' 
                             AND 	DATE(`call_datetime`) >= '$start_time'
@@ -62,7 +62,7 @@ $data		= array('page' => array(
                     				dst_queue,
                     				dst_extension,
                     				SEC_TO_TIME(duration),
-                    				CONCAT('<p onclick=play(', '\'',DATE_FORMAT(DATE(call_datetime),'%Y/%m/%d/'), file_name, '\'',  ')>მოსმენა</p>', '<a download=\"audio.wav\" href=\"http://212.72.155.176:8000/', DATE_FORMAT(DATE(call_datetime),'%Y/%m/%d/'), file_name, '\">ჩამოტვირთვა</a>') AS `file`
+                    				CONCAT('<p onclick=play(', '\'',DATE_FORMAT(DATE(call_datetime),'%Y/%m/%d/'), file_name, '\'',  ')>Listen</p>', '<a download=\"audio.wav\" href=\"http://212.72.155.176:8000/', DATE_FORMAT(DATE(call_datetime),'%Y/%m/%d/'), file_name, '\">Download</a>') AS `file`
                             FROM `asterisk_incomming`
                             JOIN incomming_call ON asterisk_incomming.id = incomming_call.asterisk_incomming_id
                             WHERE ISNULL(incomming_call.user_id)
@@ -105,37 +105,37 @@ $data		= array('page' => array(
                     <thead>
                         <tr id="datatable_header">
                             <th>ID</th>
-                            <th style="width: 180px;">თარიღი</th>
-                            <th style="width: 110px;">წყარო</th>
-                            <th style="width: 100px;">ადრესატი</th>
-							<th style="width: 100px;">ექსთენშენი</th>
-                            <th style="width: 80px;">დრო</th>
-                            <th style="width: 100px;">ქმედება</th>
+                            <th style="width: 180px;">Date</th>
+                            <th style="width: 110px;">Source</th>
+                            <th style="width: 100px;">Address</th>
+							<th style="width: 100px;">Extention</th>
+                            <th style="width: 80px;">Duration</th>
+                            <th style="width: 100px;">Action</th>
                         </tr>
                     </thead>
                     <thead>
                         <tr class="search_header">
                             <th class="colum_hidden">
-                            	<input type="text" name="search_id" value="ფილტრი" class="search_init" style=""/>
+                            	<input type="text" name="search_id" value="Filter" class="search_init" style=""/>
                             </th>
                             <th>
-                            	<input type="text" name="search_number" value="ფილტრი" class="search_init" style="">
+                            	<input type="text" name="search_number" value="Filter" class="search_init" style="">
 							</th>
                                                         
                             <th>
-                                <input type="text" name="search_category" value="ფილტრი" class="search_init" style="width: 80px;" />
+                                <input type="text" name="search_category" value="Filter" class="search_init" style="width: 80px;" />
                             </th>
                             <th>
-                                <input type="text" name="search_phone" value="ფილტრი" class="search_init" style="width: 70px;"/>
+                                <input type="text" name="search_phone" value="Filter" class="search_init" style="width: 70px;"/>
                             </th>
 							<th>
-                                <input type="text" name="search_phone" value="ფილტრი" class="search_init" style="width: 70px;"/>
+                                <input type="text" name="search_phone" value="Filter" class="search_init" style="width: 70px;"/>
                             </th>
                             <th>
-                                <input type="text" name="search_category" value="ფილტრი" class="search_init" style="width: 70px;" />
+                                <input type="text" name="search_category" value="Filter" class="search_init" style="width: 70px;" />
                             </th>
 							<th>
-                                <input type="text" name="search_category" value="ფილტრი" class="search_init" style="width: 80px;" />
+                                <input type="text" name="search_category" value="Filter" class="search_init" style="width: 80px;" />
                             </th>
                             
                         </tr>
@@ -200,37 +200,37 @@ if($_REQUEST['act'] =='answear_dialog'){
                     <thead>
                         <tr id="datatable_header">
                             <th>ID</th>
-                            <th style="width: 180px;">თარიღი</th>
-                            <th style="width: 110px;">წყარო</th>
-                            <th style="width: 110px;">ადრესატი</th>
-							<th style="width: 100px;">ექსთენშენი</th>
-                            <th style="width: 80px;">დრო</th>
-                            <th style="width: 90px;">ქმედება</th>
+                            <th style="width: 180px;">Date</th>
+                            <th style="width: 110px;">Source</th>
+                            <th style="width: 110px;">Address</th>
+							<th style="width: 100px;">Extention</th>
+                            <th style="width: 80px;">Duration</th>
+                            <th style="width: 90px;">Action</th>
                         </tr>
                     </thead>
                     <thead>
                         <tr class="search_header">
                             <th class="colum_hidden">
-                            	<input type="text" name="search_id" value="ფილტრი" class="search_init" style=""/>
+                            	<input type="text" name="search_id" value="Filter" class="search_init" style=""/>
                             </th>
                             <th>
-                            	<input type="text" name="search_number" value="ფილტრი" class="search_init" style="">
+                            	<input type="text" name="search_number" value="Filter" class="search_init" style="">
 							</th>
                                                       
                             <th>
-                                <input type="text" name="search_category" value="ფილტრი" class="search_init" style="width: 80px;" />
+                                <input type="text" name="search_category" value="Filter" class="search_init" style="width: 80px;" />
                             </th>
                             <th>
-                                <input type="text" name="search_phone" value="ფილტრი" class="search_init" style="width: 70px;"/>
+                                <input type="text" name="search_phone" value="Filter" class="search_init" style="width: 70px;"/>
                             </th>
 							<th>
-                                <input type="text" name="search_phone" value="ფილტრი" class="search_init" style="width: 70px;"/>
+                                <input type="text" name="search_phone" value="Filter" class="search_init" style="width: 70px;"/>
                             </th>
                             <th>
-                                <input type="text" name="search_category" value="ფილტრი" class="search_init" style="width: 70px;" />
+                                <input type="text" name="search_category" value="Filter" class="search_init" style="width: 70px;" />
                             </th>
 							<th>
-                                <input type="text" name="search_category" value="ფილტრი" class="search_init" style="width: 80px;" />
+                                <input type="text" name="search_category" value="Filter" class="search_init" style="width: 80px;" />
                             </th>
                             
                         </tr>
@@ -261,28 +261,28 @@ if($_REQUEST['act'] =='unanswear_dialog'){
                     <thead>
                         <tr id="datatable_header">
                             <th>ID</th>
-                            <th style="width: 200px;">თარიღი</th>
-                            <th style="width: 120px;">წყარო</th>
-                            <th style="width: 100px;">ადრესატი</th>
-                            <th style="width: 120px;">ლოდინის დრო</th>
+                            <th style="width: 200px;">Date</th>
+                            <th style="width: 120px;">Source</th>
+                            <th style="width: 100px;">Address</th>
+                            <th style="width: 120px;">Waiting time</th>
                         </tr>
                     </thead>
                     <thead>
                         <tr class="search_header">
                             <th class="colum_hidden">
-                            	<input type="text" name="search_id" value="ფილტრი" class="search_init" style=""/>
+                            	<input type="text" name="search_id" value="Filter class="search_init" style=""/>
                             </th>
                             <th>
-                            	<input type="text" name="search_number" value="ფილტრი" class="search_init" style="">
+                            	<input type="text" name="search_number" value="Filter class="search_init" style="">
 							</th>
                             <th>
-                                <input type="text" name="search_date" value="ფილტრი" class="search_init" style="width: 100px;"/>
+                                <input type="text" name="search_date" value="Filter" class="search_init" style="width: 100px;"/>
                             </th>
                             <th>
-                                <input type="text" name="search_category" value="ფილტრი" class="search_init" style="width: 80px;" />
+                                <input type="text" name="search_category" value="Filter" class="search_init" style="width: 80px;" />
                             </th>
 							<th>
-                                <input type="text" name="search_category" value="ფილტრი" class="search_init" style="width: 70px;" />
+                                <input type="text" name="search_category" value="Filter" class="search_init" style="width: 70px;" />
                             </th>
                         </tr>
                     </thead>
@@ -411,7 +411,7 @@ if($_REQUEST['act']=='tab_1'){
 	
 while ($row_answer_que = mysql_fetch_assoc($answer_que)){
 	$data['page']['answer_call'] .= '
-							<tr><td>'.$row_answer_que[dst_queue].'</td><td>'.$row_answer_que[count].' ზარი</td><td>'.round(((($row_answer_que[count]) / ($row_answer[count])) * 100)).' %</td></tr>
+							<tr><td>'.$row_answer_que[dst_queue].'</td><td>'.$row_answer_que[count].' Call</td><td>'.round(((($row_answer_que[count]) / ($row_answer[count])) * 100)).' %</td></tr>
 							';
 }
 
@@ -484,10 +484,6 @@ while ($row_answer_que = mysql_fetch_assoc($answer_que)){
 	$p60 = round($w60 * 100 / $w91);
 	$p75 = round($w75 * 100 / $w91);
 	$p90 = round($w90 * 100 / $w91);
-	
-	
-	
-	
 	
 	$data['page']['service_level'] = '
 							
@@ -658,13 +654,13 @@ $row_AGENT = mysql_fetch_assoc(mysql_query("SELECT COUNT(*) AS `count`
 	$data['page']['disconnection_cause'] = '
 
                    <tr>
-					<td>ოპერატორმა გათიშა:</td>
-					<td>'.$row_AGENT[count].' ზარი</td>
+					<td>Complete Agent:</td>
+					<td>'.$row_AGENT[count].' Call</td>
 					<td>'.ROUND((($row_AGENT[count] / ($row_COMPLETECALLER[count] +$row_AGENT[count]) ) * 100),2).' %</td>
 					</tr>
 					<tr>
-					<td>აბონენტმა გათიშა:</td>
-					<td>'.$row_COMPLETECALLER[count].' ზარი</td>
+					<td>Complete Caller:</td>
+					<td>'.$row_COMPLETECALLER[count].' Call</td>
 					<td>'.ROUND((($row_COMPLETECALLER[count] / ($row_COMPLETECALLER[count] +$row_AGENT[count]) ) * 100),2).' %</td>
 					</tr>
                     ';
@@ -708,13 +704,13 @@ if($_REQUEST['act']=='tab_2'){
 	$data['page']['disconnection_cause_unanswer'] = '
 
                   <tr> 
-                  <td>აბონენტმა გათიშა</td>
-			      <td>'.$row_abadon[count].' ზარი</td>
+                  <td>Complete Caller</td>
+			      <td>'.$row_abadon[count].' Call</td>
 			      <td>'.round((($row_abadon[count] / $row_abadon[count]) * 100),2).' %</td>
 		        </tr>
 			    <tr> 
-                  <td>დრო ამოიწურა</td>
-			      <td>0 ზარი</td>
+                  <td>Time out</td>
+			      <td>0 Call</td>
 			      <td>0 %</td>
 		        </tr>
 
@@ -737,7 +733,7 @@ if($_REQUEST['act']=='tab_2'){
 	while ($Unanswered_Calls_by_Queue = mysql_fetch_assoc($Unanswered_Calls_by_Queue_r)){
 	$data['page']['unanswered_calls_by_queue'] .= '
 
-                   	<tr><td>'.$Unanswered_Calls_by_Queue[queue].'</td><td>'.$Unanswered_Calls_by_Queue[count].' ზარი</td><td>'.round((($Unanswered_Calls_by_Queue[count] / $Unanswered_Calls_by_Queue[count]) * 100),2).' %</td></tr>
+                   	<tr><td>'.$Unanswered_Calls_by_Queue[queue].'</td><td>'.$Unanswered_Calls_by_Queue[count].' Call</td><td>'.round((($Unanswered_Calls_by_Queue[count] / $Unanswered_Calls_by_Queue[count]) * 100),2).' %</td></tr>
 
 							';
 	}
@@ -903,13 +899,13 @@ if($_REQUEST['act']=='tab_3'){
 
 $res12 = mysql_query( "
     					SELECT 	CASE
-    									WHEN DAYOFWEEK(gg.call_datetime) = 1 THEN 'კვირა'
-    									WHEN DAYOFWEEK(gg.call_datetime) = 2 THEN 'ორშაბათი'
-    									WHEN DAYOFWEEK(gg.call_datetime) = 3 THEN 'სამშაბათი'
-    									WHEN DAYOFWEEK(gg.call_datetime) = 4 THEN 'ოთხშაბათი'
-    									WHEN DAYOFWEEK(gg.call_datetime) = 5 THEN 'ხუთშაბათი'
-    									WHEN DAYOFWEEK(gg.call_datetime) = 6 THEN 'პარასკევი'
-    									WHEN DAYOFWEEK(gg.call_datetime) = 7 THEN 'შაბათი'
+    									WHEN DAYOFWEEK(gg.call_datetime) = 1 THEN 'Sunday'
+    									WHEN DAYOFWEEK(gg.call_datetime) = 2 THEN 'Monday'
+    									WHEN DAYOFWEEK(gg.call_datetime) = 3 THEN 'Tuesday'
+    									WHEN DAYOFWEEK(gg.call_datetime) = 4 THEN 'Wednesday'
+    									WHEN DAYOFWEEK(gg.call_datetime) = 5 THEN 'Thursday'
+    									WHEN DAYOFWEEK(gg.call_datetime) = 6 THEN 'Friday'
+    									WHEN DAYOFWEEK(gg.call_datetime) = 7 THEN 'Saturday'
     							END AS `datetime`,
                 				COUNT(*) AS `answer_count`,
                 				ROUND((( COUNT(*) / (

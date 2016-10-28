@@ -29,7 +29,7 @@ $name[]     = '';
 //-----------------------კავშირის გაწყვეტის მიზეზი
 if($_REQUEST['act']=='cause_fix'){
 				$res = mysql_query("		SELECT	COUNT(*) AS `count`,
-													'ოპერატორმა გათიშა' AS `cause`
+													'Complete Agent' AS `cause`
                                             FROM 	`asterisk_incomming`
                                             WHERE	`asterisk_incomming`.disconnect_cause != 'ABANDON' 
                                             AND DATE(call_datetime) >= '$start_time'
@@ -42,7 +42,7 @@ if($_REQUEST['act']=='cause_fix'){
 													UNION ALL
 
 											SELECT	COUNT(*) AS `count`,
-													'აბონენტმა გათიშა' AS `cause`
+													'Complete Caller' AS `cause`
 											FROM 	`asterisk_incomming`
                                             WHERE	`asterisk_incomming`.disconnect_cause != 'ABANDON'
                                             AND DATE(call_datetime) >= '$start_time'
@@ -80,13 +80,13 @@ while($row1 = mysql_fetch_assoc($ress)){
 //------------------------------ ნაპასუხები ზარები კვირის დღეების მიხედვით
 if($_REQUEST['act']=='answer_call_week'){
 		$res3 =mysql_query("SELECT  CASE
-										WHEN DAYOFWEEK(call_datetime) = 1 THEN 'კვირა'
-										WHEN DAYOFWEEK(call_datetime) = 2 THEN 'ორშაბათი'
-										WHEN DAYOFWEEK(call_datetime) = 3 THEN 'სამშაბათი'
-										WHEN DAYOFWEEK(call_datetime) = 4 THEN 'ოთხშაბათი'
-										WHEN DAYOFWEEK(call_datetime) = 5 THEN 'ხუთშაბათი'
-										WHEN DAYOFWEEK(call_datetime) = 6 THEN 'პარასკევი'
-										WHEN DAYOFWEEK(call_datetime) = 7 THEN 'შაბათი'
+										WHEN DAYOFWEEK(call_datetime) = 1 THEN 'Sunday'
+										WHEN DAYOFWEEK(call_datetime) = 2 THEN 'Monday'
+										WHEN DAYOFWEEK(call_datetime) = 3 THEN 'Tuesday'
+										WHEN DAYOFWEEK(call_datetime) = 4 THEN 'Wednesday'
+										WHEN DAYOFWEEK(call_datetime) = 5 THEN 'Thursday'
+										WHEN DAYOFWEEK(call_datetime) = 6 THEN 'Friday'
+										WHEN DAYOFWEEK(call_datetime) = 7 THEN 'Saturday'
 									END AS `date`,
 									COUNT(*) AS `answer_count1`
 							FROM 		`asterisk_incomming` as gg
@@ -108,13 +108,13 @@ if($_REQUEST['act']=='answer_call_week'){
 if($_REQUEST['act']=='unanswer_call_week'){	
 	$res10 =mysql_query("SELECT CASE
 				
-									WHEN DAYOFWEEK(call_datetime) = 1 THEN 'კვირა'
-									WHEN DAYOFWEEK(call_datetime) = 2 THEN 'ორშაბათი'
-									WHEN DAYOFWEEK(call_datetime) = 3 THEN 'სამშაბათი'
-									WHEN DAYOFWEEK(call_datetime) = 4 THEN 'ოთხშაბათი'
-									WHEN DAYOFWEEK(call_datetime) = 5 THEN 'ხუთშაბათი'
-									WHEN DAYOFWEEK(call_datetime) = 6 THEN 'პარასკევი'
-									WHEN DAYOFWEEK(call_datetime) = 7 THEN 'შაბათი'
+									WHEN DAYOFWEEK(call_datetime) = 1 THEN 'Sunday'
+									WHEN DAYOFWEEK(call_datetime) = 2 THEN 'Monday'
+									WHEN DAYOFWEEK(call_datetime) = 3 THEN 'Tuesday'
+									WHEN DAYOFWEEK(call_datetime) = 4 THEN 'Wednesday'
+									WHEN DAYOFWEEK(call_datetime) = 5 THEN 'Thursday'
+									WHEN DAYOFWEEK(call_datetime) = 6 THEN 'Friday'
+									WHEN DAYOFWEEK(call_datetime) = 7 THEN 'Saturday'
 									END AS `date`,
 									COUNT(*) AS `unanswer_count`
 									FROM 		`asterisk_incomming` as gg
@@ -133,7 +133,7 @@ if($_REQUEST['act']=='unanswer_call_week'){
 	//------------------------------ კავშირის გაწყვეტის მიზეზი
 if($_REQUEST['act']=='disconect_couse'){
 $res5 =mysql_query("SELECT	COUNT(*) AS `count`,
-							'აბონენტმა გათიშა' AS `cause`
+							'Complete Caller' AS `cause`
                     FROM 	`asterisk_incomming`
                     WHERE	`asterisk_incomming`.disconnect_cause = 'ABANDON' 
                     AND DATE(call_datetime) >= '$start_time'
@@ -142,7 +142,7 @@ $res5 =mysql_query("SELECT	COUNT(*) AS `count`,
 					UNION ALL
 
 					SELECT	(COUNT(*)-COUNT(*)) AS `count`,
-							'დრო ამოიწურა' AS `cause`
+							'Time out' AS `cause`
 					FROM 	`asterisk_incomming`
                     WHERE	`asterisk_incomming`.disconnect_cause = 'ABANDON'
                     AND DATE(call_datetime) >= '$start_time'
@@ -373,10 +373,10 @@ if($_REQUEST['act']=='answer_call_sec'){
 			$d91 = $w91 - $w90;
 			
 $mas = array($w15,$d30,$d45,$d60,$d75,$d90,$d91);
-$call_second=array('15 წამში','30 წამში','45წამში','60 წამში','75 წამში','90 წამში','90+წამში');			
+$call_second=array('15 seconds','30 seconds','45 seconds','60 seconds','75 seconds','90 seconds','90+seconds');			
 }
 							
-$unit[]="  ზარი";
+$unit[]="  Call";
 $series[] = array('name' => $name, 'unit' => $unit, 'quantity' => $quantity, 'cause' => $cause);
 $series[] = array('name' => $name, 'unit' => $unit, 'call_count' => $call_count, 'agent' => $agentt);
 $series[] = array('name' => $name, 'unit' => $unit, 'answer_count' => $answer_count, 'datetime' => $datetime);

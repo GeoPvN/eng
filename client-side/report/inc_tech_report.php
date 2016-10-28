@@ -1822,11 +1822,11 @@
                     <th>Total</th>
                     <th>Answered</th>
                     <th>Unanswered</th>
-                    <th>Processed</th>
+                    <th>treated</th>
                     <th>Untreated</th>
                     <th>Answered%</th>
                     <th>Unanswered %</th>
-                    <th>Processed %</th>
+                    <th>treated %</th>
                     <th>Untreated %</th>
                 </tr>
                 <tr>
