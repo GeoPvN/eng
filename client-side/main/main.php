@@ -500,7 +500,7 @@ function inner_call(){
     	        	}
     	        },
     	        tooltip: {
-                    pointFormat: 'ზარი: <b>{point.y:.0f}</b>'
+                    pointFormat: 'Call: <b>{point.y:.0f}</b>'
                 },
     	        plotOptions: {
     	            line: {
@@ -771,7 +771,7 @@ function go_sl(){
 </head>
 <body onselectstart='return false;'>
 <div id="tabs" style="width: 98%;margin-bottom: 60px;height: 950px;">
-<div class="callapp_head">მთავარი<hr class="callapp_head_hr"></div>
+<div class="callapp_head">Home<hr class="callapp_head_hr"></div>
     <div id="box_content">
         <div class="mini_boxs">
         <div class="box_main">
