@@ -1385,10 +1385,10 @@ if(fName=='add-edit-form-task'){
             <th style="width: 100%;">Date</th>
             <th style="width: 100%;">Phone 1</th>
             <th style="width: 100%;">Phone 2</th>
-            <th style="width: 100%;">სახელი გვარი</th>
-            <th style="width: 100%;">პირადი ნომერი</th>
-            <th style="width: 100%;">სცენარი</th>
-            <th style="width: 100%;">პასუხისმგებელი პირი</th>
+            <th style="width: 100%;">Name Surname</th>
+            <th style="width: 100%;">Tin</th>
+            <th style="width: 100%;">Scenario</th>
+            <th style="width: 100%;">responsible person</th>
             <th class="check" style="width: 30px;" id="last_th">&nbsp;</th>
         </tr>
     </thead>
@@ -1602,7 +1602,7 @@ if(fName=='add-edit-form-task'){
 }
 </style>
 <div id="flesh_panel">
-<div class="callapp_head" style="text-align: right;"><img id="show_flesh_panel" title="პანელის გადიდება" alt="arrow" src="media/images/icons/arrow_left.png" height="18" width="18">Call Centre<hr class="callapp_head_hr"></div>
+<div class="callapp_head" style="text-align: right;"><img id="show_flesh_panel" title="maximize panel" alt="arrow" src="media/images/icons/arrow_left.png" height="18" width="18">Call Centre<hr class="callapp_head_hr"></div>
 <table id="flesh_panel_table_mini">
 </table>
 </div>
