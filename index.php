@@ -173,13 +173,13 @@
 			<div id='yesnoclose' class="form-dialog">
                 <div id="dialog-form">
                     <fieldset>
-                                                 გსურთ თუ არა ცვლილებების შენახვა?
+                    	Do you want to save the changes?
                     </fieldset>
                 </div>
             </div>
             
             <!-- jQuery Dialog -->
-            <div  id="play_audio" class="form-dialog" title="მოსმენა">
+            <div  id="play_audio" class="form-dialog" title="Listen">
                 <audio controls autoplay>
                   <source src="" type="audio/wav">
                 </audio>
