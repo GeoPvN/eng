@@ -1334,7 +1334,7 @@ if(fName=='add-edit-form-task'){
 <div class="callapp_filter_show">
 <span>
 <select id="task_type" style="width: 120px;">
-<!-- <option value="1">Outgoing</option> -->
+<option value="1">Outgoing</option>
 <option value="2">Task</option>
 </select>
 </span>
