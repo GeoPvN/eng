@@ -38,10 +38,10 @@ while ($req = mysql_fetch_array($res)){
 
 // State
 $data['state'] =  '<option value="0">----</option>';
-$data['state'] .=  '<option value="flesh_off.png">მიუწდომელი</option>';
-$data['state'] .=  '<option value="flesh_inc.png">დაკავებული</option>';
-$data['state'] .=  '<option value="flesh_ringing.png">რეკავს</option>';
-$data['state'] .=  '<option value="flesh_free.png">თავისუფალი</option>';
+$data['state'] .=  '<option value="flesh_off.png">Unavailable</option>';
+$data['state'] .=  '<option value="flesh_inc.png">Busy</option>';
+$data['state'] .=  '<option value="flesh_ringing.png">Ringing</option>';
+$data['state'] .=  '<option value="flesh_free.png">Free</option>';
 
 echo json_encode($data);
 ?>
