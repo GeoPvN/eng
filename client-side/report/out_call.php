@@ -39,11 +39,11 @@
 
             var buttons = {
             	"save": {
-                    text: "შენახვა",
+                    text: "Save",
                     id: "save-dialog"
                 }, 
             	"cancel": {
-                    text: "დახურვა",
+                    text: "Close",
                     id: "cancel-dialog",
                     click: function () {
                     	tinymce.remove("#action_content");
@@ -105,14 +105,14 @@
 <body>
 
 <div id="tabs">
-<div class="callapp_head">გაგზავნილი ზარი<hr class="callapp_head_hr"></div>
+<div class="callapp_head">Outgoing calls<hr class="callapp_head_hr"></div>
 <div class="callapp_tabs">
 
 </div>
 
 <div>
-<input type="text" id="date_start" style="width: 70px;">-დან
-<input type="text" id="date_end" style="width: 70px;margin-left: 5px;">-მდე
+<input type="text" id="date_start" style="width: 70px;">-From
+<input type="text" id="date_end" style="width: 70px;margin-left: 5px;">-Up to
 </div>
 
 <table id="table_right_menu" style="top: 28px;">
@@ -130,52 +130,47 @@
 		<tr id="datatable_header">
            <th>ID</th>
 			<th style="width:10%;">#</th>
-			<th style="width:17%; word-break:break-all;">დარეკვის თარიღი</th>
-			<th style="width:14%; word-break:break-all;">შიდა ნომერი</th>
-			<th style="width:15%; word-break:break-all;">ოპერატორი</th>
-			<th style="width:13%; word-break:break-all;">ნომერი</th>
-			<th style="width:17%; word-break:break-all;">ლოდინის დრო</th>
-			<th style="width:17%; word-break:break-all;">ხანგძლივობა</th>
-			<th style="width:25%; word-break:break-all;">მოსმენა</th>
+			<th style="width:17%; word-break:break-all;">Call Date</th>
+			<th style="width:14%; word-break:break-all;">Extension</th>
+			<th style="width:15%; word-break:break-all;">Operator</th>
+			<th style="width:13%; word-break:break-all;">Phone</th>
+			<th style="width:17%; word-break:break-all;">Waiting time</th>
+			<th style="width:17%; word-break:break-all;">Duration</th>
+			<th style="width:25%; word-break:break-all;">Listen</th>
 		</tr>
 	</thead>
 	<thead>
 		<tr class="search_header">
 			<th class="colum_hidden">
-    			<input type="text" name="search_id" value="ფილტრი" class="search_init" style="width: 10px"/>
+    			<input type="text" name="search_id" value="Filter" class="search_init" style="width: 10px"/>
     		</th>
 			<th>
-				<input style="width:100%;" type="text" name="search_overhead" value="" class="search_init" />
+				<input style="width:100%;" type="text" name="search_overhead" value="Filter" class="search_init" />
 			</th>
 			<th>
-				<input style="width:100%;" type="text" name="search_overhead" value="ფილტრი" class="search_init" />
+				<input style="width:100%;" type="text" name="search_overhead" value="Filter" class="search_init" />
 			</th>
 			<th>
-				<input style="width:100%;" type="text" name="search_partner" value="ფილტრი" class="search_init" />
+				<input style="width:100%;" type="text" name="search_partner" value="Filter" class="search_init" />
 			</th>
 			<th>
-				<input style="width:100%;" type="text" name="search_sum_cost" value="ფილტრი" class="search_init" />
+				<input style="width:100%;" type="text" name="search_sum_cost" value="Filter" class="search_init" />
 			</th>
 			<th>
-				<input style="width:100%;" type="text" name="search_partner" value="ფილტრი" class="search_init" />
+				<input style="width:100%;" type="text" name="search_partner" value="Filter" class="search_init" />
 			</th>
 			<th>
-				<input style="width:100%;" type="text" name="search_partner" value="ფილტრი" class="search_init" />
+				<input style="width:100%;" type="text" name="search_partner" value="Filter" class="search_init" />
 			</th>
 			<th> 
-				<input style="width:100%;" type="text" name="search_sum_cost" value="ფილტრი" class="search_init" />
+				<input style="width:100%;" type="text" name="search_sum_cost" value="Filter" class="search_init" />
 			</th>
 			<th>
-				<input style="width:100%;" type="text" name="search_partner" value="ფილტრი" class="search_init" />
+				<input style="width:100%;" type="text" name="search_partner" value="Filter" class="search_init" />
 			</th>
 	    </tr>
 	</thead>
 </table>      
-		 
-<!-- jQuery Dialog -->
-<div id="add-edit-form" class="form-dialog" title="გამავალი ზარი">
-<!-- aJax -->
-</div>
-
+		
 </body>
 

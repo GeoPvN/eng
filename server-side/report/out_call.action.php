@@ -24,7 +24,7 @@ switch ($action) {
                                             phone,
                                             SEC_TO_TIME(wait_time) AS `wait_time`,
                                             SEC_TO_TIME(duration) AS `duration`,
-                                            concat('<p style=\"padding: 3px 0;\" onclick=play(','\'',date_format(cast(`asterisk_outgoing`.`call_datetime` AS date),	'%Y/%m/%d/'),`asterisk_outgoing`.`file_name`,'\'',')>მოსმენა</p>') AS `file`
+                                            concat('<p style=\"padding: 3px 0;\" onclick=play(','\'',date_format(cast(`asterisk_outgoing`.`call_datetime` AS date),	'%Y/%m/%d/'),`asterisk_outgoing`.`file_name`,'\'',')>Listen</p>') AS `file`
                                     FROM `asterisk_outgoing`
                                     WHERE DATE(call_datetime) >= '$date_start' AND DATE(call_datetime) <= '$date_end'");
 	  

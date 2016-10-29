@@ -1072,7 +1072,7 @@ $record_incomming = mysql_query("SELECT  `datetime`,
         $str_record_incomming .= '<tr>
                                     <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">'.$record_res_incomming[datetime].'</td>
                             	    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">'.$record_res_incomming[duration].'</td>
-                            	    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;cursor: pointer;" onclick="listen(\''.$record_res_incomming[file_name].'\')"><span>მოსმენა</span></td>
+                            	    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;cursor: pointer;" onclick="listen(\''.$record_res_incomming[file_name].'\')"><span>Listen</span></td>
                         	      </tr>';
     }
     
@@ -1094,19 +1094,19 @@ $record_incomming = mysql_query("SELECT  `datetime`,
         $str_record_outgoing .= '<tr>
                                     <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">'.$record_res_outgoing[call_datetime].'</td>
                             	    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">'.$record_res_outgoing[duration].'</td>
-                            	    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;cursor: pointer;" onclick="listen(\''.$record_res_outgoing[file_name].'\')"><span>მოსმენა</span></td>
+                            	    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;cursor: pointer;" onclick="listen(\''.$record_res_outgoing[file_name].'\')"><span>Listen</span></td>
                         	      </tr>';
     }
     
     if($str_record_outgoing == ''){
         $str_record_outgoing = '<tr>
-                                    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;" colspan=3>ჩანაწერი არ მოიძებნა</td>
+                                    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;" colspan=3>No records found</td>
                         	      </tr>';
     }
     
     if($str_record_incomming == ''){
         $str_record_incomming = '<tr>
-                                    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;" colspan=3>ჩანაწერი არ მოიძებნა</td>
+                                    <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;" colspan=3>No records found</td>
                         	      </tr>';
     }
     
@@ -1122,7 +1122,7 @@ $record_incomming = mysql_query("SELECT  `datetime`,
     	               <tr>
     	                   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">თარიღი</td>
                     	   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">ხანგძლივობა</td>
-                    	   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">მოსმენა</td>
+                    	   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">Listen</td>
                 	    </tr>
     	                '.$str_record_incomming.'
             	    </table>
@@ -1133,7 +1133,7 @@ $record_incomming = mysql_query("SELECT  `datetime`,
     	               <tr>
     	                   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">თარიღი</td>
                     	   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">ხანგძლივობა</td>
-                    	   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">მოსმენა</td>
+                    	   <td style="border: 1px solid #CCC;padding: 5px;text-align: center;vertical-align: middle;">Listen</td>
                 	    </tr>
     	                '.$str_record_outgoing.'
             	    </table>

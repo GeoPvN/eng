@@ -236,7 +236,7 @@
     	if($.session.get("filter_5")=='on'){
     		myhtml += '<span>Out Unansswer<close cl="filter_5">X</close></span>';
     	}
-    	if($.session.get("filter_6")=='on'){
+    	if($.session.get("filter_6")=='on'){file
     		myhtml += '<span>Inner Ansswer<close cl="filter_6">X</close></span>';
     	}
     	if($.session.get("filter_7")=='on'){
@@ -275,7 +275,7 @@
     
     function show_main(id,my_this){
     	$("#client_main,#client_other").hide();
-    	$("#" + id).show();
+    	$("#" + id).show();file
     	$(".client_main,.client_other").css('border','none');
     	$(".client_main,.client_other").css('padding','6px');
     	$(my_this).css('border','1px solid #ccc');
@@ -532,7 +532,7 @@
 	    	
     		inp_key      = this.id;
     		inp_value    = this.value;
-    		inp_q_id     = $(this).attr('q_id');
+    		inp_q_id     = $(this).attr('q_id');ფილტრი
     		
     	    if(inp_value != ''){
     		 inp_checker[inp_key] = inp_checker[inp_key] + "," + inp_value;
@@ -629,7 +629,7 @@
 	    	$.ajax({
 		        url: aJaxURL,
 			    data: link + "&checker=" + JSON.stringify(items.checker) + "&input=" + JSON.stringify(items.input)  + "&radio=" + JSON.stringify(items.radio) + "&date=" + JSON.stringify(items.date) + "&date_time=" + JSON.stringify(items.date_time) + "&select_op=" + JSON.stringify(items.select_op),
-		        success: function(data) {       
+		        success: function(data) {       ფილტრი
 					if(typeof(data.error) != "undefined"){
 						if(data.error != ""){
 							alert(data.error);
