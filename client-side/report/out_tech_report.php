@@ -1702,7 +1702,7 @@
 		
         <label>Select Tab</label>
 		<select id="change_tab" >
-		<option value="0">Home</option>
+		<option value="0">Main</option>
 		<option value="1">Answered outgoing calls</option>
 		<option value="3">Outgoing call distribution</option>
 		</select>
