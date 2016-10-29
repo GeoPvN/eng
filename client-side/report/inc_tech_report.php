@@ -1734,7 +1734,7 @@
 		<div class="clear"></div>
 		
 		<div style="width: 27%; float:left;">
-			<span>Choose Queue</span>
+			<span>Select Queue</span>
 			<hr>
 			
 			    <table border="0" cellspacing="0" cellpadding="8">
@@ -1765,7 +1765,7 @@
 				</table>
 			</div>
 			<div style="width: 27%; float:left; margin-left:75px;">
-				<span>Choose Operator</span>
+				<span>Select Operator</span>
 				<hr>
 				<table border="0" cellspacing="0" cellpadding="8" >
 					<tbody><tr>
@@ -1795,7 +1795,7 @@
 			</div>
 			<div class="clear"></div>
 			<div id="rest" style="width: 100%; float:none;">
-				<h2>Choose date</h2>
+				<h2>Select date</h2>
 				<hr>
 				<div id="button_area">
 	            	<div class="left" style="width: 160px;">
