@@ -25,7 +25,7 @@ $data		= array('page' => array(
                     				phone,
                     				'',
                     				SEC_TO_TIME(duration),
-                    				CONCAT('<p onclick=play(', '\'',DATE_FORMAT(DATE(call_datetime),'%Y/%m/%d/'), file_name, '\'',  ')>მოსმენა</p>', '<a download=\"audio.wav\" href=\"http://212.72.155.176:8000/', DATE_FORMAT(DATE(call_datetime),'%Y/%m/%d/'), file_name, '\">ჩამოტვირთვა</a>') AS `file`
+                    				CONCAT('<p onclick=play(', '\'',DATE_FORMAT(DATE(call_datetime),'%Y/%m/%d/'), file_name, '\'',  ')>Listen</p>', '<a download=\"audio.wav\" href=\"http://212.72.155.176:8000/', DATE_FORMAT(DATE(call_datetime),'%Y/%m/%d/'), file_name, '\">Download</a>') AS `file`
 	                        FROM 	`asterisk_outgoing`
                             WHERE duration != 0 
                             AND 	DATE(`call_datetime`) >= '$start_time'
@@ -70,7 +70,7 @@ $data		= array('page' => array(
                     				dst_queue,
                     				dst_extension,
                     				SEC_TO_TIME(duration),
-                    				CONCAT('<p onclick=play(', '\'',DATE_FORMAT(DATE(call_datetime),'%Y/%m/%d/'), file_name, '\'',  ')>მოსმენა</p>', '<a download=\"audio.wav\" href=\"http://212.72.155.176:8000/', DATE_FORMAT(DATE(call_datetime),'%Y/%m/%d/'), file_name, '\">ჩამოტვირთვა</a>') AS `file`
+                    				CONCAT('<p onclick=play(', '\'',DATE_FORMAT(DATE(call_datetime),'%Y/%m/%d/'), file_name, '\'',  ')>Listen</p>', '<a download=\"audio.wav\" href=\"http://212.72.155.176:8000/', DATE_FORMAT(DATE(call_datetime),'%Y/%m/%d/'), file_name, '\">Download</a>') AS `file`
                             FROM `asterisk_incomming`
                             JOIN users ON asterisk_incomming.user_id = users.id
                             WHERE 
@@ -209,37 +209,37 @@ if($_REQUEST['act'] =='answear_dialog'){
                     <thead>
                         <tr id="datatable_header">
                             <th>ID</th>
-                            <th style="width: 180px;">თარიღი</th>
-                            <th style="width: 110px;">წყარო</th>
-                            <th style="width: 110px;">ადრესატი</th>
-							<th style="width: 100px;">ექსთენშენი</th>
-                            <th style="width: 80px;">დრო</th>
-                            <th style="width: 90px;">ქმედება</th>
+                            <th style="width: 180px;">Date</th>
+                            <th style="width: 110px;">Source</th>
+                            <th style="width: 110px;">Address</th>
+							<th style="width: 100px;">Extention</th>
+                            <th style="width: 80px;">Duration</th>
+                            <th style="width: 90px;">Action</th>
                         </tr>
                     </thead>
                     <thead>
                         <tr class="search_header">
                             <th class="colum_hidden">
-                            	<input type="text" name="search_id" value="ფილტრი" class="search_init" style=""/>
+                            	<input type="text" name="search_id" value="Filter" class="search_init" style=""/>
                             </th>
                             <th>
-                            	<input type="text" name="search_number" value="ფილტრი" class="search_init" style="">
+                            	<input type="text" name="search_number" value="Filter" class="search_init" style="">
 							</th>
                                                       
                             <th>
-                                <input type="text" name="search_category" value="ფილტრი" class="search_init" style="width: 80px;" />
+                                <input type="text" name="search_category" value="Filter" class="search_init" style="width: 80px;" />
                             </th>
                             <th>
-                                <input type="text" name="search_phone" value="ფილტრი" class="search_init" style="width: 70px;"/>
+                                <input type="text" name="search_phone" value="Filter" class="search_init" style="width: 70px;"/>
                             </th>
 							<th>
-                                <input type="text" name="search_phone" value="ფილტრი" class="search_init" style="width: 70px;"/>
+                                <input type="text" name="search_phone" value="Filter" class="search_init" style="width: 70px;"/>
                             </th>
                             <th>
-                                <input type="text" name="search_category" value="ფილტრი" class="search_init" style="width: 70px;" />
+                                <input type="text" name="search_category" value="Filter" class="search_init" style="width: 70px;" />
                             </th>
 							<th>
-                                <input type="text" name="search_category" value="ფილტრი" class="search_init" style="width: 80px;" />
+                                <input type="text" name="search_category" value="Filter" class="search_init" style="width: 80px;" />
                             </th>
                             
                         </tr>
@@ -270,28 +270,28 @@ if($_REQUEST['act'] =='unanswear_dialog'){
                     <thead>
                         <tr id="datatable_header">
                             <th>ID</th>
-                            <th style="width: 100%;">თარიღი</th>
-                            <th style="width: 120px;">წყარო</th>
-                            <th style="width: 100px;">ადრესატი</th>
-                            <th style="width: 80px;">დრო</th>
+                            <th style="width: 100%;">Date</th>
+                            <th style="width: 120px;">Source</th>
+                            <th style="width: 100px;">Address</th>
+                            <th style="width: 80px;">Waiting time</th>
                         </tr>
                     </thead>
                     <thead>
                         <tr class="search_header">
                             <th class="colum_hidden">
-                            	<input type="text" name="search_id" value="ფილტრი" class="search_init" style=""/>
+                            	<input type="text" name="search_id" value="Filter" class="search_init" style=""/>
                             </th>
                             <th>
-                            	<input type="text" name="search_number" value="ფილტრი" class="search_init" style="">
+                            	<input type="text" name="search_number" value="Filter" class="search_init" style="">
 							</th>
                             <th>
-                                <input type="text" name="search_date" value="ფილტრი" class="search_init" style="width: 100px;"/>
+                                <input type="text" name="search_date" value="Filter" class="search_init" style="width: 100px;"/>
                             </th>
                             <th>
-                                <input type="text" name="search_category" value="ფილტრი" class="search_init" style="width: 80px;" />
+                                <input type="text" name="search_category" value="Filter" class="search_init" style="width: 80px;" />
                             </th>
 							<th>
-                                <input type="text" name="search_category" value="ფილტრი" class="search_init" style="width: 70px;" />
+                                <input type="text" name="search_category" value="Filter" class="search_init" style="width: 70px;" />
                             </th>
                         </tr>
                     </thead>
@@ -345,20 +345,20 @@ $row_answer = mysql_fetch_assoc(mysql_query("	SELECT  COUNT(*) AS `count`,
     $data['page']['report_info'] = '
     
                 <tr>
-                    <td>რიგი:</td>
+                    <td>Queue:</td>
                     <td>'.$queue.'</td>
                 </tr>
                 <tr>
-                    <td>საწყისი თარიღი:</td>
+                    <td>Start Date:</td>
                     <td>'.$start_time.'</td>
                 </tr>
                 <tr>
-                    <td>დასრულების თარიღი:</td>
+                    <td>End Date:</td>
                     <td>'.$end_time.'</td>
                 </tr>
                 <tr>
-                    <td>პერიოდი:</td>
-                    <td>'.$day_format.' დღე</td>
+                    <td>Period:</td>
+                    <td>'.$day_format.' Day</td>
                 </tr>
     
 							';
@@ -377,7 +377,7 @@ if($_REQUEST['act'] == 'tab_0'){
 	
 	$data['page']['technik_info'] = '
 							
-                    <td>ზარი</td>
+                    <td>Call</td>
                     <td>'.($row_answer[count] + $row_abadon[count]).'</td>
                     <td>'.$row_answer[count].'</td>
                     <td>'.$row_abadon[count].'</td>
@@ -410,21 +410,21 @@ $row_clock = mysql_fetch_assoc(mysql_query("	SELECT	ROUND((SUM(wait_time) / COUN
 	$data['page']['answer_call_info'] = '
 
                    	<tr>
-					<td>ნაპასუხები ზარები</td>
-					<td>'.$row_answer[count].' ზარი</td>
+					<td>Answered Call</td>
+					<td>'.$row_answer[count].' Call</td>
 					</tr>
 					
 					<tr>
-					<td>საშ. ხანგძლივობა:</td>
-					<td>'.$row_clock[sec].' წამი</td>
+					<td>AVG Duration:</td>
+					<td>'.$row_clock[sec].' second</td>
 					</tr>
 					<tr>
-					<td>სულ საუბრის ხანგძლივობა:</td>
-					<td>'.$row_clock[min].' წუთი</td>
+					<td>Total Duration:</td>
+					<td>'.$row_clock[min].' Minute</td>
 					</tr>
 					<tr>
-					<td>ლოდინის საშ. ხანგძლივობა:</td>
-					<td>'.$row_clock[hold].' წამი</td>
+					<td>AVG Waiting time:</td>
+					<td>'.$row_clock[hold].' second</td>
 					</tr>
 
 							';
@@ -473,9 +473,9 @@ while($row = mysql_fetch_assoc($ress)){
 					<td>'.$row[call_pr].' %</td>
 					<td>'.$row[call_time].' </td>
 					<td>'.$row[call_time_pr].' %</td>
-					<td>'.$row[avg_call_time].' წუთი</td>
-					<td>'.$row[hold_time].' წამი</td>
-					<td>'.$row[avg_hold_time].' წამი</td>
+					<td>'.$row[avg_call_time].' Minute</td>
+					<td>'.$row[hold_time].' second</td>
+					<td>'.$row[avg_hold_time].' second</td>
 					</tr>
 
 							';
@@ -491,12 +491,12 @@ if($_REQUEST['act']=='tab_3'){
 	$data['page']['totals'] = '
 
                    	<tr> 
-                  <td>ნაპასუხები ზარების რაოდენობა:</td>
-		          <td>'.$row_answer[count].' ზარი</td>
+                  <td>Answered Call Count:</td>
+		          <td>'.$row_answer[count].' Call</td>
 	            </tr>
                 <tr>
-                  <td>უპასუხო ზარების რაოდენობა:</td>
-                  <td>'.$row_abadon[count].' ზარი</td>
+                  <td>Unanswered Call Count:</td>
+                  <td>'.$row_abadon[count].' Call</td>
                 </tr>
 		        
 
@@ -558,8 +558,8 @@ if($_REQUEST['act']=='tab_3'){
 					<td>'.$row[call_answer_pr].' %</td>
 					<td>'.(($row[unanswer_call]!='')?$row[unanswer_call]:"0").'</td>
 					<td>'.($row[call_unanswer_pr]==''?0:$row[call_unanswer_pr]).' %</td>
-					<td>'.$row[avg_durat].' წუთი</td>
-					<td>'.$row[avg_hold].' წამი</td>
+					<td>'.$row[avg_durat].' Minute</td>
+					<td>'.$row[avg_hold].' second</td>
 					</tr>
 
 							';
@@ -624,8 +624,8 @@ if($_REQUEST['act']=='tab_3'){
 						<td>'.(($row[call_answer_pr]!='')?$row[call_answer_pr]:"0").' %</td>
 						<td>'.(($row[unanswer_call]!='')?$row[unanswer_call]:"0").'</td>
 						<td>'.(($row[call_unanswer_pr]!='')?$row[call_unanswer_pr]:"0").'%</td>
-						<td>'.(($row[avg_durat]!='')?$row[avg_durat]:"0").' წამი</td>
-						<td>'.(($row[avg_hold]!='')?$row[avg_hold]:"0").' წამი</td>
+						<td>'.(($row[avg_durat]!='')?$row[avg_durat]:"0").' second</td>
+						<td>'.(($row[avg_hold]!='')?$row[avg_hold]:"0").' second</td>
 
 						</tr>
 				';
@@ -695,8 +695,8 @@ $res12 = mysql_query( "
 					<td>'.(($row[call_answer_pr]!='')?$row[call_answer_pr]:"0").' %</td>
 					<td>'.(($row[unanswer_call]!='')?$row[unanswer_call]:"0").'</td>
 					<td>'.(($row[call_unanswer_pr]!='')?$row[call_unanswer_pr]:"0").'%</td>
-					<td>'.(($row[avg_durat]!='')?$row[avg_durat]:"0").' წამი</td>
-					<td>'.(($row[avg_hold]!='')?$row[avg_hold]:"0").' წამი</td>
+					<td>'.(($row[avg_durat]!='')?$row[avg_durat]:"0").' second</td>
+					<td>'.(($row[avg_hold]!='')?$row[avg_hold]:"0").' second</td>
 
 					</tr>
 						';

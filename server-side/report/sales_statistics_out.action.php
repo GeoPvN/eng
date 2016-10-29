@@ -46,13 +46,13 @@ while($row1 = mysql_fetch_assoc($ress)){
 //------------------------------ ნაპასუხები ზარები კვირის დღეების მიხედვით
 if($_REQUEST['act']=='answer_call_week'){
 		$res3 =mysql_query("SELECT  CASE
-										WHEN DAYOFWEEK(call_datetime) = 1 THEN 'კვირა'
-										WHEN DAYOFWEEK(call_datetime) = 2 THEN 'ორშაბათი'
-										WHEN DAYOFWEEK(call_datetime) = 3 THEN 'სამშაბათი'
-										WHEN DAYOFWEEK(call_datetime) = 4 THEN 'ოთხშაბათი'
-										WHEN DAYOFWEEK(call_datetime) = 5 THEN 'ხუთშაბათი'
-										WHEN DAYOFWEEK(call_datetime) = 6 THEN 'პარასკევი'
-										WHEN DAYOFWEEK(call_datetime) = 7 THEN 'შაბათი'
+										WHEN DAYOFWEEK(call_datetime) = 1 THEN 'Sunday'
+										WHEN DAYOFWEEK(call_datetime) = 2 THEN 'Monday'
+										WHEN DAYOFWEEK(call_datetime) = 3 THEN 'Tuesday'
+										WHEN DAYOFWEEK(call_datetime) = 4 THEN 'Wednesday'
+										WHEN DAYOFWEEK(call_datetime) = 5 THEN 'Wednesday'
+										WHEN DAYOFWEEK(call_datetime) = 6 THEN 'Friday'
+										WHEN DAYOFWEEK(call_datetime) = 7 THEN 'Saturday'
 									END AS `date`,
 									COUNT(*) AS `answer_count1`
 							FROM 		`asterisk_outgoing` as gg
@@ -72,13 +72,13 @@ if($_REQUEST['act']=='answer_call_week'){
 	//------------------------------ უპასუხო ზარები კვირის დღეების მიხედვით
 if($_REQUEST['act']=='unanswer_call_week'){	
 	$res10 =mysql_query("SELECT CASE
-									WHEN DAYOFWEEK(call_datetime) = 1 THEN 'კვირა'
-									WHEN DAYOFWEEK(call_datetime) = 2 THEN 'ორშაბათი'
-									WHEN DAYOFWEEK(call_datetime) = 3 THEN 'სამშაბათი'
-									WHEN DAYOFWEEK(call_datetime) = 4 THEN 'ოთხშაბათი'
-									WHEN DAYOFWEEK(call_datetime) = 5 THEN 'ხუთშაბათი'
-									WHEN DAYOFWEEK(call_datetime) = 6 THEN 'პარასკევი'
-									WHEN DAYOFWEEK(call_datetime) = 7 THEN 'შაბათი'
+									WHEN DAYOFWEEK(call_datetime) = 1 THEN 'Sunday'
+									WHEN DAYOFWEEK(call_datetime) = 2 THEN 'Monday'
+									WHEN DAYOFWEEK(call_datetime) = 3 THEN 'Tuesday'
+									WHEN DAYOFWEEK(call_datetime) = 4 THEN 'Wednesday'
+									WHEN DAYOFWEEK(call_datetime) = 5 THEN 'Wednesday'
+									WHEN DAYOFWEEK(call_datetime) = 6 THEN 'Friday'
+									WHEN DAYOFWEEK(call_datetime) = 7 THEN 'Saturday'
 								END AS `date`,
 								COUNT(*) AS `unanswer_count`
 						FROM 		`asterisk_outgoing` as gg
@@ -220,7 +220,7 @@ if($_REQUEST['act']=='answer_call_hour'){
 }
 
 							
-$unit[]="  ზარი";
+$unit[]="  Call";
 $series[] = array('name' => $name, 'unit' => $unit, 'quantity' => $quantity, 'cause' => $cause);
 $series[] = array('name' => $name, 'unit' => $unit, 'call_count' => $call_count, 'agent' => $agentt);
 $series[] = array('name' => $name, 'unit' => $unit, 'answer_count' => $answer_count, 'datetime' => $datetime);
