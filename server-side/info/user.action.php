@@ -376,7 +376,7 @@ function GetWorker($per_id)
                                             FROM	`user_info`
                                             LEFT JOIN	`users` ON `users`.`id` = `user_info`.`user_id`
                                             LEFT JOIN	`file` ON `users`.`id` = `file`.`users_id`
-                                            WHERE	`user_info`.`user_id` = '$per_id'"));
+                                            WHERE	`user_info`.`user_id` = '$per_id' AND file.actived = 1 "));
 	return $res;
 }
 

@@ -172,13 +172,16 @@ switch ($action) {
         $data['live_calls']['in_queue'] = $in_queue['in_queue'];
         break;
     case 'operator_answer':
-        $operator = mysql_query("   SELECT  user_info.`name`,asterisk_incomming.dst_extension,asterisk_incomming.user_id,
-                                            user_info.image,
+        $operator = mysql_query("   SELECT  user_info.`name`,
+                                            asterisk_incomming.dst_extension,
+                                            asterisk_incomming.user_id,
+                                            file.rand_name AS image,
                                             COUNT(*) AS `ans`
                                     FROM `asterisk_incomming`
                                     LEFT JOIN user_info ON asterisk_incomming.user_id = user_info.user_id
+                                    LEFT JOIN file ON user_info.user_id = file.users_id
                                     WHERE DATE(asterisk_incomming.datetime) = DATE(NOW())
-                                    AND asterisk_incomming.duration > 0
+                                    AND asterisk_incomming.duration > 0 AND file.actived = 1
                                     GROUP BY asterisk_incomming.user_id");
         $ope = '<div class="row header">
                   <div class="cell">
@@ -203,13 +206,14 @@ switch ($action) {
         break;
     case 'operator_answer_dur':
         $operator_avg = mysql_query("   SELECT  user_info.`name`,
-                                                user_info.image,
+                                                file.rand_name AS image,
                                                 SEC_TO_TIME(SUM(asterisk_incomming.duration)) AS `total_duration`,
     				                            SEC_TO_TIME(AVG(asterisk_incomming.duration)) AS `duration_avg`
                                         FROM `asterisk_incomming`
                                         LEFT JOIN user_info ON asterisk_incomming.user_id = user_info.user_id
+                                        LEFT JOIN file ON user_info.user_id = file.users_id
                                         WHERE DATE(asterisk_incomming.datetime) = DATE(NOW())
-                                        AND asterisk_incomming.duration > 0
+                                        AND asterisk_incomming.duration > 0 AND file.actived = 1
                                         GROUP BY asterisk_incomming.user_id");
         $ope_avg = '<div class="row header">
                       <div class="cell">
