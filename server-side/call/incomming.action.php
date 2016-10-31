@@ -240,7 +240,7 @@ switch ($action) {
 		    'user' => 'root',
 		    'pass' => 'Gl-1114',
 		    'db'   => 'epro',
-		    'host' => '212.72.155.176'
+		    'host' => 'localhost'
 		);
 		
 		
