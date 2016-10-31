@@ -1743,11 +1743,11 @@
     <div class="callapp_filter_body" myvar="1">
     <div style="float: left; width: 310px;">
         <span>
-        <label for="start_date" style="margin-left: 110px;">- From</label>
+        <label for="start_date" style="margin-left: 100px;">-From</label>
         <input class="callapp_filter_body_span_input" type="text" id="start_date" style="width: 100px;">
         </span>
         <span>
-        <label for="end_date" style="margin-left: 110px;">- Up to</label>
+        <label for="end_date" style="margin-left: 100px;">-Up to</label>
         <input class="callapp_filter_body_span_input" type="text" id="end_date" style="width: 100px;">
         </span>
         <span style="margin-top: 15px;">

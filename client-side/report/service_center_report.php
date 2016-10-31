@@ -324,11 +324,11 @@ function filter_sc(){
  <button id="back" style="margin-top:0px; float: left;">უკან</button>
 
  <div class="left" style="width: 175px;">
-   <input type="text" name="search_start" id="search_start"  class="inpt right"/>
+   <input style="height: 15px;" type="text" name="search_start" id="search_start"  class="inpt right"/>
      </div>
     	<label for="search_start" class="left" style="margin:5px 0 0 3px">-დან</label>
      <div class="left" style="width: 185px;">
-        <input type="text" name="search_end" id="search_end"  class="inpt right" />
+        <input style="height: 15px;" type="text" name="search_end" id="search_end"  class="inpt right" />
      </div>
 	 <label for="search_end" class="left" style="margin:5px 0 0 3px">–მდე</label>
      <div class="left" style="width: 200px;margin-left: 20px;">
