@@ -132,7 +132,7 @@
 			<th style="width:10%;">#</th>
 			<th style="width:17%; word-break:break-all;">Call Date</th>
 			<th style="width:14%; word-break:break-all;">Extension</th>
-			<th style="width:15%; word-break:break-all;">Operator</th>
+			<th style="width:15%; word-break:break-all;">Agent</th>
 			<th style="width:13%; word-break:break-all;">Phone</th>
 			<th style="width:17%; word-break:break-all;">Waiting time</th>
 			<th style="width:17%; word-break:break-all;">Duration</th>

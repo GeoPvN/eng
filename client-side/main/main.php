@@ -588,11 +588,11 @@ function sl(){
             if(str < str1){
             	$("#sl").css("color","#AD2C2C");
             	$("#sl").html(data.sl.percent+'%');
-            	$("#sls").html(data.sl.min+'წმ');
+            	$("#sls").html('in'+' ' +data.sl.min+'sec');
             }else{
             	$("#sl").css("color","#50AD4B");
             	$("#sl").html(data.sl.percent+'%');
-            	$("#sls").html(data.sl.min+'წმ');
+            	$("#sls").html('in' + ' ' +data.sl.min+ 'sec');
             }
         }
 	});
@@ -974,7 +974,7 @@ function go_sl(){
                 <div>
                     <div id="sl_head">
                         <div id="sl">0%</div>
-                        <div id="sls">0წმ</div>
+                        <div id="sls" style="width: 72px">0sec</div>
                     </div>
                 </div>
             </div>

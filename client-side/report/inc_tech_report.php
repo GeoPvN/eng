@@ -1335,7 +1335,7 @@
 			if(parame.queuet==''){
 				alert('Choose Queue');
 			}else if(parame.agent==''){
-				alert('Choose Operator');
+				alert('Choose Agent');
 			}else{
 				$('#loading1').css('display','block');
 				$('#tab-0,#tab-1,#tab-2,#tab-3').css('display','none');
@@ -1765,7 +1765,7 @@
 				</table>
 			</div>
 			<div style="width: 27%; float:left; margin-left:75px;">
-				<span>Select Operator</span>
+				<span>Select Agent</span>
 				<hr>
 				<table border="0" cellspacing="0" cellpadding="8" >
 					<tbody><tr>
@@ -1822,12 +1822,12 @@
                     <th>Total</th>
                     <th>Answered</th>
                     <th>Unanswered</th>
-                    <th>treated</th>
-                    <th>Untreated</th>
+                    <th>Handled calls</th>
+                    <th>Unhandled calls</th>
                     <th>Answered%</th>
                     <th>Unanswered %</th>
-                    <th>treated %</th>
-                    <th>Untreated %</th>
+                    <th>Handled calls %</th>
+                    <th>Unhandled calls %</th>
                 </tr>
                 <tr>
                     <td>Call</td>
@@ -1922,7 +1922,7 @@
         <table>
             <thead>
             <tr>
-                  <th>Operator</th>
+                  <th>Agent</th>
                   <th>Calls</th>
                   <th>% Calls</th>
                   <th>Duration</th>

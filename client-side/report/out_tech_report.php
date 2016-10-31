@@ -120,7 +120,7 @@
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'Answered call By Operator',
+			            text: 'Answered call By Agent',
 			            x: -20 
 			        },
 			       
@@ -1740,7 +1740,7 @@
 				</table>
 			</div>
 			<div style="width: 27%; float:left; margin-left:75px;">
-				<span>Select operator</span>
+				<span>Select Agent</span>
 				<hr>
 				<table border="0" cellspacing="0" cellpadding="8" >
 					<tbody><tr>
@@ -1884,13 +1884,13 @@
         </div>
         <br>
         <div class="clear"></div>
-		<div><span style="float: left;">Answered Calls By Operators</span><button style="float: right;" id="answer_call_by_queue_but">Excel</button></div>
+		<div><span style="float: left;">Answered Calls By Agents</span><button style="float: right;" id="answer_call_by_queue_but">Excel</button></div>
 		<div class="clear"></div>
 		<div id="answer_call_by_queue">
         <table>
             <thead>
             <tr>
-                  <th>Operator</th>
+                  <th>Agent</th>
                   <th>Calls</th>
                   <th>% Calls</th>
                   <th>Duration</th>

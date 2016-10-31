@@ -1760,7 +1760,7 @@
         if($user_gr == 1 || $user_gr == 2){
             $check_user = "";
             $select = "";
-            $data .= '<option value="0">All Operator</option>';
+            $data .= '<option value="0">All Agent</option>';
         }else{
             $check_user = "AND `users`.`id` = $user_id";
             $select = 'selected="selected"';
@@ -1781,15 +1781,15 @@
         <span style="margin-top: 15px;">
         <select id="tab_id" style="width: 285px;">
         <option value="0">All Call</option>
-        <option value="1">Transferred Out</option>
-        <option value="2">Clarifying the process of</option>
+        <option value="1">Redirected</option>
+        <option value="2">in progress</option>
         <option value="3">Completed</option>
         </select>
         </span>
         </span>
         <span style="margin-top: 15px;">
         <select id="user_info_id" style="width: 285px;">
-        <option value="1">My Appeals</option>
+        <option value="1">My personal</option>
         <option value="2">My Branch</option>
         <option value="3">Services Center</option>
         <option value="4">All</option>
@@ -1801,14 +1801,14 @@
         <div class="callapp_filter_header"><img alt="inc" src="media/images/icons/inc_call.png" height="14" width="14">  Incoming Calls</div>
         </span>
         <span style="margin-left: 15px">        
-        <label for="filter_1">Treated</label>
+        <label for="filter_1">Handled calls</label>
         <div class="callapp_checkbox" style="margin-top: -16px;margin-left: -15px;">
           <input class="callapp_filter_body_span_input" id="filter_1" type="checkbox" value="1"/>
           <label for="filter_1" style="background: #4CAE50;"></label>
         </div>
         </span>
         <span style="margin-left: 15px">
-        <label for="filter_2" style="">Untreated</label>
+        <label for="filter_2" style="">Unhandled calls</label>
         <div class="callapp_checkbox" style="margin-top: -16px;margin-left: -15px;">
           <input class="callapp_filter_body_span_input" id="filter_2" type="checkbox" value="2"/>
           <label for="filter_2" style="background: #ECAF00;"></label>
@@ -1824,14 +1824,14 @@
         </div>
     <div style="float: left; width: 170px;">
         <span >
-        <div class="callapp_filter_header"><img alt="out" src="media/images/icons/scenar_blue.png" height="14" width="14">  Method</div>
+        <div class="callapp_filter_header"><img alt="out" src="media/images/icons/scenar_blue.png" height="14" width="14">  Source</div>
         </span>
         <span style="margin-left: 15px">
         <label for="filter_4" style="width: 60px;">Meeting</label>
         <input class="callapp_filter_body_span_input" id="filter_4" type="checkbox" value="4">
         </span>
         <span style="margin-left: 15px">
-        <label for="filter_5" style="width: 60px;">Internet</label>
+        <label for="filter_5" style="width: 65px;">Social Media</label>
         <input class="callapp_filter_body_span_input" id="filter_5" type="checkbox" value="5">
         </span>
         <span style="margin-left: 15px">
@@ -1866,10 +1866,10 @@
         
     </div>
 </div>
-<button id="add_button" style="font-size: 11px;border: 1px solid #A3D0E4;background: #E6F2F8;position: absolute;top: 285px;z-index: 1;left: 105px;">Add</button>
+<button id="add_button" style="font-size: 11px;border: 1px solid #A3D0E4;background: #E6F2F8;position: absolute;top: 285px;z-index: 1;left: 105px;">New</button>
 <table style="position: absolute;top: 1px;width: 222px;left: 68%;">
 <tr>
-<td><button id="go_exel" style="font-size: 11px;border: 1px solid #A3D0E4;background: #E6F2F8;position: absolute;top: 285px;z-index: 1;">Excele Import</button></td>
+<td><button  id="go_exel" style="font-size: 11px; display:none; border: 1px solid #A3D0E4;background: #E6F2F8;position: absolute;top: 285px;z-index: 1;">Excele Import</button></td>
 </tr>
 </table>
 

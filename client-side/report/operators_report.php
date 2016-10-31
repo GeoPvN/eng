@@ -128,7 +128,7 @@ function getData(){
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'Answered Calls by Operators',
+			            text: 'Answered Calls by Agents',
 			            x: -20 
 			        },
 			       
@@ -573,7 +573,7 @@ function getData(){
     <p><img src="media/images/loader.gif" /></p>
 </div>
 <div id="tabs" style="width: 90%; height: 700px;">
-		<div class="callapp_head">Report by Operators<hr class="callapp_head_hr"></div>
+		<div class="callapp_head">Report by Agents<hr class="callapp_head_hr"></div>
 
 			<div style="width: 30%; float:left;">
 			<span>Select Queue</span>
@@ -607,7 +607,7 @@ function getData(){
 				</table>
 			</div>
 			<div style="width: 30%; float:left; margin-left:20px;">
-				<span>Select Operator</span>
+				<span>Select Agents</span>
 				<hr>
 				<table border="0" cellspacing="0" cellpadding="8">
 					<tbody><tr>
@@ -662,14 +662,14 @@ function getData(){
             		<input style="margin-left: 15px;" id="show_report" name="show_report" type="submit" value="Show Report">
          <div style="margin-top: 5px; position: absolute; right: 40px; display:none;"><button class="excel_answer_call_by_agent_info">Excel</button></div>   	
 		<table width="99%" cellpadding="3" cellspacing="3" border="0" class="sortable" id="table1">
-		<caption style="background: #fff;">Answered Calls by Operators</caption>
+		<caption style="background: #fff;">Answered Calls by Agents</caption>
             <thead>
             <tr>
-                  <th><a  class="sortheader">Oper<span class="sortarrow">&nbsp;&nbsp;&nbsp;</span></a></th>
+                  <th><a  class="sortheader">Agent<span class="sortarrow">&nbsp;&nbsp;&nbsp;</span></a></th>
                   <th><a  class="sortheader">Reg. hours<span class="sortarrow">&nbsp;&nbsp;&nbsp;</span></a></th>
                   <th><a  class="sortheader">Calls<span class="sortarrow">&nbsp;&nbsp;&nbsp;</span></a></th>
-                  <th><a  class="sortheader">Treated<span class="sortarrow">&nbsp;&nbsp;&nbsp;</span></a></th>
-                  <th><a  class="sortheader">Untreated<span class="sortarrow">&nbsp;&nbsp;&nbsp;</span></a></th>
+                  <th><a  class="sortheader">Handled calls<span class="sortarrow">&nbsp;&nbsp;&nbsp;</span></a></th>
+                  <th><a  class="sortheader">Unhandled calls<span class="sortarrow">&nbsp;&nbsp;&nbsp;</span></a></th>
                   <th><a  class="sortheader">% Answ.<span class="sortarrow">&nbsp;&nbsp;&nbsp;</span></a></th>
                   <th><a  class="sortheader">Duratation<span class="sortarrow">&nbsp;&nbsp;&nbsp;</span></a></th>
                   <th><a  class="sortheader">AVG Duratation<span class="sortarrow">&nbsp;&nbsp;&nbsp;</span></a></th>

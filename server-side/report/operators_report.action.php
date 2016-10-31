@@ -237,7 +237,7 @@ $data		= array('page' => array(
                                 <th style="width: 200px;">Date</th>
                                 <th style="width: 150px;">Source</th>
                                 <th style="width: 150px;">Address</th>
-    							<th style="width: 200px;">Operator</th>
+    							<th style="width: 200px;">Agent</th>
                                 <th style="width: 100px;">Duration</th>
                                 <th style="width: 100px;">Action</th>
                             </tr>
@@ -291,7 +291,7 @@ $data		= array('page' => array(
                                 <th style="width: 200px;">Date</th>
                                 <th style="width: 150px;">Source</th>
                                 <th style="width: 150px;">Address</th>
-    							<th style="width: 200px;">Operator</th>
+    							<th style="width: 200px;">Agent</th>
                                 <th style="width: 100px;">Duration</th>
                                 <th style="width: 100px;">Action</th>
                             </tr>

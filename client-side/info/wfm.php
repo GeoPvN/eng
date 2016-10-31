@@ -1462,7 +1462,7 @@ $(document).on("click", "#addinfosorce", function () {
 	</div>
 	<div  id="add-edit-form-week" class="form-dialog" title="Station / working time / week">
 	</div>
-	<div  id="add-edit-form-cikle" class="form-dialog" title="Telephone station / hour / operator">
+	<div  id="add-edit-form-cikle" class="form-dialog" title="Telephone station / hour / agent">
 	</div>
 	<div  id="add-edit-form-lang" class="form-dialog" title="S language">
 	</div>

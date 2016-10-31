@@ -133,7 +133,7 @@ td:nth-child(2){
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'Total Call by operator',
+			            text: 'Total Call by Agent',
 			            x: -20 
 			        },
 			       
@@ -255,7 +255,7 @@ td:nth-child(2){
 			            margin: [ 50, 50, 100, 80]
 			        },
 			        title: {
-			            text: 'Not interested by operator',
+			            text: 'Not interested by Agent',
 			            x: -20 
 			        },
 			       
@@ -354,7 +354,7 @@ td:nth-child(2){
                     <thead>
                         <tr id="datatable_header">
                             <th>ID</th>
-                            <th style="width: 100%;">Operator</th>
+                            <th style="width: 100%;">Agent</th>
                             <th style="width: 100%;">Total Call</th>
                             <th style="width: 100%;">Total Call %</th>
                             <th style="width: 100%;">Not interested</th>

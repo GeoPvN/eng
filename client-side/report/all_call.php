@@ -1015,7 +1015,7 @@
         </span>
         <span style="margin-top: 15px;">
         <select id="operator_id" style="width: 285px;">
-        <option value="0">All Operator</option>
+        <option value="0">All Agent</option>
         <?php
         include '../../includes/classes/core.php';
         
@@ -1107,7 +1107,7 @@
             <th style="width: 150px;">Date</th>
             <th style="width: 120px;">Recipient</th>
             <th style="width: 120px;">Source</th>
-            <th style="width: 25%;">Operator</th>
+            <th style="width: 25%;">Agent</th>
             <th style="width: 25%;">Duration</th>            
             <th style="width: 25%;">Status</th>
             <th style="width: 25%;">Lisen</th>

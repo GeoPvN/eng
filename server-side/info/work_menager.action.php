@@ -314,7 +314,7 @@ switch ($action) {
         			<td style="width: 350px;padding-right: 2px;">
             			<table id="pirveli">
             			<tr><td colspan=4 style="border: none;height: 30px;"><div style="display:inline;cursor:pointer;" value="'.$new_line.'" id="add_new_line">Add</div><div style="display:inline;margin-left:10px;cursor:pointer;" id="del_new_line">Delete</div></td></tr>
-            			<tr><td>Stations.</td><td>Operator</td><td>Cycle</td><td>X</td></tr>
+            			<tr><td>Stations.</td><td>Agents</td><td>Cycle</td><td>X</td></tr>
             			'.$marcxena.'
             			</table>
             			<table id="qveda_pirveli" style="margin-top: 7px;">

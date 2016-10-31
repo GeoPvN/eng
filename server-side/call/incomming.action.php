@@ -1146,7 +1146,7 @@ function GetPage($res,$increment,$open_number,$queue)
 	                    
                         <table class="margin_top_10">
     	                   <tr>
-        	                   <td><label style="width: 280px;" for="source_info_id">Method</label></td>
+        	                   <td><label style="width: 280px;" for="source_info_id">Source</label></td>
         	                   <td><label style="width: 280px;" for="service_center_id">Service Center</label></td>
         	                   <td><label style="width: 280px;" for="in_district_id">district</label></td>
             	           </tr>
