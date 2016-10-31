@@ -325,7 +325,7 @@ $(document).on("click", "#show_copy_prit_exel1", function () {
      	<select  id="dropdown" multiple="multiple">
             <option value="0" selected="selected">(All)</option>
             <?php 
-            include('../../../../includes/classes/core.php');
+            include('../../includes/classes/core.php');
             
             $req = mysql_query("SELECT `name` FROM `branch` WHERE actived = 1");
             while ($res = mysql_fetch_array($req)) {
