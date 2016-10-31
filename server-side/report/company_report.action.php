@@ -12,7 +12,8 @@ switch ($action) {
         
         $sourceRes = mysql_query("SELECT     source_info.id,
                                              source_info.name
-                                  FROM       source_info");
+                                  FROM       source_info
+                                  WHERE actived = 1");
         
         $sourceArray  = array();
         $branchArray  = array();
