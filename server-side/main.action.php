@@ -185,7 +185,7 @@ switch ($action) {
                                     GROUP BY asterisk_incomming.user_id");
         $ope = '<div class="row header">
                   <div class="cell">
-                    operator
+                    Agent
                   </div>
                   <div class="cell" style="width: 95px;">
                     Answered Call
@@ -217,7 +217,7 @@ switch ($action) {
                                         GROUP BY asterisk_incomming.user_id");
         $ope_avg = '<div class="row header">
                       <div class="cell">
-                        operator
+                        Agent
                       </div>
                       <div class="cell" style="width: 75px;">
                         duration

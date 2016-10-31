@@ -485,7 +485,7 @@ switch ($action) {
                             <fieldset>
                             <legend>By hours</legend>
                             <div style="margin: 10px 0;">
-                                <button id="add_button_user">Add</button>
+                                <button id="add_button_user">New</button>
                                 <button id="delete_button_user">Delete</button>
                             </div>
                             <table class="display" id="table_index" style="width: 100%;">

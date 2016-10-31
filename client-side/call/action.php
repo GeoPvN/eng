@@ -272,7 +272,7 @@
 </div>
 
 <div id="button_area">
-	<button id="add_button">Add</button>
+	<button id="add_button">New</button>
 	<button id="delete_button">Delete</button>
 	<select id="status" style="width: 150px;">
 	   <option value="1">Current</option>

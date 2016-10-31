@@ -662,7 +662,7 @@ function live_operators(){
                 
                 xAxis: {
                     categories: [
-                        'Operators'
+                        'Agents'
                     ],
                     crosshair: true
                 },
@@ -775,7 +775,7 @@ function go_sl(){
     <div id="box_content">
         <div class="mini_boxs">
         <div class="box_main">
-            <div class="box_head">Operators LIVE</div>
+            <div class="box_head">Agents LIVE</div>
             <div class="box_body">
                 <div>
                      <div id="operators" style="min-width: 250px; max-width: 250px; height: 150px;margin: 0 auto;"></div>

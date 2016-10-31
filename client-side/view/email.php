@@ -223,7 +223,7 @@
 
 <div class="callapp_filter_show">
             	<div id="button_area">
-        			<button id="add_button">Add</button>
+        			<button id="add_button">New</button>
         			<button id="delete_button">Delete</button>
         		</div>
                 <table class="display" id="table_index">

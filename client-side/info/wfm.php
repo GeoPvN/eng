@@ -1413,7 +1413,7 @@ $(document).on("click", "#addinfosorce", function () {
 	                   <td><input id="holiday_all" type="checkbox"></td>
                        <td style="width: ;"><label for="holiday_id">Holidays</label></td>
                 	   <td style="width: ;"><select id="holiday_id" style="width:253px;">'.GetHoliday().'</select></td>
-	                   <td style="width: ;"><button id="add_holiday">Add</button></td>
+	                   <td style="width: ;"><button id="add_holiday">New</button></td>
                 	   <td style="width: ;"><button id="delete_holiday">Delete</button></td>
                     </tr>
 	            </table>

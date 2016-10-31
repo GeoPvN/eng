@@ -280,7 +280,7 @@ function GetPage($lg)
 						<input type="text" id="name" value="'.$req1[0].'" />
 					</td>
 				    <td>
-				        <button id="add_button1">Add</button>
+				        <button id="add_button1">New</button>
 				    </td>
 				    <td>
                         <button id="delete_button1">Delete</button>

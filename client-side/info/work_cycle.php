@@ -194,8 +194,8 @@
 <div id="tabs" style="width: 100%;">
 <div class="callapp_head">Working Cycle<hr class="callapp_head_hr"></div>
 <div id="button_area">
-	<button id="add_button" style="display: none;">Add</button>
-	<button id="add_button2">Add</button>
+	<button id="add_button" style="display: none;">New</button>
+	<button id="add_button2">New</button>
 	<button id="delete_button">Delete</button>
 </div>
 <table id="table_right_menu">

@@ -1098,7 +1098,7 @@ function GetPage($res,$increment){
 	                   <td><input id="holiday_all" type="checkbox"></td>
                        <td style="width: ;"><label for="holiday_id">Holidays</label></td>
                 	   <td style="width: ;"><select id="holiday_id" style="width:253px;">'.GetHoliday().'</select></td>
-	                   <td style="width: ;"><button id="add_holiday">Add</button></td>
+	                   <td style="width: ;"><button id="add_holiday">New</button></td>
                 	   <td style="width: ;"><button id="delete_holiday">Delete</button></td>
                     </tr>
 	            </table>
@@ -1151,7 +1151,7 @@ function GetDialogWeek($cycle,$project_id){
         	       <legend>Basic Information</legend>
                     <input id="hidde_cycle" type="hidden" value="'.$cycle.'">
                     <div id="button_area">
-                        <button id="add_week">Add</button>
+                        <button id="add_week">New</button>
                         <button id="delete_week">Delete</button>
                     </div>
     				<table class="display" id="table_week" >
@@ -1232,7 +1232,7 @@ function GetDialogCikle($project_id){
         	    <fieldset>
         	       <legend>Basic Information</legend>
                     <div id="button_area">
-                        <button id="add_weeks">Add</button>
+                        <button id="add_weeks">New</button>
                         <button id="delete_weeks">Delete</button>
                     </div>
     				<table class="display" id="table_cikle" style="width: 100%;">
@@ -1365,7 +1365,7 @@ function GetDialogLangAdd($week_id,$project_id){
                         </tr>
 	               </table>
                     <div id="button_area">
-                        <button id="add_lang">Add</button>
+                        <button id="add_lang">New</button>
                         <button id="delete_lang">Delete</button>
                     </div>
     				<table class="display" id="table_lang" style="width: 100%;">
@@ -1412,7 +1412,7 @@ function GetDialogInfoSorceAdd($week_id,$project_id){
                         </tr>
 	               </table>
                    <div id="button_area">
-                        <button id="add_infosorce">Add</button>
+                        <button id="add_infosorce">New</button>
                         <button id="delete_infosorce">Delete</button>
                    </div>
                    <table class="display" id="table_infosorce" style="width: 100%;">

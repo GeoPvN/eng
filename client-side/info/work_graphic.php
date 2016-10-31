@@ -123,7 +123,7 @@ $(document).on("click", "#show_copy_prit_exel", function () {
 <div class="callapp_head">Work Schedules<hr class="callapp_head_hr"></div>
 
 <div id="button_area" style="margin-top: 15px;">
-<button id="add">Add</button>
+<button id="add">New</button>
 <button id="dis">Delete</button>
 </div>
 

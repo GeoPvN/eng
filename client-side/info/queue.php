@@ -256,7 +256,7 @@
 </table>
 </div>
     <div style="margin-top: 15px;">
-        <button id="add_button">Add</button>
+        <button id="add_button">New</button>
         <button id="delete_button">Delete</button>
     </div>
     

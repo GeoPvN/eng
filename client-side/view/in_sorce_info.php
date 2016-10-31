@@ -122,7 +122,7 @@
 <div id="tabs">
 <div class="callapp_head">Information Source<hr class="callapp_head_hr"></div>
 <div id="button_area">
-	<button id="add_button">Add</button>
+	<button id="add_button">New</button>
 	<button id="delete_button">Delete</button>
 </div>
 <table id="table_right_menu">
