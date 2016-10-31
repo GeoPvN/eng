@@ -13,9 +13,9 @@ $name 		= $_REQUEST['name'];
 $title 		= $_REQUEST['title'];
 $branches   = $_REQUEST['branches'];
 $text[0] 	= "Incoming calls by branches";
-$text[1] 	= "'$departament'- შემოსული ზარები კატეგორიების მიხედვით";
-$text[2] 	= "'$departament'- შემოსული ზარები ქვე-კატეგორიების  მიხედვით";
-$text[3] 	= "'$departament'- შემოსული ზარები ქვე–კატეგორია1-ის მიხედვით";
+$text[1] 	= "'$departament'- Incoming calls by category";
+$text[2] 	= "'$departament'- Incoming calls by sub-category";
+$text[3] 	= "'$departament'- Incoming calls by sub-category 1";
 
 //------------------------------------------------query-------------------------------------------
 switch ($done){
