@@ -1254,6 +1254,7 @@ function GetDate(iname) {
 
     var date = $("#" + iname).val();
 
+    
     $("#" + iname).datepicker("option", $.datepicker.regional['']);
     $("#" + iname).datepicker("option", "dateFormat", "yy-mm-dd");
     $("#" + iname).datepicker( "setDate", date );
