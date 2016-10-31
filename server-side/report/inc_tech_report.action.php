@@ -380,7 +380,7 @@ $row_done_blank = mysql_fetch_assoc(mysql_query("	SELECT COUNT(incomming_call.id
 	
 	$data['page']['technik_info'] = '
 							
-                    <td>ზარი</td>
+                    <td>Calls</td>
                     <td>'.($row_answer[count] + $row_abadon[count]).'</td>
                     <td>'.$row_answer[count].'</td>
                     <td>'.$row_abadon[count].'</td>
