@@ -12,10 +12,10 @@ $done 		= $_REQUEST['done']%4;
 $name 		= $_REQUEST['name'];
 $title 		= $_REQUEST['title'];
 $branches   = $_REQUEST['branches'];
-$text[0] 	= "შემოსული  ზარები სერვის ცენტრების  მიხედვით";
-$text[1] 	= "'$departament'- შემოსული ზარები კატეგორიების მიხედვით";
-$text[2] 	= "'$departament'- შემოსული ზარები ქვე-კატეგორიების  მიხედვით";
-$text[3] 	= "'$departament'- შემოსული ზარები ქვე–კატეგორია1-ის მიხედვით";
+$text[0] 	= "Incoming calls by service centers";
+$text[1] 	= "'$departament'- Incoming calls by categories";
+$text[2] 	= "'$departament'- Incoming calls by sub-categories";
+$text[3] 	= "'$departament'- Incoming calls by sub-categories 1";
 
 //------------------------------------------------query-------------------------------------------
 switch ($done){
@@ -45,7 +45,7 @@ switch ($done){
 		$text[0]=$text[1];
 	break;
 	case  2:
-	    $result = mysql_query("SELECT     IF(incomming_call.cat_1_1=999, 'არ აქვს კატეგორია', sub_category.`name`) as type,
+	    $result = mysql_query("SELECT     IF(incomming_call.cat_1_1=999, 'No Category', sub_category.`name`) as type,
                         				  COUNT(incomming_call.id) AS `count`,
                         				  ROUND((COUNT(incomming_call.id) / (SELECT    COUNT(incomming_call.id)
     																		 FROM     `incomming_call`
@@ -70,7 +70,7 @@ switch ($done){
 	    $text[0]=$text[2];
 	    break;
     case  3:
-        $result = mysql_query("  SELECT    IF(incomming_call.cat_1_1_1=999, 'არ აქვს კატეგორია', sub_category1.`name`) as type,
+        $result = mysql_query("  SELECT    IF(incomming_call.cat_1_1_1=999, 'No Category', sub_category1.`name`) as type,
                     					   COUNT(incomming_call.id) AS `count`,
                     					   ROUND((COUNT(incomming_call.id) / (SELECT    COUNT(incomming_call.id)
 																			  FROM     `incomming_call`
@@ -82,7 +82,7 @@ switch ($done){
 																			  WHERE     DATE(`incomming_call`.`date`) >= '$start' 
         																			    AND DATE(`incomming_call`.`date`) <= '$end' 
         																			    AND info_category.`name`='$type' 
-        																			    AND IF(incomming_call.cat_1_1=999, 'არ აქვს კატეგორია', sub_category.`name`)='$category' 
+        																			    AND IF(incomming_call.cat_1_1=999, 'No Category', sub_category.`name`)='$category' 
         																			    AND service_center.`name` ='$departament')  * 100),2)
                                  FROM 	  `incomming_call`
                                  LEFT JOIN personal_info ON personal_info.incomming_call_id = incomming_call.id
@@ -93,7 +93,7 @@ switch ($done){
                                  WHERE 	   DATE(`incomming_call`.`date`) >= '$start' 
                                            AND DATE(`incomming_call`.`date`) <= '$end' 
                                            AND info_category.`name`='$type' 
-                                           AND IF(incomming_call.cat_1_1=999, 'არ აქვს კატეგორია', sub_category.`name`)='$category' 
+                                           AND IF(incomming_call.cat_1_1=999, 'No Category', sub_category.`name`)='$category' 
                                            AND service_center.`name` ='$departament'
                                  GROUP BY  type");
         $text[0]=$text[3];
@@ -142,7 +142,7 @@ switch ($action) {
 		break;
 		case 'get_in_page':
 		    
-		    if($_REQUEST[rid] == 'არ აქვს კატეგორია'){
+		    if($_REQUEST[rid] == 'No Category'){
 		        $rid = 'AND incomming_call.cat_1_1_1 = 999';
 		    }else{
 		        $rid = "AND cat_1_1_1.`name` = '$_REQUEST[rid]'";
@@ -169,7 +169,7 @@ switch ($action) {
     			                    AND DATE(incomming_call.date)>='$start'
     			                    AND DATE(incomming_call.date)<='$end'
     			                    $rid
-                    			    AND IF(incomming_call.cat_1_1=999, 'არ აქვს კატეგორია', cat_1_1.`name`) = '$_REQUEST[sub_category]'
+                    			    AND IF(incomming_call.cat_1_1=999, 'No Category', cat_1_1.`name`) = '$_REQUEST[sub_category]'
                                     AND cat_1.`name` = '$_REQUEST[category]'
 									AND service_center.`name` ='$_REQUEST[type]'");
 					$data = array(

@@ -29,14 +29,14 @@ switch ($done){
 																			 LEFT JOIN branch ON personal_info.branch_id = branch.id
 																			 WHERE     DATE(`incomming_call`.`date`) >= '$start'  
             																		   AND DATE(`incomming_call`.`date`) <= '$end' 
-            																		   AND IF(ISNULL(branch.`name`),'სხვა',branch.`name`) = '$departament')  * 100),2)
+            																		   AND IF(ISNULL(branch.`name`),'Other',branch.`name`) = '$departament')  * 100),2)
                                 FROM     `incomming_call`
                                 JOIN      personal_info ON personal_info.incomming_call_id = incomming_call.id
                                 JOIN      info_category AS category ON category.id = incomming_call.cat_1
                                 LEFT JOIN branch ON personal_info.branch_id = branch.id
                                 WHERE     DATE(`incomming_call`.`date`) >= '$start' 
                                           AND DATE(`incomming_call`.`date`) <= '$end' 
-                                          AND IF(ISNULL(branch.`name`),'სხვა',branch.`name`) = '$departament'
+                                          AND IF(ISNULL(branch.`name`),'Other',branch.`name`) = '$departament'
                                 GROUP BY  category.`name`
 		
 		
@@ -56,7 +56,7 @@ switch ($done){
     																		 WHERE     DATE(`incomming_call`.`date`) >= '$start'
             																		   AND DATE(`incomming_call`.`date`) <= '$end' 
             																		   AND info_category.`name`='$type'  
-            																		   AND IF(ISNULL(branch.`name`),'სხვა',branch.`name`) ='$departament')  * 100),2)
+            																		   AND IF(ISNULL(branch.`name`),'Other',branch.`name`) ='$departament')  * 100),2)
                                 FROM 	 `incomming_call`
                                 LEFT JOIN personal_info ON personal_info.incomming_call_id = incomming_call.id
                                 JOIN      info_category ON info_category.id = incomming_call.cat_1
@@ -65,7 +65,7 @@ switch ($done){
                                 WHERE 	  DATE(`incomming_call`.`date`) >= '$start'
                                           AND DATE(`incomming_call`.`date`) <= '$end'
                                           AND info_category.`name`='$type'
-                                          AND IF(ISNULL(branch.`name`),'სხვა',branch.`name`) ='$departament'
+                                          AND IF(ISNULL(branch.`name`),'Other',branch.`name`) ='$departament'
                                 GROUP BY  type");
 	    $text[0]=$text[2];
 	    break;
@@ -83,7 +83,7 @@ switch ($done){
         																			    AND DATE(`incomming_call`.`date`) <= '$end' 
         																			    AND info_category.`name`='$type' 
         																			    AND IF(incomming_call.cat_1_1=999, 'No Category', sub_category.`name`)='$category' 
-        																			    AND IF(ISNULL(branch.`name`),'სხვა',branch.`name`) ='$departament')  * 100),2)
+        																			    AND IF(ISNULL(branch.`name`),'Other',branch.`name`) ='$departament')  * 100),2)
                                  FROM 	  `incomming_call`
                                  LEFT JOIN personal_info ON personal_info.incomming_call_id = incomming_call.id
                                  JOIN 	   info_category ON info_category.id = incomming_call.cat_1
@@ -94,22 +94,22 @@ switch ($done){
                                            AND DATE(`incomming_call`.`date`) <= '$end' 
                                            AND info_category.`name`='$type' 
                                            AND IF(incomming_call.cat_1_1=999, 'No Category', sub_category.`name`)='$category' 
-                                           AND IF(ISNULL(branch.`name`),'სხვა',branch.`name`) ='$departament'
+                                           AND IF(ISNULL(branch.`name`),'Other',branch.`name`) ='$departament'
                                  GROUP BY  type");
         $text[0]=$text[3];
         break;
 	default:
-		$result = mysql_query(" SELECT    IF(ISNULL(branch.`name`),'სხვა',branch.`name`) AS `br_name`,
+		$result = mysql_query(" SELECT    IF(ISNULL(branch.`name`),'Other',branch.`name`) AS `br_name`,
                                           COUNT(incomming_call.id) AS `count`,
                                           ROUND((COUNT(incomming_call.id) / (SELECT     COUNT(incomming_call.id) AS `count`
                                                                               FROM     `incomming_call`
                                                                               JOIN      personal_info ON personal_info.incomming_call_id = incomming_call.id
                                                                               LEFT JOIN branch ON personal_info.branch_id = branch.id
-                                                                              WHERE     DATE(`incomming_call`.`date`) >= '$start' and  DATE(`incomming_call`.`date`) <= '$end' AND IF(ISNULL(branch.`name`),'სხვა',branch.`name`) IN($branches))  * 100),2)
+                                                                              WHERE     DATE(`incomming_call`.`date`) >= '$start' and  DATE(`incomming_call`.`date`) <= '$end' AND IF(ISNULL(branch.`name`),'Other',branch.`name`) IN($branches))  * 100),2)
                                 FROM     `incomming_call`
                                 JOIN      personal_info ON personal_info.incomming_call_id = incomming_call.id
                                 LEFT JOIN branch ON personal_info.branch_id = branch.id
-                                WHERE     DATE(`incomming_call`.`date`) >= '$start' and  DATE(`incomming_call`.`date`) <= '$end' AND IF(ISNULL(branch.`name`),'სხვა',branch.`name`) IN($branches)
+                                WHERE     DATE(`incomming_call`.`date`) >= '$start' and  DATE(`incomming_call`.`date`) <= '$end' AND IF(ISNULL(branch.`name`),'Other',branch.`name`) IN($branches)
                                 GROUP BY  branch.`id`");
 
 		break;
@@ -157,7 +157,7 @@ switch ($action) {
                         				    cat_1.`name` AS `cat_1`,
                             				cat_1_1.`name` AS `cat_1_1`,
                             				cat_1_1_1.`name` AS `cat_1_1_1`,
-			                                 concat('<p onclick=play(', '\'', date_format(`asterisk_incomming`.`call_datetime` ,'%Y/%m/%d/'),`asterisk_incomming`.`file_name`, '\'', ')>მოსმენა</p>') AS `file`
+			                                 concat('<p onclick=play(', '\'', date_format(`asterisk_incomming`.`call_datetime` ,'%Y/%m/%d/'),`asterisk_incomming`.`file_name`, '\'', ')>Listen</p>') AS `file`
                                     FROM 	`incomming_call`
                                     LEFT JOIN	info_category AS cat_1 ON incomming_call.cat_1 = cat_1.id
                                     LEFT JOIN	info_category AS cat_1_1 ON incomming_call.cat_1_1 = cat_1_1.id
@@ -171,7 +171,7 @@ switch ($action) {
     			                    $rid
                     			    AND IF(incomming_call.cat_1_1=999, 'No Category', cat_1_1.`name`) = '$_REQUEST[sub_category]'
                                     AND cat_1.`name` = '$_REQUEST[category]'
-									AND IF(ISNULL(branch.`name`),'სხვა',branch.`name`) ='$_REQUEST[type]'");
+									AND IF(ISNULL(branch.`name`),'Other',branch.`name`) ='$_REQUEST[type]'");
 					$data = array(
 							"aaData"	=> array()
 					);
