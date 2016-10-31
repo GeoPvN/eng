@@ -82,7 +82,7 @@ if ($checkState==1) {
                         <td style="width:50px">Status</td>
                         <td style="width:35%">Number</td>
                         <td style="width:50px">Time</td>
-                        <td style="width:30%">Customers</td>
+                        <td style="width:30%">Name</td>
                       </tr>
                   </thead>
               <tbody>';
