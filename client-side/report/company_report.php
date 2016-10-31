@@ -31,7 +31,7 @@ $(document).ready(function() {
 
 function runajax(start, end){
 	
-	 $("#total_quantity").html('იტვირთება ...');
+	 $("#total_quantity").html('Loading ...');
 	 $.ajax({
         url: aJaxURL,
         type: "POST",
@@ -60,7 +60,7 @@ function drawFirstLevel(data){
 	    $('#chart_container').highcharts({
 		    
 	        title: {
-	            text: 'კომპანიაში შემოსული მომართვები'
+	            text: 'The company received the appeals'
 	        },
 	        
 	        xAxis: {
@@ -69,7 +69,7 @@ function drawFirstLevel(data){
 	        
 	        labels: {
 	            items: [{
-	                html: 'სულ მეთოდის მიხედვით',
+	                html: 'Total by method',
 	                style: {
 	                    left: '-25px',
 	                    top: '-20px',
@@ -103,19 +103,19 @@ $(document).on("click", "#show_copy_prit_exel", function () {
 </head>
 <body>
 	<div id="tabs" style="width: 90%; height: 850px;">
-		<div class="callapp_head">კომპანიაში შემოსული მომართვები<hr class="callapp_head_hr"></div>
+		<div class="callapp_head">The company received the appeals<hr class="callapp_head_hr"></div>
          <div id="button_area" style="margin: 3% 0 0 0">
 		</div>
        <div id="button_area" style="margin: 3% 0 0 0">
          <div class="left" style="width: 175px;">
            <input type="text" name="search_start" id="search_start"  class="inpt right"/>
              </div>
-            	<label for="search_start" class="left" style="margin:5px 0 0 3px">-დან</label>
+            	<label for="search_start" class="left" style="margin:5px 0 0 3px">-From</label>
              <div class="left" style="width: 185px;">
 	            <input type="text" name="search_end" id="search_end"  class="inpt right" />
              </div>
-            	<label for="search_end" class="left" style="margin:5px 0 0 3px">–მდე</label>
-           <label class="left" style="margin:5px 0 0 40px">ზარების  ჯამური რაოდენობა: </label> <label id="total_quantity" class="left" style="margin:5px 0 0 2px; font-weight: bold;"></label>
+            	<label for="search_end" class="left" style="margin:5px 0 0 3px">–Up to</label>
+           <label class="left" style="margin:5px 0 0 40px">Total number of calls: </label> <label id="total_quantity" class="left" style="margin:5px 0 0 2px; font-weight: bold;"></label>
        <br /><br /><br />
             </div>
 		<div id="chart_container" style="width: 100%; height: 480px; margin-top:-30px;"></div>
@@ -138,32 +138,32 @@ $(document).on("click", "#show_copy_prit_exel", function () {
                 <thead>
                     <tr id="datatable_header">
                         <th>ID</th>
-                        <th style="width:70%">ფილიალი</th>
-                        <th style="width:15%">ტელეფონი</th>
-                        <th style="width:15%">შეხვედრა</th>
-                        <th style="width:15%">განცხადება</th>
-                        <th style="width:15%">ინტერნეტი</th>
+                        <th style="width:70%">Branch</th>
+                        <th style="width:15%">Phone</th>
+                        <th style="width:15%">Meeting</th>
+                        <th style="width:15%">Application</th>
+                        <th style="width:15%">Internet</th>
                     </tr>
                 </thead>
                 <thead>
                     <tr class="search_header">
                         <th class="colum_hidden">
-                        	<input type="text" name="search_id" value="ფილტრი" class="search_init" />
+                        	<input type="text" name="search_id" value="Filter" class="search_init" />
                         </th>
                         <th>
-                        	<input type="text" name="search_number" value="ფილტრი" class="search_init">
+                        	<input type="text" name="search_number" value="Filter" class="search_init">
                         </th>
                         <th>
-                        	<input type="text" name="search_number" value="ფილტრი" class="search_init">
+                        	<input type="text" name="search_number" value="Filter" class="search_init">
                         </th>
                         <th>
-                        	<input type="text" name="search_number" value="ფილტრი" class="search_init">
+                        	<input type="text" name="search_number" value="Filter" class="search_init">
                         </th>
                         <th>
-                        	<input type="text" name="search_object" value="ფილტრი" class="search_init">
+                        	<input type="text" name="search_object" value="Filter" class="search_init">
                         </th>
                         <th>
-                            <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                            <input type="text" name="search_date" value="Filter" class="search_init" />
                         </th>
 
                     </tr>

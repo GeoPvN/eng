@@ -133,7 +133,7 @@ function drawFirstLevel(){
 	                options.series[0].data = json.data;
 	                options.title['text']=json.text;
 	                chart = new Highcharts.Chart(options);
-	                $("#total_quantity").html("იტვირთება....")
+	                $("#total_quantity").html("Loading....")
 	                setTimeout(function(){ $("#total_quantity").html($("#qnt").html().split(">")[1]);}, 500);
 	                $('#report td:nth-child(3)').css('text-align','right');
 	                $('#report td:nth-child(4)').css('cssText','text-align: right !important');
@@ -260,7 +260,7 @@ $(document).on("click", "#show_copy_prit_exel1", function () {
 </head>
 <body>
 	<div id="tabs" style="width: 90%; height: 850px;">
-		<div class="callapp_head">According to the appeals by the applicant<hr class="callapp_head_hr"></div>
+		<div class="callapp_head">By Applicants<hr class="callapp_head_hr"></div>
          
        <div id="button_area" style="margin: 3% 0 0 0">
          <div class="left" style="width: 175px;">
@@ -284,7 +284,7 @@ $(document).on("click", "#show_copy_prit_exel1", function () {
                	            echo "<option value=\"$req[0]\">$req[1]</option>";
                	        }
                	 ?>
-               	 <option value="0">არ არის შევსებული</option>
+               	 <option value="0">Is not filled</option>
             </select>
 	        </div>
            <label class="left" style="margin:5px 0 0 40px">Total number of calls: </label> <label id="total_quantity" class="left" style="margin:5px 0 0 2px; font-weight: bold;">5</label>
@@ -342,7 +342,7 @@ $(document).on("click", "#show_copy_prit_exel1", function () {
                 </tfoot>
             </table>
 
-<div id="audio_dialog" class="form-dialog" title="ჩანაწერი"></div>
+<div id="audio_dialog" class="form-dialog" title="Record"></div>
 <div id="in_form"  class="form-dialog">
 <table style="margin-top: 10px;" id="table_right_menu">
 	<tr>

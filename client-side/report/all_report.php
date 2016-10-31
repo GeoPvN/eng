@@ -202,7 +202,7 @@ function filter_sc(){
 </head>
 <body>
 	<div id="tabs" style="width: 90%; height: 1600px;">
-		<div class="callapp_head">All Agent<hr class="callapp_head_hr"></div>
+		<div class="callapp_head">All Report<hr class="callapp_head_hr"></div>
          
        <div id="button_area" style="margin: 3% 0 0 0;float: none;">
          <div class="left" style="width: 175px;">

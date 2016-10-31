@@ -285,18 +285,18 @@ $(document).on("click", "#show_copy_prit_exel", function () {
 </head>
 <body>
 	<div id="tabs" style="width: 90%; height: 1800px;">
-		<div class="callapp_head">კომპანიაში შემოსული მომართვები<hr class="callapp_head_hr"></div>
+		<div class="callapp_head">Top 10 report<hr class="callapp_head_hr"></div>
          <div id="button_area" style="margin: 3% 0 0 0">
 		</div>
        <div id="button_area" style="margin: 3% 0 0 0">
          <div class="left" style="width: 175px;">
            <input type="text" name="search_start" id="search_start"  class="inpt right"/>
              </div>
-            	<label for="search_start" class="left" style="margin:5px 0 0 3px">-დან</label>
+            	<label for="search_start" class="left" style="margin:5px 0 0 3px">-From</label>
              <div class="left" style="width: 185px;">
 	            <input type="text" name="search_end" id="search_end"  class="inpt right" />
              </div>
-            	<label for="search_end" class="left" style="margin:5px 0 0 3px">–მდე</label>
+            	<label for="search_end" class="left" style="margin:5px 0 0 3px">–Up to</label>
            <br /><br /><br />
             </div>
 		
@@ -306,13 +306,13 @@ $(document).on("click", "#show_copy_prit_exel", function () {
 <table id="table-sparkline" style="width: 100%; margin-top:20px;">
     <thead>
         <tr>
-            <th>მომსახურების ცენტრი</th>
-            <th>სულ</th>
-            <th>ბოლო 4 თვე</th>
-            <th>ტექნიკური</th>
-            <th>ტექნიკური ბოლო 4 თვე</th>
-            <th>სხვა</th>
-            <th>სხვა ბოლო 4 თვე</th>
+            <th>Service Center</th>
+            <th>Total</th>
+            <th>Last 4 months</th>
+            <th>Technical</th>
+            <th>Technical last 4 months</th>
+            <th>Other</th>
+            <th>Other last 4 months</th>
         </tr>
     </thead>
     <tbody id="tbody-sparkline">

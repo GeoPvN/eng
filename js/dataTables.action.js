@@ -271,7 +271,7 @@ function GetDataTableSD(tname, aJaxURL, action, count, data, hidden, length, sor
 				d.filter_5 = data.filter_5;
 				d.filter_6 = data.filter_6;
 				d.filter_7 = data.filter_7;
-				$("#table_index tbody").html("<tr><td colspan=10 style=\"font-size:16px;color: red;font-weight:bold;\">იტვირთება......</td></tr>");
+				$("#table_index tbody").html("<tr><td colspan=10 style=\"font-size:16px;color: red;font-weight:bold;\">Loading......</td></tr>");
         	}
 		},
         //"sAjaxSource": aJaxURL,

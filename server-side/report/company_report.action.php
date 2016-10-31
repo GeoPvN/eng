@@ -73,7 +73,7 @@ switch ($action) {
         
         
         $sourceArray[$i]['type']                  = 'pie';
-        $sourceArray[$i]['name']                  = 'სულ ჯამი';
+        $sourceArray[$i]['name']                  = 'Total sum';
         $sourceArray[$i]['data']                  = $totalArray;
         $sourceArray[$i]['center']                = array(20, 30);
         $sourceArray[$i]['size']                  = 100;

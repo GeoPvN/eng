@@ -57,7 +57,7 @@ function drawFirstLevel(){
 	                },
 	                tooltip: {
 	                    formatter: function() {
-	                        return '<b>'+ this.point.name +'-'+this.point.y+' ზარი :  '+this.percentage.toFixed(2) +' %</b>';
+	                        return '<b>'+ this.point.name +'-'+this.point.y+' Call :  '+this.percentage.toFixed(2) +' %</b>';
 
 	                    }
 	                },
@@ -70,7 +70,7 @@ function drawFirstLevel(){
 	                            color: '#000000',
 	                            connectorColor: '#000000',
 	                            formatter: function() {
-	                            	return '<b>'+ this.point.name +'-'+this.point.y+' ზარი :  '+this.percentage.toFixed(2) +' %</b>';
+	                            	return '<b>'+ this.point.name +'-'+this.point.y+' Call :  '+this.percentage.toFixed(2) +' %</b>';
 	                            }
 	                        },
 	                        point: {
@@ -253,20 +253,20 @@ function play(str){
 </head>
 <body>
 	<div id="tabs" style="width: 90%; height: 850px;">
-		<div class="callapp_head">კატეგორიების მიხედვით<hr class="callapp_head_hr"></div>
+		<div class="callapp_head">By categories<hr class="callapp_head_hr"></div>
          <div id="button_area" style="margin: 3% 0 0 0">
-         <button id="back" style="margin-top:0px">უკან</button>
+         <button id="back" style="margin-top:0px">Back</button>
 		</div>
        <div id="button_area" style="margin: 3% 0 0 0">
          <div class="left" style="width: 175px;">
            <input type="text" name="search_start" id="search_start"  class="inpt right"/>
              </div>
-            	<label for="search_start" class="left" style="margin:5px 0 0 3px">-დან</label>
+            	<label for="search_start" class="left" style="margin:5px 0 0 3px">-From</label>
              <div class="left" style="width: 185px;">
 	            <input type="text" name="search_end" id="search_end"  class="inpt right" />
              </div>
-            	<label for="search_end" class="left" style="margin:5px 0 0 3px">–მდე</label>
-           <label class="left" style="margin:5px 0 0 40px">ზარების  ჯამური რაოდენობა: </label> <label id="total_quantity" class="left" style="margin:5px 0 0 2px; font-weight: bold;">5</label>
+            	<label for="search_end" class="left" style="margin:5px 0 0 3px">–Up to</label>
+           <label class="left" style="margin:5px 0 0 40px">Total number of calls: </label> <label id="total_quantity" class="left" style="margin:5px 0 0 2px; font-weight: bold;">5</label>
        <br /><br /><br />
             </div>
 		<div id="chart_container" style="width: 100%; height: 480px; margin-top:-30px;"></div>
@@ -289,24 +289,24 @@ function play(str){
                 <thead>
                     <tr id="datatable_header">
                         <th>ID</th>
-                        <th style="width:70%">დასახელება</th>
-                        <th style="width:15%">რაოდენობა</th>
-                        <th style="width:15%">პროცენტი</th>
+                        <th style="width:70%">Name</th>
+                        <th style="width:15%">Quantity</th>
+                        <th style="width:15%">Percent</th>
                     </tr>
                 </thead>
                 <thead>
                     <tr class="search_header">
                         <th class="colum_hidden">
-                        	<input type="text" name="search_id" value="ფილტრი" class="search_init" />
+                        	<input type="text" name="search_id" value="Filter" class="search_init" />
                         </th>
                         <th>
-                        	<input type="text" name="search_number" value="ფილტრი" class="search_init">
+                        	<input type="text" name="search_number" value="Filter" class="search_init">
                         </th>
                         <th>
-                        	<input type="text" name="search_object" value="ფილტრი" class="search_init">
+                        	<input type="text" name="search_object" value="Filter" class="search_init">
                         </th>
                         <th>
-                            <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                            <input type="text" name="search_date" value="Filter" class="search_init" />
                         </th>
 
                     </tr>
@@ -321,7 +321,7 @@ function play(str){
                 </tfoot>
             </table>
 
-<div id="audio_dialog" class="form-dialog" title="ჩანაწერი"></div>
+<div id="audio_dialog" class="form-dialog" title="Record"></div>
 <div id="in_form"  class="form-dialog">
 <table style="margin-top: 10px;" id="table_right_menu">
 	<tr>
@@ -341,53 +341,53 @@ function play(str){
         <tr id="datatable_header">
             <th>ID</th>
             <th style="width: 46px;">№</th>
-            <th style="width: 120px;">თარიღი</th>
-            <th style="width: 120px;">ტელეფონი</th>
-            <th style="width: 25%;">აბონენტი</th>
-            <th style="width: 25%;">აბონენტის ნომერი</th>
-            <th style="width: 25%;">მ/ცენტრი</th>
-            <th style="width: 25%;">კატეგორია</th>
-            <th style="width: 25%;">რეაგირება</th>
-            <th style="width: 25%;">მოსმენა</th>
+            <th style="width: 120px;">Date</th>
+            <th style="width: 120px;">Phone</th>
+            <th style="width: 25%;">Customers</th>
+            <th style="width: 25%;">Customers Number</th>
+            <th style="width: 25%;">Service Center</th>
+            <th style="width: 25%;">Category</th>
+            <th style="width: 25%;">Responses</th>
+            <th style="width: 25%;">Listen</th>
         </tr>
     </thead>
     <thead>
         <tr class="search_header">
             <th class="colum_hidden">
-        	   <input type="text" name="search_id" value="ფილტრი" class="search_init" />
+        	   <input type="text" name="search_id" value="Filter" class="search_init" />
             </th>
             <th>
-            	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+            	<input type="text" name="search_number" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>    
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>                         
             <th>
-                <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_category" value="Filter" class="search_init" />
             </th>            
             <th>
-                <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_category" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_category" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_phone" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_phone" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_category" value="Filter" class="search_init" />
             </th>            
         </tr>
     </thead>
 </table>
 </div>
- <div  id="add-edit-form" class="form-dialog" title="შემომავალი ზარი">	</div>
+ <div  id="add-edit-form" class="form-dialog" title="Incoming Call">	</div>
 </body>
 </html>
 

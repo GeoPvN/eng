@@ -46,8 +46,8 @@ var end		= $("#search_end").val();
 $(document).ready(function() {
 	GetDate("search_start");
 	GetDate("search_end");
-	$("#dropdown").dropdownchecklist({ firstItemChecksAll: true, explicitClose: 'დახურვა',icon: {}, width: 200, zIndex: 111, onComplete : drawFirstLevel});
-	$("#dropdown1").dropdownchecklist({ firstItemChecksAll: true, explicitClose: 'დახურვა',icon: {}, width: 200, zIndex: 111, onComplete : filter_sc});  
+	$("#dropdown").dropdownchecklist({ firstItemChecksAll: true, explicitClose: 'Close',icon: {}, width: 200, zIndex: 111, onComplete : drawFirstLevel});
+	$("#dropdown1").dropdownchecklist({ firstItemChecksAll: true, explicitClose: 'Close',icon: {}, width: 200, zIndex: 111, onComplete : filter_sc});  
 	drawFirstLevel();
 	$("#back").button({ disabled: true });
 	$("#back").button({ icons: { primary: "ui-icon-arrowthick-1-w" }});
@@ -101,7 +101,7 @@ function drawFirstLevel(){
 			            }
 			        },
 			        tooltip: {
-			            pointFormat: 'რაოდენობა : <b>{point.y:.0f}</b>'
+			            pointFormat: 'Quantity : <b>{point.y:.0f}</b>'
 			        },
 			        xAxis: {
 			            categories: [],
@@ -195,7 +195,7 @@ $(document).on("click", ".download1", function () {
 	link = 'http://10.0.18.18:8080/records/' + link;
 	var btn = {
 	        "cancel": {
-	            text: "დახურვა",
+	            text: "Close",
 	            id: "cancel-dialog",
 	            click: function () {
 	                $(this).dialog("close");
@@ -214,7 +214,7 @@ $(document).on("click", ".download", function () {
 	link = 'http://10.0.18.18:8080/records/' + link;
 	var btn = {
 	        "cancel": {
-	            text: "დახურვა",
+	            text: "Close",
 	            id: "cancel-dialog",
 	            click: function () {
 	                $(this).dialog("close");
@@ -307,7 +307,7 @@ function filter_sc(){
         data: 'act=check_sc&ids='+branches1,
         success: function(data) {
             $("#dropdown").html(data.test);
-            $("#dropdown").dropdownchecklist({ firstItemChecksAll: true, explicitClose: 'დახურვა',icon: {}, width: 200, zIndex: 111, onComplete : drawFirstLevel});
+            $("#dropdown").dropdownchecklist({ firstItemChecksAll: true, explicitClose: 'Close',icon: {}, width: 200, zIndex: 111, onComplete : drawFirstLevel});
             drawFirstLevel();
         }
     });
@@ -317,23 +317,23 @@ function filter_sc(){
 </head>
 <body>
 <div id="tabs" style="width: 97%; height: 850px;">
-<div class="callapp_head">მომსახურების ცენტრების მიხედვით<hr class="callapp_head_hr"></div>
+<div class="callapp_head">By Service Centers<hr class="callapp_head_hr"></div>
      
    <div id="button_area" style="margin: 3% 0 0 0">
 
- <button id="back" style="margin-top:0px; float: left;">უკან</button>
+ <button id="back" style="margin-top:0px; float: left;">Back</button>
 
  <div class="left" style="width: 175px;">
    <input style="height: 15px;" type="text" name="search_start" id="search_start"  class="inpt right"/>
      </div>
-    	<label for="search_start" class="left" style="margin:5px 0 0 3px">-დან</label>
+    	<label for="search_start" class="left" style="margin:5px 0 0 3px">-From</label>
      <div class="left" style="width: 185px;">
         <input style="height: 15px;" type="text" name="search_end" id="search_end"  class="inpt right" />
      </div>
-	 <label for="search_end" class="left" style="margin:5px 0 0 3px">–მდე</label>
+	 <label for="search_end" class="left" style="margin:5px 0 0 3px">–Up to</label>
      <div class="left" style="width: 200px;margin-left: 20px;">
         <select id="dropdown1" multiple="multiple">
-            <option value="0" selected="selected">(ყველა)</option>
+            <option value="0" selected="selected">(All)</option>
             <?php 
         	require_once('includes/classes/core.php');
 			   $rResult = mysql_query("SELECT id, `name`
@@ -350,7 +350,7 @@ function filter_sc(){
      </div>
      <div class="left" style="width: 200px;margin-left: 20px;">
      	<select id="dropdown" multiple="multiple">
-            <option value="0" selected="selected">(ყველა)</option>
+            <option value="0" selected="selected">(All)</option>
             <?php 
         	require_once('includes/classes/core.php');
 			   $rResult = mysql_query("SELECT id, `name` 
@@ -366,7 +366,7 @@ function filter_sc(){
         </select>
      </div>
 	        
-   <label class="left" style="margin:5px 0 0 20px">ზარების  ჯამური რაოდენობა: </label> <label id="total_quantity" class="left" style="margin:5px 0 0 2px; font-weight: bold;">0</label>
+   <label class="left" style="margin:5px 0 0 20px">Total Calls Quantity: </label> <label id="total_quantity" class="left" style="margin:5px 0 0 2px; font-weight: bold;">0</label>
    <br/><br/><br/>
   </div>
     
@@ -393,24 +393,24 @@ function filter_sc(){
     <thead>
         <tr id="datatable_header">
             <th>ID</th>
-            <th style="width:70%">დასახელება</th>
-            <th style="width:15%">რაოდენობა</th>
-            <th style="width:15%">პროცენტი</th>
+            <th style="width:70%">Name</th>
+            <th style="width:15%">Quantity</th>
+            <th style="width:15%">Percent</th>
         </tr>
     </thead>
     <thead>
         <tr class="search_header">
             <th class="colum_hidden">
-            	<input type="text" name="search_id" value="ფილტრი" class="search_init" />
+            	<input type="text" name="search_id" value="Filter" class="search_init" />
             </th>
             <th>
-            	<input type="text" name="search_number" value="ფილტრი" class="search_init">
+            	<input type="text" name="search_number" value="Filter" class="search_init">
             </th>
             <th>
-            	<input type="text" name="search_object" value="ფილტრი" class="search_init">
+            	<input type="text" name="search_object" value="Filter" class="search_init">
             </th>
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>
 
         </tr>
@@ -425,7 +425,7 @@ function filter_sc(){
     </tfoot>
 </table>
 
-<div id="audio_dialog" class="form-dialog" title="ჩანაწერი"></div>
+<div id="audio_dialog" class="form-dialog" title="Record"></div>
 <div id="in_form"  class="form-dialog">
 
 <table style="margin-top: 10px;" id="table_right_menu">
@@ -447,49 +447,49 @@ function filter_sc(){
         <tr id="datatable_header">
             <th>ID</th>
             <th style="width: 60px;">№</th>
-            <th style="width: 130px;">თარიღი</th>
-            <th style="width: 15%;">ტელეფონი</th>
-            <th style="width: 20%;">სახელი</th>
-            <th style="width: 20%;">კატეგორია 1</th>
-            <th style="width: 20%;">კატეგორია 1_1</th>            
-            <th style="width: 20%;">კატეგორია 1_1_1</th>
-            <th style="width: 15%;">მოსმენა</th>
+            <th style="width: 130px;">Date</th>
+            <th style="width: 15%;">Phone</th>
+            <th style="width: 20%;">Name</th>
+            <th style="width: 20%;">Category 1</th>
+            <th style="width: 20%;">Category 1_1</th>            
+            <th style="width: 20%;">Category 1_1_1</th>
+            <th style="width: 15%;">Listen</th>
         </tr>
     </thead>
     <thead>
         <tr class="search_header">
             <th class="colum_hidden">
-        	   <input type="text" name="search_id" value="ფილტრი" class="search_init" />
+        	   <input type="text" name="search_id" value="Filter" class="search_init" />
             </th>
             <th>
-            	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+            	<input type="text" name="search_number" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>    
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>                         
             <th>
-                <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_category" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_category" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_phone" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_phone" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_category" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_category" value="Filter" class="search_init" />
             </th>            
         </tr>
     </thead>
     </table>
 </div>
-<div  id="add-edit-form" class="form-dialog" title="შემომავალი ზარი">	</div>
+<div  id="add-edit-form" class="form-dialog" title="Incoming calls">	</div>
 </body>
 </html>
 

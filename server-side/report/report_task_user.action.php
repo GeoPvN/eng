@@ -12,14 +12,14 @@ $done 		= $_REQUEST['done']%3;
 $name 		= $_REQUEST['name'];
 $user 		= $_REQUEST['user'];
 $title 		= $_REQUEST['title'];
-$text[0] 	= "დავალებები პასუხისმგებელი პირების მიხედვით";
-$text[1] 	= "'$type'- სტატუსების მიხედვით";
-$text[2] 	= "'$category'-განყოფილებების მიხედვით";
+$text[0] 	= "Tasks by responsible users";
+$text[1] 	= "'$type'- By status";
+$text[2] 	= "'$category'-By Departments";
 
-if ($category=="გადაცემულია გასარკვევად")  $c=1;
-elseif ($category=="გარკვევის პროცესშია") $c=2;
-elseif ($category=="მოგვარებულია") $c=3;
-elseif ($category=="გაუქმებულია") $c=4;
+if ($category=="Transferred to clear")  $c=1;
+elseif ($category=="Clear in process") $c=2;
+elseif ($category=="Solved") $c=3;
+elseif ($category=="Cancelled") $c=4;
 
 //------------------------------------------------query-------------------------------------------
 switch ($done){

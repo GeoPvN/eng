@@ -11,18 +11,18 @@ $s_category = $_REQUEST['sub_category'];
 $done 		= $_REQUEST['done']%4;
 $name 		= $_REQUEST['name'];
 $title 		= $_REQUEST['title'];
-$text[0] 	= "შემოსული  ზარები რეაგირების მიხედვით";
-$text[1] 	= "'$departament'- შემოსული ზარები  ქვე-კატეგორიების მიხედვით";
-$text[2] 	= "'$departament'- შემოსული ზარები ქვე-ქვე-კატეგორიების  მიხედვით";
-$text[3] 	= "'$departament'- შემოსული  ქვე–კატეგორიის მიხედვით";
+$text[0] 	= "Incoming call by response";
+$text[1] 	= "'$departament'- Incoming call by sub-categories";
+$text[2] 	= "'$departament'- Incoming call by sub-sub-categories";
+$text[3] 	= "'$departament'- Incoming call by sub-categories";
 $c="3 or incomming_call.call_type_id=0";
-if ($type=="ინფორმაცია")  $c=1;
-elseif ($type=="პრეტენზია") $c=2;
-elseif ($type=="სხვა") $c=3;
+if ($type=="Information")  $c=1;
+elseif ($type=="Presentation") $c=2;
+elseif ($type=="Other") $c=3;
 //------------------------------------------------query-------------------------------------------
 switch ($done){
 	case  1:
-		$result = mysql_query(" SELECT  IF(ISNULL(info_category.`name`),'არ აქვს კატეგორია',info_category.`name`) AS `si_name`,
+		$result = mysql_query(" SELECT  IF(ISNULL(info_category.`name`),'No Category',info_category.`name`) AS `si_name`,
                                         COUNT(incomming_call.id) AS `count`,
                                         ROUND((COUNT(incomming_call.id) / (SELECT COUNT(incomming_call.id) AS `count`
                                         FROM `incomming_call`
@@ -38,7 +38,7 @@ switch ($done){
 		$text[0]=$text[1];
 	break;
 	case  2:
-	    $result = mysql_query(" SELECT  IF(c_type.`name`!='',c_type.`name`,'არ აქვს კატეგორია') as type,
+	    $result = mysql_query(" SELECT  IF(c_type.`name`!='',c_type.`name`,'No Category') as type,
                         				COUNT(*),
                         				CONCAT(ROUND(COUNT(*)/(SELECT COUNT(*)
                         				FROM incomming_call
@@ -55,7 +55,7 @@ switch ($done){
 	    $text[0]=$text[2];
 	    break;
     case  3:
-        $result = mysql_query(" SELECT  IF(sub_cat.`name`!='',sub_cat.`name`,'არ აქვს კატეგორია') as type,
+        $result = mysql_query(" SELECT  IF(sub_cat.`name`!='',sub_cat.`name`,'No Category') as type,
                                         COUNT(*),
                                         CONCAT(ROUND(COUNT(*)/(SELECT COUNT(*)
                                         FROM incomming_call
@@ -74,7 +74,7 @@ switch ($done){
         $text[0]=$text[3];
         break;
 	default:
-		$result = mysql_query(" SELECT  IF(ISNULL(inc_status.`name`),'არ აქვს კატეგორია',inc_status.`name`) AS `si_name`,
+		$result = mysql_query(" SELECT  IF(ISNULL(inc_status.`name`),'No Category',inc_status.`name`) AS `si_name`,
                         				COUNT(incomming_call.id) AS `count`,
                         				ROUND((COUNT(incomming_call.id) / (SELECT COUNT(incomming_call.id) AS `count`
                         				FROM `incomming_call`
@@ -116,7 +116,7 @@ switch ($action) {
 		break;
 		case 'get_in_page':
 		    
-		    if($_REQUEST[rid] == 'არ აქვს კატეგორია'){
+		    if($_REQUEST[rid] == 'No Category'){
 		        $rid = 'AND incomming_call.cat_1_1_1 = 999';
 		    }else{
 		        $rid = "AND cat_1_1_1.`name` = '$_REQUEST[rid]'";

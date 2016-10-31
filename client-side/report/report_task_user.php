@@ -58,7 +58,7 @@ function drawFirstLevel(){
 	                },
 	                tooltip: {
 	                    formatter: function() {
-	                        return '<b>'+ this.point.name +': '+this.point.y+' დავალება :  '+this.percentage.toFixed(2) +' %</b>';
+	                        return '<b>'+ this.point.name +': '+this.point.y+' Task :  '+this.percentage.toFixed(2) +' %</b>';
 
 	                    }
 	                },
@@ -71,7 +71,7 @@ function drawFirstLevel(){
 	                            color: '#000000',
 	                            connectorColor: '#000000',
 	                            formatter: function() {
-	                            	return '<b>'+ this.point.name +': '+this.point.y+' დავალება :  '+this.percentage.toFixed(2) +' %</b>';
+	                            	return '<b>'+ this.point.name +': '+this.point.y+' Task :  '+this.percentage.toFixed(2) +' %</b>';
 	                            }
 	                        },
 	                        point: {
@@ -90,7 +90,7 @@ function drawFirstLevel(){
 	                },
 	                series: [{
 	                    type: 'pie',
-	                    name: 'კატეგორიები',
+	                    name: 'Categories',
 	                    data: []
 	                }]
 	            }
@@ -109,7 +109,7 @@ function drawFirstLevel(){
 	                options.series[0].data 	= 	json.data;
 	                options.title['text'] 	=	json.text;
 	                chart = new Highcharts.Chart(options);
-	                $("#total_quantity").html("იტვირთება....");
+	                $("#total_quantity").html("Loading....");
 	                setTimeout(function(){ $("#total_quantity").html($("#qnt").html().split(">")[1]);}, 500);
 		});
 		 $("#report tbody").on("click", "tr", function () {
@@ -155,30 +155,30 @@ $(document).on("click", "#show_copy_prit_exel", function () {
        	 <div id="container" style="width:90%">
             <div id="dynamic">
              <div id="button_area" style="margin-top: 28px;">
-             <button id="back">უკან</button>
+             <button id="back">Back</button>
 			</div>
 	       <div id="button_area" style="margin: 2% 0 0 0">
 	         <div class="left" style="width: 175px;">
 	           <input type="text" name="search_start" id="search_start" class="inpt right"/>
 	             </div>
-	            	<label for="search_start" class="left" style="margin:5px 0 0 3px">-დან</label>
+	            	<label for="search_start" class="left" style="margin:5px 0 0 3px">-From</label>
 	             <div class="left" style="width: 185px;">
 		            <input type="text" name="search_end" id="search_end" class="inpt right" />
 	             </div>
-	            	<label for="search_end" class="left" style="margin:5px 0 0 3px">–მდე</label>
+	            	<label for="search_end" class="left" style="margin:5px 0 0 3px">–Up to</label>
 	            
 	            	
 	         	<div class="left" style="width: 195px;">
-	         		<label for="search_end" class="left" style="margin:-18px 0 0 28px">პასუხისმგებელი პირი</label>
+	         		<label for="search_end" class="left" style="margin:-18px 0 0 28px">Responsible Person</label>
 		          <select style="width: 186px;" id="persons_id" class="inpt right"><?php 
 		          
 		       
-							   $rResult = mysql_query("	SELECT users.`id`, persons.`name`
-														FROM `persons`
-														JOIN	`users` ON persons.id = users.person_id
-														WHERE persons.actived=1 AND users.group_id in(15,3,18,19,20)");
+							   $rResult = mysql_query("	SELECT users.`id`, user_info.`name`
+														FROM `user_info`
+														JOIN `users` ON user_info.user_id = users.id
+														WHERE users.actived=1");
 
-								echo'<option value="0" selected="selected">ყველა</option>';
+								echo'<option value="0" selected="selected">All</option>';
 								
 							    while ( $aRow = mysql_fetch_array( $rResult ) )
 							    {
@@ -187,7 +187,7 @@ $(document).on("click", "#show_copy_prit_exel", function () {
 				</select>
 	             </div>
 	            	
-	           <label class="left" style="margin:5px 0 0 40px">ზარების  ჯამური რაოდენობა: </label> <label id="total_quantity" class="left" style="margin:5px 0 0 2px; font-weight: bold;">5</label>
+	           <label class="left" style="margin:5px 0 0 40px">Total number of calls: </label> <label id="total_quantity" class="left" style="margin:5px 0 0 2px; font-weight: bold;">5</label>
 	       <br /><br /><br />
 	            </div>
 			<div id="chart_container" style="width: 100%; height: 480px; margin-top:-30px;"></div>
@@ -208,24 +208,24 @@ $(document).on("click", "#show_copy_prit_exel", function () {
                     <thead>
                         <tr id="datatable_header">
                             <th>ID</th>
-                            <th style="width:70%">დასახელება</th>
-                            <th style="width:15%" class="min">რაოდენობა</th>
-                            <th style="width:15%" class="min">პროცენტი</th>
+                            <th style="width:70%">Name</th>
+                            <th style="width:15%" class="min">Quantity</th>
+                            <th style="width:15%" class="min">Percent</th>
                         </tr>
                     </thead>
                     <thead>
                         <tr class="search_header">
                             <th class="colum_hidden">
-                            	<input type="text" name="search_id" value="ფილტრი" class="search_init" />
+                            	<input type="text" name="search_id" value="Filter" class="search_init" />
                             </th>
                             <th>
-                            	<input type="text" name="search_number" value="ფილტრი" class="search_init">
+                            	<input type="text" name="search_number" value="Filter" class="search_init">
                             </th>
                             <th>
-                            	<input type="text" name="search_object" value="ფილტრი" class="search_init">
+                            	<input type="text" name="search_object" value="Filter" class="search_init">
                             </th>
                             <th>
-                                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                                <input type="text" name="search_date" value="Filter" class="search_init" />
                             </th>
 
                         </tr>
@@ -241,7 +241,7 @@ $(document).on("click", "#show_copy_prit_exel", function () {
                 </table>
               
 		</div>
- <div  id="add-edit-form" class="form-dialog" title="დავალებები">	</div>
+ <div  id="add-edit-form" class="form-dialog" title="Tasks">	</div>
   <div id="in_form"  class="form-dialog">
   <br/>
   <br/>
@@ -251,44 +251,44 @@ $(document).on("click", "#show_copy_prit_exel", function () {
         <tr id="datatable_header">
             <th>ID</th>
             <th style="width: 30px;">№</th>
-            <th style="width: 50%;">ფორმირების თარიღი</th>
-            <th style="width: 50%;">დასაწყისი</th>
-            <th style="width: 50%;">დასასრული</th>
-            <th style="width: 50%;">დამფორმირებელი</th>
-            <th style="width: 50%;">აბონენტი</th>
-            <th style="width: 50%;">პასუხისმგებელი პირი</th>
-            <th style="width: 50%;">სტატუსი</th>
+            <th style="width: 50%;">Date</th>
+            <th style="width: 50%;">Start</th>
+            <th style="width: 50%;">End</th>
+            <th style="width: 50%;">Agent</th>
+            <th style="width: 50%;">Customers</th>
+            <th style="width: 50%;">Responsible Person</th>
+            <th style="width: 50%;">Status</th>
             <th class="check" style="width: 30px;">&nbsp;</th>
         </tr>
     </thead>
     <thead>
         <tr class="search_header">
             <th class="colum_hidden">
-        	   <input type="text" name="search_id" value="ფილტრი" class="search_init" />
+        	   <input type="text" name="search_id" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>    
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>            
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>    
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>
             <th>
-            	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+            	<input type="text" name="search_number" value="Filter" class="search_init" />
             </th>
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>    
             <th>
-                <input type="text" name="search_date" value="ფილტრი" class="search_init" />
+                <input type="text" name="search_date" value="Filter" class="search_init" />
             </th>
             <th>
-            	<input type="text" name="search_number" value="ფილტრი" class="search_init" />
+            	<input type="text" name="search_number" value="Filter" class="search_init" />
             </th>
             <th style="border-right: 1px solid #E6E6E6 !important;">
             	<div class="callapp_checkbox">
