@@ -284,7 +284,7 @@
   }
 }
 .align_right{
-	text-align: right;
+	text-align: left;
 }
 .cell {
 	font-size: 10px;
