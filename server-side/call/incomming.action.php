@@ -240,7 +240,7 @@ switch ($action) {
 		    'user' => 'root',
 		    'pass' => 'Gl-1114',
 		    'db'   => 'epro',
-		    'host' => 'localhost'
+		    'host' => '212.72.155.176'
 		);
 		
 		
@@ -743,7 +743,7 @@ function get_cat_1_1($id,$child_id){
         $i = 1;
     }
     if($i == 0 && $id > 0){
-        $data .= '<option value="999" selected="selected">არ აქვს კატეგორია</option>';
+        $data .= '<option value="999" selected="selected">No Category</option>';
     }
     
     return $data;
@@ -765,7 +765,7 @@ function get_cat_1_1_1($id,$child_id){
         $i = 1;
     }
     if($i == 0 && $id > 0){
-        $data .= '<option value="999" selected="selected">არ აქვს კატეგორია</option>';
+        $data .= '<option value="999" selected="selected">No Category</option>';
     }
     
     return $data;
