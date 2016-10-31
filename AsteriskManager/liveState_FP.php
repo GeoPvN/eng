@@ -168,24 +168,24 @@ foreach($filter_queues  as $qn) {
 
 ///QUEUE details
 
-			
+echo "<BR><h2>".$lang[$language]['calls_waiting_detail']."</h2><BR>";
+echo '<table id="tb" >';
+echo "<thead>";
+echo "<tr>";
+echo "<th>Queue</th>";
+echo "<th>Position</th>";
+echo "<th>Number</th>";
+echo "<th>Wait Time</th>";
+echo "</tr>\n";
+echo "</thead>\n";
+echo "<tbody>\n";			
 foreach($filter_queues as $qn) {
 	$position=1;
 	if(!isset($queues[$qn]['calls']))  continue;
 
 	foreach($queues[$qn]['calls'] as $key=>$val) {
 		if($position==1) {
-		    echo "<BR><h2>".$lang[$language]['calls_waiting_detail']."</h2><BR>";
-			echo '<table id="tb" >';
-			echo "<thead>";
-			echo "<tr>";
-			echo "<th>Queue</th>";
-			echo "<th>Position</th>";
-			echo "<th>Number</th>";
-			echo "<th>Wait Time</th>";
-			echo "</tr>\n";
-			echo "</thead>\n";
-			echo "<tbody>\n";
+		    
 		}
 
 		if($position%2) {
