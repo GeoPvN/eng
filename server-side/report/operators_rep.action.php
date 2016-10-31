@@ -20,13 +20,13 @@ $call_count = array();
 $name[]     = '';
 
 
-	$ress =mysql_query("SELECT 	  persons.`name` AS `agent`,
+	$ress =mysql_query("SELECT 	  user_info.`name` AS `agent`,
                                   COUNT(*) AS `num`
                         FROM 	  asterisk_incomming
-                        JOIN   	  persons ON asterisk_incomming.user_id = persons.user_id
+                        JOIN   	  user_info ON asterisk_incomming.user_id = user_info.user_id
 	                    JOIN      incomming_call ON incomming_call.asterisk_incomming_id = asterisk_incomming.id       
-                       	WHERE 	  persons.`name` in ($agentt) AND DATE(`asterisk_incomming`.`call_datetime`) BETWEEN '$start' AND '$end'
-                        GROUP BY  persons.`name`");
+                       	WHERE 	  user_info.`name` in ($agentt) AND DATE(`asterisk_incomming`.`call_datetime`) BETWEEN '$start' AND '$end'
+                        GROUP BY  user_info.`name`");
 			
 while($row1 = mysql_fetch_assoc($ress)){
 

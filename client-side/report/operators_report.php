@@ -336,10 +336,19 @@ function getData(){
 			    data: parame,
 		        success: function(data) {		        	
 					$("#test").html(data.page.answear_dialog);
-					GetDialog("add-edit-form", 941, "auto", "", "no");
+					var button = {
+							"cancel": {
+					            text: "Close",
+					            id: "cancel-dialog",
+					            click: function () {
+					                $(this).dialog("close");
+					            }
+					        }
+						};
+					GetDialog("add-edit-form", 941, "auto", button);
 					/* Table ID, aJaxURL, Action, Colum Number, Custom Request, Hidden Colum, Menu Array */
 					//GetDataTable("example", aJaxURL, "answear_dialog_table&start_time="+parame.start_time+"&end_time="+parame.end_time+"&queuet="+parame.queuet+"&agent="+parame.agent+"&name="+name,8, "", 0, "", 1, "desc");
-					GetDataTable("example", aJaxURL, "answear_dialog_table&start_time="+parame.start_time+"&end_time="+parame.end_time+"&queuet="+parame.queuet+"&agent="+parame.agent,8, "", 0, "", 1, "desc",'',"<'dataTable_buttons'T><'F'Cfipl>");
+					GetDataTable("example", aJaxURL, "answear_dialog_table&start_time="+parame.start_time+"&end_time="+parame.end_time+"&queuet="+parame.queuet+"&name="+parame.name,8, "", 0, "", 1, "desc",'',"<'dataTable_buttons'T><'F'Cfipl>");
 			    }
 		    });
 		}
@@ -390,7 +399,7 @@ function getData(){
 					GetDialog("add-edit-form-undone", 941, "auto", button);
 					/* Table ID, aJaxURL, Action, Colum Number, Custom Request, Hidden Colum, Menu Array */
 					//GetDataTable("example2", aJaxURL, "undone_dialog_table&start_time="+parame.start_time+"&end_time="+parame.end_time+"&queuet="+parame.queuet+"&agent="+parame.agent+"&name="+name,8, "", 0, "", 1, "desc");
-					GetDataTable("example2", aJaxURL, "undone_dialog_table&start_time="+parame.start_time+"&end_time="+parame.end_time+"&queuet="+parame.queuet+"&agent="+parame.agent,8, "", 0, "", 1, "desc",'',"<'dataTable_buttons'T><'F'Cfipl>");
+					GetDataTable("example2", aJaxURL, "undone_dialog_table&start_time="+parame.start_time+"&end_time="+parame.end_time+"&queuet="+parame.queuet+"&name="+parame.name,8, "", 0, "", 1, "desc",'',"<'dataTable_buttons'T><'F'Cfipl>");
 					$( "div" ).removeClass( "ui-widget-overlay" );
 			    }
 		    });
@@ -605,9 +614,9 @@ function getData(){
 					   <td>Available<br><br>
 					    <select size="10" name="excel_answer_call_by_agent_info" multiple="multiple" id="myform_List_Agent_from" style="height: 100px;width: 173px;">
 							 <?php 
-							   $rResult = mysql_query("SELECT persons.`name`
+							   $rResult = mysql_query("SELECT user_info.`name`
                                                        FROM  users
-                                                       LEFT JOIN persons ON persons.user_id = users.id
+                                                       LEFT JOIN user_info ON user_info.user_id = users.id
                                                        AND users.actived = 1");
 							    while ( $aRow = mysql_fetch_array( $rResult ) )
 							    {

@@ -22,9 +22,9 @@ if($_REQUEST['act'] =='check'){
             					  ROUND(COUNT(*)/(SELECT COUNT(*) 
 												  FROM  asterisk_incomming AS ast
  	                                              JOIN  incomming_call ON incomming_call.asterisk_incomming_id = ast.id
-												  JOIN  persons ON persons.user_id = ast.user_id
+												  JOIN  user_info ON user_info.user_id = ast.user_id
 												  WHERE ast.disconnect_cause != 'ABANDON'
-												  AND   persons.`name` IN($agent)
+												  AND   user_info.`name` IN($agent)
 												  AND   DATE(`ast`.`call_datetime`) BETWEEN '$start_time' AND '$end_time'
  	                                              AND   asterisk_incomming.duration>0
 												  )*100,2) AS percent,
@@ -38,7 +38,7 @@ if($_REQUEST['act'] =='check'){
                         FROM      asterisk_incomming
                         JOIN      incomming_call AS inc ON inc.asterisk_incomming_id = asterisk_incomming.id
                         LEFT JOIN users ON asterisk_incomming.user_id = users.id
-                        JOIN      persons AS pers  ON pers.user_id = users .id
+                        JOIN      user_info AS pers  ON pers.user_id = users .id
                         WHERE     pers.`name` IN($agent)
                         AND       DATE(`asterisk_incomming`.`call_datetime`) BETWEEN '$start_time' AND '$end_time'
                         AND       asterisk_incomming.duration>0
@@ -80,13 +80,13 @@ $data		= array('page' => array(
 	                                  asterisk_incomming.call_datetime,
                 					  asterisk_incomming.source,
                 					  asterisk_incomming.dst_queue,
-                					  persons.`name`,
+                					  user_info.`name`,
                                       SEC_TO_TIME(asterisk_incomming.duration),
                             					CONCAT('<p onclick=play(', '\'',DATE_FORMAT(DATE(call_datetime),'%Y/%m/%d/'), file_name, '\'',  ')>Listen</p>', '<a download=\"audio.wav\" href=\"http://212.72.155.176:8000/', DATE_FORMAT(DATE(call_datetime),'%Y/%m/%d/'), file_name, '\">Download</a>') AS `file`
                             FROM 	  asterisk_incomming
-                            JOIN   	  persons ON asterisk_incomming.user_id = persons.user_id
+                            JOIN   	  user_info ON asterisk_incomming.user_id = user_info.user_id
                             JOIN      incomming_call ON incomming_call.asterisk_incomming_id = asterisk_incomming.id       
-                            WHERE 	  persons.`name` in ($agent) AND DATE(`asterisk_incomming`.`call_datetime`) BETWEEN '$start_time' AND '$end_time' AND  asterisk_incomming.duration>0
+                            WHERE 	  user_info.`name` in ('$name') AND DATE(`asterisk_incomming`.`call_datetime`) BETWEEN '$start_time' AND '$end_time' AND  asterisk_incomming.duration>0
                             ");
 	$data = array(
 			"aaData"	=> array()
@@ -116,13 +116,13 @@ $data		= array('page' => array(
 	                                  asterisk_incomming.call_datetime,
                 					  asterisk_incomming.source,
                 					  asterisk_incomming.dst_queue,
-                					  persons.`name`,
+                					  user_info.`name`,
                                       SEC_TO_TIME(asterisk_incomming.duration),
                             					CONCAT('<p onclick=play(', '\'',DATE_FORMAT(DATE(call_datetime),'%Y/%m/%d/'), file_name, '\'',  ')>Listen</p>', '<a download=\"audio.wav\" href=\"http://212.72.155.176:8000/', DATE_FORMAT(DATE(call_datetime),'%Y/%m/%d/'), file_name, '\">Download</a>') AS `file`
                             FROM 	  asterisk_incomming
-                            JOIN   	  persons ON asterisk_incomming.user_id = persons.user_id
+                            JOIN   	  user_info ON asterisk_incomming.user_id = user_info.user_id
                             JOIN      incomming_call ON incomming_call.asterisk_incomming_id = asterisk_incomming.id       
-                            WHERE 	  persons.`name` in ($agent) AND DATE(`asterisk_incomming`.`call_datetime`) BETWEEN '$start_time' AND '$end_time'
+                            WHERE 	  user_info.`name` in ('$name') AND DATE(`asterisk_incomming`.`call_datetime`) BETWEEN '$start_time' AND '$end_time'
 							  AND ISNULL(incomming_call.inc_status_id) AND asterisk_incomming.disconnect_cause != 'ABANDON' AND  asterisk_incomming.duration>0
        ");
     $data = array(
