@@ -1000,7 +1000,7 @@ function getbranch_id($id){
                             FROM    `branch`
                             WHERE   `actived` = 1 AND id = $tt[0]");
 
-    $data .= '<option value="0" selected="selected">სხვა</option>';
+    $data .= '<option value="0" selected="selected">Other</option>';
     while( $res = mysql_fetch_assoc($req)){
         if($res['id'] == $id){
             $data .= '<option value="' . $res['id'] . '" selected="selected">' . $res['name'] . '</option>';
