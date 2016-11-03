@@ -230,7 +230,7 @@ switch ($action) {
 		    array( 'db' => '`service_center`.`name`',     		    'dt' => 6 ),
 		    array( 'db' => '`ic1`.`name`',	            'dt' => 7 ),
 		    array( 'db' => '`inc_status`.`name`',		        'dt' => 8 ),
-		    array( 'db' => 'IF ((`asterisk_incomming`.`disconnect_cause` = "ABANDON"),"",concat("<p style=\"padding: 3px 0;\" onclick=play(","\"",date_format(cast(`asterisk_incomming`.`call_datetime` AS date),"%Y/%m/%d/"),`asterisk_incomming`.`file_name`,"\"",")>Listen</p>"))',	            'dt' => 9 ),
+		    array( 'db' => 'IF ((`asterisk_incomming`.`disconnect_cause` = "ABANDON"),"",concat("<p class=clickmetolisten gotoplay=",date_format(cast(`asterisk_incomming`.`call_datetime` AS date),"%Y/%m/%d/"),`asterisk_incomming`.`file_name`,">Listen</p>"))',	            'dt' => 9 ),
 		    array( 'db' => '(CASE WHEN (`incomming_call`.`inc_status_id` IS NOT NULL) THEN	"<div class=gr></div>"	WHEN (isnull(`incomming_call`.`inc_status_id`)	AND (`asterisk_incomming`.`disconnect_cause` <> "ABANDON")) THEN "<div class=ye></div>"	WHEN (`asterisk_incomming`.`disconnect_cause` = "ABANDON") THEN	"<div class=re></div>"	END) AS `status_color`',	    'dt' => 10 )
 		
 		);
