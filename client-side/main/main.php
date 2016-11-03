@@ -412,8 +412,8 @@ function outgoing_call(){
         url: "server-side/main.action.php",
         data: 'act=outgoing_call',
         success: function(data) {
-            var last_array = $(data.outgoing_call_day[1].data).size();
-        	$("#outgoing_call_day").html(data.outgoing_call_day[1].data[(last_array-1)]);
+//             var last_array = $(data.outgoing_call_day[1].data).size();
+//         	$("#outgoing_call_day").html(data.outgoing_call_day[1].data[(last_array-1)]);
         	$('#outgoing_call').highcharts({
     	        chart: {
     	            type: 'line'
