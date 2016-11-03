@@ -36,7 +36,7 @@ switch ($action) {
         break;
     case 'outgoing_call':
         $outgoing_call_day = mysql_query("  SELECT 	COUNT(*) AS `day_count`,
-                                                    DATE(call_datetime) AS `day`
+                                                    DAY(call_datetime) AS `day`
                                             FROM 	`asterisk_outgoing`
                                             WHERE   DATE(`call_datetime`) > DATE_ADD(DATE(NOW()), INTERVAL -7 DAY)
                                             AND 	DATE(`call_datetime`) <= DATE(NOW()) AND LENGTH(phone) != 3
