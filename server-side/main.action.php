@@ -45,6 +45,7 @@ switch ($action) {
         
         while ($outgoing_call_day_res = mysql_fetch_assoc($outgoing_call_day)){
             $record[] = intval($outgoing_call_day_res[day_count]);
+            $data['outgoing_call_day_date'][] = $outgoing_call_day_res[day];
         }
         $data['outgoing_call_day'][] = (object)array('name'=>'');
         $data['outgoing_call_day'][] = (object)array('data'=>$record);
@@ -60,6 +61,7 @@ switch ($action) {
  	    
  	    while ($inner_call_day_res = mysql_fetch_assoc($inner_call_day)){
  	        $record[] = intval($inner_call_day_res[day_count]);
+ 	        $data['inner_call_day_date'][] = $inner_call_day_res[day];
  	    }
  	    $data['inner_call_day'][] = (object)array('name'=>'');
  	    $data['inner_call_day'][] = (object)array('data'=>$record);

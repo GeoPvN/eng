@@ -425,6 +425,7 @@ function outgoing_call(){
     	            text: ''
     	        },
     	        xAxis: {
+    	        	categories: data.outgoing_call_day_date,
     	        	opposite: false,
     	        	visible: false,
     	        	labels: {
@@ -483,6 +484,7 @@ function inner_call(){
     	            text: ''
     	        },
     	        xAxis: {
+    	        	categories: data.inner_call_day_date,
     	        	opposite: false,
     	        	visible: false,
     	        	labels: {
