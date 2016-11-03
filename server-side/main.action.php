@@ -36,7 +36,7 @@ switch ($action) {
         break;
     case 'outgoing_call':
         $outgoing_call_day = mysql_query("  SELECT 	COUNT(*) AS `day_count`,
-                                                    DAY(call_datetime) AS `day`
+                                                    DAYNAME(call_datetime) AS `day`
                                             FROM 	`asterisk_outgoing`
                                             WHERE   DATE(`call_datetime`) > DATE_ADD(DATE(NOW()), INTERVAL -7 DAY)
                                             AND 	DATE(`call_datetime`) <= DATE(NOW()) AND LENGTH(phone) != 3
@@ -154,7 +154,7 @@ switch ($action) {
                                                     WHERE DATE(asterisk_incomming.datetime) = DATE(NOW())
                                                     AND ISNULL(asterisk_incomming.disconnect_cause)
                                                     AND NOT ISNULL(dst_extension)"));
-        $data['live_operators'][] = array('name'=>'Free','data'=>array((8-intval($in_busy[in_busy]))));
+        $data['live_operators'][] = array('name'=>'Free','data'=>array((2-intval($in_busy[in_busy]))));
         $data['live_operators'][] = array('name'=>'Busy','data'=>array(intval($in_busy[in_busy])));
         $data['live_operators'][] = array('name'=>'OFF','data'=>array(0));
         break;

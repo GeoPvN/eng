@@ -31,19 +31,19 @@ if ($check==4) {
 			<html>
 				<head>
 					<meta charset="utf-8">
-					<title>ავტორიზაცია</title>
+					<title>Authorization</title>
 					<link rel="stylesheet" type="text/css" href="media/css/login/style.css" />
 				</head>
 				<body>
 					<div class="container">
 						<section id="content">
 							<form action="" method="post">
-								<h1>ავტორიზაცია</h1>
+								<h1>Authorization</h1>
 								<div>
-									<input name="username" type="text" placeholder="მომხმარებელი" required="" id="username" autocomplete="off"/>
+									<input name="username" type="text" placeholder="User" required="" id="username" autocomplete="off"/>
 								</div>
 								<div>
-									<input name="password" type="password" placeholder="პაროლი" required="" id="password" autocomplete="off"/>
+									<input name="password" type="password" placeholder="Password" required="" id="password" autocomplete="off"/>
 								</div>
 								<script type="text/javascript">
 							    function show_ext(){
@@ -87,7 +87,7 @@ if ($check==4) {
 								</div>
 								<div><p style="font-size: 10px; color: #F70404;"><?php echo $text ?></p></div>
 								<div>
-									<input type="submit" value="შესვლა" />
+									<input type="submit" value="Log In" />
 								</div>
 							</form>
 						</section>
