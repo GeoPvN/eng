@@ -47,7 +47,7 @@ switch ($action) {
             $record[] = intval($outgoing_call_day_res[day_count]);
             $data['outgoing_call_day_date'][] = $outgoing_call_day_res[day];
         }
-        $data['outgoing_call_day'][] = (object)array('name'=>'');
+        
         $data['outgoing_call_day'][] = (object)array('data'=>$record);
         break;
  	case 'inner_call' :
